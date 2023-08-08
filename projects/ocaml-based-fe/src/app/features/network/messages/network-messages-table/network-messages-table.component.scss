@@ -1,0 +1,11 @@
+@import 'variables';
+
+.no-results {
+	button {
+		background-color: $base-container;
+
+		&:hover {
+			background-color: $base-divider;
+		}
+	}
+}

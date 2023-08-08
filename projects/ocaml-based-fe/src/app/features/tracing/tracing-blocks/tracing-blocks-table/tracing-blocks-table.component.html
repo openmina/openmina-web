@@ -1,0 +1,21 @@
+<ng-container #minaTable></ng-container>
+
+<ng-template #rowTemplate let-row="row">
+  <span>
+    <a class="underline primary"
+       [tooltip]="'See block in network'"
+       [showDelay]="500"
+       [href]="origin + '/network/blocks/' + row.height + (activeNodeName ? '?node=' + activeNodeName : '')"
+       target="_blank">{{ row.height }}</a>
+  </span>
+  <span>{{ row.globalSlot || '-' }}</span>
+  <span class="secondary">
+    <mina-copy [value]="row.hash" [display]="row.hash | truncateMid: 15"></mina-copy>
+  </span>
+  <span>
+    <mina-copy [value]="row.creator" [display]="(row.creator || '-') | truncateMid: 15"></mina-copy>
+  </span>
+  <span class="secondary" [innerHTML]="row.totalTime | secDuration: secDurationConfig"></span>
+  <span class="secondary">{{ row.source }}</span>
+  <span [ngClass]="row.status">{{ row.status }}</span>
+</ng-template>

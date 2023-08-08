@@ -1,0 +1,111 @@
+<div class="h-lg">
+  <button class="mt-5 ml-12 fx-row-vert-cent secondary primary-hover bg-transparent"
+          routerLink="/web-node/wallet/transactions">
+    <span class="mina-icon f-20 mr-8">arrow_back</span>
+    <span>Send Mina</span>
+  </button>
+</div>
+
+<div class="fx-col-horiz-cent pt-12 flex-grow">
+  <mina-stepper [stepHeaders]="['Generate Keys', 'Request Tokens', 'Wallet Overview']"
+                [steps]="[step1, step2, step1]"
+                [activeStep]="activeStep"
+                [footerTemplate]="stepperFooter"
+                [contentHeaderInfoTemplate]="contentHeaderInfo"
+                [style.max-width.px]="600"></mina-stepper>
+</div>
+<ng-template #contentHeaderInfo>
+  <div class="w-100 h-xl fx-row-vert-cent p-12 error bg-warn-container mb-10 border-rad-4">
+    <span class="mina-icon f-22 mr-10 icon-300">error</span>
+    Development purposes only, wallets are stored in a super dangerous way.
+  </div>
+</ng-template>
+
+<ng-template #step1>
+  <div class="border-rad-6 border p-12 flex-column h-100 w-100">
+    <ng-container *ngIf="!newWallet; else walletCreated">
+      <div class="fx-row-full-cent flex-grow">
+        <span class="f-48 mina-icon primary icon-100">vpn_key</span>
+      </div>
+      <div class="flex-column">
+        <div class="mb-5 border-rad-4 border fx-row-full-cent tertiary h-lg">
+          Public Key
+        </div>
+        <div class="border-rad-4 border fx-row-full-cent tertiary h-lg">
+          Private Key
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #walletCreated>
+      <div class="flex-column flex-between h-100">
+        <div class="fx-col-full-cent">
+          <span class="mb-10 mina-icon f-48 icon-100">check_circle</span>
+          <p>Success</p>
+          <p class="tertiary mt-10 mb-10">
+            {{ !tokensRequested
+            ? 'The following keys were generated'
+            : 'Devnet tMINA will arrive at your wallet when the next block si produced (~3min)' }}
+          </p>
+        </div>
+        <div class="flex-column">
+          <div class="h-lg mb-5 pr-12 pl-12 tertiary border-rad-4 bg-container fx-row-vert-cent flex-between">
+            Public Key
+            <span class="fx-row-vert-cent">
+              <span class="primary monospace">{{ newWallet?.publicKey }}</span>
+              <span class="mina-icon ml-8 tertiary primary-hover f-18 pointer"
+                    *ngIf="newWallet"
+                    [copyToClipboard]="newWallet.publicKey">content_copy
+              </span>
+            </span>
+          </div>
+          <div class="h-lg pr-12 pl-12 tertiary border-rad-4 bg-container fx-row-vert-cent flex-between">
+            <div class="text-nowrap">Private Key</div>
+            <span class="fx-row-vert-cent flex-end">
+              <span [style.width.%]="81.5"
+                    class="primary private-key overflow-hidden monospace">{{ newWallet?.privateKey }}</span>
+              <span class="mina-icon ml-8 tertiary primary-hover f-18 pointer"
+                    *ngIf="newWallet"
+                    [copyToClipboard]="newWallet.privateKey">content_copy
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</ng-template>
+
+<ng-template #step2>
+  <div class="border-rad-6 border p-12 fx-col-horiz-cent h-100">
+    <div class="flex-grow fx-col-full-cent">
+      <span class="f-48 mina-icon icon-100">toll</span>
+    </div>
+    <div class="fx-col-vert-cent flex-end text-center">
+      <span>
+        <span *ngIf="requestingTokensInProgress || tokensRequested">Requesting</span>
+        Testnet MINA (tMINA)
+      </span>
+      <div class="tertiary mt-10">
+        <div class="mb-5">The tokens are solely useful for experimenting on DEVNET and have no monetary value.</div>
+        <div>Limit of 1 use per address to help ensure everyone has access.</div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #stepperFooter>
+  <div class="flex-row flex-between mt-16">
+    <button class="btn-primary pl-12 pr-12 h-md" (click)="prevStep()"
+            [disabled]="activeStep === 0 || activeStep === 2 || tokensRequested || requestingTokensInProgress">
+      Back
+    </button>
+    <button class="btn-selected pl-12 pr-12 h-md" (click)="nextStep()"
+            [disabled]="activeStep === 1 && requestingTokensInProgress">
+      {{ activeStep === 0
+      ? !newWallet ? 'Generate' : 'Continue'
+      : activeStep === 1
+        ? 'Request Tokens'
+        : 'See Wallet' }}
+    </button>
+  </div>
+</ng-template>

@@ -1,0 +1,13 @@
+<div class="flex-row align-center pl-12 pb-10 h-xl border-bottom">
+  <button class="btn-primary mr-8" (click)="expandEntireJSON()">Expand All</button>
+  <button class="btn-primary mr-8" (click)="collapseEntireJSON()">Collapse All</button>
+  <button class="btn-primary mr-8" [copyToClipboard]="jsonString">Copy</button>
+  <button class="btn-primary" (click)="downloadJson()">Save</button>
+</div>
+<div class="p-relative flex-column flex-grow">
+  <div class="p-absolute-cover flex-column h-100 overflow-y-scroll">
+    <mina-json-viewer [json]="json"
+                      [expanded]="false"
+                      [expandTracking]="expandTracking"></mina-json-viewer>
+  </div>
+</div>

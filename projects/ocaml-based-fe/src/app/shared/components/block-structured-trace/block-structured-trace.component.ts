@@ -1,0 +1,57 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TracingTraceGroup } from '@ocfe-shared/types/tracing/blocks/tracing-trace-group.type';
+import { TracingTraceCheckpoint } from '@ocfe-shared/types/tracing/blocks/tracing-trace-checkpoint.type';
+import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
+import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { SharedModule } from '@ocfe-shared/shared.module';
+
+@Component({
+  standalone: true,
+  imports: [SharedModule],
+  selector: 'mina-block-structured-trace',
+  templateUrl: './block-structured-trace.component.html',
+  styleUrls: ['./block-structured-trace.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: { class: 'h-100 flex-column' },
+})
+export class BlockStructuredTraceComponent extends ManualDetection {
+
+  readonly timeColorScheme: SecDurationConfig = { severe: 1, warn: 0.3, default: 0.1, color: true };
+
+  title: string;
+  checkpoints: TracingTraceCheckpoint[] = [];
+  expandedParents: string[] = [];
+  allExpanded: boolean;
+
+  toggleExpanding(checkpoint: TracingTraceGroup | TracingTraceCheckpoint): void {
+    if (!checkpoint.checkpoints.length) {
+      return;
+    }
+    const index = this.expandedParents.indexOf(checkpoint.title);
+    if (index !== -1) {
+      this.expandedParents.splice(index, 1);
+    } else {
+      this.expandedParents.push(checkpoint.title);
+    }
+  }
+
+  expandAll(): void {
+    this.allExpanded = true;
+    this.collapseAll();
+    this.expandRecursively(this.checkpoints);
+  }
+
+  private expandRecursively(checkpoints: TracingTraceCheckpoint[]): void {
+    checkpoints.forEach((checkpoint: TracingTraceCheckpoint) => {
+      if (checkpoint.checkpoints.length) {
+        this.expandedParents.push(checkpoint.title);
+      }
+      this.expandRecursively(checkpoint.checkpoints);
+    });
+  };
+
+  collapseAll(): void {
+    this.expandedParents = [];
+    this.allExpanded = false;
+  }
+}

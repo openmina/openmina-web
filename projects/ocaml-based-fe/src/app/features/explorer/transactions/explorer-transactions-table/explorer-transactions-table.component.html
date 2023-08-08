@@ -1,0 +1,29 @@
+<div class="h-xl fx-row-vert-cent flex-between pl-12 pr-12 tertiary border-bottom">
+  <button class="btn-primary fx-row-vert-cent pl-12 mr-10"
+          (click)="newTx()">
+    New Transaction
+    <span class="ml-5 mina-icon icon-200 f-20">send</span>
+  </button>
+  {{ txs.length }} transactions
+</div>
+<ng-container #minaTable></ng-container>
+
+<ng-template #rowTemplate let-row="row">
+  <span>
+    <mina-copy [value]="row.id" [display]="row.id | truncateMid"></mina-copy>
+  </span>
+  <span class="secondary">
+    <mina-copy [value]="row.from" [display]="row.from | truncateMid"></mina-copy>
+  </span>
+  <span class="secondary">
+    <mina-copy [value]="row.to" [display]="row.to | truncateMid"></mina-copy>
+  </span>
+  <span class="secondary">{{ row.amount }}</span>
+  <span class="secondary">{{ row.fee }}</span>
+  <span>{{ row.nonce }}</span>
+  <span>{{ row.memo || '-' | truncateMid }}</span>
+  <span>
+    <span class="status border-rad-4 pl-5 pr-5 text-capitalize"
+          [ngClass]="row.status">{{ row.status }}</span>
+  </span>
+</ng-template>

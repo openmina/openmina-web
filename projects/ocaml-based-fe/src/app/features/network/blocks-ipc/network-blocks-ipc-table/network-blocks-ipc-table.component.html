@@ -1,0 +1,24 @@
+<ng-container #minaTable></ng-container>
+
+<ng-template #rowTemplate let-row="row">
+  <span>{{ row.date }}</span>
+  <span class="secondary">
+    <mina-copy [value]="row.hash" [display]="row.hash | truncateMid"></mina-copy>
+  </span>
+  <span>{{ row.height }}</span>
+  <span>
+    <span (click)="seeMessagesForAddress(row.nodeAddress)"
+          class="underline secondary"
+          [tooltip]="'See messages for this address'"
+          [showDelay]="1000">{{ row.nodeAddress }}</span>
+  </span>
+  <span>
+    <span (click)="seeMessagesForAddress(row.peerAddress)"
+          class="underline secondary"
+          [tooltip]="'Peer ID: ' + row.peerId | truncateMid: 17"
+          [showDelay]="1000">{{ row.peerAddress }}</span>
+  </span>
+  <span>{{ row.type }}</span>
+  <span>{{ row.msgType }}</span>
+  <span class="secondary" [innerHTML]="row.blockLatency | secDuration: secConfig"></span>
+</ng-template>

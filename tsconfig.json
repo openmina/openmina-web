@@ -1,0 +1,93 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "allowJs": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
+    "types": [
+      "node",
+      "google",
+      "cypress",
+      "cypress-real-events"
+    ],
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
+    "paths": {
+      "@ocfe-app/*": [
+        "projects/ocaml-based-fe/src/app/*"
+      ],
+      "@ocfe-core/*": [
+        "projects/ocaml-based-fe/src/app/core/*"
+      ],
+      "@ocfe-shared/*": [
+        "projects/ocaml-based-fe/src/app/shared/*"
+      ],
+      "@ocfe-environment/*": [
+        "projects/ocaml-based-fe/src/environments/*"
+      ],
+      "@ocfe-resources/*": [
+        "projects/ocaml-based-fe/src/app/features/resources/*"
+      ],
+      "@ocfe-system-resources/*": [
+        "projects/ocaml-based-fe/src/app/features/resources/system/*"
+      ],
+      "@ocfe-network/*": [
+        "projects/ocaml-based-fe/src/app/features/network/*"
+      ],
+      "@ocfe-error-preview/*": [
+        "projects/ocaml-based-fe/src/app/layout/error-preview/*"
+      ],
+      "@ocfe-tracing/*": [
+        "projects/ocaml-based-fe/src/app/features/tracing/*"
+      ],
+      "@ocfe-benchmarks/*": [
+        "projects/ocaml-based-fe/src/app/features/benchmarks/*"
+      ],
+      "@ocfe-web-node/*": [
+        "projects/ocaml-based-fe/src/app/features/web-node/*"
+      ],
+      "@ocfe-dashboard/*": [
+        "projects/ocaml-based-fe/src/app/features/dashboard/*"
+      ],
+      "@ocfe-explorer/*": [
+        "projects/ocaml-based-fe/src/app/features/explorer/*"
+      ],
+      "@ocfe-logs/*": [
+        "projects/ocaml-based-fe/src/app/features/logs/*"
+      ],
+      "@ocfe-storage/*": [
+        "projects/ocaml-based-fe/src/app/features/storage/*"
+      ],
+      "@ocfe-dsw/*": [
+        "projects/ocaml-based-fe/src/app/features/dsw/*"
+      ],
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

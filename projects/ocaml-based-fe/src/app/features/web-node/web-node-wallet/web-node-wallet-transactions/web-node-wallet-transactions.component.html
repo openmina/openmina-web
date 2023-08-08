@@ -1,0 +1,58 @@
+<mina-web-node-wallet-toolbar></mina-web-node-wallet-toolbar>
+<!--TODO: create a table component-->
+<div class="wrapper w-100 flex-row p-relative">
+  <div class="table-wrapper p-relative"
+       [class.shrink]="activeTransaction">
+    <div class="mina-table flex-grow overflow-x-auto h-100"
+         [class.opacity-0]="!transactions.length">
+      <div class="row head">
+        <span>Transaction ID</span>
+        <span>From</span>
+        <span>To</span>
+        <span>Amount</span>
+        <span>Fee</span>
+        <span>Nonce</span>
+        <span>Memo</span>
+        <span>Status</span>
+      </div>
+      <cdk-virtual-scroll-viewport class="border-bottom h-100 overflow-y-auto h-minus-lg"
+                                   [itemSize]="itemSize">
+        <div *cdkVirtualFor="let tx of transactions; let i=index"
+             (click)="onRowClick(tx)"
+             [class.active]="activeTransaction?.id === tx.id"
+             [class.row-even]="i % 2 === 0"
+             class="row">
+          <span class="secondary">
+            <mina-copy [value]="tx.id" [display]="tx.id | truncateMid"></mina-copy>
+          </span>
+          <span class="secondary">
+            <mina-copy [value]="tx.from" [display]="tx.from | truncateMid"></mina-copy>
+          </span>
+          <span class="secondary">
+            <mina-copy [value]="tx.to" [display]="tx.to | truncateMid"></mina-copy>
+          </span>
+          <span class="tertiary">{{ tx.amount }}</span>
+          <span class="tertiary">{{ tx.fee }}</span>
+          <span class="tertiary">{{ tx.nonce }}</span>
+          <span class="tertiary">
+            <mina-copy [value]="tx.memo" [display]="tx.memo || '-' | truncateMid"></mina-copy>
+          </span>
+          <span>
+            <span class="status border-rad-4 pl-5 pr-5 text-capitalize" [ngClass]="tx.status">{{ tx.status }}</span>
+          </span>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+
+    <div class="no-results p-absolute w-100 h-100 z-1 fx-col-full-cent"
+         *ngIf="!transactions?.length">
+      <span class="mina-icon mb-16 icon-100 f-40">send</span>
+      <span class="f-600 f-big">No Transactions yet</span>
+      <span class="tertiary mt-8 text-center">
+        If there is a new transaction it will appear here when the next block is produced (~3min)
+      </span>
+    </div>
+
+  </div>
+  <mina-web-node-wallet-side-panel [class.show]="activeTransaction"></mina-web-node-wallet-side-panel>
+</div>

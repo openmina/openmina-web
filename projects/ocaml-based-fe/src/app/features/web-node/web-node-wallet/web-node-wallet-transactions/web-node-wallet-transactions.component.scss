@@ -1,0 +1,56 @@
+@import 'variables';
+
+
+.status {
+	padding: 3px;
+
+	&.pending {
+		color: $aware-primary;
+		background-color: $aware-container;
+	}
+
+	&.included {
+		color: $success-primary;
+		background-color: $success-container;
+	}
+}
+
+.wrapper {
+	height: calc(100% - 36px);
+
+	@media (max-width: 700px) {
+		height: calc(100% - 40px);
+	}
+
+	.table-wrapper {
+		transition: width 400ms cubic-bezier(0.22, 1, 0.36, 1);
+
+		&.shrink {
+			width: calc(100% - 320px);
+		}
+
+		&:not(.shrink) {
+			width: 100% !important;
+		}
+	}
+}
+
+mina-web-node-wallet-side-panel {
+	width: 320px;
+	height: 100%;
+	position: absolute;
+	right: -320px;
+	transition: right 400ms cubic-bezier(0.22, 1, 0.36, 1);
+
+	&.show {
+		right: 0 !important;
+	}
+}
+
+.no-results {
+	top: 0;
+
+	> * {
+		max-width: 80%;
+	}
+}

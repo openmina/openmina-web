@@ -1,0 +1,21 @@
+@import 'variables';
+
+.condensed {
+	background-color: $base-container;
+
+	.mina-icon {
+		color: $base-tertiary;
+	}
+
+	&:hover:not(.active) .mina-icon {
+		color: $base-primary;
+	}
+
+	&.active {
+		background-color: $selected-container;
+
+		.mina-icon {
+			color: $selected-primary;
+		}
+	}
+}

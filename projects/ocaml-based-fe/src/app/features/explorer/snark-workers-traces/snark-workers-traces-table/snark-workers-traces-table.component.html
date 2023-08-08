@@ -1,0 +1,11 @@
+<ng-container #minaTable></ng-container>
+
+<ng-template #rowTemplate let-row="row">
+  <span>{{ row.worker | truncateMid: 0: 12 }}</span>
+  <span>{{ row.ids ?? '-' }}</span>
+  <span class="secondary">{{ row.kind ?? '-' }}</span>
+  <span>{{ row.jobInit | readableDate }}</span>
+  <span class="secondary" [innerHTML]="row.jobReceived | secDuration: config"></span>
+  <span class="secondary" [innerHTML]="row.proofGenerated | secDuration: config"></span>
+  <span class="secondary" [innerHTML]="row.proofSubmitted | secDuration: config"></span>
+</ng-template>

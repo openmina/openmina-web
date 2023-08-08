@@ -1,0 +1,17 @@
+<div #parent class="flex-column h-100">
+  <mina-dashboard-nodes-toolbar></mina-dashboard-nodes-toolbar>
+  <mina-horizontal-resizable-container [leftTemplate]="left"
+                                       [rightTemplate]="right"
+                                       [show]="isActiveTrace"
+                                       [minWidth]="420"
+                                       [maxWidthElement]="parent"
+                                       localStorageKey="db-nodes-spw"></mina-horizontal-resizable-container>
+</div>
+
+<ng-template #left>
+  <mina-dashboard-nodes-table></mina-dashboard-nodes-table>
+</ng-template>
+
+<ng-template #right>
+  <mina-dashboard-nodes-side-panel></mina-dashboard-nodes-side-panel>
+</ng-template>

@@ -1,0 +1,12 @@
+<div class="h-xl fx-row-vert-cent flex-between pl-12 pr-12 tertiary border-bottom">
+  <div>{{ snarks.length }} snark jobs, {{ workIdsCount }} work ids</div>
+</div>
+<ng-container #minaTable></ng-container>
+
+<ng-template #rowTemplate let-row="row">
+  <span>
+    <mina-copy [value]="row.prover" [display]="row.prover | truncateMid: 12"></mina-copy>
+  </span>
+  <span class="secondary">{{ row.fee }}</span>
+  <span class="secondary truncate">{{ row.workIds }}</span>
+</ng-template>

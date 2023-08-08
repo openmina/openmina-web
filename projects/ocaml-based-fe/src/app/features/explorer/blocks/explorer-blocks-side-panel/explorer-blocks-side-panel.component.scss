@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'flex';
+
+.side-panel-stepper {
+	.step {
+		&.active {
+			left: 0;
+			opacity: 1;
+			transition: left 300ms cubic-bezier(0.25, 1, 0.5, 1), opacity 200ms linear;
+		}
+
+		&.after, &.before {
+			opacity: 0;
+			transition: left 300ms cubic-bezier(0.5, 0, 0.75, 0), opacity 200ms linear;
+		}
+
+		&.before {
+			left: -100%;
+		}
+
+		&.after {
+			left: 100%;
+		}
+	}
+}
+
+.tab-group {
+	@include flexRowVertCenter();
+
+	.tab {
+		min-width: 90px;
+		text-align: center;
+		border-radius: 6px;
+		color: $base-secondary;
+		transition: 0.2s;
+		background-color: transparent;
+
+		&.selected {
+			background-color: $selected-container;
+			color: $selected-primary;
+		}
+
+		&:hover:not(.selected) {
+			background-color: $base-container;
+		}
+	}
+}

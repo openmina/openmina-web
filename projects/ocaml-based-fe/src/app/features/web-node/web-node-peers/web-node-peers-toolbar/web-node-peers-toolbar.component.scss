@@ -1,0 +1,7 @@
+@import 'variables';
+
+.peer-toolbar {
+	@media (max-width: 768px) {
+		background-color: $base-surface;
+	}
+}

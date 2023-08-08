@@ -1,0 +1,15 @@
+<mina-horizontal-resizable-container *ngIf="el" [leftTemplate]="left"
+                                     [rightTemplate]="right"
+                                     [show]="isActiveTrace"
+                                     [minWidth]="420"
+                                     [maxWidthElement]="el.nativeElement"
+                                     localStorageKey="tracing-side-panel-width">
+</mina-horizontal-resizable-container>
+
+<ng-template #left>
+  <mina-tracing-blocks-table></mina-tracing-blocks-table>
+</ng-template>
+
+<ng-template #right>
+  <mina-tracing-blocks-side-panel></mina-tracing-blocks-side-panel>
+</ng-template>

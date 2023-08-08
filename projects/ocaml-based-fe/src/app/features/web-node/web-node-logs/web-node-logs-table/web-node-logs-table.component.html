@@ -1,0 +1,11 @@
+<ng-container #minaTable></ng-container>
+
+<ng-template #rowTemplate let-row="row">
+  <span>{{ row.id }}</span>
+  <span>{{ row.date }}</span>
+  <span class="secondary truncate">{{ row.kind }}</span>
+  <span>
+    <mina-copy [value]="row.summary" [display]="row.summary | truncateMid: 17"></mina-copy>
+  </span>
+  <span class="secondary truncate">{{ row.level }}</span>
+</ng-template>

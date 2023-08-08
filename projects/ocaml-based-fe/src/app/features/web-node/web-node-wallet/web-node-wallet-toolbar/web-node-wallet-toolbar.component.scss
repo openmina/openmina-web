@@ -1,0 +1,84 @@
+@import 'variables';
+
+.wallet-toolbar {
+	.btn-selected {
+		min-width: 230px;
+
+		&:hover {
+			filter: brightness(120%);
+		}
+	}
+
+	@media (max-width: 768px) {
+		background-color: $base-surface;
+
+		.btn-selected {
+			min-width: 220px;
+		}
+	}
+
+	.mobile-dropdown {
+		position: absolute;
+		top: 44px;
+		right: 10px;
+		width: 200px;
+
+		> button {
+			margin-right: 0 !important;
+
+			&:not(:last-child) {
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
+
+.dropdown {
+	box-sizing: border-box;
+	max-height: 200px;
+
+	.dropdown-item {
+		display: grid;
+		height: 24px;
+		grid-template-columns: 57px 110px 1fr;
+		color: $base-tertiary;
+		box-sizing: border-box;
+
+		span:nth-child(2), span:nth-child(4):hover {
+			color: $base-primary;
+		}
+
+		&:hover:not(.active) {
+			background-color: $base-container;
+		}
+
+		&.active {
+			background-color: $selected-container;
+
+			span:nth-child(1), span:nth-child(2), span:nth-child(4):hover {
+				color: $selected-primary;
+			}
+
+			span:nth-child(3), span:nth-child(4) {
+				color: $selected-secondary;
+			}
+		}
+
+		&:not(.active) .mina-icon {
+			color: $base-divider;
+		}
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	@media (max-width: 700px) {
+		width: 100vw;
+		max-height: 60vh;
+
+		.dropdown-item {
+			height: 48px;
+		}
+	}
+}

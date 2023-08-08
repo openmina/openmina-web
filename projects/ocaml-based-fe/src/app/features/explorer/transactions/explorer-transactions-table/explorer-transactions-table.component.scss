@@ -1,0 +1,11 @@
+@import 'variables';
+
+
+.status {
+	padding: 3px;
+
+	&.pending {
+		color: $aware-primary;
+		background-color: $aware-container;
+	}
+}

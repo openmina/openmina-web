@@ -1,0 +1,52 @@
+<div class="debugger-status h-sm mr-8 border-rad-4 fx-row-full-cent"
+     *ngIf="enabledDebugger && debuggerStatus && !switchForbidden"
+     [tooltip]="debuggerTooltip"
+     [class.failed]="debuggerStatus.failed"
+     [class.offline]="!debuggerStatus.isOnline">
+  <span class="mina-icon icon-200 f-20">code</span>
+  <span *ngIf="debuggerStatus.failed !== undefined" class="ml-5 mr-5">
+    {{ debuggerStatus.failed | number: '1.1-1' }}% Failed
+  </span>
+  <div *ngIf="!debuggerStatus.isOnline && !isMobile" class="ml-5 mr-5">Offline</div>
+</div>
+
+<div class="web-node-status h-sm mr-8 border-rad-4 fx-row-vert-cent"
+     *ngIf="enabledWebNode && webNodeStatus"
+     [tooltip]="webNodeTooltip"
+     [class.offline]="!webNodeStatus.peers && !webNodeStatus.messages">
+  <span class="mina-icon icon-300 f-20">language</span>
+  <div class="ml-5 mr-5">
+    {{ webNodeStatus.peers }} peer{{ webNodeStatus.peers === 1 ? '' : 's' }} , {{ webNodeStatus.messages }} message{{ webNodeStatus.messages === 1 ? '' : 's' }}
+  </div>
+</div>
+
+<div class="node-status mr-8 border-rad-4 p-relative overflow-hidden">
+  <div class="shine-parent p-absolute z-0">
+    <div *ngIf="status === 'catchup' || status === 'bootstrap'"
+         class="shining-border p-absolute"></div>
+  </div>
+  <div class="bg-surface h-sm border-rad-4 p-relative z-1">
+    <div class="background-wrap border-rad-4 fx-row-vert-cent h-100"
+         [ngClass]="[status, switchForbidden ? 'synced' : '']"
+         [tooltip]="nodeTooltip">
+      <div *ngIf="!switchForbidden"
+           class="block-level h-100 fx-row-vert-cent pl-5 pr-8">
+        <span class="strong-text text-capitalize fx-row-vert-cent mr-5">
+          <span class="mina-icon icon-200 f-20">dns</span>
+          &nbsp;{{ status }}
+        </span>
+        <span class="p-relative" *ngIf="timeIsPresent && !isMobile">
+          <span *ngIf="blockLevel > 0">#{{ blockLevel }}&nbsp;</span>
+          <span class="p-absolute text-light" [innerHTML]="elapsedTime$ | async"></span>
+          <span class="p-absolute ago">ago</span>
+        </span>
+      </div>
+      <div class="node-switcher h-100 fx-row-vert-cent pl-8 pr-8"
+           [class.border-rad-4]="switchForbidden"
+           #overlayOpener (click)="openNodePicker($event)">
+        <span class="strong-text truncate">{{ !switchForbidden ? activeNode?.name : 'All Nodes' }}</span>
+        <span class="mina-icon icon-200" *ngIf="!switchForbidden">arrow_drop_down</span>
+      </div>
+    </div>
+  </div>
+</div>

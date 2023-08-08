@@ -1,0 +1,67 @@
+@import 'variables';
+
+span {
+	&.Success {
+		color: $success-secondary;
+	}
+
+	&.Pending {
+		color: $selected-secondary;
+	}
+
+	&.Failure {
+		color: $warn-primary;
+	}
+}
+
+.status {
+	padding: 2px 5px;
+	border-radius: 4px;
+
+	&.synced {
+		background-color: $success-container;
+		color: $success-primary;
+	}
+
+	&.connecting,
+	&.listening {
+		background-color: $base-container;
+		color: $base-primary;
+	}
+
+	&.bootstrap,
+	&.catchup {
+		background-color: $aware-container;
+		color: $aware-primary;
+	}
+
+	&.offline {
+		background-color: $warn-container;
+		color: $warn-primary;
+	}
+}
+
+.no-results {
+	top: 0;
+
+	> * {
+		max-width: 80%;
+	}
+}
+
+.pulse {
+	padding: 3px;
+	animation: fadeIn 3000ms ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+	30% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.1;
+	}
+	70% {
+		opacity: 1;
+	}
+}

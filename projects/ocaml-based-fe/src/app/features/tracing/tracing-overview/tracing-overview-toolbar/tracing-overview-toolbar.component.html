@@ -1,0 +1,21 @@
+<div class="fx-row-vert-cent">
+  <div class="mr-16 tertiary">Sort</div>
+  <button class="mr-5 pl-8 pr-8"
+          [ngClass]="'btn-' + (currentSort === SORT_DIRECTIONS.DSC ? 'selected' : 'primary')"
+          (click)="sort(SORT_DIRECTIONS.DSC)">Slowest First</button>
+  <button class="pl-8 pr-8"
+          [ngClass]="'btn-' + (currentSort === SORT_DIRECTIONS.ASC ? 'selected' : 'primary')"
+          (click)="sort(SORT_DIRECTIONS.ASC)">Fastest First</button>
+</div>
+<div class="flex-row">
+  <button class="condensed icon-btn border-rad-4 mr-8"
+       [class.active]="!condensedView"
+       (click)="toggleCondensedView(false)">
+    <span class="mina-icon f-20">grid_view</span>
+  </button>
+  <button class="condensed icon-btn border-rad-4 mr-10"
+       [class.active]="condensedView"
+       (click)="toggleCondensedView(true)">
+    <span class="mina-icon f-20">view_headline</span>
+  </button>
+</div>

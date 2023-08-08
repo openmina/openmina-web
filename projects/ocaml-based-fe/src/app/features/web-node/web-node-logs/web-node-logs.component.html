@@ -1,0 +1,15 @@
+<mina-horizontal-resizable-container [leftTemplate]="left"
+                                     [rightTemplate]="right"
+                                     [show]="isActiveRow"
+                                     [minWidth]="400"
+                                     [maxWidthElement]="el?.nativeElement"
+                                     localStorageKey="web-node-logs-side-panel-width">
+</mina-horizontal-resizable-container>
+
+<ng-template #left>
+  <mina-web-node-logs-table></mina-web-node-logs-table>
+</ng-template>
+
+<ng-template #right>
+  <mina-web-node-logs-side-panel></mina-web-node-logs-side-panel>
+</ng-template>

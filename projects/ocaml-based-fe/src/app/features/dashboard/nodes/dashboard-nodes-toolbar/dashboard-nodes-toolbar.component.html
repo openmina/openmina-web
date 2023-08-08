@@ -1,0 +1,72 @@
+<div class="row1 fx-row-vert-cent"
+     [ngClass]="nodeLister ? 'h-100' : 'h-50'">
+  <mina-horizontal-menu [clz]="'pl-12'" [template]="template1"></mina-horizontal-menu>
+  <ng-template #template1>
+    <div class="w-100 fx-row-vert-cent flex-between">
+      <div class="fx-row-vert-cent shrink-0">
+        <span class="tertiary mr-10 f-600 shrink-0">Global Slot</span>
+        <div class="pagination-group shrink-0 fx-row-vert-cent bg-selected-container ml-10 border-rad-4">
+          <button class="h-sm w-sm fx-row-full-cent"
+                  [class.disabled]="!earliestSlot || activeSlot === 1 || currentSlotIsTooBig"
+                  [tooltip]="'Prev block'"
+                  [showDelay]="500"
+                  (click)="getBlock(activeSlot - 1)">
+            <span class="mina-icon f-18">navigate_before</span>
+          </button>
+          <span class="selected-primary pl-5 pr-5 f-600">{{ activeSlot ?? '-' }}</span>
+          <button class="h-sm w-sm fx-row-full-cent"
+                  [class.disabled]="!earliestSlot || earliestSlot === activeSlot || currentSlotIsTooBig"
+                  [tooltip]="'Next block'"
+                  [showDelay]="500"
+                  (click)="getBlock(activeSlot + 1)">
+            <span class="mina-icon f-18">navigate_next</span>
+          </button>
+        </div>
+        <button class="btn-secondary h-sm w-sm mr-10 ml-5 fx-row-full-cent"
+                [class.disabled]="!earliestSlot || earliestSlot === activeSlot"
+                [tooltip]="'Last block'"
+                [showDelay]="500"
+                (click)="getBlock(earliestSlot)">
+          <span class="mina-icon f-18">last_page</span>
+        </button>
+        <div class="flex-row shrink-0">
+          <button class="h-sm btn-primary mr-5"
+                  [class.disabled]="isLoading"
+                  (click)="toggleShowLatencyFromFastest()">Show latency from {{ latencyFromFastest ? 'second' : '' }} fastest</button>
+          <button class="h-sm btn-primary mr-5"
+                  [class.disabled]="isLoading"
+                  (click)="toggleNodesShowing()">Show {{ showOffline ? 'active' : 'all' }} nodes</button>
+        </div>
+      </div>
+      <div class="pr-10 fx-row-vert-cent selected-primary h-sm shrink-0"
+           [tooltip]="nodesLength + ' nodes'">
+        <ng-container *ngIf="!nodeLister; else nodesLengthRef">
+          {{ count.nodes }} Node{{ count.nodes | plural }} · {{ count.producers }} Producer{{ count.producers | plural }} · {{ count.snarkers }} Snarker{{ count.snarkers | plural }} · {{ count.seeders }} Seeder{{ count.seeders | plural }} · {{ count.transactionGenerators }} Generator{{ count.transactionGenerators | plural }}
+        </ng-container>
+        <ng-template #nodesLengthRef>
+          {{ count.nodes }} Node{{ count.nodes | plural }} + {{ count.producers }} Producer{{ count.producers | plural }}
+        </ng-template>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<div *ngIf="!nodeLister" class="row2 fx-row-vert-cent h-50">
+  <mina-horizontal-menu [clz]="'pl-12'" [template]="template2"></mina-horizontal-menu>
+  <ng-template #template2>
+    <span class="tertiary mr-10 f-600">{{ !forks ? '0 ' : forks.length === 0 ? 'Loading ' : '' }}Branches</span>
+    <span *ngFor="let fork of (forks || [])"
+          [class.section-active]="activeForkFilter?.value === fork.branch || fork.candidates.includes(activeForkFilter?.value)"
+          class="mr-5 border-rad-4 overflow-hidden f-600 fx-row-vert-cent shrink-0">
+      <button [ngClass]="'btn-' + (activeForkFilter?.value === fork.branch ? 'selected' : 'primary')"
+              (click)="toggleFilter({ value: fork.branch, type: 'branch' })"
+              class="border-rad-0 border-right">{{ fork.branch }}</button>
+      <button *ngFor="let candidate of fork.candidates"
+              class="border-rad-0 f-600 fx-row-vert-cent border-right"
+              (click)="toggleFilter({ value: candidate, type: 'bestTip' })"
+              [ngClass]="'btn-' + (activeForkFilter?.value === candidate ? 'selected' : 'primary')">
+        <span>{{ candidate | truncateMid: 0: 5 }}</span>
+      </button>
+    </span>
+  </ng-template>
+</div>

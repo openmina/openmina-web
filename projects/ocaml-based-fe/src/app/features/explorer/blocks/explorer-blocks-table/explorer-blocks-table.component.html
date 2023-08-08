@@ -1,0 +1,25 @@
+<ng-container #minaTable></ng-container>
+
+<ng-template #rowTemplate let-row="row">
+  <span>{{ row.date }}</span>
+  <span class="secondary">
+    <mina-copy [value]="row.hash" [display]="row.hash | truncateMid"></mina-copy>
+  </span>
+  <span class="secondary">
+    <span (click)="goToScanState(row.height)"
+          [tooltip]="'See scan state for this block'"
+          [showDelay]="500"
+          class="underline">{{ row.height }}</span>
+  </span>
+  <span>{{ row.globalSlot }}</span>
+  <span class="secondary">{{ row.txCount }}</span>
+  <span class="secondary">{{ row.zkAppsCount }}</span>
+  <span class="secondary">{{ row.totalTxCount }}</span>
+  <span class="secondary">{{ row.snarkCount }}</span>
+  <span>
+    <mina-copy [value]="row.stagedLedgerHash" [display]="row.stagedLedgerHash | truncateMid"></mina-copy>
+  </span>
+  <span>
+    <mina-copy [value]="row.snarkedLedgerHash" [display]="row.snarkedLedgerHash | truncateMid"></mina-copy>
+  </span>
+</ng-template>

@@ -1,0 +1,33 @@
+<mina-web-node-peers-toolbar></mina-web-node-peers-toolbar>
+<div #parent class="w-100 flex-row p-relative h-minus-lg">
+  <mina-horizontal-resizable-container [leftTemplate]="left"
+                                       [rightTemplate]="right"
+                                       [class.show]="activePeer"
+                                       [minWidth]="420"
+                                       [maxWidthElement]="parent"
+                                       localStorageKey="web-node-peers-side-panel-width">
+  </mina-horizontal-resizable-container>
+</div>
+
+<ng-template #left>
+  <div class="h-100 table-wrapper p-relative">
+    <ng-container #minaTable></ng-container>
+
+    <ng-template #rowTemplate let-row="row">
+      <span>{{ row.id }}</span>
+      <span>{{ row.date }}</span>
+      <span>
+        <mina-copy [value]="row.peerId" [display]="row.peerId | truncateMid: 17"></mina-copy>
+      </span>
+      <span class="secondary truncate">{{ row.kind }}</span>
+      <span>
+        <mina-copy [value]="row.summary" [display]="row.summary | truncateMid: 17"></mina-copy>
+      </span>
+      <span class="secondary truncate">{{ row.level }}</span>
+    </ng-template>
+  </div>
+</ng-template>
+
+<ng-template #right>
+  <mina-web-node-peers-side-panel></mina-web-node-peers-side-panel>
+</ng-template>

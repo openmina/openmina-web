@@ -1,0 +1,135 @@
+@import 'variables';
+@import 'dimensions';
+
+.debugger-status {
+	padding-left: 2px;
+	padding-right: 2px;
+	background-color: $success-container;
+	color: $success-primary;
+
+	@media (max-width: 768px) {
+		min-width: 34px;
+	}
+
+	&.offline {
+		background-color: $warn-container;
+		color: $warn-primary;
+	}
+
+	&.failed {
+		background-color: $aware-container;
+		color: $aware-primary;
+	}
+}
+
+.web-node-status {
+	padding-left: 2px;
+	padding-right: 2px;
+	background-color: $success-container;
+	color: $success-primary;
+
+	&.offline {
+		background-color: $warn-container;
+		color: $warn-primary;
+	}
+}
+
+.node-status {
+	.shine-parent {
+		height: calc(100% + 1px);
+		width: calc(100% + 1px);
+
+		.shining-border {
+			top: -300%;
+			left: -50%;
+			z-index: -1;
+			height: 800%;
+			width: 190%;
+			transform: rotate(-45deg);
+			background: linear-gradient(to right, transparent 20%, transparent 40%, $base-container 45%, $base-divider 46%, $aware-tertiary 50%, $base-divider 54%, $base-container 55%, transparent 55%, transparent 100%);
+			background-size: 200% auto;
+			animation: shine 7s linear infinite;
+		}
+	}
+
+	.bg-surface {
+		margin: 1px;
+
+		.background-wrap {
+			background-color: $warn-container;
+			color: $warn-primary;
+
+			.strong-text {
+				max-width: 125px;
+			}
+
+			&.connecting,
+			&.listening {
+				background-color: $base-container;
+				color: $base-secondary;
+
+				.strong-text {
+					color: $base-primary;
+				}
+			}
+
+			&.synced {
+				background-color: $success-container;
+				color: $success-secondary;
+
+				.strong-text {
+					color: $success-primary;
+				}
+			}
+
+			&.bootstrap,
+			&.catchup {
+				background-color: $aware-container;
+				color: $aware-secondary;
+
+				.strong-text {
+					color: $aware-primary;
+				}
+			}
+
+			.block-level {
+				.p-relative {
+					padding-right: 73px;
+					height: 14px;
+
+					.p-absolute {
+						top: 0;
+						right: 0;
+						width: 73px;
+					}
+
+					.ago {
+						width: 19px;
+					}
+				}
+			}
+
+			.node-switcher {
+				&:not(.border-rad-4) {
+					border-left: 2px solid $base-surface;
+					cursor: pointer;
+					padding-left: 5px !important;
+
+					.mina-icon {
+						width: 16px;
+					}
+
+					&:hover {
+						background-color: $base-container;
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes shine {
+	to {
+		background-position: 200% center;
+	}
+}
