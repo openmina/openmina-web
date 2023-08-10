@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { WebNodeWallet } from '@ocfe-shared/types/web-node/wallet/web-node-wallet.type';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { selectWebNodeActiveWallet, selectWebNodeWallets } from '@ocfe-web-node/web-node-wallet/web-node-wallet.state';

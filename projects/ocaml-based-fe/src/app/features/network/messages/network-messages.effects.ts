@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
 import { NetworkMessagesService } from '@ocfe-network/messages/network-messages.service';
 import {
   NETWORK_CHANGE_TAB,
@@ -37,10 +37,24 @@ import {
   NetworkMessagesSetTimestampInterval,
   NetworkMessagesToggleFilter,
 } from '@ocfe-network/messages/network-messages.actions';
-import { Effect, NonDispatchableEffect } from '@ocfe-shared/types/store/effect.type';
-import { catchError, EMPTY, filter, forkJoin, map, mergeMap, of, repeat, Subject, switchMap, takeUntil, tap, timer } from 'rxjs';
+import { createNonDispatchableEffect, Effect, NonDispatchableEffect } from '@openmina/shared';
+import {
+  catchError,
+  EMPTY,
+  filter,
+  forkJoin,
+  map,
+  mergeMap,
+  of,
+  repeat,
+  Subject,
+  switchMap,
+  takeUntil,
+  tap,
+  timer
+} from 'rxjs';
 import { NetworkMessage } from '@ocfe-shared/types/network/messages/network-message.type';
-import { catchErrorAndRepeat, createNonDispatchableEffect } from '@ocfe-shared/constants/store-functions';
+import { catchErrorAndRepeat } from '@ocfe-shared/constants/store-functions';
 import { NetworkMessageConnection } from '@ocfe-shared/types/network/messages/network-messages-connection.type';
 import { NetworkMessagesDirection } from '@ocfe-shared/types/network/messages/network-messages-direction.enum';
 import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.enum';
@@ -49,7 +63,7 @@ import { NetworkMessagesState } from '@ocfe-network/messages/network-messages.st
 @Injectable({
   providedIn: 'root',
 })
-export class NetworkMessagesEffects extends MinaBaseEffect<NetworkMessagesActions> {
+export class NetworkMessagesEffects extends MinaOcamlBaseEffect<NetworkMessagesActions> {
 
   readonly init$: Effect;
   readonly getMessages$: Effect;

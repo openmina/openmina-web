@@ -1,14 +1,26 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { distinctUntilChanged } from 'rxjs';
-import { TimestampInterval } from '@ocfe-shared/types/shared/timestamp-interval.type';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
-import { ONE_THOUSAND, TEN_BILLIONS } from '@ocfe-shared/constants/unit-measurements';
-import { hasValue } from '@ocfe-shared/helpers/values.helper';
+import {
+  hasValue,
+  ManualDetection,
+  ONE_THOUSAND,
+  OpenminaEagerSharedModule,
+  TEN_BILLIONS,
+  TimestampInterval
+} from '@openmina/shared';
 import { CommonModule } from '@angular/common';
-import { ClickOutsideDirective } from '@ocfe-shared/directives/click-outside.directive';
-import { EagerSharedModule } from '@ocfe-shared/eager-shared.module';
 
 type PresetIntervals = { name: string, value: number }[];
 
@@ -47,7 +59,7 @@ const yearStr = 'year';
   styleUrls: ['./interval-select.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, EagerSharedModule],
+  imports: [CommonModule, ReactiveFormsModule, OpenminaEagerSharedModule],
 })
 export class IntervalSelectComponent extends ManualDetection implements OnInit, AfterViewInit {
 

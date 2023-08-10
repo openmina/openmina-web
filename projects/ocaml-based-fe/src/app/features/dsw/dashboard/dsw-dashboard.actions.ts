@@ -1,6 +1,5 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { DswDashboardNode } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
 
 enum DswDashboardActionTypes {
   DSW_DASHBOARD_INIT = 'DSW_DASHBOARD_INIT',

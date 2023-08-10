@@ -1,14 +1,17 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import { ExplorerBlock } from '@ocfe-shared/types/explorer/blocks/explorer-block.type';
-import { selectExplorerBlocksActiveBlock, selectExplorerBlocksActiveZkApp, selectExplorerBlocksTxsAndZkApps } from '@ocfe-explorer/blocks/explorer-blocks.state';
+import {
+  selectExplorerBlocksActiveBlock,
+  selectExplorerBlocksActiveZkApp,
+  selectExplorerBlocksTxsAndZkApps
+} from '@ocfe-explorer/blocks/explorer-blocks.state';
 import { ExplorerBlockTx } from '@ocfe-shared/types/explorer/blocks/explorer-block-tx.type';
 import { ExplorerBlocksSetActiveBlock } from '@ocfe-explorer/blocks/explorer-blocks.actions';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { ExplorerBlockZkApp } from '@ocfe-shared/types/explorer/blocks/explorer-block-zk-app-type';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import { getMergedRoute, MergedRoute } from '@openmina/shared';
 import { take } from 'rxjs';
 
 @Component({

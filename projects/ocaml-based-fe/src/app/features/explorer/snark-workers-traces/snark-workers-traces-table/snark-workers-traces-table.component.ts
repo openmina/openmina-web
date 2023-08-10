@@ -1,15 +1,16 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { SnarkWorkerTraceJob } from '@ocfe-shared/types/explorer/snark-traces/snark-worker-trace-job.type';
 import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
-import { selectSWTracesActiveRow, selectSWTracesSort } from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.state';
+import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
+import {
+  selectSWTracesActiveRow,
+  selectSWTracesSort
+} from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.state';
 import { SWTracesSetActiveJob, SWTracesSort } from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.actions';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
 import { take } from 'rxjs';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-snark-workers-traces-table',
@@ -18,7 +19,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class SnarkWorkersTracesTableComponent extends MinaTableWrapper<SnarkWorkerTraceJob> implements OnChanges {
+export class SnarkWorkersTracesTableComponent extends MinaTableOcamlWrapper<SnarkWorkerTraceJob> implements OnChanges {
 
   readonly config: SecDurationConfig = { color: true, default: 0.5, warn: 0.75, severe: 1, undefinedAlternative: '-' };
   protected readonly tableHeads: TableColumnList<SnarkWorkerTraceJob> = [

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ONE_MILLION, ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
+import { ONE_MILLION, ONE_THOUSAND } from '@openmina/shared';
 
 @Pipe({
   name: 'thousand',

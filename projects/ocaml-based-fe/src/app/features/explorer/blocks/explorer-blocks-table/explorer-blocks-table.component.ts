@@ -1,17 +1,16 @@
-import { ChangeDetectionStrategy, Component, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
 import { ExplorerBlock } from '@ocfe-shared/types/explorer/blocks/explorer-block.type';
-import { selectExplorerBlocks, selectExplorerBlocksActiveBlock, selectExplorerBlocksSorting } from '@ocfe-explorer/blocks/explorer-blocks.state';
+import {
+  selectExplorerBlocks,
+  selectExplorerBlocksActiveBlock,
+  selectExplorerBlocksSorting
+} from '@ocfe-explorer/blocks/explorer-blocks.state';
 import { ExplorerBlocksSetActiveBlock, ExplorerBlocksSort } from '@ocfe-explorer/blocks/explorer-blocks.actions';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
-import { MinaTableComponent } from '@ocfe-shared/components/mina-table/mina-table.component';
-import { untilDestroyed } from '@ngneat/until-destroy';
 import { filter, take } from 'rxjs';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-explorer-blocks-table',
@@ -20,7 +19,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class ExplorerBlocksTableComponent extends MinaTableWrapper<ExplorerBlock> implements OnInit {
+export class ExplorerBlocksTableComponent extends MinaTableOcamlWrapper<ExplorerBlock> implements OnInit {
 
   protected readonly tableHeads: TableColumnList<ExplorerBlock> = [
     { name: 'date', sort: 'timestamp' },
@@ -29,7 +28,11 @@ export class ExplorerBlocksTableComponent extends MinaTableWrapper<ExplorerBlock
     { name: 'global slot', sort: 'globalSlot' },
     { name: 'user commands', sort: 'txCount' },
     { name: 'zk apps', sort: 'zkAppsCount' },
-    { name: 'total transactions', sort: 'totalTxCount', tooltip: 'User commands + Fee transfers + ZkApp commands + 1 coinbase' },
+    {
+      name: 'total transactions',
+      sort: 'totalTxCount',
+      tooltip: 'User commands + Fee transfers + ZkApp commands + 1 coinbase'
+    },
     { name: 'snark jobs', sort: 'snarkCount' },
     { name: 'staged ledger hash', sort: 'stagedLedgerHash' },
     { name: 'snarked ledger hash', sort: 'snarkedLedgerHash' },

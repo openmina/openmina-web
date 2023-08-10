@@ -1,6 +1,4 @@
-import { isMobile } from '@ocfe-shared/helpers/values.helper';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { isMobile, sort, SortDirection, TableSort } from '@openmina/shared';
 import { DswFrontierState } from '@ocfe-dsw/frontier/dsw-frontier.state';
 import {
   DSW_FRONTIER_CLOSE,

@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { untilDestroyed } from '@ngneat/until-destroy';
 import { ExplorerTransactionsCreateTx } from '@ocfe-explorer/transactions/explorer-transactions.actions';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
-import { FormDefinitions, TypedFormGroup } from '@ocfe-shared/types/shared/typed-form.type';
+import { FormDefinitions, TypedFormGroup } from '@openmina/shared';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { merge } from 'rxjs';

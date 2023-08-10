@@ -2,8 +2,8 @@ import { Injectable, NgZone } from '@angular/core';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect, NonDispatchableEffect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { createNonDispatchableEffect, Effect, NonDispatchableEffect, removeParamsFromURL } from '@openmina/shared';
 import { BehaviorSubject, catchError, filter, interval, map, mergeMap, repeat, switchMap, tap } from 'rxjs';
 import {
   APP_CHANGE_ACTIVE_NODE,
@@ -25,14 +25,13 @@ import {
 import { BlockService } from '@ocfe-shared/services/block.service';
 import { AppNodeStatusTypes } from '@ocfe-shared/types/app/app-node-status-types.enum';
 import { HttpErrorResponse } from '@angular/common/http';
-import { addError, createNonDispatchableEffect } from '@ocfe-shared/constants/store-functions';
+import { addError } from '@ocfe-shared/constants/store-functions';
 import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.enum';
 import { NodeStatus } from '@ocfe-shared/types/app/node-status.type';
 import { GraphQLService } from '@ocfe-core/services/graph-ql.service';
 import { Router } from '@angular/router';
 import { FeatureType, MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
 import { withLatestFrom } from 'rxjs/operators';
-import { removeParamsFromURL } from '@ocfe-shared/helpers/router.helper';
 import { AppService } from './app.service';
 import { getFirstFeature, isFeatureEnabled } from '@ocfe-shared/constants/config';
 import { TracingGraphQlService } from '@ocfe-core/services/tracing-graph-ql.service';
@@ -43,7 +42,7 @@ const INIT_EFFECTS = '@ngrx/effects/init';
 @Injectable({
   providedIn: 'root',
 })
-export class AppEffects extends MinaBaseEffect<AppActions> {
+export class AppEffects extends MinaOcamlBaseEffect<AppActions> {
 
   readonly initEffects$: Effect;
   readonly init$: Effect;
@@ -55,7 +54,10 @@ export class AppEffects extends MinaBaseEffect<AppActions> {
   readonly getDebuggerStatus$: Effect;
   readonly zoneDebugEffects$: NonDispatchableEffect;
 
-  private readonly updateDebuggerStatus = (isOnline: boolean): AppUpdateDebuggerStatus => ({ type: APP_UPDATE_DEBUGGER_STATUS, payload: { isOnline } });
+  private readonly updateDebuggerStatus = (isOnline: boolean): AppUpdateDebuggerStatus => ({
+    type: APP_UPDATE_DEBUGGER_STATUS,
+    payload: { isOnline }
+  });
   private readonly nodeCheckInterval$ = new BehaviorSubject<number>(10000);
   private readonly debuggerCheckInterval$ = new BehaviorSubject<number>(10000);
 

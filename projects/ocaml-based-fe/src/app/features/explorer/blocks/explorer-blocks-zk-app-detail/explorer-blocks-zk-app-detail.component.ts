@@ -1,13 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { selectExplorerBlocksActiveZkApp } from '@ocfe-explorer/blocks/explorer-blocks.state';
 import { ExplorerBlockZkApp } from '@ocfe-shared/types/explorer/blocks/explorer-block-zk-app-type';
-import { ExplorerBlocksSetActiveBlock, ExplorerBlocksSetActiveZkApp } from '@ocfe-explorer/blocks/explorer-blocks.actions';
+import {
+  ExplorerBlocksSetActiveBlock,
+  ExplorerBlocksSetActiveZkApp
+} from '@ocfe-explorer/blocks/explorer-blocks.actions';
 import { filter } from 'rxjs';
 import { ExpandTracking } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
-import { ONE_BILLION } from '@ocfe-shared/constants/unit-measurements';
+import { ONE_BILLION, TableColumnList } from '@openmina/shared';
 import { Router } from '@angular/router';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 type ZkAppUpdate = {
   index: number;
@@ -23,7 +25,7 @@ type ZkAppUpdate = {
   host: { class: 'h-100 flex-column' },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExplorerBlocksZkAppDetailComponent extends MinaTableWrapper<ZkAppUpdate> implements OnInit {
+export class ExplorerBlocksZkAppDetailComponent extends MinaTableOcamlWrapper<ZkAppUpdate> implements OnInit {
 
   zkApp: ExplorerBlockZkApp;
   zkAppUpdates: ZkAppUpdate[] = [];

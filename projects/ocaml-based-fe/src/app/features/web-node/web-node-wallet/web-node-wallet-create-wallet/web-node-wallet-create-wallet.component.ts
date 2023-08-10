@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { Router } from '@angular/router';
 import { WebNodeWalletService } from '@ocfe-web-node/web-node-wallet/web-node-wallet.service';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { WEB_NODE_WALLET_CHANGE_WALLET, WebNodeWalletChangeWallet } from '@ocfe-web-node/web-node-wallet/web-node-wallet.actions';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';

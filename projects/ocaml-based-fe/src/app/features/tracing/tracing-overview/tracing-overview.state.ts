@@ -2,7 +2,7 @@ import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { selectTracingOverviewState } from '@ocfe-tracing/tracing.state';
 import { TracingOverviewCheckpoint } from '@ocfe-shared/types/tracing/overview/tracing-overview-checkpoint.type';
-import { SortDirection } from '@ocfe-shared/types/shared/table-sort.type';
+import { SortDirection } from '@openmina/shared';
 
 export interface TracingOverviewState {
   checkpoints: TracingOverviewCheckpoint[];

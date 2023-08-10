@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
 import { ExplorerBlockTx } from '@ocfe-shared/types/explorer/blocks/explorer-block-tx.type';
-import { toggleItem } from '@ocfe-shared/helpers/array.helper';
+import { toggleItem } from '@openmina/shared';
 
 @Component({
   selector: 'mina-explorer-blocks-user-commands',

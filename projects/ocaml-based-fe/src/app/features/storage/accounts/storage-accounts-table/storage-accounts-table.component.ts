@@ -1,10 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { TableColumnList } from '@openmina/shared';
 import { StorageAccount } from '@ocfe-shared/types/storage/accounts/storage-account.type';
 import { filter } from 'rxjs';
-import { selectStorageAccountsAccountList, selectStorageAccountsActiveAccount } from '@ocfe-storage/accounts/storage-accounts.state';
+import {
+  selectStorageAccountsAccountList,
+  selectStorageAccountsActiveAccount
+} from '@ocfe-storage/accounts/storage-accounts.state';
 import { StorageAccountsSetActiveAccount } from '@ocfe-storage/accounts/storage-accounts.actions';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-storage-accounts-table',
@@ -13,7 +16,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class StorageAccountsTableComponent extends MinaTableWrapper<StorageAccount> implements OnInit {
+export class StorageAccountsTableComponent extends MinaTableOcamlWrapper<StorageAccount> implements OnInit {
 
   protected readonly tableHeads: TableColumnList<StorageAccount> = [
     { name: 'public key' },

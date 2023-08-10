@@ -1,15 +1,17 @@
 import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
 import { DswActionsToggleSidePanel } from '@ocfe-dsw/actions/dsw-actions.actions';
-import { selectDswActionsActiveSlotAndStats, selectDswActionsGroups, selectDswActionsSort } from '@ocfe-dsw/actions/dsw-actions.state';
+import {
+  selectDswActionsActiveSlotAndStats,
+  selectDswActionsGroups,
+  selectDswActionsSort
+} from '@ocfe-dsw/actions/dsw-actions.state';
 import { DswActionGroup } from '@ocfe-shared/types/dsw/actions/dsw-action-group.type';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { isMobile, TableColumnList, TableSort } from '@openmina/shared';
 import { DOCUMENT } from '@angular/common';
 import { distinctUntilChanged } from 'rxjs';
-import { isMobile } from '@ocfe-shared/helpers/values.helper';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
 import { DswActionsStats } from '@ocfe-shared/types/dsw/actions/dsw-actions-stats.type';
 import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-dsw-actions-side-panel',
@@ -17,7 +19,7 @@ import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
   styleUrls: ['./dsw-actions-side-panel.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DswActionsSidePanelComponent extends MinaTableWrapper<DswActionGroup> implements OnInit {
+export class DswActionsSidePanelComponent extends MinaTableOcamlWrapper<DswActionGroup> implements OnInit {
 
   activeSlot: number;
   stats: DswActionsStats = {} as DswActionsStats;

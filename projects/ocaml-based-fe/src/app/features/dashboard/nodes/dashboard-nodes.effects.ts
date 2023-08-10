@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { Effect } from '@openmina/shared';
 import { catchError, debounceTime, EMPTY, filter, finalize, map, mergeMap, Subject, switchMap, takeUntil } from 'rxjs';
 import { addErrorObservable, catchErrorAndRepeat } from '@ocfe-shared/constants/store-functions';
 import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.enum';
@@ -45,7 +45,7 @@ import { DashboardNodesState } from '@ocfe-dashboard/nodes/dashboard-nodes.state
 @Injectable({
   providedIn: 'root',
 })
-export class DashboardNodesEffects extends MinaBaseEffect<DashboardNodesActions> {
+export class DashboardNodesEffects extends MinaOcamlBaseEffect<DashboardNodesActions> {
 
   readonly init$: Effect;
   readonly earliestBlock$: Effect;

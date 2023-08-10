@@ -1,4 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction } from '@openmina/shared';
 import { StorageAccount } from '@ocfe-shared/types/storage/accounts/storage-account.type';
 import { StorageAccountsFilter } from '@ocfe-storage/accounts/storage-accounts-filter/storage-accounts-filter.component';
 

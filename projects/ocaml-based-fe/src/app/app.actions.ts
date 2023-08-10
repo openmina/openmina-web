@@ -1,4 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction } from '@openmina/shared';
 import { NodeStatus } from '@ocfe-shared/types/app/node-status.type';
 import { MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
 import { Routes } from '@ocfe-shared/enums/routes.enum';

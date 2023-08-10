@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { APP_CHANGE_SUB_MENUS, AppChangeSubMenus } from '@ocfe-app/app.actions';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 
 @Component({
   selector: 'mina-benchmarks',

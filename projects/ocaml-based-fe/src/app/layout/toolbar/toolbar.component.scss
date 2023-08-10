@@ -1,59 +1,61 @@
 @import 'variables';
 @import 'dimensions';
-:host{
-	height: 40px;
-	@media (max-width: 768px) {
-		height: 56px;
-	}
+
+:host {
+  height: 40px;
+  @media (max-width: 768px) {
+    height: 56px;
+  }
 }
+
 .toolbar {
-	.mobile-toggle {
-		width: 46px;
-	}
+  .mobile-toggle {
+    width: 46px;
+  }
 
-	.percentage {
-		width: 200px;
+  .percentage {
+    width: 200px;
 
-		span {
-			width: 18px;
-		}
-	}
+    span {
+      width: 18px;
+    }
+  }
 
-	.loading {
-		height: 1px;
-		width: 25%;
-		border-radius: 4px;
-		background-color: $selected-primary;
-		bottom: 0;
-		left: 0;
-		animation: loading 1.5s infinite;
-		animation-timing-function: linear;
-	}
+  .loading {
+    height: 1px;
+    width: 25%;
+    border-radius: 4px;
+    background-color: $selected-primary;
+    bottom: 0;
+    left: 0;
+    animation: loading 1.5s infinite;
+    animation-timing-function: linear;
+  }
 }
 
 @keyframes loading {
-	0% {
-		left: -15%;
-		opacity: 0;
-	}
-	20% {
-		opacity: 1;
-	}
-	80% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-		left: 85%;
-	}
+  0% {
+    left: -15%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: 85%;
+  }
 }
 
 @media (max-width: 700px) {
-	:host {
-		border: none !important;
-	}
+  :host {
+    border: none !important;
+  }
 
-	.toolbar {
-		background-color: $base-surface;
-	}
+  .toolbar {
+    background-color: $base-surface;
+  }
 }

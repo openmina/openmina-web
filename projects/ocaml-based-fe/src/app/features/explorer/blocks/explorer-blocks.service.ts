@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { ExplorerBlock } from '@ocfe-shared/types/explorer/blocks/explorer-block.type';
 import { GraphQLService } from '@ocfe-core/services/graph-ql.service';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
+import { ONE_BILLION, toReadableDate } from '@openmina/shared';
 import { ExplorerBlockTx } from '@ocfe-shared/types/explorer/blocks/explorer-block-tx.type';
 import { ExplorerBlockZkApp } from '@ocfe-shared/types/explorer/blocks/explorer-block-zk-app-type';
-import { ONE_BILLION } from '@ocfe-shared/constants/unit-measurements';
 
 @Injectable({
   providedIn: 'root',

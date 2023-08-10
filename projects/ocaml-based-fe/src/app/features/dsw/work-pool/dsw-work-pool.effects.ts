@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { Effect, hasValue } from '@openmina/shared';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
@@ -23,13 +23,12 @@ import {
 import { DswWorkPoolService } from '@ocfe-dsw/work-pool/dsw-work-pool.service';
 import { WorkPool } from '@ocfe-shared/types/dsw/work-pool/work-pool.type';
 import { WorkPoolSpecs } from '@ocfe-shared/types/dsw/work-pool/work-pool-specs.type';
-import { hasValue } from '@ocfe-shared/helpers/values.helper';
 import { WorkPoolDetail } from '@ocfe-shared/types/dsw/work-pool/work-pool-detail.type';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DswWorkPoolEffects extends MinaBaseEffect<DswWorkPoolActions> {
+export class DswWorkPoolEffects extends MinaOcamlBaseEffect<DswWorkPoolActions> {
 
   readonly getWorkPool$: Effect;
   readonly selectActiveWorkPool$: Effect;

@@ -1,12 +1,16 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { APP_TOGGLE_MENU_OPENING, APP_TOGGLE_MOBILE, AppToggleMenuOpening, AppToggleMobile } from '@ocfe-app/app.actions';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import {
+  APP_TOGGLE_MENU_OPENING,
+  APP_TOGGLE_MOBILE,
+  AppToggleMenuOpening,
+  AppToggleMobile
+} from '@ocfe-app/app.actions';
 import { AppMenu } from '@ocfe-shared/types/app/app-menu.type';
 import { selectAppMenu } from '@ocfe-app/app.state';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { MAX_WIDTH_700 } from '@ocfe-shared/constants/breakpoint-observer';
+import { ManualDetection, MAX_WIDTH_700 } from '@openmina/shared';
 
 @Component({
   selector: 'app-root',

@@ -1,9 +1,7 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { selectDswBootstrapState, selectDswDashboardState } from '@ocfe-dsw/dsw.state';
-import { DswDashboardNode } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { DswDashboardBlock } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
+import { selectDswBootstrapState } from '@ocfe-dsw/dsw.state';
+import { TableSort } from '@openmina/shared';
 import { DswBootstrapNode } from '@ocfe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
 
 export interface DswBootstrapState {

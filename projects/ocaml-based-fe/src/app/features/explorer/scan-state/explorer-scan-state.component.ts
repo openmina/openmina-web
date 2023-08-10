@@ -13,8 +13,7 @@ import {
   ExplorerScanStateSetActiveBlock,
   ExplorerScanStateSetEarliestBlock,
 } from '@ocfe-explorer/scan-state/explorer-scan-state.actions';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import { getMergedRoute, MergedRoute } from '@openmina/shared';
 import { EXPLORER_SNARKS_GET_SNARKS, ExplorerSnarksGetSnarks } from '@ocfe-explorer/snarks/explorer-snarks.actions';
 
 @UntilDestroy()

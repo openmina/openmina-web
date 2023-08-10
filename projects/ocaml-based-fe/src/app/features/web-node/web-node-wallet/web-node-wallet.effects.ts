@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect, NonDispatchableEffect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { any, createNonDispatchableEffect, Effect, NonDispatchableEffect } from '@openmina/shared';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
@@ -21,15 +21,14 @@ import {
 import { WebNodeWalletService } from '@ocfe-web-node/web-node-wallet/web-node-wallet.service';
 import { WebNodeWallet } from '@ocfe-shared/types/web-node/wallet/web-node-wallet.type';
 import { WebNodeTransaction } from '@ocfe-shared/types/web-node/wallet/web-node-transaction.type';
-import { addError, catchErrorAndRepeat, createNonDispatchableEffect } from '@ocfe-shared/constants/store-functions';
+import { addError, catchErrorAndRepeat } from '@ocfe-shared/constants/store-functions';
 import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.enum';
 import { HttpErrorResponse } from '@angular/common/http';
-import { any } from "@ocfe-shared/helpers/values.helper";
 
 @Injectable({
   providedIn: 'root',
 })
-export class WebNodeWalletEffects extends MinaBaseEffect<WebNodeWalletActions> {
+export class WebNodeWalletEffects extends MinaOcamlBaseEffect<WebNodeWalletActions> {
 
   readonly walletInit$: Effect;
   readonly getWallets$: Effect;

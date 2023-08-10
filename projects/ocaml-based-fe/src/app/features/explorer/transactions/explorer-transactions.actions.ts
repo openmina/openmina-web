@@ -1,5 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { ExplorerTransaction } from '@ocfe-shared/types/explorer/transactions/explorer-transaction.type';
 import { ExplorerSignedTransaction } from '@ocfe-shared/types/explorer/transactions/explorer-signed-transaction.type';
 import { ExplorerZkAppTransaction } from '@ocfe-shared/types/explorer/transactions/explorer-zk-app-transaction.type';

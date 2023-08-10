@@ -8,9 +8,7 @@ import {
   NETWORK_BLOCKS_IPC_TOGGLE_SIDE_PANEL,
   NetworkBlocksIpcActions,
 } from '@ocfe-network/blocks-ipc/network-blocks-ipc.actions';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
-import { ONE_MILLION } from '@ocfe-shared/constants/unit-measurements';
+import { ONE_MILLION, sort, SortDirection, TableSort } from '@openmina/shared';
 import { NetworkBlocksIpcState } from '@ocfe-network/blocks-ipc/network-blocks-ipc.state';
 import { NetworkBlockIpc } from '@ocfe-shared/types/network/blocks-ipc/network-block-ipc.type';
 

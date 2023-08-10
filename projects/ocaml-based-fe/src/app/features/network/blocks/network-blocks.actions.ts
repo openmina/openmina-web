@@ -1,6 +1,5 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { NetworkBlock } from '@ocfe-shared/types/network/blocks/network-block.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
 import { NodeStatus } from '@ocfe-shared/types/app/node-status.type';
 
 enum NetworkBlocksActionTypes {

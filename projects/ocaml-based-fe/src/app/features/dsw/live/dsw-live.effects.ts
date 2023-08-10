@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { Effect } from '@openmina/shared';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
@@ -8,13 +8,20 @@ import { EMPTY, filter, map, switchMap, tap } from 'rxjs';
 import { catchErrorAndRepeat } from '@ocfe-shared/constants/store-functions';
 import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.enum';
 import { DswLiveService } from '@ocfe-dsw/live/dsw-live.service';
-import { DSW_LIVE_CLOSE, DSW_LIVE_GET_NODES, DSW_LIVE_GET_NODES_SUCCESS, DswLiveActions, DswLiveClose, DswLiveGetNodes } from '@ocfe-dsw/live/dsw-live.actions';
+import {
+  DSW_LIVE_CLOSE,
+  DSW_LIVE_GET_NODES,
+  DSW_LIVE_GET_NODES_SUCCESS,
+  DswLiveActions,
+  DswLiveClose,
+  DswLiveGetNodes
+} from '@ocfe-dsw/live/dsw-live.actions';
 import { DswLiveNode } from '@ocfe-shared/types/dsw/live/dsw-live-node.type';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DswLiveEffects extends MinaBaseEffect<DswLiveActions> {
+export class DswLiveEffects extends MinaOcamlBaseEffect<DswLiveActions> {
 
   readonly getNodes$: Effect;
 

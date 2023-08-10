@@ -1,5 +1,4 @@
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { sort, SortDirection, TableSort } from '@openmina/shared';
 import { ExplorerBlock } from '@ocfe-shared/types/explorer/blocks/explorer-block.type';
 import { ExplorerBlocksState } from '@ocfe-explorer/blocks/explorer-blocks.state';
 import {

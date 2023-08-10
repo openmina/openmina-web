@@ -4,14 +4,13 @@ import { WebNodeLog } from '@ocfe-shared/types/web-node/logs/web-node-log.type';
 import { WebNodeTransaction } from '@ocfe-shared/types/web-node/wallet/web-node-transaction.type';
 import * as base from 'base-x';
 import { JsHandle, WasmConfig } from '../../../assets/webnode/mina-rust';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
+import { any, toReadableDate } from '@openmina/shared';
 import { WebNodeWasm } from '@ocfe-shared/types/web-node/web-node-wasm.type';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { ErrorAdd } from '@ocfe-error-preview/error-preview.actions';
 import { addError } from '@ocfe-shared/constants/store-functions';
 import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.enum';
-import { any } from "@ocfe-shared/helpers/values.helper";
 
 export const PEER_CONNECTED = 'PeerConnected';
 export const PEER_DISCONNECTED = 'PeerDisconnected';

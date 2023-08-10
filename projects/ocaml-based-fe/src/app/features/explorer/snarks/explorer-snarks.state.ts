@@ -1,6 +1,6 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { selectExplorerSnarksState } from '@ocfe-explorer/explorer.state';
 import { ExplorerSnark } from '@ocfe-shared/types/explorer/snarks/explorer-snarks.type';
 

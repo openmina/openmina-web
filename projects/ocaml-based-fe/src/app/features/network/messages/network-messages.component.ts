@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { NetworkMessagesTableComponent } from '@ocfe-network/messages/network-messages-table/network-messages-table.component';
+import {
+  NetworkMessagesTableComponent
+} from '@ocfe-network/messages/network-messages-table/network-messages-table.component';
 import { selectNetworkActiveRow } from '@ocfe-network/messages/network-messages.state';
 import { NetworkMessage } from '@ocfe-shared/types/network/messages/network-message.type';
 import { NetworkMessagesClose, NetworkMessagesInit } from '@ocfe-network/messages/network-messages.actions';

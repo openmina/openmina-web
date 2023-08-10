@@ -1,7 +1,6 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { SystemResourcesChartData } from '@ocfe-shared/types/resources/system/system-resources-chart-data.type';
 import { SystemResourcesActivePoint } from '@ocfe-shared/types/resources/system/system-resources-active-point.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
 import { SystemResourcesPointThread } from '@ocfe-shared/types/resources/system/system-resources-sub-point.type';
 
 enum SystemResourcesActionTypes {

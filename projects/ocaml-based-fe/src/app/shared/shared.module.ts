@@ -5,10 +5,10 @@ import { SizePipe } from './pipes/size.pipe';
 import { TruncateMidPipe } from './pipes/truncate-mid.pipe';
 import { SecDurationPipe } from './pipes/sec-duration.pipe';
 import { ThousandPipe } from '@ocfe-shared/pipes/thousand.pipe';
-import { EagerSharedModule } from '@ocfe-shared/eager-shared.module';
 import { ReadableDatePipe } from '@ocfe-shared/pipes/readable-date.pipe';
 import { PluralPipe } from '@ocfe-shared/pipes/plural.pipe';
 import { SafeHtmlPipe } from '@ocfe-shared/pipes/safe-html.pipe';
+import { OpenminaEagerSharedModule } from '@openmina/shared';
 
 
 const PIPES = [
@@ -22,7 +22,7 @@ const PIPES = [
 ];
 
 const MODULES = [
-  EagerSharedModule,
+  OpenminaEagerSharedModule,
   MatExpansionModule,
   ReactiveFormsModule,
 ];

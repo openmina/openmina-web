@@ -1,14 +1,16 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
 import { Router } from '@angular/router';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
 import { filter, take } from 'rxjs';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { DswFrontierLog } from '@ocfe-shared/types/dsw/frontier/dsw-frontier-log.type';
 import { DswFrontierSetActiveLog, DswFrontierSortLogs } from '@ocfe-dsw/frontier/dsw-frontier.actions';
-import { selectDswFrontierActiveLog, selectDswFrontierLogs, selectDswFrontierSort } from '@ocfe-dsw/frontier/dsw-frontier.state';
+import {
+  selectDswFrontierActiveLog,
+  selectDswFrontierLogs,
+  selectDswFrontierSort
+} from '@ocfe-dsw/frontier/dsw-frontier.state';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-dsw-frontier-table',
@@ -16,7 +18,7 @@ import { selectDswFrontierActiveLog, selectDswFrontierLogs, selectDswFrontierSor
   styleUrls: ['./dsw-frontier-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DswFrontierTableComponent extends MinaTableWrapper<DswFrontierLog> implements OnInit {
+export class DswFrontierTableComponent extends MinaTableOcamlWrapper<DswFrontierLog> implements OnInit {
 
   protected readonly tableHeads: TableColumnList<DswFrontierLog> = [
     { name: 'date' },

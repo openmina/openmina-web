@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { isStringAValidJson, ManualDetection } from '@openmina/shared';
 import { Router } from '@angular/router';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { WebNodePeersService } from '@ocfe-web-node/web-node-peers/web-node-peers.service';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { fromEvent } from 'rxjs';
-import { isStringAValidJson } from '@ocfe-shared/helpers/user-input.helper';
 
 @UntilDestroy()
 @Component({

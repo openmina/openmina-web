@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ComponentRef, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 import { selectErrorPreviewErrors } from '@ocfe-error-preview/error-preview.state';
 import { filter, take } from 'rxjs';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
@@ -9,7 +9,6 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { ErrorListComponent } from '@ocfe-error-preview/error-list/error-list.component';
 import { MinaError } from '@ocfe-shared/types/error-preview/mina-error.type';
 import { MARK_ERRORS_AS_SEEN, MarkErrorsAsSeen } from '@ocfe-error-preview/error-preview.actions';
-import { isMobile } from '@ocfe-shared/helpers/values.helper';
 
 @Component({
   selector: 'mina-error-preview',

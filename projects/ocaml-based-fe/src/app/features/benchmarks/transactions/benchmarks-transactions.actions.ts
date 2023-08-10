@@ -1,5 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { BenchmarksTransaction } from '@ocfe-shared/types/benchmarks/transactions/benchmarks-transaction.type';
 
 enum BenchmarksTransactionsActionTypes {

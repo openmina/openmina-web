@@ -2,7 +2,7 @@ import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { selectDswActionsState } from '@ocfe-dsw/dsw.state';
 import { DswActionGroup } from '@ocfe-shared/types/dsw/actions/dsw-action-group.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { DswActionsStats } from '@ocfe-shared/types/dsw/actions/dsw-actions-stats.type';
 
 export interface DswActionsState {

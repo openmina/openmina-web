@@ -5,7 +5,7 @@ import { DashboardSplitsPeer } from '@ocfe-shared/types/dashboard/splits/dashboa
 import { DashboardSplitsLink } from '@ocfe-shared/types/dashboard/splits/dashboard-splits-link.type';
 import { DashboardSplitsSet } from '@ocfe-shared/types/dashboard/splits/dashboard-splits-set.type';
 import { DashboardNodeCount } from '@ocfe-shared/types/dashboard/nodes/dashboard-node-count.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 
 export interface DashboardSplitsState {
   peers: DashboardSplitsPeer[];

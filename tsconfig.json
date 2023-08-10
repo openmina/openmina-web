@@ -82,6 +82,12 @@
       "@ocfe-dsw/*": [
         "projects/ocaml-based-fe/src/app/features/dsw/*"
       ],
+      "openmina-shared": [
+        "dist/openmina-shared"
+      ],
+      "openmina-styles": [
+        "dist/openmina-styles"
+      ],
     }
   },
   "angularCompilerOptions": {

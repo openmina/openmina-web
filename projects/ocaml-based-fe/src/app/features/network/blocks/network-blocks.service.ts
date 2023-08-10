@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { NetworkBlock } from '@ocfe-shared/types/network/blocks/network-block.type';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
-import { ONE_BILLION, ONE_MILLION, ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
+import { ONE_BILLION, ONE_MILLION, ONE_THOUSAND, toReadableDate } from '@openmina/shared';
 import { ConfigService } from '@ocfe-core/services/config.service';
 
 @Injectable({

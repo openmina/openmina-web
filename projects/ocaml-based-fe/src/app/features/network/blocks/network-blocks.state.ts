@@ -2,7 +2,7 @@ import { NetworkBlock } from '@ocfe-shared/types/network/blocks/network-block.ty
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { selectNetworkBlocksState } from '@ocfe-network/network.state';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 
 export interface NetworkBlocksState {
   blocks: NetworkBlock[];

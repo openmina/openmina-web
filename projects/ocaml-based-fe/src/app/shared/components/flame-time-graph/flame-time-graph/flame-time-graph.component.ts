@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ComponentRef, EventEmitter, Input } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 import { take } from 'rxjs';
 import { FlameTimeGraphTooltipComponent } from '@ocfe-shared/components/flame-time-graph/flame-time-graph-tooltip/flame-time-graph-tooltip.component';
 import { SharedModule } from '@ocfe-shared/shared.module';

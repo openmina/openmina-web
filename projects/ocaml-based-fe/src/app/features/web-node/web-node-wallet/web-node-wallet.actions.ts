@@ -1,4 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction } from '@openmina/shared';
 import { WebNodeWallet } from '@ocfe-shared/types/web-node/wallet/web-node-wallet.type';
 import { WebNodeTransaction } from '@ocfe-shared/types/web-node/wallet/web-node-transaction.type';
 

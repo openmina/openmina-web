@@ -1,13 +1,16 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { untilDestroyed } from '@ngneat/until-destroy';
 import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { TableHeadSorting } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { TableHeadSorting } from '@openmina/shared';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { NetworkBlocksIpcSort } from '@ocfe-network/blocks-ipc/network-blocks-ipc.actions';
-import { selectNetworkBlocksIpc, selectNetworkBlocksIpcSorting } from '@ocfe-network/blocks-ipc/network-blocks-ipc.state';
+import {
+  selectNetworkBlocksIpc,
+  selectNetworkBlocksIpcSorting
+} from '@ocfe-network/blocks-ipc/network-blocks-ipc.state';
 import { NetworkBlockIpc } from '@ocfe-shared/types/network/blocks-ipc/network-block-ipc.type';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-network-blocks-ipc-table',
@@ -16,9 +19,15 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'h-100 flex-column' },
 })
-export class NetworkBlocksIpcTableComponent extends MinaTableWrapper<NetworkBlockIpc> implements OnInit {
+export class NetworkBlocksIpcTableComponent extends MinaTableOcamlWrapper<NetworkBlockIpc> implements OnInit {
 
-  readonly secConfig: SecDurationConfig = { color: true, default: 0.5, warn: 0.75, severe: 1, undefinedAlternative: '-' };
+  readonly secConfig: SecDurationConfig = {
+    color: true,
+    default: 0.5,
+    warn: 0.75,
+    severe: 1,
+    undefinedAlternative: '-'
+  };
 
   protected readonly tableHeads: TableHeadSorting<NetworkBlockIpc>[] = [
     { name: 'datetime', sort: 'timestamp' },

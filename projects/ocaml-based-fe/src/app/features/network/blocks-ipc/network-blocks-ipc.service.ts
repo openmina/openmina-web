@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ConfigService } from '@ocfe-core/services/config.service';
 import { map, Observable } from 'rxjs';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
+import { ONE_THOUSAND, toReadableDate } from '@openmina/shared';
 import { NetworkBlockIpc } from '@ocfe-shared/types/network/blocks-ipc/network-block-ipc.type';
-import { ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
 
 @Injectable({
   providedIn: 'root',

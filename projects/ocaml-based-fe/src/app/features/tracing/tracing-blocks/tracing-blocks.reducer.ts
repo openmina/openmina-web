@@ -1,15 +1,15 @@
 import { TracingBlocksState } from '@ocfe-tracing/tracing-blocks/tracing-blocks.state';
 import {
   TRACING_BLOCKS_CLOSE,
-  TRACING_BLOCKS_GET_DETAILS_SUCCESS, TRACING_BLOCKS_GET_TRACES,
+  TRACING_BLOCKS_GET_DETAILS_SUCCESS,
+  TRACING_BLOCKS_GET_TRACES,
   TRACING_BLOCKS_GET_TRACES_SUCCESS,
   TRACING_BLOCKS_SELECT_ROW,
   TRACING_BLOCKS_SORT,
   TracingBlocksActions,
 } from '@ocfe-tracing/tracing-blocks/tracing-blocks.actions';
 import { TracingBlockTrace } from '@ocfe-shared/types/tracing/blocks/tracing-block-trace.type';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { sort, SortDirection, TableSort } from '@openmina/shared';
 
 const initialState: TracingBlocksState = {
   traces: undefined,

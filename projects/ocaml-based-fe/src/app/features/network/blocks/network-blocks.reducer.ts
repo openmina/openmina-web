@@ -9,10 +9,8 @@ import {
   NETWORK_BLOCKS_TOGGLE_SIDE_PANEL,
   NetworkBlocksActions,
 } from '@ocfe-network/blocks/network-blocks.actions';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { ONE_BILLION, sort, SortDirection, TableSort } from '@openmina/shared';
 import { NetworkBlock } from '@ocfe-shared/types/network/blocks/network-block.type';
-import { ONE_BILLION } from '@ocfe-shared/constants/unit-measurements';
 
 const initialState: NetworkBlocksState = {
   blocks: [],

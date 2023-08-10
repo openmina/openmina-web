@@ -1,5 +1,5 @@
 import { NetworkMessagesDirection } from '@ocfe-shared/types/network/messages/network-messages-direction.enum';
-import { ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
+import { ONE_THOUSAND } from '@openmina/shared';
 import { NetworkConnectionsState } from '@ocfe-network/connections/network-connections.state';
 import {
   NETWORK_CONNECTIONS_CLOSE,

@@ -4,7 +4,7 @@ import { WebNodeWallet } from '@ocfe-shared/types/web-node/wallet/web-node-walle
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 import { selectWebNodeActiveWallet, selectWebNodeWallets } from '@ocfe-web-node/web-node-wallet/web-node-wallet.state';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { filter } from 'rxjs';

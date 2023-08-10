@@ -1,9 +1,9 @@
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { sort, SortDirection, TableSort } from '@openmina/shared';
 import { ExplorerSnarksState } from '@ocfe-explorer/snarks/explorer-snarks.state';
 import {
   EXPLORER_SNARKS_CLOSE,
-  EXPLORER_SNARKS_GET_SNARKS_SUCCESS, EXPLORER_SNARKS_SET_ACTIVE_SNARK,
+  EXPLORER_SNARKS_GET_SNARKS_SUCCESS,
+  EXPLORER_SNARKS_SET_ACTIVE_SNARK,
   EXPLORER_SNARKS_SORT,
   ExplorerSnarksActions,
 } from '@ocfe-explorer/snarks/explorer-snarks.actions';

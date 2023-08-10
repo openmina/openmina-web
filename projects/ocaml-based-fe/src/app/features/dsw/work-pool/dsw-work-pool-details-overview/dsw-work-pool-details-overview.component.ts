@@ -1,8 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
-import { ExpandTracking, MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
+import {
+  ExpandTracking,
+  MinaJsonViewerComponent
+} from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
 import { selectDswWorkPoolActiveWorkPoolDetail } from '@ocfe-dsw/work-pool/dsw-work-pool.state';
-import { downloadJson } from '@ocfe-shared/helpers/user-input.helper';
+import { downloadJson } from '@openmina/shared';
 import { WorkPoolDetail } from '@ocfe-shared/types/dsw/work-pool/work-pool-detail.type';
 
 @Component({

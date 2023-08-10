@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.enum';
 import { MinaError } from '@ocfe-shared/types/error-preview/mina-error.type';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 
 @Component({
   selector: 'mina-error-list',

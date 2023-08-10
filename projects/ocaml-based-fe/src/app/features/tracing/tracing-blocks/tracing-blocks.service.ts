@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { TracingBlockTrace } from '@ocfe-shared/types/tracing/blocks/tracing-block-trace.type';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
+import { ONE_THOUSAND, toReadableDate } from '@openmina/shared';
 import { TracingTraceGroup } from '@ocfe-shared/types/tracing/blocks/tracing-trace-group.type';
-import { ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
 import { TracingTraceCheckpoint } from '@ocfe-shared/types/tracing/blocks/tracing-trace-checkpoint.type';
 import { TracingGraphQlService } from '@ocfe-core/services/tracing-graph-ql.service';
 

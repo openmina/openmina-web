@@ -1,7 +1,7 @@
 import { ExplorerBlock } from '@ocfe-shared/types/explorer/blocks/explorer-block.type';
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { selectExplorerBlocksState } from '@ocfe-explorer/explorer.state';
 import { ExplorerBlockTx } from '@ocfe-shared/types/explorer/blocks/explorer-block-tx.type';
 import { ExplorerBlockZkApp } from '@ocfe-shared/types/explorer/blocks/explorer-block-zk-app-type';

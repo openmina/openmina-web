@@ -6,9 +6,13 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
-import { THEME_PROVIDER } from '@ocfe-core/services/theme-switcher.service';
+import {
+  GlobalErrorHandlerService,
+  NgrxRouterStoreModule,
+  OpenminaEagerSharedModule,
+  THEME_PROVIDER
+} from '@openmina/shared';
 import { MenuComponent } from './layout/menu/menu.component';
-import { EagerSharedModule } from '@ocfe-shared/eager-shared.module';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { metaReducers, reducers } from '@ocfe-app/app.setup';
 import { EffectsModule } from '@ngrx/effects';
@@ -16,13 +20,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppEffects } from '@ocfe-app/app.effects';
 import { ErrorPreviewComponent } from '@ocfe-error-preview/error-preview.component';
 import { ErrorListComponent } from '@ocfe-error-preview/error-list/error-list.component';
-import { NgrxRouterStoreModule } from '@ocfe-shared/router/ngrx-router.module';
 import * as Sentry from '@sentry/angular-ivy';
 import { ServerStatusComponent } from './layout/server-status/server-status.component';
 import { CONFIG } from '@ocfe-shared/constants/config';
 import { SubmenuTabsComponent } from './layout/submenu-tabs/submenu-tabs.component';
 import { NodePickerComponent } from './layout/node-picker/node-picker.component';
-import { GlobalErrorHandlerService } from '@ocfe-core/services/global-error-handler.service';
 import { Router } from '@angular/router';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
@@ -31,6 +33,7 @@ import localeFr from '@angular/common/locales/fr';
 import localeEn from '@angular/common/locales/en';
 import { HorizontalMenuComponent } from '@ocfe-app/shared/components/horizontal-menu/horizontal-menu.component';
 import { SharedModule } from '@ocfe-shared/shared.module';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 registerLocaleData(localeFr, 'fr');
 registerLocaleData(localeEn, 'en');
@@ -82,7 +85,8 @@ export class AppGlobalErrorhandler implements ErrorHandler {
     NgrxRouterStoreModule,
     !CONFIG.production ? StoreDevtoolsModule.instrument({ maxAge: 150 }) : [],
     HttpClientModule,
-    EagerSharedModule,
+    MatSidenavModule,
+    OpenminaEagerSharedModule,
     HorizontalMenuComponent,
     SharedModule,
   ],

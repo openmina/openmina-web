@@ -1,5 +1,4 @@
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { ONE_THOUSAND, sort, SortDirection, TableSort } from '@openmina/shared';
 import { DashboardNodesState } from '@ocfe-dashboard/nodes/dashboard-nodes.state';
 import { DashboardNodeCount } from '@ocfe-shared/types/dashboard/nodes/dashboard-node-count.type';
 import {
@@ -20,7 +19,6 @@ import {
 } from '@ocfe-dashboard/nodes/dashboard-nodes.actions';
 import { DashboardNode } from '@ocfe-shared/types/dashboard/nodes/dashboard-node.type';
 import { AppNodeStatusTypes } from '@ocfe-shared/types/app/app-node-status-types.enum';
-import { ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
 import { DashboardForkFilter } from '@ocfe-shared/types/dashboard/nodes/dashboard-fork-filter.type';
 import { CONFIG } from '@ocfe-shared/constants/config';
 

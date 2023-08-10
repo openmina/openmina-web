@@ -6,7 +6,7 @@ import {
   TRACING_OVERVIEW_TOGGLE_CONDENSED_VIEW,
   TracingOverviewActions,
 } from '@ocfe-tracing/tracing-overview/tracing-overview.actions';
-import { SortDirection } from '@ocfe-shared/types/shared/table-sort.type';
+import { SortDirection } from '@openmina/shared';
 import { TracingOverviewCheckpoint } from '@ocfe-shared/types/tracing/overview/tracing-overview-checkpoint.type';
 
 const initialState: TracingOverviewState = {

@@ -1,6 +1,6 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { selectExplorerTransactionsState } from '@ocfe-explorer/explorer.state';
 import { ExplorerTransaction } from '@ocfe-shared/types/explorer/transactions/explorer-transaction.type';
 

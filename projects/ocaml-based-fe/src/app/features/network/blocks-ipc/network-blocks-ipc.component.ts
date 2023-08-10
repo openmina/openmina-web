@@ -1,12 +1,16 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
+import { getMergedRoute, MergedRoute } from '@openmina/shared';
 import { untilDestroyed } from '@ngneat/until-destroy';
 import { filter, take } from 'rxjs';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
 import { selectAppNodeStatus } from '@ocfe-app/app.state';
 import { NodeStatus } from '@ocfe-shared/types/app/node-status.type';
 import { AppNodeStatusTypes } from '@ocfe-shared/types/app/app-node-status-types.enum';
-import { NetworkBlocksIpcClose, NetworkBlocksIpcGetEarliestBlock, NetworkBlocksIpcInit, NetworkBlocksIpcSetActiveBlock } from './network-blocks-ipc.actions';
+import {
+  NetworkBlocksIpcClose,
+  NetworkBlocksIpcGetEarliestBlock,
+  NetworkBlocksIpcInit,
+  NetworkBlocksIpcSetActiveBlock
+} from './network-blocks-ipc.actions';
 import { selectNetworkBlocksIpcSidePanelOpen } from './network-blocks-ipc.state';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 

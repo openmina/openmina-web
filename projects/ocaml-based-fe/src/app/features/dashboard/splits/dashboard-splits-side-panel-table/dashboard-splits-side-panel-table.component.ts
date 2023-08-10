@@ -1,12 +1,17 @@
-import { ChangeDetectionStrategy, Component, HostBinding, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit } from '@angular/core';
 import { DashboardSplitsPeer } from '@ocfe-shared/types/dashboard/splits/dashboard-splits-peer.type';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { isDesktop, TableColumnList } from '@openmina/shared';
 import { Router } from '@angular/router';
-import { DashboardSplitsSetActivePeer, DashboardSplitsSortPeers } from '@ocfe-dashboard/splits/dashboard-splits.actions';
-import { selectDashboardSplitsActivePeer, selectDashboardSplitsSort } from '@ocfe-dashboard/splits/dashboard-splits.state';
+import {
+  DashboardSplitsSetActivePeer,
+  DashboardSplitsSortPeers
+} from '@ocfe-dashboard/splits/dashboard-splits.actions';
+import {
+  selectDashboardSplitsActivePeer,
+  selectDashboardSplitsSort
+} from '@ocfe-dashboard/splits/dashboard-splits.state';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { isDesktop, isMobile } from '@ocfe-shared/helpers/values.helper';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-dashboard-splits-side-panel-table',
@@ -14,7 +19,7 @@ import { isDesktop, isMobile } from '@ocfe-shared/helpers/values.helper';
   styleUrls: ['./dashboard-splits-side-panel-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardSplitsSidePanelTableComponent extends MinaTableWrapper<DashboardSplitsPeer> implements OnInit {
+export class DashboardSplitsSidePanelTableComponent extends MinaTableOcamlWrapper<DashboardSplitsPeer> implements OnInit {
 
   @Input() peers: DashboardSplitsPeer[];
   @HostBinding('style.height.px') private height: number;

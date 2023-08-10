@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
 import { selectAppMenu } from '@ocfe-app/app.state';
 import { filter } from 'rxjs';
 import { AppMenu } from '@ocfe-shared/types/app/app-menu.type';
@@ -7,9 +7,7 @@ import { ExplorerBlockZkApp } from '@ocfe-shared/types/explorer/blocks/explorer-
 import { ExplorerBlocksSetActiveZkApp, ExplorerBlocksSortZkApps } from '@ocfe-explorer/blocks/explorer-blocks.actions';
 import { selectExplorerBlocksZkAppsSorting } from '@ocfe-explorer/blocks/explorer-blocks.state';
 import { Router } from '@angular/router';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 
 @Component({
@@ -19,7 +17,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   host: { class: 'h-100 w-100 flex-column' },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExplorerBlocksZkAppsTableComponent extends MinaTableWrapper<ExplorerBlockZkApp> implements OnInit, OnChanges {
+export class ExplorerBlocksZkAppsTableComponent extends MinaTableOcamlWrapper<ExplorerBlockZkApp> implements OnInit, OnChanges {
 
   @Input() zkApps: ExplorerBlockZkApp[] = [];
   isMobile: boolean;

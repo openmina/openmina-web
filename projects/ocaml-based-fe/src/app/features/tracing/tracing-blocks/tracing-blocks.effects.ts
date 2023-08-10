@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
 import { EMPTY, filter, map, switchMap } from 'rxjs';
-import { Effect } from '@ocfe-shared/types/store/effect.type';
+import { Effect } from '@openmina/shared';
 import { TracingBlockTrace } from '@ocfe-shared/types/tracing/blocks/tracing-block-trace.type';
 import { TracingTraceGroup } from '@ocfe-shared/types/tracing/blocks/tracing-trace-group.type';
 import { TracingBlocksService } from '@ocfe-tracing/tracing-blocks/tracing-blocks.service';
 import {
-  TRACING_BLOCKS_CLOSE, TRACING_BLOCKS_GET_DETAILS,
+  TRACING_BLOCKS_CLOSE,
+  TRACING_BLOCKS_GET_DETAILS,
   TRACING_BLOCKS_GET_DETAILS_SUCCESS,
   TRACING_BLOCKS_GET_TRACES,
   TRACING_BLOCKS_GET_TRACES_SUCCESS,
@@ -25,7 +26,7 @@ import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.
 @Injectable({
   providedIn: 'root',
 })
-export class TracingBlocksEffects extends MinaBaseEffect<TracingBlocksActions> {
+export class TracingBlocksEffects extends MinaOcamlBaseEffect<TracingBlocksActions> {
 
   readonly getTraces$: Effect;
   readonly selectTrace$: Effect;

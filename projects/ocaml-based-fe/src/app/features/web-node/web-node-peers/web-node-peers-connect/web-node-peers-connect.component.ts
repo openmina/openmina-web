@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { isStringAValidJson, ManualDetection } from '@openmina/shared';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
@@ -7,7 +7,6 @@ import { WebNodePeersService } from '@ocfe-web-node/web-node-peers/web-node-peer
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { FormControl } from '@angular/forms';
 import { fromEvent } from 'rxjs';
-import { isStringAValidJson } from '@ocfe-shared/helpers/user-input.helper';
 
 @UntilDestroy()
 @Component({

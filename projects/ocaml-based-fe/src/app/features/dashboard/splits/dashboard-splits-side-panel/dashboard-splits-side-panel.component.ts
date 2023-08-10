@@ -1,14 +1,18 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { selectDashboardSplitsActivePeer, selectDashboardSplitsPeersAndSets } from '@ocfe-dashboard/splits/dashboard-splits.state';
+import {
+  selectDashboardSplitsActivePeer,
+  selectDashboardSplitsPeersAndSets
+} from '@ocfe-dashboard/splits/dashboard-splits.state';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
-import { toggleItem } from '@ocfe-shared/helpers/array.helper';
-import { DashboardSplitsSetActivePeer, DashboardSplitsToggleSidePanel } from '@ocfe-dashboard/splits/dashboard-splits.actions';
+import { getMergedRoute, MergedRoute, toggleItem } from '@openmina/shared';
+import {
+  DashboardSplitsSetActivePeer,
+  DashboardSplitsToggleSidePanel
+} from '@ocfe-dashboard/splits/dashboard-splits.actions';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
 import { untilDestroyed } from '@ngneat/until-destroy';
 import { take } from 'rxjs';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
 import { DashboardSplitsPeer } from '@ocfe-shared/types/dashboard/splits/dashboard-splits-peer.type';
 import { DashboardSplitsSet } from '@ocfe-shared/types/dashboard/splits/dashboard-splits-set.type';
 
@@ -46,7 +50,10 @@ export class DashboardSplitsSidePanelComponent extends StoreDispatcher implement
   }
 
   private selectSplitsPeersAndLinks(): void {
-    this.select(selectDashboardSplitsPeersAndSets, ({ peers, sets }: { peers: DashboardSplitsPeer[], sets: DashboardSplitsSet[] }) => {
+    this.select(selectDashboardSplitsPeersAndSets, ({ peers, sets }: {
+      peers: DashboardSplitsPeer[],
+      sets: DashboardSplitsSet[]
+    }) => {
       this.sets = sets;
       if (this.idFromRoute) {
         const peer = peers.find((peer: DashboardSplitsPeer) => peer.address === this.idFromRoute);

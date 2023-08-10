@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { Effect } from '@openmina/shared';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
@@ -13,7 +13,7 @@ import {
   DSW_BOOTSTRAP_GET_NODES_SUCCESS,
   DswBootstrapActions,
   DswBootstrapClose,
-  DswBootstrapGetNodes, DswBootstrapGetNodesSuccess,
+  DswBootstrapGetNodes,
 } from '@ocfe-dsw/bootstrap/dsw-bootstrap.actions';
 import { DswBootstrapService } from '@ocfe-dsw/bootstrap/dsw-bootstrap.service';
 import { DswBootstrapNode } from '@ocfe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
@@ -21,7 +21,7 @@ import { DswBootstrapNode } from '@ocfe-shared/types/dsw/bootstrap/dsw-bootstrap
 @Injectable({
   providedIn: 'root',
 })
-export class DswBootstrapEffects extends MinaBaseEffect<DswBootstrapActions> {
+export class DswBootstrapEffects extends MinaOcamlBaseEffect<DswBootstrapActions> {
 
   readonly getNodes$: Effect;
 

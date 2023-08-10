@@ -1,6 +1,5 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction, SortDirection } from '@openmina/shared';
 import { TracingOverviewCheckpoint } from '@ocfe-shared/types/tracing/overview/tracing-overview-checkpoint.type';
-import { SortDirection } from '@ocfe-shared/types/shared/table-sort.type';
 
 enum TracingOverviewActionTypes {
   TRACING_OVERVIEW_GET_CHECKPOINTS = 'TRACING_OVERVIEW_GET_CHECKPOINTS',

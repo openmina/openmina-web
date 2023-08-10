@@ -1,4 +1,4 @@
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { selectBenchmarksTransactionsState } from '@ocfe-benchmarks/benchmarks.state';

@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEventType, HttpRequest } from '@angular/common/http';
 import { catchError, map, Observable, of } from 'rxjs';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
+import { ONE_MILLION, ONE_THOUSAND, toReadableDate } from '@openmina/shared';
 import { NetworkMessage } from '@ocfe-shared/types/network/messages/network-message.type';
 import { NetworkMessageConnection } from '@ocfe-shared/types/network/messages/network-messages-connection.type';
 import { NetworkMessagesFilter } from '@ocfe-shared/types/network/messages/network-messages-filter.type';
 import { NetworkMessagesFilterTypes } from '@ocfe-shared/types/network/messages/network-messages-filter-types.enum';
 import { NetworkMessagesDirection } from '@ocfe-shared/types/network/messages/network-messages-direction.enum';
-import { ONE_MILLION, ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
 import { ConfigService } from '@ocfe-core/services/config.service';
 
 

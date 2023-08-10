@@ -4,15 +4,11 @@ import { filter, map } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { selectAppMenu } from '@ocfe-app/app.state';
-import { TooltipService } from '@ocfe-shared/services/tooltip.service';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
-import { LoadingEvent } from '@ocfe-shared/types/core/loading/loading-event.type';
+import { getMergedRoute, ManualDetection, TooltipService } from '@openmina/shared';
 import { AppMenu } from '@ocfe-shared/types/app/app-menu.type';
 import { APP_TOGGLE_MENU_OPENING, AppToggleMenuOpening } from '@ocfe-app/app.actions';
 import { selectLoadingStateLength } from '@ocfe-app/layout/toolbar/loading.reducer';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { CONFIG } from '@ocfe-shared/constants/config';
 
 @Component({
   selector: 'mina-toolbar',
@@ -24,7 +20,6 @@ import { CONFIG } from '@ocfe-shared/constants/config';
 export class ToolbarComponent extends ManualDetection implements OnInit {
 
   title: string = 'Loading';
-  definiteLoading: LoadingEvent;
   isMobile: boolean;
   switchForbidden: boolean;
 

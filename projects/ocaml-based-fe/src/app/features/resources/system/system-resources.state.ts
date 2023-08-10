@@ -4,7 +4,7 @@ import { selectSystemResourcesState } from '@ocfe-resources/resources.state';
 import { SystemResourcesChartData } from '@ocfe-shared/types/resources/system/system-resources-chart-data.type';
 import { SystemResourcesColorMapping } from '@ocfe-shared/types/resources/system/system-resources-color-mapping.type';
 import { SystemResourcesActivePoint } from '@ocfe-shared/types/resources/system/system-resources-active-point.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { SystemResourcesPointThread } from '@ocfe-shared/types/resources/system/system-resources-sub-point.type';
 
 export interface SystemResourcesState {

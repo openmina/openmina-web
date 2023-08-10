@@ -5,8 +5,7 @@ import { DswLiveNode } from '@ocfe-shared/types/dsw/live/dsw-live-node.type';
 import { DswLiveSetActiveNode } from '@ocfe-dsw/live/dsw-live.actions';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import { getMergedRoute, MergedRoute } from '@openmina/shared';
 import { filter, take } from 'rxjs';
 
 @Component({

@@ -1,12 +1,11 @@
 import { BenchmarksTransactionsState } from '@ocfe-benchmarks/transactions/benchmarks-transactions.state';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { sort, SortDirection, TableSort } from '@openmina/shared';
 import {
   BENCHMARKS_TRANSACTIONS_CLOSE,
   BENCHMARKS_TRANSACTIONS_GET_TRANSACTIONS_SUCCESS,
   BENCHMARKS_TRANSACTIONS_SORT,
   BenchmarksTransactionsActions,
 } from '@ocfe-benchmarks/transactions/benchmarks-transactions.actions';
-import { sort } from '@ocfe-shared/helpers/array.helper';
 import { BenchmarksTransaction } from '@ocfe-shared/types/benchmarks/transactions/benchmarks-transaction.type';
 
 const initialState: BenchmarksTransactionsState = {

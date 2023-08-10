@@ -1,0 +1,14 @@
+{
+  "bundlerOptions": {
+    "entryFile": "./projects/openmina-styles/src/lib/styles/entry.scss",
+    "rootDir": "../",
+    "outFile": "./projects/openmina-styles/src/lib/styles/openmina.scss",
+    "ignoreImports": [],
+    "dedupeGlobs": [
+      "./projects/openmina-styles/src/lib/styles/utilities/dimensions.scss",
+      "./projects/openmina-styles/src/lib/styles/utilities/flex.scss",
+      "./projects/openmina-styles/src/lib/styles/utilities/text.scss",
+      "./projects/openmina-styles/src/lib/styles/utilities/variables.scss"
+    ]
+  }
+}

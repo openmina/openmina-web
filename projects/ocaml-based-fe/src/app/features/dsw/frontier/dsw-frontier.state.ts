@@ -1,7 +1,7 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { selectDswFrontierState } from '@ocfe-dsw/dsw.state';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { DswFrontierLog } from '@ocfe-shared/types/dsw/frontier/dsw-frontier-log.type';
 
 export interface DswFrontierState {

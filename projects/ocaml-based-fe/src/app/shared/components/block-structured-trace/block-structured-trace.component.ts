@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TracingTraceGroup } from '@ocfe-shared/types/tracing/blocks/tracing-trace-group.type';
 import { TracingTraceCheckpoint } from '@ocfe-shared/types/tracing/blocks/tracing-trace-checkpoint.type';
 import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 import { SharedModule } from '@ocfe-shared/shared.module';
 
 @Component({

@@ -1,4 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction } from '@openmina/shared';
 import { NetworkConnection } from '@ocfe-shared/types/network/connections/network-connection.type';
 
 enum NetworkConnectionsActionTypes {

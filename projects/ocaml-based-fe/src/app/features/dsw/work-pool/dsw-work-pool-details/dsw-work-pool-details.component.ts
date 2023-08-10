@@ -3,8 +3,7 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { selectDswWorkPoolActiveWorkPoolDetail } from '@ocfe-dsw/work-pool/dsw-work-pool.state';
 import { WorkPoolDetail } from '@ocfe-shared/types/dsw/work-pool/work-pool-detail.type';
 import { Router } from '@angular/router';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import { getMergedRoute, MergedRoute } from '@openmina/shared';
 import { take } from 'rxjs';
 
 @Component({

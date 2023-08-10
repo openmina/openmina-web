@@ -1,19 +1,21 @@
 import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
 import { selectActiveNode, selectAppMenu } from '@ocfe-app/app.state';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { AppMenu } from '@ocfe-shared/types/app/app-menu.type';
-import { APP_CHANGE_MENU_COLLAPSING, APP_TOGGLE_MENU_OPENING, AppChangeMenuCollapsing, AppToggleMenuOpening } from '@ocfe-app/app.actions';
-import { ThemeType } from '@ocfe-shared/types/core/theme/theme-types.type';
+import {
+  APP_CHANGE_MENU_COLLAPSING,
+  APP_TOGGLE_MENU_OPENING,
+  AppChangeMenuCollapsing,
+  AppToggleMenuOpening
+} from '@ocfe-app/app.actions';
+import { ManualDetection, removeParamsFromURL, ThemeType, TooltipPosition } from '@openmina/shared';
 import { DOCUMENT } from '@angular/common';
 import { MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
 import { filter, map, tap } from 'rxjs';
 import { CONFIG, getAvailableFeatures } from '@ocfe-shared/constants/config';
 import { NavigationEnd, Router } from '@angular/router';
-import { removeParamsFromURL } from '@ocfe-shared/helpers/router.helper';
-import { TooltipPosition } from '@ocfe-shared/directives/mina-tooltip.directive';
 
 interface MenuItem {
   name: string;

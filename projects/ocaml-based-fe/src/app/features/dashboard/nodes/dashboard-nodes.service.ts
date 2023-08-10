@@ -1,13 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DashboardNode } from '@ocfe-shared/types/dashboard/nodes/dashboard-node.type';
-import { catchError, concatAll, EMPTY, forkJoin, from, map, mergeMap, Observable, of, scan, switchMap, tap, throwError, toArray } from 'rxjs';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
-import { ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
+import {
+  catchError,
+  concatAll,
+  EMPTY,
+  forkJoin,
+  from,
+  map,
+  mergeMap,
+  Observable,
+  of,
+  scan,
+  switchMap,
+  throwError,
+  toArray
+} from 'rxjs';
+import { lastItem, ONE_THOUSAND, toReadableDate } from '@openmina/shared';
 import { TracingTraceGroup } from '@ocfe-shared/types/tracing/blocks/tracing-trace-group.type';
 import { TracingBlocksService } from '@ocfe-tracing/tracing-blocks/tracing-blocks.service';
 import { AppNodeStatusTypes } from '@ocfe-shared/types/app/app-node-status-types.enum';
-import { lastItem } from '@ocfe-shared/helpers/array.helper';
 import { CONFIG, isNotVanilla } from '@ocfe-shared/constants/config';
 import { DashboardFork } from '@ocfe-shared/types/dashboard/nodes/dashboard-fork.type';
 import { MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
@@ -226,7 +238,10 @@ export class DashboardNodesService {
               candidates.push(candidate);
               newItem.bestTip = candidate;
 
-              const relatedPairListOfChains = checkedPairs.find((checked: { chains: BestChain[], node: DashboardNode }) => {
+              const relatedPairListOfChains = checkedPairs.find((checked: {
+                chains: BestChain[],
+                node: DashboardNode
+              }) => {
                 chains.some(c => checked.chains.map(ch => ch.stateHash).includes(c.stateHash));
               })?.chains;
               const relatedCandidate = relatedPairListOfChains ? lastItem(relatedPairListOfChains).stateHash : undefined;
@@ -258,7 +273,10 @@ export class DashboardNodesService {
     );
   }
 
-  private getDeepForks(chains: BestChain[], node: DashboardNode, maxLength: number): Observable<{ chains: BestChain[], node: DashboardNode }> {
+  private getDeepForks(chains: BestChain[], node: DashboardNode, maxLength: number): Observable<{
+    chains: BestChain[],
+    node: DashboardNode
+  }> {
     if (chains.length === 0) {
       return this.http
         .post<{ data: BestChainResponse }>(node.url, { query: bestChain(maxLength) }, this.options)

@@ -1,5 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { NodeStatus } from '@ocfe-shared/types/app/node-status.type';
 import { NetworkBlockIpc } from '@ocfe-app/shared/types/network/blocks-ipc/network-block-ipc.type';
 

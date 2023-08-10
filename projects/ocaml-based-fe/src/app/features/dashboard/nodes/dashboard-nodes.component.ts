@@ -7,11 +7,15 @@ import {
   DashboardNodesInit,
   DashboardNodesSetActiveBlock,
 } from '@ocfe-dashboard/nodes/dashboard-nodes.actions';
-import { selectDashboardNodes, selectDashboardNodesActiveNode, selectDashboardNodesRemainingRequests } from '@ocfe-dashboard/nodes/dashboard-nodes.state';
+import {
+  selectDashboardNodes,
+  selectDashboardNodesActiveNode,
+  selectDashboardNodesRemainingRequests
+} from '@ocfe-dashboard/nodes/dashboard-nodes.state';
 import { DashboardNode } from '@ocfe-shared/types/dashboard/nodes/dashboard-node.type';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
+import { getMergedRoute } from '@openmina/shared';
 import { filter, merge, take, throttleTime } from 'rxjs';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import { MergedRoute } from '@openmina/shared';
 import { AppNodeStatusTypes } from '@ocfe-shared/types/app/app-node-status-types.enum';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 

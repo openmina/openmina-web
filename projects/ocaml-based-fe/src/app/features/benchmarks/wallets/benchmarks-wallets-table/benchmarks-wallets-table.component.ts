@@ -5,8 +5,8 @@ import { selectActiveNode, selectAppNodeStatus } from '@ocfe-app/app.state';
 import { BenchmarksWalletsGetWallets } from '@ocfe-benchmarks/wallets/benchmarks-wallets.actions';
 import { NodeStatus } from '@ocfe-shared/types/app/node-status.type';
 import { selectBenchmarksWallets } from '@ocfe-benchmarks/wallets/benchmarks-wallets.state';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { TableColumnList } from '@openmina/shared';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-benchmarks-wallets-table',
@@ -15,7 +15,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class BenchmarksWalletsTableComponent extends MinaTableWrapper<BenchmarksWallet> implements OnInit {
+export class BenchmarksWalletsTableComponent extends MinaTableOcamlWrapper<BenchmarksWallet> implements OnInit {
 
   protected readonly tableHeads: TableColumnList<BenchmarksWallet> = [
     { name: 'public key' },

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { Effect } from '@openmina/shared';
 import { concatMap, filter, map, mergeMap, switchMap } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
@@ -30,7 +30,7 @@ import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.
 @Injectable({
   providedIn: 'root',
 })
-export class BenchmarksWalletsEffects extends MinaBaseEffect<BenchmarksWalletsActions> {
+export class BenchmarksWalletsEffects extends MinaOcamlBaseEffect<BenchmarksWalletsActions> {
 
   readonly getWallets$: Effect;
   readonly sendTxs$: Effect;

@@ -7,14 +7,12 @@ import {
 import { SystemResourcesActivePoint } from '@ocfe-shared/types/resources/system/system-resources-active-point.type';
 import { filter } from 'rxjs';
 import {
-  SystemResourcesRedrawCharts,
   SystemResourcesSetSidePanelActivePath,
   SystemResourcesSortThreads,
   SystemResourcesToggleSidePanel,
 } from '@ocfe-resources/system/system-resources.actions';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { SortDirection, TableHeadSorting, TableSort } from '@openmina/shared';
 import { SystemResourcesPointThread } from '@ocfe-shared/types/resources/system/system-resources-sub-point.type';
-import { TableHeadSorting } from '@ocfe-shared/types/shared/table-head-sorting.type';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import { Router } from '@angular/router';
 

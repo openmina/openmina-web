@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect, NonDispatchableEffect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { createNonDispatchableEffect, Effect, NonDispatchableEffect } from '@openmina/shared';
 import { filter, map, Subject, switchMap, takeUntil, tap, timer } from 'rxjs';
-import { catchErrorAndRepeat, createNonDispatchableEffect } from '@ocfe-shared/constants/store-functions';
+import { catchErrorAndRepeat } from '@ocfe-shared/constants/store-functions';
 import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.enum';
 import {
   NETWORK_CONNECTIONS_CLOSE,
@@ -26,7 +26,7 @@ import { NetworkConnectionsState } from '@ocfe-network/connections/network-conne
 @Injectable({
   providedIn: 'root',
 })
-export class NetworkConnectionsEffects extends MinaBaseEffect<NetworkConnectionsActions> {
+export class NetworkConnectionsEffects extends MinaOcamlBaseEffect<NetworkConnectionsActions> {
 
   readonly init$: Effect;
   readonly getConnections$: Effect;
