@@ -1,15 +1,22 @@
 import { ChangeDetectionStrategy, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
 import { Router } from '@angular/router';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
 import { take } from 'rxjs';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { WorkPool } from '@ocfe-shared/types/dsw/work-pool/work-pool.type';
-import { DswWorkPoolSetActiveWorkPool, DswWorkPoolSortWorkPool, DswWorkPoolToggleSidePanel } from '@ocfe-dsw/work-pool/dsw-work-pool.actions';
-import { selectDswWorkPoolActiveWorkPool, selectDswWorkPoolOpenSidePanel, selectDswWorkPools, selectDswWorkPoolSort } from '@ocfe-dsw/work-pool/dsw-work-pool.state';
+import {
+  DswWorkPoolSetActiveWorkPool,
+  DswWorkPoolSortWorkPool,
+  DswWorkPoolToggleSidePanel
+} from '@ocfe-dsw/work-pool/dsw-work-pool.actions';
+import {
+  selectDswWorkPoolActiveWorkPool,
+  selectDswWorkPoolOpenSidePanel,
+  selectDswWorkPools,
+  selectDswWorkPoolSort
+} from '@ocfe-dsw/work-pool/dsw-work-pool.state';
 import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-dsw-work-pool-table',
@@ -17,9 +24,15 @@ import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
   styleUrls: ['./dsw-work-pool-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DswWorkPoolTableComponent extends MinaTableWrapper<WorkPool> implements OnInit {
+export class DswWorkPoolTableComponent extends MinaTableOcamlWrapper<WorkPool> implements OnInit {
 
-  readonly secConfig: SecDurationConfig = { color: true, undefinedAlternative: '-', default: 100, warn: 500, severe: 1000 };
+  readonly secConfig: SecDurationConfig = {
+    color: true,
+    undefinedAlternative: '-',
+    default: 100,
+    warn: 500,
+    severe: 1000
+  };
   protected readonly tableHeads: TableColumnList<WorkPool> = [
     { name: 'datetime', sort: 'timestamp' },
     { name: 'id' },

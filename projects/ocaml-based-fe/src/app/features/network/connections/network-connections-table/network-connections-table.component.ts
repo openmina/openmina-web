@@ -2,13 +2,14 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { NetworkConnection } from '@ocfe-shared/types/network/connections/network-connection.type';
-import { selectNetworkConnections, selectNetworkConnectionsActiveConnection } from '@ocfe-network/connections/network-connections.state';
+import {
+  selectNetworkConnections,
+  selectNetworkConnectionsActiveConnection
+} from '@ocfe-network/connections/network-connections.state';
 import { NetworkConnectionsSelectConnection } from '@ocfe-network/connections/network-connections.actions';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
+import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
 import { filter, take } from 'rxjs';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-network-connections-table',
@@ -17,7 +18,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class NetworkConnectionsTableComponent extends MinaTableWrapper<NetworkConnection> implements OnInit {
+export class NetworkConnectionsTableComponent extends MinaTableOcamlWrapper<NetworkConnection> implements OnInit {
 
   protected readonly tableHeads: TableColumnList<NetworkConnection> = [
     { name: 'ID' },

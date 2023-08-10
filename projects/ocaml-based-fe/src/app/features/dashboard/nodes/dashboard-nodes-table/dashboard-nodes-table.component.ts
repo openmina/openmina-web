@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { getMergedRoute, MergedRoute, TableColumnList, toggleItem } from '@openmina/shared';
 import { DashboardNode } from '@ocfe-shared/types/dashboard/nodes/dashboard-node.type';
 import {
   selectDashboardNodes,
@@ -9,16 +9,16 @@ import {
   selectDashboardNodesEarliestBlockLevel,
   selectDashboardNodesSorting,
 } from '@ocfe-dashboard/nodes/dashboard-nodes.state';
-import { DashboardNodesSetActiveBlock, DashboardNodesSetActiveNode, DashboardNodesSort } from '@ocfe-dashboard/nodes/dashboard-nodes.actions';
+import {
+  DashboardNodesSetActiveBlock,
+  DashboardNodesSetActiveNode,
+  DashboardNodesSort
+} from '@ocfe-dashboard/nodes/dashboard-nodes.actions';
 import { filter, take } from 'rxjs';
-import { toggleItem } from '@ocfe-shared/helpers/array.helper';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { Router } from '@angular/router';
 import { CONFIG } from '@ocfe-shared/constants/config';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
-import { WorkPool } from '@ocfe-shared/types/dsw/work-pool/work-pool.type';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-dashboard-nodes-table',
@@ -27,9 +27,15 @@ import { WorkPool } from '@ocfe-shared/types/dsw/work-pool/work-pool.type';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class DashboardNodesTableComponent extends MinaTableWrapper<DashboardNode> implements OnInit {
+export class DashboardNodesTableComponent extends MinaTableOcamlWrapper<DashboardNode> implements OnInit {
 
-  readonly secConfig: SecDurationConfig = { color: true, default: 0.5, warn: 0.75, severe: 1, undefinedAlternative: '-' };
+  readonly secConfig: SecDurationConfig = {
+    color: true,
+    default: 0.5,
+    warn: 0.75,
+    severe: 1,
+    undefinedAlternative: '-'
+  };
   protected readonly tableHeads: TableColumnList<DashboardNode> = CONFIG.nodeLister
     ? [
       { name: 'name' },

@@ -2,10 +2,12 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import { DswBootstrapNode } from '@ocfe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
 import { selectDswBootstrapActiveNode } from '@ocfe-dsw/bootstrap/dsw-bootstrap.state';
-import { DswDashboardBlock, DswDashboardNodeBlockStatus } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
+import {
+  DswDashboardBlock,
+  DswDashboardNodeBlockStatus
+} from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
 import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { sort, SortDirection, TableSort } from '@openmina/shared';
 
 @Component({
   selector: 'mina-dsw-bootstrap-blocks',

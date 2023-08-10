@@ -1,7 +1,7 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { selectNetworkBlocksIpcState } from '@ocfe-network/network.state';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { NetworkBlockIpc } from '@ocfe-shared/types/network/blocks-ipc/network-block-ipc.type';
 
 export interface NetworkBlocksIpcState {

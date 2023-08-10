@@ -3,7 +3,7 @@ import { TracingBlockTrace } from '@ocfe-shared/types/tracing/blocks/tracing-blo
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { TracingTraceGroup } from '@ocfe-shared/types/tracing/blocks/tracing-trace-group.type';
 import { selectTracingBlocksState } from '@ocfe-tracing/tracing.state';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 
 export interface TracingBlocksState {
   traces: TracingBlockTrace[];

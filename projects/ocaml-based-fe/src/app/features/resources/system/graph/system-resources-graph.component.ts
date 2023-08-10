@@ -13,18 +13,23 @@ import { AxisDomain, curveLinear } from 'd3';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { SystemResourcesSetActivePoint } from '@ocfe-resources/system/system-resources.actions';
 import { SystemResourcesActivePoint } from '@ocfe-shared/types/resources/system/system-resources-active-point.type';
-import { noMillisFormat, toReadableDate } from '@ocfe-shared/helpers/date.helper';
 import { Router } from '@angular/router';
 import { SystemResourcesPoint } from '@ocfe-shared/types/resources/system/system-resources-point.type';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { MAX_WIDTH_700, MIN_WIDTH_1200, MIN_WIDTH_1600 } from '@ocfe-shared/constants/breakpoint-observer';
+import {
+  isMobile,
+  MAX_WIDTH_700,
+  MIN_WIDTH_1200,
+  MIN_WIDTH_1600,
+  noMillisFormat,
+  toReadableDate
+} from '@openmina/shared';
 import { debounceTime, delay, distinctUntilChanged, filter, fromEvent, skip } from 'rxjs';
 import { untilDestroyed } from '@ngneat/until-destroy';
 import { selectAppMenu } from '@ocfe-app/app.state';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import { selectSystemResourcesRedrawCharts } from '@ocfe-resources/system/system-resources.state';
-import { isMobile } from '@ocfe-shared/helpers/values.helper';
 
 @Component({
   selector: 'mina-system-resources-graph',

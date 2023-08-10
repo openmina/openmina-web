@@ -1,17 +1,19 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TracingBlockTrace } from '@ocfe-shared/types/tracing/blocks/tracing-block-trace.type';
 import { Router } from '@angular/router';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
 import { filter } from 'rxjs';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { selectTracingActiveTrace, selectTracingBlocksSorting, selectTracingTraces } from '@ocfe-tracing/tracing-blocks/tracing-blocks.state';
+import {
+  selectTracingActiveTrace,
+  selectTracingBlocksSorting,
+  selectTracingTraces
+} from '@ocfe-tracing/tracing-blocks/tracing-blocks.state';
 import { TracingBlocksSelectRow, TracingBlocksSort } from '@ocfe-tracing/tracing-blocks/tracing-blocks.actions';
 import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
 import { selectActiveNode } from '@ocfe-app/app.state';
 import { MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 const secDurationConfig: SecDurationConfig = {
   severe: 50,
@@ -28,7 +30,7 @@ const secDurationConfig: SecDurationConfig = {
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'h-100 flex-column' },
 })
-export class TracingBlocksTableComponent extends MinaTableWrapper<TracingBlockTrace> implements OnInit {
+export class TracingBlocksTableComponent extends MinaTableOcamlWrapper<TracingBlockTrace> implements OnInit {
 
   readonly secDurationConfig: SecDurationConfig = secDurationConfig;
   readonly origin: string = origin;

@@ -1,5 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { DswActionGroup } from '@ocfe-shared/types/dsw/actions/dsw-action-group.type';
 import { DswActionsStats } from '@ocfe-shared/types/dsw/actions/dsw-actions-stats.type';
 

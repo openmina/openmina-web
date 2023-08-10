@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { getMergedRoute, MergedRoute, SortDirection, TableSort } from '@openmina/shared';
 import { DswActionGroup } from '@ocfe-shared/types/dsw/actions/dsw-action-group.type';
 import { DswActionsGetActions, DswActionsSearch, DswActionsSort } from '@ocfe-dsw/actions/dsw-actions.actions';
 import { selectDswActionsToolbarValues } from '@ocfe-dsw/actions/dsw-actions.state';
@@ -9,8 +9,6 @@ import { untilDestroyed } from '@ngneat/until-destroy';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
 
 @Component({
   selector: 'mina-dsw-actions-toolbar',

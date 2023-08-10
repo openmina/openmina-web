@@ -1,5 +1,13 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef
+} from '@angular/core';
+import { isMobile, ManualDetection } from '@openmina/shared';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import {
@@ -29,7 +37,6 @@ import { distinctUntilChanged, filter } from 'rxjs';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
 import { BenchmarksWallet } from '@ocfe-shared/types/benchmarks/wallets/benchmarks-wallet.type';
-import { isMobile } from '@ocfe-shared/helpers/values.helper';
 
 interface TransactionForm {
   batch: FormControl<number>;
@@ -157,7 +164,10 @@ export class BenchmarksWalletsToolbarComponent extends ManualDetection implement
         }
         this.formGroup.get('batch').patchValue(payload);
         if (this.currentBatch !== payload) {
-          this.store.dispatch<BenchmarksWalletsChangeTransactionBatch>({ type: BENCHMARKS_WALLETS_CHANGE_TRANSACTION_BATCH, payload });
+          this.store.dispatch<BenchmarksWalletsChangeTransactionBatch>({
+            type: BENCHMARKS_WALLETS_CHANGE_TRANSACTION_BATCH,
+            payload
+          });
         }
       });
     this.formGroup.get('fee')

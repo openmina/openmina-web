@@ -1,8 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
-import { toggleItem } from '@ocfe-shared/helpers/array.helper';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import { getMergedRoute, MergedRoute, toggleItem } from '@openmina/shared';
 import { Router } from '@angular/router';
 
 @Component({

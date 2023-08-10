@@ -1,9 +1,8 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction, TimestampInterval } from '@openmina/shared';
 import { NetworkMessage } from '@ocfe-shared/types/network/messages/network-message.type';
 import { NetworkMessageConnection } from '@ocfe-shared/types/network/messages/network-messages-connection.type';
 import { NetworkMessagesFilter } from '@ocfe-shared/types/network/messages/network-messages-filter.type';
 import { NetworkMessagesDirection } from '@ocfe-shared/types/network/messages/network-messages-direction.enum';
-import { TimestampInterval } from '@ocfe-shared/types/shared/timestamp-interval.type';
 
 enum NetworkMessagesActionTypes {
   NETWORK_INIT = 'NETWORK_INIT',

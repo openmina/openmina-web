@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { TableHeadSorting } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { SortDirection, TableHeadSorting, TableSort } from '@openmina/shared';
 import { BenchmarksTransaction } from '@ocfe-shared/types/benchmarks/transactions/benchmarks-transaction.type';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
-import { selectBenchmarksTransactionList, selectBenchmarksTransactionSort } from '@ocfe-benchmarks/transactions/benchmarks-transactions.state';
+import {
+  selectBenchmarksTransactionList,
+  selectBenchmarksTransactionSort
+} from '@ocfe-benchmarks/transactions/benchmarks-transactions.state';
 import { BenchmarksTransactionsSort } from '@ocfe-benchmarks/transactions/benchmarks-transactions.actions';
 
 @Component({

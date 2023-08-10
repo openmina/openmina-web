@@ -1,6 +1,5 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { ExplorerBlock } from '@ocfe-shared/types/explorer/blocks/explorer-block.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
 import { ExplorerBlockTx } from '@ocfe-shared/types/explorer/blocks/explorer-block-tx.type';
 import { ExplorerBlockZkApp } from '@ocfe-shared/types/explorer/blocks/explorer-block-zk-app-type';
 

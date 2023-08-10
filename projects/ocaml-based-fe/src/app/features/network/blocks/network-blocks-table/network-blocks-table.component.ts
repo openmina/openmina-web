@@ -4,9 +4,9 @@ import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { selectNetworkBlocks, selectNetworkBlocksSorting } from '@ocfe-network/blocks/network-blocks.state';
 import { NetworkBlock } from '@ocfe-shared/types/network/blocks/network-block.type';
 import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { TableColumnList } from '@openmina/shared';
 import { NetworkBlocksSort } from '@ocfe-network/blocks/network-blocks.actions';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-network-blocks-table',
@@ -15,9 +15,15 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'h-100 flex-column' },
 })
-export class NetworkBlocksTableComponent extends MinaTableWrapper<NetworkBlock> implements OnInit {
+export class NetworkBlocksTableComponent extends MinaTableOcamlWrapper<NetworkBlock> implements OnInit {
 
-  readonly secConfig: SecDurationConfig = { onlySeconds: true, undefinedAlternative: '-', color: true, severe: 30, warn: 5 };
+  readonly secConfig: SecDurationConfig = {
+    onlySeconds: true,
+    undefinedAlternative: '-',
+    color: true,
+    severe: 30,
+    warn: 5
+  };
 
   protected readonly tableHeads: TableColumnList<NetworkBlock> = [
     { name: 'ID', sort: 'messageId' },

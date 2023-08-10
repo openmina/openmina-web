@@ -3,11 +3,10 @@ import { GraphQLService } from '@ocfe-core/services/graph-ql.service';
 import { catchError, map, Observable, of } from 'rxjs';
 import { BenchmarksWallet } from '@ocfe-shared/types/benchmarks/wallets/benchmarks-wallet.type';
 import { ConfigService } from '@ocfe-core/services/config.service';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
+import { ONE_MILLION, toReadableDate } from '@openmina/shared';
 import { BenchmarksMempoolTx } from '@ocfe-shared/types/benchmarks/wallets/benchmarks-mempool-tx.type';
 import { BenchmarksWalletTransaction } from '@ocfe-shared/types/benchmarks/wallets/benchmarks-wallet-transaction.type';
 import Client from 'mina-signer';
-import { ONE_MILLION } from '@ocfe-shared/constants/unit-measurements';
 
 export const WALLETS: any[] = [
   {

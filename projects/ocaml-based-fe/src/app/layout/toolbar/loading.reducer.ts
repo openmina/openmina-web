@@ -1,4 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction } from '@openmina/shared';
 import { MinaState } from '@ocfe-app/app.setup';
 import {
   DASHBOARD_SPLITS_CLOSE,
@@ -37,7 +37,11 @@ import {
   SW_TRACES_GET_WORKERS_SUCCESS,
   SW_TRACES_INIT,
 } from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.actions';
-import { EXPLORER_SNARKS_CLOSE, EXPLORER_SNARKS_GET_SNARKS, EXPLORER_SNARKS_GET_SNARKS_SUCCESS } from '@ocfe-explorer/snarks/explorer-snarks.actions';
+import {
+  EXPLORER_SNARKS_CLOSE,
+  EXPLORER_SNARKS_GET_SNARKS,
+  EXPLORER_SNARKS_GET_SNARKS_SUCCESS
+} from '@ocfe-explorer/snarks/explorer-snarks.actions';
 import {
   EXPLORER_TRANSACTIONS_CLOSE,
   EXPLORER_TRANSACTIONS_CREATE_TX,
@@ -73,7 +77,11 @@ import {
   NETWORK_GET_MESSAGE_HEX,
   NETWORK_GET_MESSAGE_HEX_SUCCESS,
 } from '@ocfe-network/messages/network-messages.actions';
-import { SYSTEM_RESOURCES_CLOSE, SYSTEM_RESOURCES_GET_RESOURCES, SYSTEM_RESOURCES_GET_RESOURCES_SUCCESS } from '@ocfe-resources/system/system-resources.actions';
+import {
+  SYSTEM_RESOURCES_CLOSE,
+  SYSTEM_RESOURCES_GET_RESOURCES,
+  SYSTEM_RESOURCES_GET_RESOURCES_SUCCESS
+} from '@ocfe-resources/system/system-resources.actions';
 import {
   TRACING_OVERVIEW_CLOSE,
   TRACING_OVERVIEW_GET_CHECKPOINTS,
@@ -86,7 +94,11 @@ import {
   TRACING_BLOCKS_GET_TRACES,
   TRACING_BLOCKS_GET_TRACES_SUCCESS,
 } from '@ocfe-tracing/tracing-blocks/tracing-blocks.actions';
-import { WEB_NODE_WALLET_CLOSE, WEB_NODE_WALLET_GET_WALLETS, WEB_NODE_WALLET_GET_WALLETS_SUCCESS } from '@ocfe-web-node/web-node-wallet/web-node-wallet.actions';
+import {
+  WEB_NODE_WALLET_CLOSE,
+  WEB_NODE_WALLET_GET_WALLETS,
+  WEB_NODE_WALLET_GET_WALLETS_SUCCESS
+} from '@ocfe-web-node/web-node-wallet/web-node-wallet.actions';
 import {
   WEB_NODE_SHARED_GET_LOGS,
   WEB_NODE_SHARED_GET_LOGS_SUCCESS,
@@ -111,8 +123,16 @@ import {
 } from '@ocfe-benchmarks/wallets/benchmarks-wallets.actions';
 import { WEB_NODE_PEERS_CLOSE } from '@ocfe-web-node/web-node-peers/web-node-peers.actions';
 import { WEB_NODE_LOGS_CLOSE } from '@ocfe-web-node/web-node-logs/web-node-logs.actions';
-import { DSW_DASHBOARD_CLOSE, DSW_DASHBOARD_GET_NODES_SUCCESS, DSW_DASHBOARD_INIT } from '@ocfe-dsw/dashboard/dsw-dashboard.actions';
-import { DSW_BOOTSTRAP_CLOSE, DSW_BOOTSTRAP_GET_NODES_SUCCESS, DSW_BOOTSTRAP_INIT } from '@ocfe-dsw/bootstrap/dsw-bootstrap.actions';
+import {
+  DSW_DASHBOARD_CLOSE,
+  DSW_DASHBOARD_GET_NODES_SUCCESS,
+  DSW_DASHBOARD_INIT
+} from '@ocfe-dsw/dashboard/dsw-dashboard.actions';
+import {
+  DSW_BOOTSTRAP_CLOSE,
+  DSW_BOOTSTRAP_GET_NODES_SUCCESS,
+  DSW_BOOTSTRAP_INIT
+} from '@ocfe-dsw/bootstrap/dsw-bootstrap.actions';
 import { DSW_LIVE_CLOSE, DSW_LIVE_GET_NODES_SUCCESS, DSW_LIVE_INIT } from '@ocfe-dsw/live/dsw-live.actions';
 import {
   DSW_WORK_POOL_CLOSE,

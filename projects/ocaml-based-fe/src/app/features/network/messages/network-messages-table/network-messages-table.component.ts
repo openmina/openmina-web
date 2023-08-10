@@ -13,23 +13,26 @@ import {
   NetworkMessagesSetTimestampInterval,
   NetworkMessagesToggleFilter,
 } from '@ocfe-network/messages/network-messages.actions';
-import { selectNetworkActiveFilters, selectNetworkActiveRow, selectNetworkMessages, selectNetworkStream } from '@ocfe-network/messages/network-messages.state';
+import {
+  selectNetworkActiveFilters,
+  selectNetworkActiveRow,
+  selectNetworkMessages,
+  selectNetworkStream
+} from '@ocfe-network/messages/network-messages.state';
 import { untilDestroyed } from '@ngneat/until-destroy';
 import { NetworkMessagesFilter } from '@ocfe-shared/types/network/messages/network-messages-filter.type';
 import { NetworkMessagesFilterTypes } from '@ocfe-shared/types/network/messages/network-messages-filter-types.enum';
 import { filter, fromEvent, take, throttleTime } from 'rxjs';
 import { NetworkMessagesFilterCategory } from '@ocfe-shared/types/network/messages/network-messages-filter-group.type';
-import { networkAvailableFilters } from '@ocfe-network/messages/network-messages-filters/network-messages-filters.component';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import {
+  networkAvailableFilters
+} from '@ocfe-network/messages/network-messages-filters/network-messages-filters.component';
+import { getMergedRoute, lastItem, MergedRoute, TableColumnList, TimestampInterval } from '@openmina/shared';
 import { Params, Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { TimestampInterval } from '@ocfe-shared/types/shared/timestamp-interval.type';
 import { NetworkMessagesDirection } from '@ocfe-shared/types/network/messages/network-messages-direction.enum';
 import { APP_UPDATE_DEBUGGER_STATUS, AppUpdateDebuggerStatus } from '@ocfe-app/app.actions';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
-import { lastItem } from '@ocfe-shared/helpers/array.helper';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-network-messages-table',
@@ -38,7 +41,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class NetworkMessagesTableComponent extends MinaTableWrapper<NetworkMessage> implements OnInit {
+export class NetworkMessagesTableComponent extends MinaTableOcamlWrapper<NetworkMessage> implements OnInit {
 
   protected readonly tableHeads: TableColumnList<NetworkMessage> = [
     { name: 'ID' },

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, Input, TemplateRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArrowHide, HorizontalMenuDirective } from './horizontal-menu.directive';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 
 
 @Component({

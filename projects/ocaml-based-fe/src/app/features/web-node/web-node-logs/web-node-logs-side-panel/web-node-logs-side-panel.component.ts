@@ -5,12 +5,14 @@ import { MinaState } from '@ocfe-app/app.setup';
 import { selectWebNodeLogsActiveLog } from '@ocfe-web-node/web-node-logs/web-node-logs.state';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { WEB_NODE_LOGS_SELECT_LOG, WebNodeLogsSelectLog } from '@ocfe-web-node/web-node-logs/web-node-logs.actions';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { downloadJson, ManualDetection } from '@openmina/shared';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs';
-import { downloadJson } from '@ocfe-app/shared/helpers/user-input.helper';
-import { ExpandTracking, MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
+import {
+  ExpandTracking,
+  MinaJsonViewerComponent
+} from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
 
 @UntilDestroy()
 @Component({

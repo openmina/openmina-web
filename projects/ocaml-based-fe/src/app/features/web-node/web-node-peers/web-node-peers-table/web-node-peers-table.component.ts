@@ -4,8 +4,8 @@ import { filter } from 'rxjs';
 import { selectWebNodePeersActivePeer } from '@ocfe-web-node/web-node-peers/web-node-peers.state';
 import { WebNodePeersSelectPeer } from '@ocfe-web-node/web-node-peers/web-node-peers.actions';
 import { selectWebNodePeers } from '@ocfe-web-node/web-node.state';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { TableColumnList } from '@openmina/shared';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-web-node-peers-table',
@@ -14,7 +14,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class WebNodePeersTableComponent extends MinaTableWrapper<WebNodeLog> implements OnInit {
+export class WebNodePeersTableComponent extends MinaTableOcamlWrapper<WebNodeLog> implements OnInit {
 
   protected readonly tableHeads: TableColumnList<WebNodeLog> = [
     { name: 'ID' },

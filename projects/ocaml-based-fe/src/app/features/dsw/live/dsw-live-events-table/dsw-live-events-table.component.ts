@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
 import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { TableColumnList } from '@openmina/shared';
 import { filter } from 'rxjs';
 import { DswLiveBlockEvent } from '@ocfe-shared/types/dsw/live/dsw-live-block-event.type';
 import { DswLiveSortEvents } from '@ocfe-dsw/live/dsw-live.actions';
 import { selectDswLiveFilteredEvents, selectDswLiveSort } from '@ocfe-dsw/live/dsw-live.state';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-dsw-live-events-table',
@@ -14,7 +14,7 @@ import { selectDswLiveFilteredEvents, selectDswLiveSort } from '@ocfe-dsw/live/d
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'h-minus-lg flex-column' },
 })
-export class DswLiveEventsTableComponent extends MinaTableWrapper<DswLiveBlockEvent> implements OnInit {
+export class DswLiveEventsTableComponent extends MinaTableOcamlWrapper<DswLiveBlockEvent> implements OnInit {
 
   readonly secConfig: SecDurationConfig = {
     color: true,

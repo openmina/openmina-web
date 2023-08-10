@@ -1,12 +1,12 @@
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort, toggleItem } from '@ocfe-shared/helpers/array.helper';
-import { isDesktop } from '@ocfe-shared/helpers/values.helper';
+import { isDesktop, sort, SortDirection, TableSort, toggleItem } from '@openmina/shared';
 import { DswWorkPoolState } from '@ocfe-dsw/work-pool/dsw-work-pool.state';
 import {
-  DSW_WORK_POOL_CLOSE, DSW_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS,
+  DSW_WORK_POOL_CLOSE,
+  DSW_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS,
   DSW_WORK_POOL_GET_WORK_POOL_SUCCESS,
   DSW_WORK_POOL_SET_ACTIVE_WORK_POOL,
-  DSW_WORK_POOL_SORT_WORK_POOL, DSW_WORK_POOL_TOGGLE_FILTER,
+  DSW_WORK_POOL_SORT_WORK_POOL,
+  DSW_WORK_POOL_TOGGLE_FILTER,
   DSW_WORK_POOL_TOGGLE_SIDE_PANEL,
   DswWorkPoolActions,
 } from '@ocfe-dsw/work-pool/dsw-work-pool.actions';
@@ -77,7 +77,7 @@ export function reducer(state: DswWorkPoolState = initialState, action: DswWorkP
         ...state,
         activeWorkPoolSpecs: action.payload[0],
         activeWorkPoolDetail: action.payload[1],
-      }
+      };
     }
 
     case DSW_WORK_POOL_CLOSE:

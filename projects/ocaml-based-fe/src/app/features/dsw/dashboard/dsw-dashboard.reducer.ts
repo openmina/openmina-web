@@ -6,8 +6,7 @@ import {
   DSW_DASHBOARD_SORT_NODES,
   DswDashboardActions,
 } from '@ocfe-dsw/dashboard/dsw-dashboard.actions';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { sort, SortDirection, TableSort } from '@openmina/shared';
 import { DswDashboardNode } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
 
 const initialState: DswDashboardState = {

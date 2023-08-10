@@ -1,12 +1,11 @@
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { lastItem, sort, toggleItem } from '@ocfe-shared/helpers/array.helper';
-import { isDesktop } from '@ocfe-shared/helpers/values.helper';
+import { isDesktop, lastItem, sort, SortDirection, TableSort, toggleItem } from '@openmina/shared';
 import { DswLiveState } from '@ocfe-dsw/live/dsw-live.state';
 import {
   DSW_LIVE_CLOSE,
   DSW_LIVE_GET_NODES_SUCCESS,
   DSW_LIVE_SET_ACTIVE_NODE,
-  DSW_LIVE_SORT_EVENTS, DSW_LIVE_TOGGLE_FILTER,
+  DSW_LIVE_SORT_EVENTS,
+  DSW_LIVE_TOGGLE_FILTER,
   DSW_LIVE_TOGGLE_SIDE_PANEL,
   DswLiveActions,
 } from '@ocfe-dsw/live/dsw-live.actions';

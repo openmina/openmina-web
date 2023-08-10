@@ -1,7 +1,6 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { DashboardSplits } from '@ocfe-shared/types/dashboard/splits/dashboard-splits.type';
 import { DashboardSplitsPeer } from '@ocfe-shared/types/dashboard/splits/dashboard-splits-peer.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
 
 enum DashboardSplitsActionTypes {
   DASHBOARD_SPLITS_CLOSE = 'DASHBOARD_SPLITS_CLOSE',

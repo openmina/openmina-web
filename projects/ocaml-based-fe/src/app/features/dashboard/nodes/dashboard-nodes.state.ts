@@ -1,6 +1,6 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { selectDashboardNodesState } from '@ocfe-dashboard/dashboard.state';
 import { DashboardNode } from '@ocfe-shared/types/dashboard/nodes/dashboard-node.type';
 import { DashboardNodeCount } from '@ocfe-shared/types/dashboard/nodes/dashboard-node-count.type';

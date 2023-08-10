@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
+import { ONE_MILLION, ONE_THOUSAND, toReadableDate } from '@openmina/shared';
 import { NetworkMessagesDirection } from '@ocfe-shared/types/network/messages/network-messages-direction.enum';
 import { NetworkConnection } from '@ocfe-shared/types/network/connections/network-connection.type';
-import { ONE_MILLION, ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
 import { ConfigService } from '@ocfe-core/services/config.service';
 
 @Injectable({

@@ -1,4 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction } from '@openmina/shared';
 import { MinaError } from '@ocfe-shared/types/error-preview/mina-error.type';
 
 enum ErrorPreviewActionTypes {

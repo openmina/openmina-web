@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { Effect } from '@openmina/shared';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
@@ -28,7 +28,7 @@ import { Routes } from '@ocfe-shared/enums/routes.enum';
 @Injectable({
   providedIn: 'root',
 })
-export class ExplorerTransactionsEffects extends MinaBaseEffect<ExplorerTransactionsActions> {
+export class ExplorerTransactionsEffects extends MinaOcamlBaseEffect<ExplorerTransactionsActions> {
 
   readonly getTxs$: Effect;
   readonly newTx$: Effect;

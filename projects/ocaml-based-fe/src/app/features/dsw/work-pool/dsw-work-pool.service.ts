@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable, of, switchMap, tap } from 'rxjs';
 import { WorkPool } from '@ocfe-shared/types/dsw/work-pool/work-pool.type';
 import { HttpClient } from '@angular/common/http';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
-import { ONE_BILLION, ONE_MILLION, ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
+import { ONE_BILLION, ONE_MILLION, ONE_THOUSAND, toReadableDate } from '@openmina/shared';
 import { WorkPoolSpecs } from '@ocfe-shared/types/dsw/work-pool/work-pool-specs.type';
 import { WorkPoolDetail } from '@ocfe-shared/types/dsw/work-pool/work-pool-detail.type';
 import { WorkPoolCommitment } from '@ocfe-shared/types/dsw/work-pool/work-pool-commitment.type';
@@ -28,7 +27,7 @@ export class DswWorkPoolService {
         return this.http.get<any[]>(this.rust.URL + '/snarker/config').pipe(
           tap((config: any) => this.snarkerHash = config.public_key),
           map(() => response),
-        )
+        );
       }),
       map((response: any[]) => this.mapWorkPoolResponse(response)),
     );
@@ -54,6 +53,10 @@ export class DswWorkPoolService {
       if (commitment) {
         work.commitment = {
           ...commitment,
+          commitment: {
+            ...commitment.commitment,
+            timestamp: commitment.commitment.timestamp,
+          },
           date: toReadableDate(commitment.commitment.timestamp),
         };
         work.commitmentRecLatency = (commitment.received_t - item.time) / ONE_BILLION;

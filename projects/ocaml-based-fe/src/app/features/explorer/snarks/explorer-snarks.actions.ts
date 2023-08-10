@@ -1,5 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { ExplorerSnark } from '@ocfe-shared/types/explorer/snarks/explorer-snarks.type';
 
 enum ExplorerSnarksActionTypes {

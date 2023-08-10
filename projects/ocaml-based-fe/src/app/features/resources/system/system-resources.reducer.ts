@@ -1,6 +1,7 @@
 import {
   SYSTEM_RESOURCES_CLOSE,
-  SYSTEM_RESOURCES_GET_RESOURCES_SUCCESS, SYSTEM_RESOURCES_REDRAW_CHARTS,
+  SYSTEM_RESOURCES_GET_RESOURCES_SUCCESS,
+  SYSTEM_RESOURCES_REDRAW_CHARTS,
   SYSTEM_RESOURCES_SET_ACTIVE_POINT,
   SYSTEM_RESOURCES_SET_ACTIVE_TIME,
   SYSTEM_RESOURCES_SET_SIDE_PANEL_ACTIVE_PATH,
@@ -10,10 +11,8 @@ import {
 } from '@ocfe-resources/system/system-resources.actions';
 import { SystemResourcesState } from '@ocfe-resources/system/system-resources.state';
 import { SystemResourcesPoint } from '@ocfe-shared/types/resources/system/system-resources-point.type';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { any, isMobile, sort, SortDirection, TableSort } from '@openmina/shared';
 import { SystemResourcesPointThread } from '@ocfe-shared/types/resources/system/system-resources-sub-point.type';
-import { any, isMobile } from '@ocfe-shared/helpers/values.helper';
 
 const totals = ['var(--success-primary)', '#59bfb5'];
 const colors = ['#8a3ffc', '#ff7eb6', '#d2a106', '#ba4e00', '#33b1ff', '#fa4d56', '#4589ff', '#08bdba', '#d4bbff', '#007d79', '#fff1f1', '#d12771'];

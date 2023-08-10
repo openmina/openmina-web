@@ -9,11 +9,9 @@ import {
   DSW_ACTIONS_TOGGLE_SIDE_PANEL,
   DswActionsActions,
 } from '@ocfe-dsw/actions/dsw-actions.actions';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { isMobile, sort, SortDirection, TableSort } from '@openmina/shared';
 import { DswActionGroup } from '@ocfe-shared/types/dsw/actions/dsw-action-group.type';
 import { DswActionsStats } from '@ocfe-shared/types/dsw/actions/dsw-actions-stats.type';
-import { isMobile } from '@ocfe-shared/helpers/values.helper';
 
 const initialState: DswActionsState = {
   groups: [],

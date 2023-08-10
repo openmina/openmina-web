@@ -3,7 +3,7 @@ import { MinaState } from '@ocfe-app/app.setup';
 import { selectDswLiveState } from '@ocfe-dsw/dsw.state';
 import { DswLiveNode } from '@ocfe-shared/types/dsw/live/dsw-live-node.type';
 import { DswLiveBlockEvent } from '@ocfe-shared/types/dsw/live/dsw-live-block-event.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 
 export interface DswLiveState {
   nodes: DswLiveNode[];

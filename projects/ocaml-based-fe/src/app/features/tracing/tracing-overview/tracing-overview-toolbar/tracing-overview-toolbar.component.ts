@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { SortDirection } from '@ocfe-shared/types/shared/table-sort.type';
+import { SortDirection } from '@openmina/shared';
 import { selectTracingOverviewCondensedView, selectTracingOverviewSortDirection } from '@ocfe-tracing/tracing-overview/tracing-overview.state';
 import { TracingOverviewSort, TracingOverviewToggleCondensedView } from '@ocfe-tracing/tracing-overview/tracing-overview.actions';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';

@@ -1,10 +1,26 @@
-import { ChangeDetectionStrategy, Component, ComponentRef, ElementRef, Input, NgZone, OnChanges, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ComponentRef,
+  ElementRef,
+  Input,
+  NgZone,
+  OnChanges,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import { AppNodeStatusTypes } from '@ocfe-shared/types/app/app-node-status-types.enum';
-import { selectActiveNode, selectAppDebuggerStatus, selectAppMenu, selectAppNodeStatus, selectNodes } from '@ocfe-app/app.state';
+import {
+  selectActiveNode,
+  selectAppDebuggerStatus,
+  selectAppMenu,
+  selectAppNodeStatus,
+  selectNodes
+} from '@ocfe-app/app.state';
 import { BehaviorSubject, filter, take } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { isMobile, ManualDetection } from '@openmina/shared';
 import { NodeStatus } from '@ocfe-shared/types/app/node-status.type';
 import { DebuggerStatus } from '@ocfe-shared/types/app/debugger-status.type';
 import { WebNodeStatus } from '@ocfe-shared/types/app/web-node-status.type';
@@ -15,7 +31,6 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { CONFIG, isFeatureEnabled } from '@ocfe-shared/constants/config';
 import { NodePickerComponent } from '@ocfe-app/layout/node-picker/node-picker.component';
-import { isMobile } from '@ocfe-shared/helpers/values.helper';
 
 const TOOLTIP_MESSAGES: { [p: string]: string } = {
   [AppNodeStatusTypes.OFFLINE.toLowerCase()]: 'Is when the node has not received any messages for a while',

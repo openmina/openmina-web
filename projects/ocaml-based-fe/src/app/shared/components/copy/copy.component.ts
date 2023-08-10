@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit } from '@angular/core';
-import { EagerSharedModule } from '@ocfe-shared/eager-shared.module';
+import { OpenminaEagerSharedModule } from '@openmina/shared';
 
 @Component({
   selector: 'mina-copy',
@@ -7,7 +7,7 @@ import { EagerSharedModule } from '@ocfe-shared/eager-shared.module';
   styleUrls: ['./copy.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [EagerSharedModule],
+  imports: [OpenminaEagerSharedModule],
 })
 export class CopyComponent implements OnInit {
 

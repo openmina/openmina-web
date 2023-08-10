@@ -4,8 +4,11 @@ import { NetworkConnection } from '@ocfe-shared/types/network/connections/networ
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { Router } from '@angular/router';
 import { NetworkConnectionsSelectConnection } from '@ocfe-network/connections/network-connections.actions';
-import { downloadJson } from '@ocfe-app/shared/helpers/user-input.helper';
-import { ExpandTracking, MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
+import { downloadJson } from '@openmina/shared';
+import {
+  ExpandTracking,
+  MinaJsonViewerComponent
+} from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({

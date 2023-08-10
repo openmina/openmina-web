@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { MICROSEC_IN_1_SEC, MILLISEC_IN_1_SEC, NANOSEC_IN_1_SEC } from '@ocfe-shared/constants/unit-measurements';
+import { hasValue, MICROSEC_IN_1_SEC, MILLISEC_IN_1_SEC, NANOSEC_IN_1_SEC } from '@openmina/shared';
 import { formatNumber } from '@angular/common';
-import { hasValue } from '@ocfe-shared/helpers/values.helper';
 
 interface SecDurationConfigDefinition {
   severe: number;

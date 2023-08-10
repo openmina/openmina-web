@@ -1,6 +1,5 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { DswFrontierLog } from '@ocfe-shared/types/dsw/frontier/dsw-frontier-log.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
 
 enum DswFrontierActionTypes {
   DSW_FRONTIER_GET_LOGS = 'DSW_FRONTIER_GET_LOGS',

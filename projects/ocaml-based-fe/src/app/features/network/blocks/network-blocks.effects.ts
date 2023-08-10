@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect, NonDispatchableEffect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { createNonDispatchableEffect, Effect, NonDispatchableEffect } from '@openmina/shared';
 import { filter, map, Subject, switchMap, takeUntil, tap, timer } from 'rxjs';
-import { catchErrorAndRepeat, createNonDispatchableEffect } from '@ocfe-shared/constants/store-functions';
+import { catchErrorAndRepeat } from '@ocfe-shared/constants/store-functions';
 import { MinaErrorType } from '@ocfe-shared/types/error-preview/mina-error-type.enum';
 import {
   NETWORK_BLOCKS_CLOSE,
@@ -29,7 +29,7 @@ import { NetworkBlocksState } from '@ocfe-network/blocks/network-blocks.state';
 @Injectable({
   providedIn: 'root',
 })
-export class NetworkBlocksEffects extends MinaBaseEffect<NetworkBlocksActions> {
+export class NetworkBlocksEffects extends MinaOcamlBaseEffect<NetworkBlocksActions> {
 
   readonly init$: Effect;
   readonly earliestBlock$: Effect;

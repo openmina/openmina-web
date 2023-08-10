@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
+import { hasValue, ONE_THOUSAND, removeLast } from '@openmina/shared';
 import { HttpClient } from '@angular/common/http';
 import { ConfigService } from '@ocfe-core/services/config.service';
-import { hasValue } from '@ocfe-shared/helpers/values.helper';
 import { SnarkWorkerTraceJob } from '@ocfe-shared/types/explorer/snark-traces/snark-worker-trace-job.type';
 import { SnarkWorkerTraceFilter } from '@ocfe-shared/types/explorer/snark-traces/snark-worker-trace-filters.type';
-import { removeLast } from '@ocfe-shared/helpers/array.helper';
 
 @Injectable({
   providedIn: 'root',

@@ -12,14 +12,12 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { MAX_WIDTH_700 } from '@ocfe-shared/constants/breakpoint-observer';
+import { getXTicks, ManualDetection, MAX_WIDTH_700, niceYScale } from '@openmina/shared';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
-import { getXTicks, niceYScale } from '@ocfe-shared/helpers/graph.helper';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
 import { CommonModule } from '@angular/common';
 
 class ChartColumn {
@@ -224,7 +222,7 @@ export class BarGraphComponent extends ManualDetection implements OnInit, AfterV
       yTicks.push(i);
     }
     if (yTicks.length === 0) {
-      yTicks.push(6,5,4,3,2,1,0);
+      yTicks.push(6, 5, 4, 3, 2, 1, 0);
     }
 
     return yTicks;

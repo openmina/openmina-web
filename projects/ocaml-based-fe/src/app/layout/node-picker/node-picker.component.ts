@@ -4,7 +4,7 @@ import { debounceTime, distinctUntilChanged, filter, fromEvent, map } from 'rxjs
 import { APP_ADD_NODE, APP_CHANGE_ACTIVE_NODE, AppAddNode, AppChangeActiveNode } from '@ocfe-app/app.actions';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()

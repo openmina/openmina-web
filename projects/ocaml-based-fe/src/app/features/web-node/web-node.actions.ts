@@ -1,4 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction } from '@openmina/shared';
 import { WebNodeLog } from '@ocfe-shared/types/web-node/logs/web-node-log.type';
 
 enum WebNodeSharedActionTypes {

@@ -1,10 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { untilDestroyed } from '@ngneat/until-destroy';
 import { catchError, debounceTime, EMPTY, filter, switchMap, take, tap } from 'rxjs';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { getMergedRoute, MergedRoute, sort, TableSort } from '@openmina/shared';
 import { SnarkWorkersTracesService } from './snark-workers-traces.service';
 import { SnarkWorkerTraceJob } from '@ocfe-shared/types/explorer/snark-traces/snark-worker-trace-job.type';
 import {

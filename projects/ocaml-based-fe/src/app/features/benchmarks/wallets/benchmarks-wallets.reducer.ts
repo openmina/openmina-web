@@ -14,7 +14,7 @@ import {
 } from '@ocfe-benchmarks/wallets/benchmarks-wallets.actions';
 import { BenchmarksWallet } from '@ocfe-shared/types/benchmarks/wallets/benchmarks-wallet.type';
 import { BenchmarksWalletTransaction } from '@ocfe-shared/types/benchmarks/wallets/benchmarks-wallet-transaction.type';
-import { ONE_BILLION } from '@ocfe-shared/constants/unit-measurements';
+import { ONE_BILLION } from '@openmina/shared';
 import { BenchmarksWalletsState } from '@ocfe-benchmarks/wallets/benchmarks-wallets.state';
 
 const initialState: BenchmarksWalletsState = {

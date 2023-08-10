@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { Effect } from '@openmina/shared';
 import { EMPTY, map, switchMap } from 'rxjs';
 import {
   DASHBOARD_SPLITS_CLOSE,
@@ -27,7 +27,7 @@ import { DashboardSplitsState } from '@ocfe-dashboard/splits/dashboard-splits.st
 @Injectable({
   providedIn: 'root',
 })
-export class DashboardSplitsEffects extends MinaBaseEffect<DashboardSplitsActions> {
+export class DashboardSplitsEffects extends MinaOcamlBaseEffect<DashboardSplitsActions> {
 
   readonly getSplits$: Effect;
   readonly splitNodes$: Effect;

@@ -1,15 +1,16 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { getMergedRoute, MergedRoute, TableColumnList, TableSort } from '@openmina/shared';
 import { ExplorerSnark } from '@ocfe-shared/types/explorer/snarks/explorer-snarks.type';
 import { ExplorerSnarksSetActiveSnark, ExplorerSnarksSort } from '@ocfe-explorer/snarks/explorer-snarks.actions';
-import { selectExplorerSnarks, selectExplorerSnarksActiveSnark, selectExplorerSnarksSorting } from '@ocfe-explorer/snarks/explorer-snarks.state';
+import {
+  selectExplorerSnarks,
+  selectExplorerSnarksActiveSnark,
+  selectExplorerSnarksSorting
+} from '@ocfe-explorer/snarks/explorer-snarks.state';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
 import { filter, take } from 'rxjs';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-explorer-snarks-table',
@@ -18,7 +19,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class ExplorerSnarksTableComponent extends MinaTableWrapper<ExplorerSnark> implements OnInit {
+export class ExplorerSnarksTableComponent extends MinaTableOcamlWrapper<ExplorerSnark> implements OnInit {
 
   protected readonly tableHeads: TableColumnList<ExplorerSnark> = [
     { name: 'prover' },

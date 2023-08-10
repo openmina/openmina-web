@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MinaBaseEffect } from '@ocfe-shared/base-classes/mina-base.effect';
-import { Effect } from '@ocfe-shared/types/store/effect.type';
+import { MinaOcamlBaseEffect } from '@ocfe-shared/base-classes/mina-ocaml-base.effect';
+import { Effect } from '@openmina/shared';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { MinaState, selectMinaState } from '@ocfe-app/app.setup';
@@ -28,7 +28,7 @@ import { ExplorerBlockZkApp } from '@ocfe-shared/types/explorer/blocks/explorer-
 @Injectable({
   providedIn: 'root',
 })
-export class ExplorerBlocksEffects extends MinaBaseEffect<ExplorerBlocksActions> {
+export class ExplorerBlocksEffects extends MinaOcamlBaseEffect<ExplorerBlocksActions> {
 
   readonly getBlocks$: Effect;
   readonly setActiveBlock$: Effect;

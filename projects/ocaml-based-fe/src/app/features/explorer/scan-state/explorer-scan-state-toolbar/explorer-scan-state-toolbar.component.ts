@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { Router } from '@angular/router';

@@ -4,9 +4,11 @@ import { map, Observable } from 'rxjs';
 import { DswDashboardNode } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
 import { DswLiveNode } from '@ocfe-shared/types/dsw/live/dsw-live-node.type';
 import { DswLiveBlockEvent } from '@ocfe-shared/types/dsw/live/dsw-live-block-event.type';
-import { DswDashboardBlock, DswDashboardNodeBlockStatus } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
-import { ONE_MILLION } from '@ocfe-shared/constants/unit-measurements';
+import {
+  DswDashboardBlock,
+  DswDashboardNodeBlockStatus
+} from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
+import { ONE_MILLION, toReadableDate } from '@openmina/shared';
 import { RustNodeService } from '@ocfe-core/services/rust-node.service';
 
 @Injectable({

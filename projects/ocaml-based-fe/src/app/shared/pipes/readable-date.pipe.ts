@@ -1,13 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
-import { ONE_MILLION } from '@ocfe-shared/constants/unit-measurements';
+import { ONE_MILLION, toReadableDate } from '@openmina/shared';
 
 @Pipe({
   name: 'readableDate',
 })
 export class ReadableDatePipe implements PipeTransform {
   transform(value: number, format?: string): string {
-    if (value > 1e12) {
+    if (value > 1e13) {
       value = value / ONE_MILLION;
     }
 

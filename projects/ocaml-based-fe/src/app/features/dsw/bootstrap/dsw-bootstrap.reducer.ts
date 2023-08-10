@@ -1,5 +1,4 @@
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { sort, SortDirection, TableSort } from '@openmina/shared';
 import { DswBootstrapState } from '@ocfe-dsw/bootstrap/dsw-bootstrap.state';
 import {
   DSW_BOOTSTRAP_CLOSE,
@@ -10,7 +9,7 @@ import {
   DswBootstrapActions,
 } from '@ocfe-dsw/bootstrap/dsw-bootstrap.actions';
 import { DswBootstrapNode } from '@ocfe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
-import { isDesktop } from '@ocfe-shared/helpers/values.helper';
+import { isDesktop } from '@openmina/shared';
 
 const initialState: DswBootstrapState = {
   nodes: [],

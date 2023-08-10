@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { selectSWTracesActiveRow } from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.state';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { SnarkWorkerTraceJob } from '@ocfe-shared/types/explorer/snark-traces/snark-worker-trace-job.type';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { SW_TRACES_SET_ACTIVE_JOB, SWTracesSetActiveJob } from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.actions';

@@ -1,10 +1,18 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { NetworkMessagesChangeTab, NetworkMessagesSetActiveRow } from '@ocfe-network/messages/network-messages.actions';
 import { NetworkMessage } from '@ocfe-shared/types/network/messages/network-message.type';
-import { ExpandTracking, MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
+import {
+  ExpandTracking,
+  MinaJsonViewerComponent
+} from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
 import { NetworkMessageConnection } from '@ocfe-shared/types/network/messages/network-messages-connection.type';
-import { selectNetworkActiveRow, selectNetworkConnection, selectNetworkFullMessage, selectNetworkMessageHex } from '@ocfe-network/messages/network-messages.state';
-import { downloadJson, downloadJsonFromURL } from '@ocfe-shared/helpers/user-input.helper';
+import {
+  selectNetworkActiveRow,
+  selectNetworkConnection,
+  selectNetworkFullMessage,
+  selectNetworkMessageHex
+} from '@ocfe-network/messages/network-messages.state';
+import { downloadJson, downloadJsonFromURL } from '@openmina/shared';
 import { filter } from 'rxjs';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';

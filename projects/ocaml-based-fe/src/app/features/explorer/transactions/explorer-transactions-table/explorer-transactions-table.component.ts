@@ -1,11 +1,14 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { TableColumnList } from '@openmina/shared';
 import { ExplorerTransaction } from '@ocfe-shared/types/explorer/transactions/explorer-transaction.type';
-import { selectExplorerTransactions, selectExplorerTransactionsSorting } from '@ocfe-explorer/transactions/explorer-transactions.state';
+import {
+  selectExplorerTransactions,
+  selectExplorerTransactionsSorting
+} from '@ocfe-explorer/transactions/explorer-transactions.state';
 import { ExplorerTransactionsSort } from '@ocfe-explorer/transactions/explorer-transactions.actions';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-explorer-transactions-table',
@@ -14,7 +17,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class ExplorerTransactionsTableComponent extends MinaTableWrapper<ExplorerTransaction> implements OnInit {
+export class ExplorerTransactionsTableComponent extends MinaTableOcamlWrapper<ExplorerTransaction> implements OnInit {
 
   protected readonly tableHeads: TableColumnList<ExplorerTransaction> = [
     { name: 'transaction ID', sort: 'id' },
@@ -29,7 +32,7 @@ export class ExplorerTransactionsTableComponent extends MinaTableWrapper<Explore
 
   txs: ExplorerTransaction[] = [];
 
-  constructor(private router: Router) { super() }
+  constructor(private router: Router) { super(); }
 
   override async ngOnInit(): Promise<void> {
     await super.ngOnInit();

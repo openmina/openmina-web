@@ -24,15 +24,15 @@
 }
 
 :host ::ng-deep .mina-table .row .th {
-	@for $i from 5 through 8 {
+	@for $i from 3 through 6 {
 		span:nth-child(#{$i}) {
-			color: $base-primary !important;
+			color: $special-selected-alt-3-primary !important;
 		}
 	}
 
-	@for $i from 9 through 12 {
+	@for $i from 7 through 9 {
 		span:nth-child(#{$i}) {
-			color: $success-primary !important;
+			color: $special-selected-alt-1-primary !important;
 		}
 	}
 }

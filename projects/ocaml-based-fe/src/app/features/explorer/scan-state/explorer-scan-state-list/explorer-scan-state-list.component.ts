@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, ElementRef, OnInit, QueryList, View
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection } from '@openmina/shared';
 import { selectExplorerScanStateCenterTrees, selectExplorerScanStateTree } from '@ocfe-explorer/scan-state/explorer-scan-state.state';
 import { ExplorerScanStateTree } from '@ocfe-shared/types/explorer/scan-state/explorer-scan-state-tree.type';
 import { ExplorerScanStateLeaf } from '@ocfe-shared/types/explorer/scan-state/explorer-scan-state-leaf.type';

@@ -3,10 +3,9 @@ import { map, Observable } from 'rxjs';
 import { DswActionGroup } from '@ocfe-shared/types/dsw/actions/dsw-action-group.type';
 import { DswActionGroupAction } from '@ocfe-shared/types/dsw/actions/dsw-action-group-action.type';
 import { DswActionColumn } from '@ocfe-shared/types/dsw/actions/dsw-action-column.type';
-import { NANOSEC_IN_1_SEC, ONE_MILLION } from '@ocfe-shared/constants/unit-measurements';
+import { NANOSEC_IN_1_SEC, ONE_MILLION, toReadableDate } from '@openmina/shared';
 import { HttpClient } from '@angular/common/http';
 import { DswActionsStats } from '@ocfe-shared/types/dsw/actions/dsw-actions-stats.type';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
 import { RustNodeService } from '@ocfe-core/services/rust-node.service';
 
 @Injectable({

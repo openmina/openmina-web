@@ -3,7 +3,7 @@ import { DswDashboardBlock } from '@ocfe-app/shared/types/dsw/dashboard/dsw-dash
 import { DswLiveNode } from '@ocfe-app/shared/types/dsw/live/dsw-live-node.type';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import { selectDswLiveActiveNode } from '../dsw-live.state';
-import { lastItem } from '@ocfe-shared/helpers/array.helper';
+import { lastItem } from '@openmina/shared';
 
 @Component({
   selector: 'mina-dsw-live-blocks-map',

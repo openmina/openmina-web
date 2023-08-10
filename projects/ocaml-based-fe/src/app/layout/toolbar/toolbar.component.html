@@ -10,10 +10,7 @@
   </div>
   <div class="flex-row flex-end align-center">
     <mina-error-preview></mina-error-preview>
-    <div class="percentage text-right flex-end pr-5 selected-primary flex-row align-center" *ngIf="definiteLoading">
-      {{ definiteLoading.remaining }} remaining, <span>{{ definiteLoading.percentage }}</span>% completed
-    </div>
     <mina-server-status [switchForbidden]="switchForbidden"></mina-server-status>
   </div>
-  <div #loadingRef id="loadingRef" class="loading p-absolute" [class.opacity-0]="!!definiteLoading"></div>
+  <div #loadingRef id="loadingRef" class="loading p-absolute"></div>
 </div>

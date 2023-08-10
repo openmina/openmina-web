@@ -1,4 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction } from '@openmina/shared';
 import { BenchmarksWallet } from '@ocfe-shared/types/benchmarks/wallets/benchmarks-wallet.type';
 import { BenchmarksMempoolTx } from '@ocfe-shared/types/benchmarks/wallets/benchmarks-mempool-tx.type';
 import { BenchmarksWalletTransaction } from '@ocfe-shared/types/benchmarks/wallets/benchmarks-wallet-transaction.type';

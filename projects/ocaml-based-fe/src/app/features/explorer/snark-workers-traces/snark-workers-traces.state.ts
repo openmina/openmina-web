@@ -1,6 +1,6 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { selectExplorerSnarkTracesState } from '@ocfe-explorer/explorer.state';
 import { SnarkWorkerTraceJob } from '@ocfe-shared/types/explorer/snark-traces/snark-worker-trace-job.type';
 import { SnarkWorkerTraceFilter } from '@ocfe-shared/types/explorer/snark-traces/snark-worker-trace-filters.type';

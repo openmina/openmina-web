@@ -1,4 +1,4 @@
-import { SortDirection } from '@ocfe-shared/types/shared/table-sort.type';
+import { SortDirection } from '@openmina/shared';
 import { SnarkWorkersTracesState } from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.state';
 import {
   SW_TRACES_CLOSE,

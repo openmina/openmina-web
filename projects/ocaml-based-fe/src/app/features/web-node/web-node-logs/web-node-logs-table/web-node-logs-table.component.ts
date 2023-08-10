@@ -5,11 +5,9 @@ import { WebNodeLogsSelectLog } from '@ocfe-web-node/web-node-logs/web-node-logs
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
 import { selectWebNodeLogs } from '@ocfe-web-node/web-node.state';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-web-node-logs-table',
@@ -18,7 +16,7 @@ import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.c
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column h-100' },
 })
-export class WebNodeLogsTableComponent extends MinaTableWrapper<WebNodeLog> implements OnInit {
+export class WebNodeLogsTableComponent extends MinaTableOcamlWrapper<WebNodeLog> implements OnInit {
 
   protected readonly tableHeads: TableColumnList<WebNodeLog> = [
     { name: 'ID' },

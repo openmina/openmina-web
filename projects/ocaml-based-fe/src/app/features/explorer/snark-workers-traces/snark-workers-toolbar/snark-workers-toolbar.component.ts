@@ -1,20 +1,28 @@
-import { ChangeDetectionStrategy, Component, ComponentRef, ElementRef, Input, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ComponentRef,
+  ElementRef,
+  Input,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { selectSWTracesFilter } from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.state';
-import { ManualDetection } from '@ocfe-shared/base-classes/manual-detection.class';
+import { ManualDetection, TimestampInterval, toggleItem } from '@openmina/shared';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, TemplatePortal } from '@angular/cdk/portal';
 import { SW_TRACES_GET_JOBS, SWTracesGetJobs } from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.actions';
 import { Router } from '@angular/router';
 import { IntervalSelectComponent } from '@ocfe-shared/components/interval-select/interval-select.component';
-import { TimestampInterval } from '@ocfe-shared/types/shared/timestamp-interval.type';
 import { DatePipe } from '@angular/common';
 import { take } from 'rxjs';
 import { SnarkWorkerTraceJob } from '@ocfe-app/shared/types/explorer/snark-traces/snark-worker-trace-job.type';
 import { SnarkWorkerTraceFilter } from '@ocfe-shared/types/explorer/snark-traces/snark-worker-trace-filters.type';
-import { toggleItem } from '@ocfe-shared/helpers/array.helper';
 
 @UntilDestroy()
 @Component({

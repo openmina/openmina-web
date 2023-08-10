@@ -6,17 +6,15 @@ import {
   DASHBOARD_SPLITS_MERGE_NODES,
   DASHBOARD_SPLITS_SET_ACTIVE_PEER,
   DASHBOARD_SPLITS_SORT_PEERS,
-  DASHBOARD_SPLITS_SPLIT_NODES, DASHBOARD_SPLITS_TOGGLE_SIDE_PANEL,
+  DASHBOARD_SPLITS_SPLIT_NODES,
+  DASHBOARD_SPLITS_TOGGLE_SIDE_PANEL,
   DashboardSplitsActions,
 } from '@ocfe-dashboard/splits/dashboard-splits.actions';
-import { SortDirection, TableSort } from '@ocfe-shared/types/shared/table-sort.type';
-import { sort } from '@ocfe-shared/helpers/array.helper';
+import { isMobile, noMillisFormat, sort, SortDirection, TableSort, toReadableDate } from '@openmina/shared';
 import { DashboardSplitsPeer } from '@ocfe-shared/types/dashboard/splits/dashboard-splits-peer.type';
 import { DashboardSplitsLink } from '@ocfe-shared/types/dashboard/splits/dashboard-splits-link.type';
 import { DashboardSplitsSet } from '@ocfe-shared/types/dashboard/splits/dashboard-splits-set.type';
-import { noMillisFormat, toReadableDate } from '@ocfe-shared/helpers/date.helper';
 import { DashboardNodeCount } from '@ocfe-shared/types/dashboard/nodes/dashboard-node-count.type';
-import { isMobile } from '@ocfe-shared/helpers/values.helper';
 
 const initialState: DashboardSplitsState = {
   peers: [],
@@ -100,7 +98,7 @@ export function reducer(state: DashboardSplitsState = initialState, action: Dash
       return {
         ...state,
         openSidePanel: !state.openSidePanel,
-      }
+      };
     }
 
     case DASHBOARD_SPLITS_CLOSE:
@@ -165,7 +163,12 @@ function splitThePeers(peers: DashboardSplitsPeer[], links: DashboardSplitsLink[
         }
       }
 
-      sets.push({ peers: sortPeers(Array.from(peersForCurrentSet), { sortBy: 'outgoingConnections', sortDirection: SortDirection.DSC }) });
+      sets.push({
+        peers: sortPeers(Array.from(peersForCurrentSet), {
+          sortBy: 'outgoingConnections',
+          sortDirection: SortDirection.DSC
+        })
+      });
     }
   }
 

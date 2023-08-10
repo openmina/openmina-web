@@ -18,9 +18,8 @@ import {
   NetworkMessagesActions,
 } from '@ocfe-network/messages/network-messages.actions';
 import { NetworkMessage } from '@ocfe-shared/types/network/messages/network-message.type';
-import { VirtualScrollActivePage } from '@ocfe-shared/types/shared/virtual-scroll-active-page.type';
+import { ONE_THOUSAND, VirtualScrollActivePage } from '@openmina/shared';
 import { NetworkMessagesDirection } from '@ocfe-shared/types/network/messages/network-messages-direction.enum';
-import { ONE_THOUSAND } from '@ocfe-shared/constants/unit-measurements';
 
 const initialState: NetworkMessagesState = {
   messages: [],

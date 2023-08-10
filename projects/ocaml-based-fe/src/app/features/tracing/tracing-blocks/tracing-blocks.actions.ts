@@ -1,7 +1,6 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction, TableSort } from '@openmina/shared';
 import { TracingBlockTrace } from '@ocfe-shared/types/tracing/blocks/tracing-block-trace.type';
 import { TracingTraceGroup } from '@ocfe-shared/types/tracing/blocks/tracing-trace-group.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
 
 enum TracingBlocksActionTypes {
   TRACING_BLOCKS_INIT = 'TRACING_BLOCKS_INIT',

@@ -1,10 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
-import { downloadJson } from '@ocfe-shared/helpers/user-input.helper';
+import { downloadJson } from '@openmina/shared';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import { selectStorageAccountsActiveAccount } from '@ocfe-storage/accounts/storage-accounts.state';
 import { StorageAccount } from '@ocfe-shared/types/storage/accounts/storage-account.type';
 import { StorageAccountsSetActiveAccount } from '@ocfe-storage/accounts/storage-accounts.actions';
-import { ExpandTracking, MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
+import {
+  ExpandTracking,
+  MinaJsonViewerComponent
+} from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
 
 @Component({
   selector: 'mina-storage-accounts-side-panel',

@@ -4,7 +4,7 @@ import { map, Observable } from 'rxjs';
 import { SystemResourcesChartData } from '@ocfe-shared/types/resources/system/system-resources-chart-data.type';
 import { ConfigService } from '@ocfe-core/services/config.service';
 import { SystemResourcesPoint } from '@ocfe-shared/types/resources/system/system-resources-point.type';
-import { niceYScale } from '@ocfe-shared/helpers/graph.helper';
+import { niceYScale } from '@openmina/shared';
 
 const MB_DIVISOR = 1048576;
 const GB_DIVISOR = 1073741824;

@@ -1,6 +1,6 @@
 import { FeaturesConfig, FeatureType, MinaEnv, MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
 import { environment } from '@ocfe-environment/environment';
-import { hasValue } from '@ocfe-shared/helpers/values.helper';
+import { hasValue } from '@openmina/shared';
 
 export const CONFIG: Readonly<MinaEnv> = {
   ...environment,

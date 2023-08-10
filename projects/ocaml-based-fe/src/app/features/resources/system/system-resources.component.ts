@@ -9,9 +9,8 @@ import {
 import { selectActiveNode } from '@ocfe-app/app.state';
 import { take } from 'rxjs';
 import { AppChangeSubMenus } from '@ocfe-app/app.actions';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
+import { getMergedRoute, MergedRoute } from '@openmina/shared';
 import { Router } from '@angular/router';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import { selectSystemResourcesSidePanel } from '@ocfe-resources/system/system-resources.state';

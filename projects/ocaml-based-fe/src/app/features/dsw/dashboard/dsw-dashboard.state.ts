@@ -2,7 +2,7 @@ import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { selectDswDashboardState } from '@ocfe-dsw/dsw.state';
 import { DswDashboardNode } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 
 export interface DswDashboardState {
   nodes: DswDashboardNode[];

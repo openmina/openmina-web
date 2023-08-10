@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import { getMergedRoute, MergedRoute, removeParamsFromURL } from '@openmina/shared';
 import { selectActiveNode, selectAppMenu } from '@ocfe-app/app.state';
 import { untilDestroyed } from '@ngneat/until-destroy';
-import { removeParamsFromURL } from '@ocfe-shared/helpers/router.helper';
 import { combineLatest, debounceTime, filter } from 'rxjs';
 import { CONFIG, getAvailableFeatures } from '@ocfe-shared/constants/config';
 import { FeatureType, MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';

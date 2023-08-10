@@ -1,7 +1,7 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
 import { selectDswWorkPoolState } from '@ocfe-dsw/dsw.state';
-import { TableSort } from '@ocfe-shared/types/shared/table-sort.type';
+import { TableSort } from '@openmina/shared';
 import { WorkPool } from '@ocfe-shared/types/dsw/work-pool/work-pool.type';
 import { WorkPoolSpecs } from '@ocfe-shared/types/dsw/work-pool/work-pool-specs.type';
 import { WorkPoolDetail } from '@ocfe-shared/types/dsw/work-pool/work-pool-detail.type';

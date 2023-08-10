@@ -2,11 +2,16 @@ import { Injectable } from '@angular/core';
 import { forkJoin, map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DswDashboardNode, DswDashboardNodeKindType } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
-import { toReadableDate } from '@ocfe-shared/helpers/date.helper';
-import { DswDashboardBlock, DswDashboardNodeBlockStatus } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
-import { ONE_BILLION, ONE_MILLION } from '@ocfe-shared/constants/unit-measurements';
-import { DswDashboardLedger, DswDashboardLedgerStep, DswDashboardLedgerStepState } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-ledger.type';
-import { hasValue } from '@ocfe-shared/helpers/values.helper';
+import { hasValue, ONE_BILLION, ONE_MILLION, toReadableDate } from '@openmina/shared';
+import {
+  DswDashboardBlock,
+  DswDashboardNodeBlockStatus
+} from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
+import {
+  DswDashboardLedger,
+  DswDashboardLedgerStep,
+  DswDashboardLedgerStepState
+} from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-ledger.type';
 import { CONFIG } from '@ocfe-shared/constants/config';
 
 @Injectable({

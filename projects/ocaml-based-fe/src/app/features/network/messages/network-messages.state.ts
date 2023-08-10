@@ -1,10 +1,9 @@
 import { MinaState } from '@ocfe-app/app.setup';
 import { NetworkMessage } from '@ocfe-shared/types/network/messages/network-message.type';
 import { NetworkMessageConnection } from '@ocfe-shared/types/network/messages/network-messages-connection.type';
-import { VirtualScrollActivePage } from '@ocfe-shared/types/shared/virtual-scroll-active-page.type';
+import { TimestampInterval, VirtualScrollActivePage } from '@openmina/shared';
 import { NetworkMessagesFilter } from '@ocfe-shared/types/network/messages/network-messages-filter.type';
 import { NetworkMessagesDirection } from '@ocfe-shared/types/network/messages/network-messages-direction.enum';
-import { TimestampInterval } from '@ocfe-shared/types/shared/timestamp-interval.type';
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { selectNetworkMessagesState } from '@ocfe-network/network.state';
 

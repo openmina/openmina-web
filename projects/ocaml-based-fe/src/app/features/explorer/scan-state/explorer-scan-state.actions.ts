@@ -1,4 +1,4 @@
-import { FeatureAction } from '@ocfe-shared/types/store/feature-action.type';
+import { FeatureAction } from '@openmina/shared';
 import { ExplorerScanStateResponse } from '@ocfe-shared/types/explorer/scan-state/explorer-scan-state-response.type';
 
 enum ExplorerScanStateActionTypes {

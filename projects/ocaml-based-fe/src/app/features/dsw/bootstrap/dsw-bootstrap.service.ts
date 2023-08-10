@@ -4,7 +4,7 @@ import { map, Observable } from 'rxjs';
 import { DswDashboardNode } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
 import { DswBootstrapNode } from '@ocfe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
 import { DswDashboardNodeBlockStatus } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
-import { hasValue } from '@ocfe-shared/helpers/values.helper';
+import { hasValue } from '@openmina/shared';
 import { RustNodeService } from '@ocfe-core/services/rust-node.service';
 
 @Injectable({

@@ -1,14 +1,15 @@
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
-import { selectNetworkActiveFilters, selectNetworkTimestampInterval } from '@ocfe-network/messages/network-messages.state';
+import {
+  selectNetworkActiveFilters,
+  selectNetworkTimestampInterval
+} from '@ocfe-network/messages/network-messages.state';
 import { NetworkMessagesFilterCategory } from '@ocfe-shared/types/network/messages/network-messages-filter-group.type';
 import { NetworkMessagesToggleFilter } from '@ocfe-network/messages/network-messages.actions';
 import { NetworkMessagesFilter } from '@ocfe-shared/types/network/messages/network-messages-filter.type';
 import { NetworkMessagesFilterTypes } from '@ocfe-shared/types/network/messages/network-messages-filter-types.enum';
 import { ActivatedRoute, Router } from '@angular/router';
 import { skip } from 'rxjs';
-import { TimestampInterval } from '@ocfe-shared/types/shared/timestamp-interval.type';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
+import { getMergedRoute, MergedRoute, TimestampInterval } from '@openmina/shared';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 

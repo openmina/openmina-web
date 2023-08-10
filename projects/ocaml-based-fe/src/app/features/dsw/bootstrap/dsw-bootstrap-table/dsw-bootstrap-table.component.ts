@@ -1,21 +1,22 @@
 import { ChangeDetectionStrategy, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { MinaTableWrapper } from '@ocfe-shared/base-classes/mina-table-wrapper.class';
-import { TableColumnList } from '@ocfe-shared/types/shared/table-head-sorting.type';
+import { getMergedRoute, hasValue, MergedRoute, TableColumnList } from '@openmina/shared';
 import { Router } from '@angular/router';
-import { DswBootstrapSetActiveBlock, DswBootstrapSortNodes, DswBootstrapToggleSidePanel } from '@ocfe-dsw/bootstrap/dsw-bootstrap.actions';
+import {
+  DswBootstrapSetActiveBlock,
+  DswBootstrapSortNodes,
+  DswBootstrapToggleSidePanel
+} from '@ocfe-dsw/bootstrap/dsw-bootstrap.actions';
 import {
   selectDswBootstrapActiveNode,
   selectDswBootstrapNodes,
   selectDswBootstrapOpenSidePanel,
   selectDswBootstrapSort,
 } from '@ocfe-dsw/bootstrap/dsw-bootstrap.state';
-import { getMergedRoute } from '@ocfe-shared/router/router-state.selectors';
-import { MergedRoute } from '@ocfe-shared/router/merged-route';
 import { delay, filter, mergeMap, of, take } from 'rxjs';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { DswBootstrapNode } from '@ocfe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
-import { hasValue } from '@ocfe-shared/helpers/values.helper';
 import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
+import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
   selector: 'mina-dsw-bootstrap-table',
@@ -23,9 +24,16 @@ import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig } from '@ocfe-shared/pipes/s
   styleUrls: ['./dsw-bootstrap-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DswBootstrapTableComponent extends MinaTableWrapper<DswBootstrapNode> implements OnInit {
+export class DswBootstrapTableComponent extends MinaTableOcamlWrapper<DswBootstrapNode> implements OnInit {
 
-  readonly secConfig: SecDurationConfig = { color: true, onlySeconds: false, colors: SEC_CONFIG_GRAY_PALETTE, severe: 10, warn: 1, default: 0.01 };
+  readonly secConfig: SecDurationConfig = {
+    color: true,
+    onlySeconds: false,
+    colors: SEC_CONFIG_GRAY_PALETTE,
+    severe: 10,
+    warn: 1,
+    default: 0.01
+  };
 
   openSidePanel: boolean = true;
 
