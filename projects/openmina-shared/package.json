@@ -1,26 +1,27 @@
 {
   "name": "@openmina/shared",
-  "version": "0.12.0",
+  "version": "0.21.0",
   "scripts": {
     "start": "ng serve",
-    "deploy": "npm run pack && npm run publish",
+    "deploy": "npm run pack && npm run publish && npm run update",
     "build": "ng build --configuration production",
     "pack": "ng-packagr -p ng-package.json && cd ../../dist/shared && npm pack",
-    "publish": "cd ../../dist/shared && npm publish --access public"
+    "publish": "cd ../../dist/shared && npm publish --access public",
+    "update": "cd ../../ && npm i @openmina/shared@latest"
   },
   "peerDependencies": {
+    "@angular/animations": "^16.1.0",
     "@angular/common": "^16.1.0",
     "@angular/core": "^16.1.0",
-    "@angular/animations": "^16.1.0",
-    "@angular/material": "^16.1.7",
     "@angular/forms": "^16.1.0",
+    "@angular/material": "^16.1.7",
     "@ngneat/until-destroy": "^10.0.0",
     "@ngrx/effects": "^16.2.0",
     "@ngrx/router-store": "^16.2.0",
     "@ngrx/store": "^16.2.0",
     "@ngrx/store-devtools": "^16.2.0",
     "d3": "^7.8.4",
-    "ngx-json-viewer": "^3.1.0",
+    "ngx-json-viewer": "^3.2.1",
     "rxjs": "~7.8.0",
     "zone.js": "~0.13.0"
   },
@@ -30,7 +31,6 @@
   "sideEffects": false,
   "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.",
   "main": "projects/openmina-shared/src/public-api.ts",
-  "devDependencies": {},
   "author": "Teofil Jolte",
   "license": "Apache License, Version 2.0"
 }

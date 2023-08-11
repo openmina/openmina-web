@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
+import { getMergedRoute, MergedRoute, SecDurationConfig, TableColumnList } from '@openmina/shared';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
@@ -15,7 +15,6 @@ import {
   selectDswWorkPools,
   selectDswWorkPoolSort
 } from '@ocfe-dsw/work-pool/dsw-work-pool.state';
-import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({

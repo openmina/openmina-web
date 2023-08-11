@@ -6,8 +6,7 @@ import {
   ExplorerBlocksSetActiveZkApp
 } from '@ocfe-explorer/blocks/explorer-blocks.actions';
 import { filter } from 'rxjs';
-import { ExpandTracking } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
-import { ONE_BILLION, TableColumnList } from '@openmina/shared';
+import { ExpandTracking, ONE_BILLION, TableColumnList } from '@openmina/shared';
 import { Router } from '@angular/router';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 

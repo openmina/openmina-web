@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TracingBlockTrace } from '@ocfe-shared/types/tracing/blocks/tracing-block-trace.type';
 import { Router } from '@angular/router';
-import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
+import { getMergedRoute, MergedRoute, SecDurationConfig, TableColumnList } from '@openmina/shared';
 import { filter } from 'rxjs';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import {
@@ -10,7 +10,6 @@ import {
   selectTracingTraces
 } from '@ocfe-tracing/tracing-blocks/tracing-blocks.state';
 import { TracingBlocksSelectRow, TracingBlocksSort } from '@ocfe-tracing/tracing-blocks/tracing-blocks.actions';
-import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
 import { selectActiveNode } from '@ocfe-app/app.state';
 import { MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';

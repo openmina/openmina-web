@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { TableColumnList } from '@openmina/shared';
+import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig, TableColumnList } from '@openmina/shared';
 import { filter } from 'rxjs';
 import { DswLiveBlockEvent } from '@ocfe-shared/types/dsw/live/dsw-live-block-event.type';
 import { DswLiveSortEvents } from '@ocfe-dsw/live/dsw-live.actions';

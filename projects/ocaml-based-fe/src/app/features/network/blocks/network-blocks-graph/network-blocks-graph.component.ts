@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { selectNetworkBlocks } from '@ocfe-network/blocks/network-blocks.state';
 import { NetworkBlock } from '@ocfe-shared/types/network/blocks/network-block.type';
-import { BarGraphComponent } from '@ocfe-shared/components/bar-graph/bar-graph.component';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
+import { BarGraphComponent } from '@openmina/shared';
 
 @Component({
   selector: 'mina-network-blocks-graph',
@@ -19,7 +19,7 @@ export class NetworkBlocksGraphComponent extends StoreDispatcher implements OnIn
   private component: BarGraphComponent;
 
   async ngOnInit(): Promise<void> {
-    await import('@ocfe-shared/components/bar-graph/bar-graph.component').then(c => {
+    await import('@openmina/shared').then((c) => {
       this.component = this.minaBarGraphRef.createComponent<BarGraphComponent>(c.BarGraphComponent).instance;
       this.component.xStep = 1;
       this.component.xTicksLength = 15;

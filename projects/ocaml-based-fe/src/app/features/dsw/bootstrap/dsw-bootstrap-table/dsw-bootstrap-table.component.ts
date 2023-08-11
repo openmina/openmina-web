@@ -1,5 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { getMergedRoute, hasValue, MergedRoute, TableColumnList } from '@openmina/shared';
+import {
+  getMergedRoute,
+  hasValue,
+  MergedRoute,
+  SEC_CONFIG_GRAY_PALETTE,
+  SecDurationConfig,
+  TableColumnList
+} from '@openmina/shared';
 import { Router } from '@angular/router';
 import {
   DswBootstrapSetActiveBlock,
@@ -15,7 +22,6 @@ import {
 import { delay, filter, mergeMap, of, take } from 'rxjs';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { DswBootstrapNode } from '@ocfe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
-import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({

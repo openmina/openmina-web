@@ -7,8 +7,8 @@ import { TracingTraceGroup } from '@ocfe-shared/types/tracing/blocks/tracing-tra
 import { selectTracingActiveTraceDetails, selectTracingActiveTraceGroups } from '@ocfe-tracing/tracing-blocks/tracing-blocks.state';
 import { TracingBlocksSelectRow } from '@ocfe-tracing/tracing-blocks/tracing-blocks.actions';
 import { BlockStructuredTraceComponent } from '@ocfe-shared/components/block-structured-trace/block-structured-trace.component';
-import { ExpandTracking } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
+import { ExpandTracking } from '@openmina/shared';
 
 @Component({
   selector: 'mina-tracing-blocks-side-panel',

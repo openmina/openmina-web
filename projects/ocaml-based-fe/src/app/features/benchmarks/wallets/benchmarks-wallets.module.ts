@@ -8,8 +8,7 @@ import { BenchmarksWalletsEffects } from '@ocfe-benchmarks/wallets/benchmarks-wa
 import { BenchmarksWalletsTableComponent } from '@ocfe-benchmarks/wallets/benchmarks-wallets-table/benchmarks-wallets-table.component';
 import { BenchmarksWalletsToolbarComponent } from '@ocfe-benchmarks/wallets/benchmarks-wallets-toolbar/benchmarks-wallets-toolbar.component';
 import { BenchmarksWalletsRouting } from '@ocfe-benchmarks/wallets/benchmarks-wallets.routing';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
-import { HorizontalMenuComponent } from '@ocfe-shared/components/horizontal-menu/horizontal-menu.component';
+import { CopyComponent, HorizontalMenuComponent } from '@openmina/shared';
 
 
 @NgModule({

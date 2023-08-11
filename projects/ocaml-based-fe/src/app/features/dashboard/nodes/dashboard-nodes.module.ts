@@ -8,9 +8,7 @@ import { DashboardNodesToolbarComponent } from './dashboard-nodes-toolbar/dashbo
 import { EffectsModule } from '@ngrx/effects';
 import { DashboardNodesEffects } from '@ocfe-dashboard/nodes/dashboard-nodes.effects';
 import { DashboardNodesSidePanelComponent } from './dashboard-nodes-side-panel/dashboard-nodes-side-panel.component';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
-import { HorizontalMenuComponent } from '@ocfe-shared/components/horizontal-menu/horizontal-menu.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
+import { CopyComponent, HorizontalMenuComponent, HorizontalResizableContainerComponent } from '@openmina/shared';
 
 
 @NgModule({

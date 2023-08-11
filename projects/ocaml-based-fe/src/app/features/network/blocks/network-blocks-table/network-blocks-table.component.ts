@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { selectNetworkBlocks, selectNetworkBlocksSorting } from '@ocfe-network/blocks/network-blocks.state';
 import { NetworkBlock } from '@ocfe-shared/types/network/blocks/network-block.type';
-import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { TableColumnList } from '@openmina/shared';
+import { SecDurationConfig, TableColumnList } from '@openmina/shared';
 import { NetworkBlocksSort } from '@ocfe-network/blocks/network-blocks.actions';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 

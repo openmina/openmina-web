@@ -7,9 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { TracingBlocksEffects } from '@ocfe-tracing/tracing-blocks/tracing-blocks.effects';
 import { TracingBlocksTableComponent } from '@ocfe-tracing/tracing-blocks/tracing-blocks-table/tracing-blocks-table.component';
 import { TracingBlocksSidePanelComponent } from '@ocfe-tracing/tracing-blocks/tracing-blocks-side-panel/tracing-blocks-side-panel.component';
-import { MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
+import { CopyComponent, HorizontalResizableContainerComponent, MinaJsonViewerComponent } from '@openmina/shared';
 
 
 @NgModule({

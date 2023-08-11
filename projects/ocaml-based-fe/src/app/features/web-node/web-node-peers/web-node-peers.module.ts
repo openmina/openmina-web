@@ -8,10 +8,12 @@ import { WebNodePeersConnectComponent } from './web-node-peers-connect/web-node-
 import { WebNodePeersListenComponent } from './web-node-peers-listen/web-node-peers-listen.component';
 import { SharedModule } from '@ocfe-shared/shared.module';
 import { WebNodePeersSidePanelComponent } from './web-node-peers-side-panel/web-node-peers-side-panel.component';
-import { MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
-import { StepperComponent } from '@ocfe-shared/components/stepper/stepper.component';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
+import {
+  CopyComponent,
+  HorizontalResizableContainerComponent,
+  MinaJsonViewerComponent,
+  StepperComponent
+} from '@openmina/shared';
 
 
 @NgModule({

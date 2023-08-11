@@ -12,11 +12,11 @@ import {
   NetworkMessagesTableFooterComponent
 } from './network-messages-table-footer/network-messages-table-footer.component';
 import { CommonModule, DatePipe } from '@angular/common';
-import { MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
 import {
-  HorizontalResizableContainerComponent
-} from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
-import { HorizontalMenuComponent } from '@ocfe-shared/components/horizontal-menu/horizontal-menu.component';
+  HorizontalMenuComponent,
+  HorizontalResizableContainerComponent,
+  MinaJsonViewerComponent
+} from '@openmina/shared';
 
 
 @NgModule({

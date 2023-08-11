@@ -10,12 +10,17 @@ import { NetworkMessagesDirection } from '@ocfe-shared/types/network/messages/ne
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { filter, take } from 'rxjs';
-import { getMergedRoute, MergedRoute, ONE_THOUSAND, TimestampInterval } from '@openmina/shared';
+import {
+  getMergedRoute,
+  IntervalSelectComponent,
+  MergedRoute,
+  ONE_THOUSAND,
+  TimestampInterval
+} from '@openmina/shared';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { selectNetworkMessagesState } from '@ocfe-network/network.state';
-import { IntervalSelectComponent } from '@ocfe-shared/components/interval-select/interval-select.component';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({

@@ -82,9 +82,39 @@
       "@ocfe-dsw/*": [
         "projects/ocaml-based-fe/src/app/features/dsw/*"
       ],
+
+      "@rufe-app/*": [
+        "projects/rust-based-fe/src/app/*"
+      ],
+      "@rufe-core/*": [
+        "projects/rust-based-fe/src/app/core/*"
+      ],
+      "@rufe-shared/*": [
+        "projects/rust-based-fe/src/app/shared/*"
+      ],
+      "@rufe-environment/*": [
+        "projects/rust-based-fe/src/environments/*"
+      ],
+      "@rufe-error-preview/*": [
+        "projects/rust-based-fe/src/app/layout/error-preview/*"
+      ],
+      "@rufe-dsw/*": [
+        "projects/rust-based-fe/src/app/features/dsw/*"
+      ],
+      "@rufe-state/*": [
+        "projects/rust-based-fe/src/app/features/state/*"
+      ],
+      "@rufe-nodes/*": [
+        "projects/rust-based-fe/src/app/features/nodes/*"
+      ],
+      "@rufe-snarks/*": [
+        "projects/rust-based-fe/src/app/features/snarks/*"
+      ],
+
       "openmina-shared": [
         "dist/openmina-shared"
       ],
+
       "openmina-styles": [
         "dist/openmina-styles"
       ],

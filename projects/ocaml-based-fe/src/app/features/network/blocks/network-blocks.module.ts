@@ -9,8 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { NetworkBlocksEffects } from '@ocfe-network/blocks/network-blocks.effects';
 import { NetworkBlocksSidePanelComponent } from './network-blocks-side-panel/network-blocks-side-panel.component';
 import { NetworkBlocksToolbarComponent } from './network-blocks-toolbar/network-blocks-toolbar.component';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
+import { CopyComponent, HorizontalResizableContainerComponent } from '@openmina/shared';
 
 
 @NgModule({

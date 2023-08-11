@@ -9,10 +9,8 @@ import { SharedModule } from '@ocfe-shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
 import { DashboardSplitsEffects } from '@ocfe-dashboard/splits/dashboard-splits.effects';
 import { DashboardSplitsComponent } from '@ocfe-dashboard/splits/dashboard-splits.component';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
-import { HorizontalMenuComponent } from '@ocfe-shared/components/horizontal-menu/horizontal-menu.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
 import { DashboardSplitsSidePanelTableComponent } from './dashboard-splits-side-panel-table/dashboard-splits-side-panel-table.component';
+import { CopyComponent, HorizontalMenuComponent, HorizontalResizableContainerComponent } from '@openmina/shared';
 
 
 @NgModule({

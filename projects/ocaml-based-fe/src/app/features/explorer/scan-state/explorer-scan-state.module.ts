@@ -6,9 +6,9 @@ import { ExplorerScanStateComponent } from '@ocfe-explorer/scan-state/explorer-s
 import { EffectsModule } from '@ngrx/effects';
 import { ExplorerScanStateEffects } from '@ocfe-explorer/scan-state/explorer-scan-state.effects';
 import { ExplorerScanStateToolbarComponent } from './explorer-scan-state-toolbar/explorer-scan-state-toolbar.component';
-import { HorizontalMenuComponent } from '@ocfe-shared/components/horizontal-menu/horizontal-menu.component';
 import { ScanStateChartComponent } from './scan-state-chart/scan-state-chart.component';
 import { ExplorerScanStateChartListComponent } from './explorer-scan-state-chart-list/explorer-scan-state-chart-list.component';
+import { HorizontalMenuComponent } from '@openmina/shared';
 
 
 @NgModule({

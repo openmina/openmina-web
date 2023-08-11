@@ -7,8 +7,7 @@ import { NetworkConnectionsTableComponent } from './network-connections-table/ne
 import { NetworkConnectionsSidePanelComponent } from './network-connections-side-panel/network-connections-side-panel.component';
 import { EffectsModule } from '@ngrx/effects';
 import { NetworkConnectionsEffects } from '@ocfe-network/connections/network-connections.effects';
-import { MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
+import { HorizontalResizableContainerComponent, MinaJsonViewerComponent } from '@openmina/shared';
 
 
 @NgModule({

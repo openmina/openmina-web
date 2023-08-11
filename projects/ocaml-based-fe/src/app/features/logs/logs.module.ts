@@ -8,8 +8,7 @@ import { LogsEffects } from '@ocfe-logs/logs.effects';
 import { LogsTableComponent } from './logs-table/logs-table.component';
 import { LogsToolbarComponent } from './logs-toolbar/logs-toolbar.component';
 import { LogsSidePanelComponent } from './logs-side-panel/logs-side-panel.component';
-import { MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
+import { HorizontalResizableContainerComponent, MinaJsonViewerComponent } from '@openmina/shared';
 
 
 @NgModule({

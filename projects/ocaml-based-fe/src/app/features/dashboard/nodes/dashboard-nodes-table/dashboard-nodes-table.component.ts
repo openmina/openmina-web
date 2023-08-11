@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { getMergedRoute, MergedRoute, TableColumnList, toggleItem } from '@openmina/shared';
+import { getMergedRoute, MergedRoute, SecDurationConfig, TableColumnList, toggleItem } from '@openmina/shared';
 import { DashboardNode } from '@ocfe-shared/types/dashboard/nodes/dashboard-node.type';
 import {
   selectDashboardNodes,

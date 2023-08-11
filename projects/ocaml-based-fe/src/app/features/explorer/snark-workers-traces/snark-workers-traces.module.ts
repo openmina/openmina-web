@@ -7,9 +7,7 @@ import { SnarkWorkersTracesRouting } from '@ocfe-explorer/snark-workers-traces/s
 import { SnarkWorkersSidePanelComponent } from './snark-workers-side-panel/snark-workers-side-panel.component';
 import { EffectsModule } from '@ngrx/effects';
 import { SnarkWorkersTracesEffects } from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.effects';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
-import { HorizontalMenuComponent } from '@ocfe-shared/components/horizontal-menu/horizontal-menu.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
+import { CopyComponent, HorizontalMenuComponent, HorizontalResizableContainerComponent } from '@openmina/shared';
 
 
 @NgModule({

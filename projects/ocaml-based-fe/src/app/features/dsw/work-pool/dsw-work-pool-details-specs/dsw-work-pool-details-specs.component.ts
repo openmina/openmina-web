@@ -1,15 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import {
-  ExpandTracking,
-  MinaJsonViewerComponent
-} from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
-import {
   selectDswWorkPoolActiveWorkPoolDetail,
   selectDswWorkPoolActiveWorkPoolSpecs
 } from '@ocfe-dsw/work-pool/dsw-work-pool.state';
 import { WorkPoolSpecs } from '@ocfe-shared/types/dsw/work-pool/work-pool-specs.type';
-import { downloadJson, downloadJsonFromURL } from '@openmina/shared';
+import { downloadJson, downloadJsonFromURL, ExpandTracking, MinaJsonViewerComponent } from '@openmina/shared';
 import { HttpClient } from '@angular/common/http';
 import { RustNodeService } from '@ocfe-core/services/rust-node.service';
 import { WorkPoolDetail } from '@ocfe-shared/types/dsw/work-pool/work-pool-detail.type';

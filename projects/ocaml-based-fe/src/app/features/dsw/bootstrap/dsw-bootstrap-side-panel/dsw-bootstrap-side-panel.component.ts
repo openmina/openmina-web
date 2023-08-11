@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { selectDswBootstrapActiveNode, selectDswBootstrapNodes } from '@ocfe-dsw/bootstrap/dsw-bootstrap.state';
 import { DswBootstrapNode } from '@ocfe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
 import { DswBootstrapSetActiveBlock, DswBootstrapToggleSidePanel } from '@ocfe-dsw/bootstrap/dsw-bootstrap.actions';
-import { DswDashboardNode } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 
 @Component({

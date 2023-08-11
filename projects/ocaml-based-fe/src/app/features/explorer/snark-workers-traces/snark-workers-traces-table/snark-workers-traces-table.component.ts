@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { SnarkWorkerTraceJob } from '@ocfe-shared/types/explorer/snark-traces/snark-worker-trace-job.type';
-import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
+import { getMergedRoute, MergedRoute, SecDurationConfig, TableColumnList } from '@openmina/shared';
 import {
   selectSWTracesActiveRow,
   selectSWTracesSort
