@@ -6,7 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { TracingOverviewEffects } from '@ocfe-tracing/tracing-overview/tracing-overview.effects';
 import { TracingOverviewGraphListComponent } from './tracing-overview-graph-list/tracing-overview-graph-list.component';
 import { TracingOverviewToolbarComponent } from './tracing-overview-toolbar/tracing-overview-toolbar.component';
-import { FlameTimeGraphComponent } from '@ocfe-shared/components/flame-time-graph/flame-time-graph/flame-time-graph.component';
+import { FlameTimeGraphComponent } from '@openmina/shared';
 
 
 @NgModule({

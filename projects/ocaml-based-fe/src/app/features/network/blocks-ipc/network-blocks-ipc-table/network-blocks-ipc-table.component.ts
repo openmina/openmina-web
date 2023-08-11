@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { untilDestroyed } from '@ngneat/until-destroy';
-import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { TableHeadSorting } from '@openmina/shared';
+import { SecDurationConfig, TableHeadSorting } from '@openmina/shared';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { NetworkBlocksIpcSort } from '@ocfe-network/blocks-ipc/network-blocks-ipc.actions';

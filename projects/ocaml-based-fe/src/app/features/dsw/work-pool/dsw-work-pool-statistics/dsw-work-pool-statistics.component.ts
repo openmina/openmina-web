@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
-import { BarGraphComponent } from '@ocfe-shared/components/bar-graph/bar-graph.component';
 import { selectDswWorkPools } from '@ocfe-dsw/work-pool/dsw-work-pool.state';
 import { WorkPool } from '@ocfe-shared/types/dsw/work-pool/work-pool.type';
+import { BarGraphComponent } from '@openmina/shared';
 
 @Component({
   selector: 'mina-dsw-work-pool-statistics',
@@ -23,13 +23,13 @@ export class DswWorkPoolStatisticsComponent extends StoreDispatcher implements O
   private component2: BarGraphComponent;
 
   async ngOnInit(): Promise<void> {
-    await import('@ocfe-shared/components/bar-graph/bar-graph.component').then(c => {
+    await import('@openmina/shared').then((c) => {
       this.component1 = this.minaBarGraphRef1.createComponent<BarGraphComponent>(c.BarGraphComponent).instance;
       this.component1.color = 'var(--special-selected-alt-3-primary)';
       this.addBarGraphProperties(this.component1);
       this.component1.ngOnInit();
     });
-    await import('@ocfe-shared/components/bar-graph/bar-graph.component').then(c => {
+    await import('@openmina/shared').then((c) => {
       this.component2 = this.minaBarGraphRef2.createComponent<BarGraphComponent>(c.BarGraphComponent).instance;
       this.component2.color = 'var(--special-selected-alt-1-primary)';
       this.addBarGraphProperties(this.component2);

@@ -10,7 +10,7 @@ import {
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { untilDestroyed } from '@ngneat/until-destroy';
 import { debounceTime } from 'rxjs';
-import { DOCUMENT } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { BaseStoreDispatcher } from '../../base-classes/base-store-dispatcher.class';
 import { TableColumnList } from '../../types/shared/table-head-sorting.type';
 import { SortDirection, TableSort } from '../../types/shared/table-sort.type';
@@ -21,7 +21,7 @@ const DESKTOP_ROW_HEIGHT = 36;
 
 @Component({
   standalone: true,
-  imports: [OpenminaEagerSharedModule],
+  imports: [OpenminaEagerSharedModule, CommonModule],
   selector: 'mina-table',
   templateUrl: './mina-table.component.html',
   styleUrls: ['./mina-table.component.scss'],

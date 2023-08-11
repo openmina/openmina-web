@@ -9,10 +9,8 @@ import { StorageAccountsSidePanelComponent } from './storage-accounts-side-panel
 import { SharedModule } from '@ocfe-shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
 import { StorageAccountsEffects } from '@ocfe-storage/accounts/storage-accounts.effects';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
 import { CommonModule } from '@angular/common';
-import { MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
+import { CopyComponent, HorizontalResizableContainerComponent, MinaJsonViewerComponent } from '@openmina/shared';
 
 
 @NgModule({

@@ -1,0 +1,12 @@
+@import '../../../../../assets/styles/openmina';
+
+.pagination-group {
+	button {
+		background-color: transparent;
+		color: $selected-primary;
+
+		&:hover {
+			background-color: $selected-container;
+		}
+	}
+}

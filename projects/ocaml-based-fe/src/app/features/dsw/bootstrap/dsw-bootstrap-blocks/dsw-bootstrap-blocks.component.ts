@@ -6,8 +6,7 @@ import {
   DswDashboardBlock,
   DswDashboardNodeBlockStatus
 } from '@ocfe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
-import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
-import { sort, SortDirection, TableSort } from '@openmina/shared';
+import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig, sort, SortDirection, TableSort } from '@openmina/shared';
 
 @Component({
   selector: 'mina-dsw-bootstrap-blocks',

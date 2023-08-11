@@ -6,11 +6,10 @@ import {
   selectDswActionsSort
 } from '@ocfe-dsw/actions/dsw-actions.state';
 import { DswActionGroup } from '@ocfe-shared/types/dsw/actions/dsw-action-group.type';
-import { isMobile, TableColumnList, TableSort } from '@openmina/shared';
+import { isMobile, SecDurationConfig, TableColumnList, TableSort } from '@openmina/shared';
 import { DOCUMENT } from '@angular/common';
 import { distinctUntilChanged } from 'rxjs';
 import { DswActionsStats } from '@ocfe-shared/types/dsw/actions/dsw-actions-stats.type';
-import { SecDurationConfig } from '@ocfe-shared/pipes/sec-duration.pipe';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({

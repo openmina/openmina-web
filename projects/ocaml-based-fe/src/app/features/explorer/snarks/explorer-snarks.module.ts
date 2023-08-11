@@ -4,7 +4,7 @@ import { ExplorerSnarksTableComponent } from './explorer-snarks-table/explorer-s
 import { SharedModule } from '@ocfe-shared/shared.module';
 import { ExplorerSnarksComponent } from '@ocfe-explorer/snarks/explorer-snarks.component';
 import { ExplorerSnarksRouting } from '@ocfe-explorer/snarks/explorer-snarks.routing';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
+import { CopyComponent } from '@openmina/shared';
 
 
 @NgModule({

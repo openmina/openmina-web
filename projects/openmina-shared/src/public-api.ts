@@ -4,6 +4,15 @@ export * from './lib/openmina-eager-shared.module';
 
 /* COMPONENTS */
 export * from './lib/components/mina-table/mina-table.component';
+export * from './lib/components/bar-graph/bar-graph.component';
+export * from './lib/components/copy/copy.component';
+export * from './lib/components/flame-time-graph/flame-time-graph/flame-time-graph.component';
+export * from './lib/components/flame-time-graph/flame-time-graph-tooltip/flame-time-graph-tooltip.component';
+export * from './lib/components/horizontal-menu/horizontal-menu.component';
+export * from './lib/components/horizontal-resizable-container/horizontal-resizable-container.component';
+export * from './lib/components/interval-select/interval-select.component';
+export * from './lib/components/mina-json-viewer/mina-json-viewer.component';
+export * from './lib/components/stepper/stepper.component';
 
 /* DIRECTIVES */
 export * from './lib/directives/click-outside.directive';
@@ -11,6 +20,13 @@ export * from './lib/directives/copy-to-clipboard.directive';
 export * from './lib/directives/mina-tooltip.directive';
 
 /* PIPES */
+export * from './lib/pipes/plural.pipe';
+export * from './lib/pipes/readable-date.pipe';
+export * from './lib/pipes/safe-html.pipe';
+export * from './lib/pipes/sec-duration.pipe';
+export * from './lib/pipes/size.pipe';
+export * from './lib/pipes/thousand.pipe';
+export * from './lib/pipes/truncate-mid.pipe';
 
 /* SERVICES */
 export * from './lib/services/tooltip.service';

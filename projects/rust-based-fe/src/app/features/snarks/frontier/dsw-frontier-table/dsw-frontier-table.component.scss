@@ -1,0 +1,23 @@
+@import '../../../../../assets/styles/openmina';
+
+.status {
+	&.Best {
+		color: $special-selected-alt-1-primary;
+	}
+
+	&.Applied {
+		color: $success-primary;
+	}
+
+	&.Applying {
+		color: $selected-primary;
+	}
+
+	&.Downloading {
+		color: $aware-primary;
+	}
+
+	&.Missing {
+		color: $warn-primary;
+	}
+}

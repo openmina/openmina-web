@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { selectNetworkBlocksIpc } from '@ocfe-network/blocks-ipc/network-blocks-ipc.state';
 import { NetworkBlockIpc } from '@ocfe-shared/types/network/blocks-ipc/network-block-ipc.type';
-import { BarGraphComponent } from '@ocfe-shared/components/bar-graph/bar-graph.component';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
+import { BarGraphComponent } from '@openmina/shared';
 
 @Component({
   selector: 'mina-network-blocks-ipc-side-panel',
@@ -19,7 +19,7 @@ export class NetworkBlocksIpcSidePanelComponent extends StoreDispatcher implemen
   private bars: number[] = [];
 
   async ngOnInit(): Promise<void> {
-    await import('@ocfe-shared/components/bar-graph/bar-graph.component').then(c => {
+    await import('@openmina/shared').then((c) => {
       this.component = this.minaBarGraphRef.createComponent<BarGraphComponent>(c.BarGraphComponent).instance;
       this.component.xStep = 1;
       this.component.xTicksLength = 15;

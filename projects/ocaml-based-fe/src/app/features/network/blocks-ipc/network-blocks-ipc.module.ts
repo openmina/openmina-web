@@ -8,8 +8,7 @@ import { NetworkBlocksIpcSidePanelComponent } from './network-blocks-ipc-side-pa
 import { SharedModule } from '@ocfe-shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
 import { NetworkBlocksIpcEffects } from '@ocfe-network/blocks-ipc/network-blocks-ipc.effects';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
+import { CopyComponent, HorizontalResizableContainerComponent } from '@openmina/shared';
 
 
 @NgModule({

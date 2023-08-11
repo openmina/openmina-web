@@ -10,7 +10,8 @@ import {
   GlobalErrorHandlerService,
   NgrxRouterStoreModule,
   OpenminaEagerSharedModule,
-  THEME_PROVIDER
+  THEME_PROVIDER,
+  HorizontalMenuComponent
 } from '@openmina/shared';
 import { MenuComponent } from './layout/menu/menu.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
@@ -28,11 +29,9 @@ import { NodePickerComponent } from './layout/node-picker/node-picker.component'
 import { Router } from '@angular/router';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
-import { registerLocaleData } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeEn from '@angular/common/locales/en';
-import { HorizontalMenuComponent } from '@ocfe-app/shared/components/horizontal-menu/horizontal-menu.component';
-import { SharedModule } from '@ocfe-shared/shared.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 registerLocaleData(localeFr, 'fr');
@@ -67,6 +66,7 @@ export class AppGlobalErrorhandler implements ErrorHandler {
     NodePickerComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRouting,
@@ -88,7 +88,6 @@ export class AppGlobalErrorhandler implements ErrorHandler {
     MatSidenavModule,
     OpenminaEagerSharedModule,
     HorizontalMenuComponent,
-    SharedModule,
   ],
   providers: [
     SENTRY_PROVIDER,

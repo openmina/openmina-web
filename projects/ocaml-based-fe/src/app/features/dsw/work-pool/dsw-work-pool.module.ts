@@ -7,16 +7,18 @@ import { DswWorkPoolSidePanelComponent } from './dsw-work-pool-side-panel/dsw-wo
 import { SharedModule } from '@ocfe-shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
 import { DswWorkPoolEffects } from '@ocfe-dsw/work-pool/dsw-work-pool.effects';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
-import { MinaJsonViewerComponent } from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
 import { DswWorkPoolToolbarComponent } from './dsw-work-pool-toolbar/dsw-work-pool-toolbar.component';
 import { DswWorkPoolStatisticsComponent } from './dsw-work-pool-statistics/dsw-work-pool-statistics.component';
-import { HorizontalMenuComponent } from '@ocfe-shared/components/horizontal-menu/horizontal-menu.component';
 import { DswWorkPoolDetailsComponent } from './dsw-work-pool-details/dsw-work-pool-details.component';
 import { DswWorkPoolDetailsOverviewComponent } from './dsw-work-pool-details-overview/dsw-work-pool-details-overview.component';
 import { DswWorkPoolDetailsSpecsComponent } from './dsw-work-pool-details-specs/dsw-work-pool-details-specs.component';
 import { DswWorkPoolDetailsAccountsComponent } from './dsw-work-pool-details-accounts/dsw-work-pool-details-accounts.component';
+import {
+  CopyComponent,
+  HorizontalMenuComponent,
+  HorizontalResizableContainerComponent,
+  MinaJsonViewerComponent
+} from '@openmina/shared';
 
 
 @NgModule({

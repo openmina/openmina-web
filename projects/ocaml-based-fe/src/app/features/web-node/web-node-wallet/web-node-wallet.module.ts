@@ -10,8 +10,7 @@ import { WebNodeWalletTransactionsComponent } from './web-node-wallet-transactio
 import { WebNodeWalletCreateTransactionComponent } from './web-node-wallet-create-transaction/web-node-wallet-create-transaction.component';
 import { WebNodeWalletToolbarComponent } from './web-node-wallet-toolbar/web-node-wallet-toolbar.component';
 import { WebNodeWalletSidePanelComponent } from './web-node-wallet-side-panel/web-node-wallet-side-panel.component';
-import { StepperComponent } from '@ocfe-shared/components/stepper/stepper.component';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
+import { CopyComponent, StepperComponent } from '@openmina/shared';
 
 
 @NgModule({

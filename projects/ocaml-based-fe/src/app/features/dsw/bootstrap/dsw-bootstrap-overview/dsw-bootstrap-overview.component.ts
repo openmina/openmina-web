@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewContainerRef
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import { DswBootstrapNode } from '@ocfe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
 import { selectDswBootstrapNodes } from '@ocfe-dsw/bootstrap/dsw-bootstrap.state';
-import { BarGraphComponent } from '@ocfe-shared/components/bar-graph/bar-graph.component';
 import { filter } from 'rxjs';
+import { BarGraphComponent } from '@openmina/shared';
 
 @Component({
   selector: 'mina-dsw-bootstrap-overview',
@@ -30,7 +30,7 @@ export class DswBootstrapOverviewComponent extends StoreDispatcher implements On
   private component2: BarGraphComponent;
 
   async ngOnInit(): Promise<void> {
-    await import('@ocfe-shared/components/bar-graph/bar-graph.component').then(c => {
+    await import('@openmina/shared').then((c) => {
       this.component1 = this.minaBarGraphRef1.createComponent<BarGraphComponent>(c.BarGraphComponent).instance;
       this.component1.xStep = 0.01;
       this.component1.xTicksLength = 55;
@@ -43,7 +43,7 @@ export class DswBootstrapOverviewComponent extends StoreDispatcher implements On
       this.component1.color = 'var(--base-primary)';
       this.component1.ngOnInit();
     });
-    await import('@ocfe-shared/components/bar-graph/bar-graph.component').then(c => {
+    await import('@openmina/shared').then((c) => {
       this.component2 = this.minaBarGraphRef2.createComponent<BarGraphComponent>(c.BarGraphComponent).instance;
       this.component2.xStep = 0.01;
       this.component2.xTicksLength = 55;

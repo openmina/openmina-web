@@ -6,9 +6,9 @@ import { ExplorerTransactionsRouting } from '@ocfe-explorer/transactions/explore
 import { SharedModule } from '@ocfe-shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
 import { ExplorerTransactionsEffects } from '@ocfe-explorer/transactions/explorer-transactions.effects';
-import { CopyComponent } from '@ocfe-shared/components/copy/copy.component';
 import { ExplorerTransactionsNewComponent } from './explorer-transactions-new/explorer-transactions-new.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CopyComponent } from '@openmina/shared';
 
 
 @NgModule({

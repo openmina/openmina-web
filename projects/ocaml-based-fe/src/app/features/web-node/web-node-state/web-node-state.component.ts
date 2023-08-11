@@ -1,10 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { WebNodeService } from '@ocfe-web-node/web-node.service';
-import { downloadJson, ManualDetection } from '@openmina/shared';
-import {
-  ExpandTracking,
-  MinaJsonViewerComponent
-} from '@ocfe-shared/components/mina-json-viewer/mina-json-viewer.component';
+import { downloadJson, ExpandTracking, ManualDetection, MinaJsonViewerComponent } from '@openmina/shared';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()

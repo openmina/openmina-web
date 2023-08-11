@@ -8,7 +8,7 @@ import { SystemResourcesEffects } from '@ocfe-resources/system/system-resources.
 import { SystemResourcesGraphComponent } from './graph/system-resources-graph.component';
 import { SystemResourcesGraphListComponent } from '@ocfe-resources/system/graph-list/system-resources-graph-list.component';
 import { SystemResourcesSidePanelComponent } from './side-panel/system-resources-side-panel.component';
-import { HorizontalResizableContainerComponent } from '@ocfe-shared/components/horizontal-resizable-container/horizontal-resizable-container.component';
+import { HorizontalResizableContainerComponent } from '@openmina/shared';
 
 
 @NgModule({
