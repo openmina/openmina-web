@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
-import { DswBootstrapNode } from '@rufe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
+import { DswBootstrapNode } from '@rufe-shared/types/nodes/bootstrap/dsw-bootstrap-node.type';
 import { selectDswBootstrapNodes } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.state';
 import { filter } from 'rxjs';
 import { BarGraphComponent } from '@openmina/shared';

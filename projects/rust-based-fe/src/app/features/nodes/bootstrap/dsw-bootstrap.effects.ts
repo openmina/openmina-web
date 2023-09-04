@@ -15,7 +15,7 @@ import {
   DswBootstrapGetNodes,
 } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.actions';
 import { DswBootstrapService } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.service';
-import { DswBootstrapNode } from '@rufe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
+import { DswBootstrapNode } from '@rufe-shared/types/nodes/bootstrap/dsw-bootstrap-node.type';
 import { MinaRustBaseEffect } from '@rufe-shared/base-classes/mina-rust-base.effect';
 
 @Injectable({

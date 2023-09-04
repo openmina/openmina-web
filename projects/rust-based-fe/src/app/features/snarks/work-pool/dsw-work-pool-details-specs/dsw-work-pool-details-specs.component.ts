@@ -4,11 +4,10 @@ import {
   selectDswWorkPoolActiveWorkPoolDetail,
   selectDswWorkPoolActiveWorkPoolSpecs
 } from '@rufe-snarks/work-pool/dsw-work-pool.state';
-import { WorkPoolSpecs } from '@rufe-shared/types/dsw/work-pool/work-pool-specs.type';
+import { WorkPoolSpecs } from '@rufe-shared/types/snarks/work-pool/work-pool-specs.type';
 import { downloadJson, downloadJsonFromURL, ExpandTracking, MinaJsonViewerComponent } from '@openmina/shared';
-import { HttpClient } from '@angular/common/http';
 import { RustNodeService } from '@rufe-core/services/rust-node.service';
-import { WorkPoolDetail } from '@rufe-shared/types/dsw/work-pool/work-pool-detail.type';
+import { WorkPoolDetail } from '@rufe-shared/types/snarks/work-pool/work-pool-detail.type';
 
 @Component({
   selector: 'mina-dsw-work-pool-details-specs',
@@ -25,8 +24,7 @@ export class DswWorkPoolDetailsSpecsComponent extends StoreDispatcher implements
   @ViewChild(MinaJsonViewerComponent) private minaJsonViewer: MinaJsonViewerComponent;
   private jobId: string;
 
-  constructor(private http: HttpClient,
-              private rust: RustNodeService) {super();}
+  constructor(private rust: RustNodeService) {super();}
 
   ngOnInit(): void {
     this.select(selectDswWorkPoolActiveWorkPoolSpecs, (wp: WorkPoolSpecs) => {

@@ -14,6 +14,11 @@ const routes: Routes = [
         title: SNARKS_TITLE,
       },
       {
+        path: 'scan-state',
+        loadChildren: () => import('@rufe-snarks/scan-state/scan-state.module').then(m => m.ScanStateModule),
+        title: SNARKS_TITLE,
+      },
+      {
         path: '**',
         redirectTo: 'work-pool',
         pathMatch: 'full',

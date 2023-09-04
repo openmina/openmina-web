@@ -27,11 +27,6 @@ export const environment: Readonly<MinaEnv> = {
       // 'web-node': ['wallet', 'peers', 'logs', 'state'],
     },
   },
-  rustNodes: [
-    'http://webrtc2.webnode.openmina.com:10000',
-    'http://webrtc2.webnode.openmina.com:10010',
-    'http://webrtc2.webnode.openmina.com:10011',
-  ],
   configs: [
   ],
 };

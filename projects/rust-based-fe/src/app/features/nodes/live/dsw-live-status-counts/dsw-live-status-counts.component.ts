@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { selectDswLiveActiveNode } from '@rufe-app/features/nodes/live/dsw-live.state';
-import { DswLiveNode } from '@rufe-shared/types/dsw/live/dsw-live-node.type';
+import { DswLiveNode } from '@rufe-shared/types/nodes/live/dsw-live-node.type';
 
 @Component({
   selector: 'mina-dsw-live-status-counts',

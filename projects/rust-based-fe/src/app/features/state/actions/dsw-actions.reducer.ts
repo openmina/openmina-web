@@ -10,8 +10,8 @@ import {
   DswActionsActions,
 } from '@rufe-state/actions/dsw-actions.actions';
 import { isMobile, sort, SortDirection, TableSort } from '@openmina/shared';
-import { DswActionGroup } from '@rufe-shared/types/dsw/actions/dsw-action-group.type';
-import { DswActionsStats } from '@rufe-shared/types/dsw/actions/dsw-actions-stats.type';
+import { DswActionGroup } from '@rufe-shared/types/state/actions/dsw-action-group.type';
+import { DswActionsStats } from '@rufe-shared/types/state/actions/dsw-actions-stats.type';
 
 const initialState: DswActionsState = {
   groups: [],

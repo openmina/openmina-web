@@ -1,7 +1,7 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@rufe-app/app.setup';
 import { TableSort } from '@openmina/shared';
-import { DswBootstrapNode } from '@rufe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
+import { DswBootstrapNode } from '@rufe-shared/types/nodes/bootstrap/dsw-bootstrap-node.type';
 import { selectNodesBootstrapState } from '@rufe-nodes/nodes.state';
 
 export interface DswBootstrapState {

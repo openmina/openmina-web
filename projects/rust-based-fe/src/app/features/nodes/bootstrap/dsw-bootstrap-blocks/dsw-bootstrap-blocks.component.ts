@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
-import { DswBootstrapNode } from '@rufe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
+import { DswBootstrapNode } from '@rufe-shared/types/nodes/bootstrap/dsw-bootstrap-node.type';
 import { selectDswBootstrapActiveNode } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.state';
 import {
   DswDashboardBlock,
   DswDashboardNodeBlockStatus
-} from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
+} from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-block.type';
 import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig, sort, SortDirection, TableSort } from '@openmina/shared';
 
 @Component({

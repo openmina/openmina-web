@@ -3,7 +3,7 @@ import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
 import { Router } from '@angular/router';
 import { filter, take } from 'rxjs';
 import { Routes } from '@rufe-shared/enums/routes.enum';
-import { DswFrontierLog } from '@rufe-shared/types/dsw/frontier/dsw-frontier-log.type';
+import { DswFrontierLog } from '@rufe-shared/types/snarks/frontier/dsw-frontier-log.type';
 import { DswFrontierSetActiveLog, DswFrontierSortLogs } from '@rufe-snarks/frontier/dsw-frontier.actions';
 import {
   selectDswFrontierActiveLog,

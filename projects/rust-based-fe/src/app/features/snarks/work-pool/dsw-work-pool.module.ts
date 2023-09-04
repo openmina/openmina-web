@@ -17,7 +17,7 @@ import {
   CopyComponent,
   HorizontalMenuComponent,
   HorizontalResizableContainerComponent,
-  MinaJsonViewerComponent
+  MinaJsonViewerComponent, MinaSidePanelStepperComponent
 } from '@openmina/shared';
 
 
@@ -41,6 +41,7 @@ import {
     CopyComponent,
     MinaJsonViewerComponent,
     HorizontalMenuComponent,
+    MinaSidePanelStepperComponent,
   ],
 })
 export class DswWorkPoolModule {}

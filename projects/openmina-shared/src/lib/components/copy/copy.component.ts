@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit } from '@angular/core';
 import { OpenminaEagerSharedModule } from '../../openmina-eager-shared.module';
 import { CommonModule } from '@angular/common';
+import { REQUIRED } from '../../constants/angular';
 
 @Component({
   selector: 'mina-copy',
@@ -12,8 +13,8 @@ import { CommonModule } from '@angular/common';
 })
 export class CopyComponent implements OnInit {
 
-  @Input() value: string;
-  @Input() display: string;
+  @Input(REQUIRED) value: string;
+  @Input(REQUIRED) display: string;
   @Input() hidden: boolean = true;
 
   @HostBinding('class.no-hide') get isHidden(): boolean {

@@ -2,7 +2,7 @@ import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@rufe-app/app.setup';
 import { selectDswFrontierState } from '@rufe-dsw/dsw.state';
 import { TableSort } from '@openmina/shared';
-import { DswFrontierLog } from '@rufe-shared/types/dsw/frontier/dsw-frontier-log.type';
+import { DswFrontierLog } from '@rufe-shared/types/snarks/frontier/dsw-frontier-log.type';
 
 export interface DswFrontierState {
   logs: DswFrontierLog[];

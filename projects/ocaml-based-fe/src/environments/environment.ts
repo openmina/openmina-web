@@ -23,11 +23,6 @@ export const environment: Readonly<MinaEnv> = {
       'web-node': ['wallet', 'peers', 'logs', 'state'],
     },
   },
-  rustNodes: [
-    'http://webrtc2.webnode.openmina.com:10000',
-    'http://webrtc2.webnode.openmina.com:10010',
-    'http://webrtc2.webnode.openmina.com:10011',
-  ],
   configs: [
     // {
     //   "graphql": "mocked",
@@ -41,18 +36,18 @@ export const environment: Readonly<MinaEnv> = {
     //   "debugger": "http://1.k8.openmina.com:31308/node1/bpf-debugger",
     //   "name": "2Hardcoded Webrtc2 Node"
     // },
-    // {
-    //   "graphql": "http://1.k8.openmina.com:31308/node1",
-    //   "tracing-graphql": "http://1.k8.openmina.com:31308/node1/internal-trace",
-    //   "debugger": "http://1.k8.openmina.com:31308/node1/bpf-debugger",
-    //   "name": "node1"
-    // },
-    // {
-    //   "graphql": "http://1.k8.openmina.com:31308/node2",
-    //   "tracing-graphql": "http://1.k8.openmina.com:31308/node2/internal-trace",
-    //   "debugger": "http://1.k8.openmina.com:31308/node2/bpf-debugger",
-    //   "name": "node2"
-    // },
+    {
+      "graphql": "http://1.k8.openmina.com:31308/node1",
+      "tracing-graphql": "http://1.k8.openmina.com:31308/node1/internal-trace",
+      "debugger": "http://1.k8.openmina.com:31308/node1/bpf-debugger",
+      "name": "node1"
+    },
+    {
+      "graphql": "http://1.k8.openmina.com:31308/node2",
+      "tracing-graphql": "http://1.k8.openmina.com:31308/node2/internal-trace",
+      "debugger": "http://1.k8.openmina.com:31308/node2/bpf-debugger",
+      "name": "node2"
+    },
     // {
     //   "graphql": "http://1.k8.openmina.com:31308/node3",
     //   "tracing-graphql": "http://1.k8.openmina.com:31308/node3/internal-trace",

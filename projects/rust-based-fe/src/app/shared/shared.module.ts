@@ -12,7 +12,6 @@ const MODULES = [
 ];
 
 @NgModule({
-  declarations: [],
   imports: [
     ...MODULES,
   ],

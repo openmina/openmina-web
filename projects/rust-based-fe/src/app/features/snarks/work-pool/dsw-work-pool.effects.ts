@@ -20,9 +20,9 @@ import {
   DswWorkPoolSetActiveWorkPool,
 } from '@rufe-snarks/work-pool/dsw-work-pool.actions';
 import { DswWorkPoolService } from '@rufe-snarks/work-pool/dsw-work-pool.service';
-import { WorkPool } from '@rufe-shared/types/dsw/work-pool/work-pool.type';
-import { WorkPoolSpecs } from '@rufe-shared/types/dsw/work-pool/work-pool-specs.type';
-import { WorkPoolDetail } from '@rufe-shared/types/dsw/work-pool/work-pool-detail.type';
+import { WorkPool } from '@rufe-shared/types/snarks/work-pool/work-pool.type';
+import { WorkPoolSpecs } from '@rufe-shared/types/snarks/work-pool/work-pool-specs.type';
+import { WorkPoolDetail } from '@rufe-shared/types/snarks/work-pool/work-pool-detail.type';
 import { MinaRustBaseEffect } from '@rufe-shared/base-classes/mina-rust-base.effect';
 
 @Injectable({
@@ -44,7 +44,9 @@ export class DswWorkPoolEffects extends MinaRustBaseEffect<DswWorkPoolActions> {
     this.getWorkPool$ = createEffect(() => this.actions$.pipe(
       ofType(DSW_WORK_POOL_GET_WORK_POOL, DSW_WORK_POOL_CLOSE),
       this.latestActionState<DswWorkPoolGetWorkPool | DswWorkPoolClose>(),
-      filter(({ action }) => !this.pendingRequest),
+      filter(({ action }) => {
+        return (action.type === DSW_WORK_POOL_GET_WORK_POOL && !this.pendingRequest) || action.type === DSW_WORK_POOL_CLOSE;
+      }),
       tap(({ action }) => {
         if (action.type === DSW_WORK_POOL_GET_WORK_POOL) {
           this.pendingRequest = true;
@@ -79,7 +81,10 @@ export class DswWorkPoolEffects extends MinaRustBaseEffect<DswWorkPoolActions> {
             this.dswWorkPoolService.getWorkPoolDetail(state.snarks.workPool.activeWorkPool.id),
           ]),
       ),
-      map((payload: [WorkPoolSpecs, WorkPoolDetail]) => ({ type: DSW_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS, payload })),
+      map((payload: [WorkPoolSpecs, WorkPoolDetail]) => ({
+        type: DSW_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS,
+        payload
+      })),
       catchErrorAndRepeat(MinaErrorType.GENERIC, DSW_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS),
     ));
   }

@@ -34,6 +34,7 @@ export class HorizontalResizeDirective implements OnInit {
   private resizeInProgress: boolean;
   private windowResize$: Subject<number> = new Subject<number>();
   private maxCalculatedWidth: number;
+  private initialWidthOnResize: number;
 
   constructor(@Inject(DOCUMENT) private readonly document: Document,
               @Inject(ElementRef) private readonly elementRef: ElementRef<HTMLElement>) {
@@ -48,6 +49,7 @@ export class HorizontalResizeDirective implements OnInit {
             const { width, left } = this.elementRef.nativeElement
               .parentElement.parentElement
               .getBoundingClientRect();
+            this.initialWidthOnResize = this.elementRef.nativeElement.parentElement.offsetWidth;
 
             return fromEvent<MouseEvent>(this.document, 'mousemove').pipe(
               map(({ clientX }: { clientX: number }) => {
@@ -72,6 +74,7 @@ export class HorizontalResizeDirective implements OnInit {
       .pipe(
         filter(() => this.resizeInProgress),
         tap(() => this.resizeInProgress = false),
+        filter(() => this.initialWidthOnResize !== this.elementRef.nativeElement.parentElement.offsetWidth),
       );
   }
 

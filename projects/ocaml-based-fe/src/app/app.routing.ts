@@ -14,7 +14,6 @@ export const DASHBOARD_TITLE: string = APP_TITLE + ' - Dashboard';
 export const EXPLORER_TITLE: string = APP_TITLE + ' - Explorer';
 export const LOGS_TITLE: string = APP_TITLE + ' - Logs';
 export const STORAGE_TITLE: string = APP_TITLE + ' - Storage';
-export const DSW_TITLE: string = APP_TITLE + ' - Snark Worker';
 
 
 const routes: Routes = [
@@ -64,12 +63,6 @@ const routes: Routes = [
     path: 'storage',
     loadChildren: () => import('@ocfe-storage/storage.module').then(m => m.StorageModule),
     title: STORAGE_TITLE,
-    canActivate: [FeatureGuard],
-  },
-  {
-    path: 'snark-worker',
-    loadChildren: () => import('@ocfe-dsw/dsw.module').then(m => m.DswModule),
-    title: DSW_TITLE,
     canActivate: [FeatureGuard],
   },
   {

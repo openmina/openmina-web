@@ -35,7 +35,6 @@ import { withLatestFrom } from 'rxjs/operators';
 import { AppService } from './app.service';
 import { getFirstFeature, isFeatureEnabled } from '@ocfe-shared/constants/config';
 import { TracingGraphQlService } from '@ocfe-core/services/tracing-graph-ql.service';
-import { RustNodeService } from '@ocfe-core/services/rust-node.service';
 
 const INIT_EFFECTS = '@ngrx/effects/init';
 
@@ -66,7 +65,6 @@ export class AppEffects extends MinaOcamlBaseEffect<AppActions> {
               private graphQL: GraphQLService,
               private tracingGQL: TracingGraphQlService,
               private blockService: BlockService,
-              private rustNode: RustNodeService,
               private router: Router,
               store: Store<MinaState>) {
 
@@ -180,6 +178,5 @@ export class AppEffects extends MinaOcamlBaseEffect<AppActions> {
   private changeGqlProvider(node: MinaNode): void {
     this.graphQL.changeGraphQlProvider(node);
     this.tracingGQL.changeGraphQlProvider(node);
-    this.rustNode.changeRustNode(node.name);
   }
 }

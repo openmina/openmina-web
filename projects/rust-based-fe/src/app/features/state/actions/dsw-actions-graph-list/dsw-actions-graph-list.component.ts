@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { selectDswActionsGroups, selectDswActionsOpenSidePanel } from '@rufe-state/actions/dsw-actions.state';
-import { DswActionGroup } from '@rufe-shared/types/dsw/actions/dsw-action-group.type';
+import { DswActionGroup } from '@rufe-shared/types/state/actions/dsw-action-group.type';
 import { DswActionsToggleSidePanel } from '@rufe-state/actions/dsw-actions.actions';
-import { DswActionGroupAction } from '@rufe-shared/types/dsw/actions/dsw-action-group-action.type';
+import { DswActionGroupAction } from '@rufe-shared/types/state/actions/dsw-action-group-action.type';
 import { delay } from 'rxjs';
 
 

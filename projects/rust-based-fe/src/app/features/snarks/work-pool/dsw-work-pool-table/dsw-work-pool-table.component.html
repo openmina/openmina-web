@@ -1,16 +1,19 @@
+<script src="../dsw-work-pool.actions.ts"></script>
 <ng-container #minaTable></ng-container>
 
 <ng-template #thGroupsTemplate>
   <div class="th-group h-lg lh-lg border-top tertiary f-600">
     <span class="pl-12">Jobs</span>
     <span class="pl-12">Commitments</span>
-    <span class="pl-12">SNARKs</span>
-    <span class="fx-row-vert-cent flex-end">
-      <button *ngIf="!openSidePanel"
-              class="h-sm w-sm fx-row-full-cent btn-selected p-0 mr-10"
-              (click)="toggleSidePanel()">
-        <span class="mina-icon f-20">view_sidebar</span>
-      </button>
+    <span class="pl-12 p-relative">
+      SNARKs
+      <span class="fx-row-vert-cent h-100 p-absolute" style="top:0;right:0">
+        <button *ngIf="!openSidePanel"
+                class="h-sm w-sm fx-row-full-cent btn-selected p-0 mr-10"
+                (click)="toggleSidePanel()">
+          <span class="mina-icon f-20">view_sidebar</span>
+        </button>
+      </span>
     </span>
   </div>
 </ng-template>

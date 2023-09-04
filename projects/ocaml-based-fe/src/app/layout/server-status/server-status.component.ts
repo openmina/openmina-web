@@ -116,17 +116,13 @@ export class ServerStatusComponent extends ManualDetection implements OnInit, On
         ),
       )
       .subscribe((node: NodeStatus) => {
-        if (CONFIG.rustNodes) {
-          this.status = AppNodeStatusTypes.SYNCED.toLowerCase();
-        } else {
-          this.timeIsPresent = !!node.timestamp;
-          this.timeReference = node.timestamp;
-          this.secondsPassed = (Date.now() - this.timeReference) / 1000;
-          this.elapsedTime$.next(ServerStatusComponent.getFormattedTimeToDisplay(this.secondsPassed));
+        this.timeIsPresent = !!node.timestamp;
+        this.timeReference = node.timestamp;
+        this.secondsPassed = (Date.now() - this.timeReference) / 1000;
+        this.elapsedTime$.next(ServerStatusComponent.getFormattedTimeToDisplay(this.secondsPassed));
 
-          this.blockLevel = node.blockLevel;
-          this.status = node.status.toLowerCase();
-        }
+        this.blockLevel = node.blockLevel;
+        this.status = node.status.toLowerCase();
         this.buildTooltipText();
         this.detect();
       });

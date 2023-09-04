@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { SEC_CONFIG_GRAY_PALETTE, SecDurationConfig, TableColumnList } from '@openmina/shared';
 import { filter } from 'rxjs';
-import { DswLiveBlockEvent } from '@rufe-shared/types/dsw/live/dsw-live-block-event.type';
+import { DswLiveBlockEvent } from '@rufe-shared/types/nodes/live/dsw-live-block-event.type';
 import { DswLiveSortEvents } from '@rufe-app/features/nodes/live/dsw-live.actions';
 import { selectDswLiveFilteredEvents, selectDswLiveSort } from '@rufe-app/features/nodes/live/dsw-live.state';
 import { MinaTableRustWrapper } from '@rufe-shared/base-classes/mina-table-rust-wrapper.class';

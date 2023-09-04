@@ -7,21 +7,21 @@ export const environment: Readonly<MinaEnv> = {
     features: {
       nodes: ['overview', 'live', 'bootstrap'],
       state: ['actions'],
-      snarks: ['work-pool'],
+      snarks: ['work-pool', 'scan-state'],
     },
   },
   configs: [
     {
-      name: 'webrtc2:10000',
+      name: 'Snarker 1',
       url: 'http://webrtc2.webnode.openmina.com:10000',
     },
     {
-      name: 'webrtc2:10010',
-      url: 'http://webrtc2.webnode.openmina.com:10010',
+      name: 'Snarker 2',
+      url: 'http://webrtc3.webnode.openmina.com:10000',
     },
     {
-      name: 'webrtc2:10011',
-      url: 'http://webrtc2.webnode.openmina.com:10011',
+      name: 'Snarker 3',
+      url: 'http://webrtc4.webnode.openmina.com:10000',
     }
   ],
 };

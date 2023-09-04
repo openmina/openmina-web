@@ -54,14 +54,20 @@ $code-yellow: var(--code-yellow);
 $code-blue: var(--code-blue);
 $code-magenta: var(--code-magenta);
 $code-teal: var(--code-teal);
+$code-purple: var(--code-purple);
 
 $special-surface: var(--special-surface);
 $special-selected-alt-1-primary: var(--special-selected-alt-1-primary);
 $special-selected-alt-1-secondary: var(--special-selected-alt-1-secondary);
+$special-selected-alt-1-tertiary: var(--special-selected-alt-1-tertiary);
 $special-selected-alt-1-container: var(--special-selected-alt-1-container);
 $special-selected-alt-2-primary: var(--special-selected-alt-2-primary);
+$special-selected-alt-2-secondary: var(--special-selected-alt-2-secondary);
+$special-selected-alt-2-tertiary: var(--special-selected-alt-2-tertiary);
 $special-selected-alt-2-container: var(--special-selected-alt-2-container);
 $special-selected-alt-3-primary: var(--special-selected-alt-3-primary);
+$special-selected-alt-3-secondary: var(--special-selected-alt-3-secondary);
+$special-selected-alt-3-tertiary: var(--special-selected-alt-3-tertiary);
 $special-selected-alt-3-container: var(--special-selected-alt-3-container);
 $special-table-hover: var(--special-table-hover);
 $special-node: var(--special-node);
@@ -1892,99 +1898,139 @@ span.mina-icon {
 
 
 .primary {
-	color: $base-primary !important;
+  color: $base-primary !important;
 }
 
 .secondary {
-	color: $base-secondary !important;
+  color: $base-secondary !important;
 }
 
 .tertiary {
-	color: $base-tertiary !important;
+  color: $base-tertiary !important;
 }
 
 .container {
-	color: $base-container !important;
+  color: $base-container !important;
 }
 
 .divider {
-	color: $base-divider !important;
+  color: $base-divider !important;
 }
 
 .selected-primary {
-	color: $selected-primary !important;
+  color: $selected-primary !important;
 }
 
 .selected-secondary {
-	color: $selected-secondary !important;
+  color: $selected-secondary !important;
 }
 
 .success-primary {
-	color: $success-primary !important;
+  color: $success-primary !important;
 }
 
 .success-secondary {
-	color: $success-secondary !important;
+  color: $success-secondary !important;
 }
 
 .warn-primary {
-	color: $warn-primary !important;
+  color: $warn-primary !important;
 }
 
 .warn-secondary {
-	color: $warn-secondary !important;
+  color: $warn-secondary !important;
 }
 
 .aware-primary {
-	color: $aware-primary !important;
+  color: $aware-primary !important;
+}
+
+.aware-secondary {
+  color: $aware-secondary !important;
 }
 
 .cta-primary {
-	color: $cta-primary !important;
+  color: $cta-primary !important;
 }
 
 .cta-secondary {
-	color: $cta-secondary !important;
+  color: $cta-secondary !important;
 }
 
 .primary-hover:hover {
-	color: $base-primary !important;
+  color: $base-primary !important;
 }
 
 .secondary-hover:hover {
-	color: $base-secondary !important;
+  color: $base-secondary !important;
 }
 
 .tertiary-hover:hover {
-	color: $base-tertiary !important;
+  color: $base-tertiary !important;
 }
 
-.special-alt-1 {
-	color: $special-selected-alt-1-primary !important;
+.special-alt-1-primary {
+  color: $special-selected-alt-1-primary !important;
 }
 
-.special-alt-2 {
-	color: $special-selected-alt-2-primary !important;
+.special-alt-1-secondary {
+  color: $special-selected-alt-1-secondary !important;
 }
 
-.special-alt-3 {
-	color: $special-selected-alt-3-primary !important;
+.special-alt-1-tertiary {
+  color: $special-selected-alt-1-tertiary !important;
+}
+
+.special-alt-2-primary {
+  color: $special-selected-alt-2-primary !important;
+}
+
+.special-alt-2-secondary {
+  color: $special-selected-alt-2-secondary !important;
+}
+
+.special-alt-2-tertiary {
+  color: $special-selected-alt-2-tertiary !important;
+}
+
+.special-alt-3-primary {
+  color: $special-selected-alt-3-primary !important;
+}
+
+.special-alt-3-secondary {
+  color: $special-selected-alt-3-secondary !important;
+}
+
+.special-alt-3-tertiary {
+  color: $special-selected-alt-3-tertiary !important;
 }
 
 .error {
-	color: $warn-primary !important;
-	fill: $warn-primary !important;
+  color: $warn-primary !important;
+  fill: $warn-primary !important;
 }
 
 .orange {
-	opacity: 0.85;
-	color: $chart-yellow-red-2 !important;
-	fill: $chart-yellow-red-2 !important;
+  opacity: 0.85;
+  color: $chart-yellow-red-2 !important;
+  fill: $chart-yellow-red-2 !important;
 }
 
 .warn {
-	opacity: 0.7;
-	color: $chart-yellow-red-1 !important;
-	fill: $chart-yellow-red-1 !important;
+  opacity: 0.7;
+  color: $chart-yellow-red-1 !important;
+  fill: $chart-yellow-red-1 !important;
+}
+
+.code-teal {
+  color: $code-teal !important;
+}
+
+.code-purple {
+  color: $code-purple !important;
+}
+
+.code-magenta {
+  color: $code-magenta !important;
 }
 

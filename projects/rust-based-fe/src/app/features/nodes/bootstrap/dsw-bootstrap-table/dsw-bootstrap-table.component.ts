@@ -21,7 +21,7 @@ import {
 } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.state';
 import { delay, filter, mergeMap, of, take } from 'rxjs';
 import { Routes } from '@rufe-shared/enums/routes.enum';
-import { DswBootstrapNode } from '@rufe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
+import { DswBootstrapNode } from '@rufe-shared/types/nodes/bootstrap/dsw-bootstrap-node.type';
 import { MinaTableRustWrapper } from '@rufe-shared/base-classes/mina-table-rust-wrapper.class';
 
 @Component({

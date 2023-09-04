@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { catchError, forkJoin, map, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { DswDashboardNode, DswDashboardNodeKindType } from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
+import { DswDashboardNode, DswDashboardNodeKindType } from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-node.type';
 import { hasValue, ONE_BILLION, ONE_MILLION, toReadableDate } from '@openmina/shared';
 import {
   DswDashboardBlock,
   DswDashboardNodeBlockStatus
-} from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
+} from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-block.type';
 import {
   DswDashboardLedger,
   DswDashboardLedgerStep,
   DswDashboardLedgerStepState
-} from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-ledger.type';
+} from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-ledger.type';
 import { CONFIG } from '@rufe-shared/constants/config';
 import { MinaNode } from '@rufe-shared/types/core/environment/mina-env.type';
 

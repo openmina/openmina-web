@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { DswDashboardBlock } from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
-import { DswLiveNode } from '@rufe-shared/types/dsw/live/dsw-live-node.type';
+import { DswDashboardBlock } from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-block.type';
+import { DswLiveNode } from '@rufe-shared/types/nodes/live/dsw-live-node.type';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { selectDswLiveActiveNode } from '../dsw-live.state';
 import { lastItem } from '@openmina/shared';

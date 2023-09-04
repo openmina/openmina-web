@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { selectDswLiveFilters } from '@rufe-app/features/nodes/live/dsw-live.state';
 import { DswLiveToggleFilter } from '@rufe-app/features/nodes/live/dsw-live.actions';
-import { DswDashboardNodeBlockStatus } from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
+import { DswDashboardNodeBlockStatus } from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-block.type';
 
 @Component({
   selector: 'mina-dsw-live-filters',

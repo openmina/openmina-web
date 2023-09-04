@@ -8,7 +8,7 @@ import {
   DSW_BOOTSTRAP_TOGGLE_SIDE_PANEL,
   DswBootstrapActions,
 } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.actions';
-import { DswBootstrapNode } from '@rufe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
+import { DswBootstrapNode } from '@rufe-shared/types/nodes/bootstrap/dsw-bootstrap-node.type';
 import { isDesktop } from '@openmina/shared';
 
 const initialState: DswBootstrapState = {

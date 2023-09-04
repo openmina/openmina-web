@@ -1,6 +1,6 @@
 import { FeatureAction, TableSort } from '@openmina/shared';
-import { DswLiveNode } from '@rufe-shared/types/dsw/live/dsw-live-node.type';
-import { DswLiveBlockEvent } from '@rufe-shared/types/dsw/live/dsw-live-block-event.type';
+import { DswLiveNode } from '@rufe-shared/types/nodes/live/dsw-live-node.type';
+import { DswLiveBlockEvent } from '@rufe-shared/types/nodes/live/dsw-live-block-event.type';
 
 enum DswLiveActionTypes {
   DSW_LIVE_INIT = 'DSW_LIVE_INIT',

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { DswActionGroup } from '@rufe-shared/types/dsw/actions/dsw-action-group.type';
-import { DswActionGroupAction } from '@rufe-shared/types/dsw/actions/dsw-action-group-action.type';
-import { DswActionColumn } from '@rufe-shared/types/dsw/actions/dsw-action-column.type';
+import { DswActionGroup } from '@rufe-shared/types/state/actions/dsw-action-group.type';
+import { DswActionGroupAction } from '@rufe-shared/types/state/actions/dsw-action-group-action.type';
+import { DswActionColumn } from '@rufe-shared/types/state/actions/dsw-action-column.type';
 import { NANOSEC_IN_1_SEC, ONE_MILLION, toReadableDate } from '@openmina/shared';
 import { HttpClient } from '@angular/common/http';
-import { DswActionsStats } from '@rufe-shared/types/dsw/actions/dsw-actions-stats.type';
+import { DswActionsStats } from '@rufe-shared/types/state/actions/dsw-actions-stats.type';
 import { RustNodeService } from '@rufe-core/services/rust-node.service';
 
 @Injectable({

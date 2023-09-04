@@ -15,7 +15,7 @@ import {
   DswLiveClose,
   DswLiveGetNodes
 } from '@rufe-app/features/nodes/live/dsw-live.actions';
-import { DswLiveNode } from '@rufe-shared/types/dsw/live/dsw-live-node.type';
+import { DswLiveNode } from '@rufe-shared/types/nodes/live/dsw-live-node.type';
 import { MinaRustBaseEffect } from '@rufe-shared/base-classes/mina-rust-base.effect';
 
 @Injectable({

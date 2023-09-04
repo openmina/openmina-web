@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { map, Observable, of, switchMap, tap } from 'rxjs';
-import { WorkPool } from '@rufe-shared/types/dsw/work-pool/work-pool.type';
+import { WorkPool } from '@rufe-shared/types/snarks/work-pool/work-pool.type';
 import { HttpClient } from '@angular/common/http';
 import { ONE_BILLION, ONE_MILLION, ONE_THOUSAND, toReadableDate } from '@openmina/shared';
-import { WorkPoolSpecs } from '@rufe-shared/types/dsw/work-pool/work-pool-specs.type';
-import { WorkPoolDetail } from '@rufe-shared/types/dsw/work-pool/work-pool-detail.type';
-import { WorkPoolCommitment } from '@rufe-shared/types/dsw/work-pool/work-pool-commitment.type';
+import { WorkPoolSpecs } from '@rufe-shared/types/snarks/work-pool/work-pool-specs.type';
+import { WorkPoolDetail } from '@rufe-shared/types/snarks/work-pool/work-pool-detail.type';
+import { WorkPoolCommitment } from '@rufe-shared/types/snarks/work-pool/work-pool-commitment.type';
 import { RustNodeService } from '@rufe-core/services/rust-node.service';
 
 @Injectable({
@@ -24,8 +24,8 @@ export class DswWorkPoolService {
         if (this.snarkerHash) {
           return of(response);
         }
-        return this.http.get<any[]>(this.rust.URL + '/snarker/config').pipe(
-          tap((config: any) => this.snarkerHash = config.public_key),
+        return this.getSnarkerPublicKey().pipe(
+          tap((hash: string) => this.snarkerHash = hash),
           map(() => response),
         );
       }),
@@ -39,6 +39,12 @@ export class DswWorkPoolService {
 
   getWorkPoolSpecs(id: string): Observable<WorkPoolSpecs> {
     return this.http.get<WorkPoolSpecs>(this.rust.URL + '/snarker/job/spec?id=' + id);
+  }
+
+  getSnarkerPublicKey(): Observable<string> {
+    return this.http.get<any>(this.rust.URL + '/snarker/config').pipe(
+      map((config: any) => config.public_key),
+    );
   }
 
   private mapWorkPoolResponse(response: any[]): WorkPool[] {

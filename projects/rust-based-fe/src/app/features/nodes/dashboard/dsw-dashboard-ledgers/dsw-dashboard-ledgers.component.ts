@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
-import { DswDashboardLedger } from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-ledger.type';
+import { DswDashboardLedger } from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-ledger.type';
 import { SecDurationConfig } from '@openmina/shared';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';

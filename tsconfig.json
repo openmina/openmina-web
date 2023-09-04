@@ -14,7 +14,7 @@
     "strictPropertyInitialization": false,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -78,9 +78,6 @@
       ],
       "@ocfe-storage/*": [
         "projects/ocaml-based-fe/src/app/features/storage/*"
-      ],
-      "@ocfe-dsw/*": [
-        "projects/ocaml-based-fe/src/app/features/dsw/*"
       ],
 
       "@rufe-app/*": [

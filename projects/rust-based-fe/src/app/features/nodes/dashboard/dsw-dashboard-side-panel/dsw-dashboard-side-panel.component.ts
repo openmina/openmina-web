@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { selectDswDashboardActiveNode } from '@rufe-app/features/nodes/dashboard/dsw-dashboard.state';
-import { DswDashboardNode } from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
+import { DswDashboardNode } from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-node.type';
 import { DswDashboardSetActiveNode } from '@rufe-app/features/nodes/dashboard/dsw-dashboard.actions';
 import { Router } from '@angular/router';
 import { Routes } from '@rufe-shared/enums/routes.enum';

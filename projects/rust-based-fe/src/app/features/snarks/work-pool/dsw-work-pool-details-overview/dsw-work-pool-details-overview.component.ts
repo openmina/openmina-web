@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { selectDswWorkPoolActiveWorkPoolDetail } from '@rufe-snarks/work-pool/dsw-work-pool.state';
 import { downloadJson, ExpandTracking, MinaJsonViewerComponent } from '@openmina/shared';
-import { WorkPoolDetail } from '@rufe-shared/types/dsw/work-pool/work-pool-detail.type';
+import { WorkPoolDetail } from '@rufe-shared/types/snarks/work-pool/work-pool-detail.type';
 
 @Component({
   selector: 'mina-dsw-work-pool-details-overview',

@@ -15,7 +15,7 @@ import {
   DswDashboardGetNodes,
 } from '@rufe-app/features/nodes/dashboard/dsw-dashboard.actions';
 import { DswDashboardService } from '@rufe-app/features/nodes/dashboard/dsw-dashboard.service';
-import { DswDashboardNode } from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
+import { DswDashboardNode } from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-node.type';
 import { MinaRustBaseEffect } from '@rufe-shared/base-classes/mina-rust-base.effect';
 
 @Injectable({

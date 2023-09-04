@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { selectDswWorkPoolFilters, selectDswWorkPools } from '@rufe-snarks/work-pool/dsw-work-pool.state';
 import { DswWorkPoolToggleFilter } from '@rufe-snarks/work-pool/dsw-work-pool.actions';
-import { WorkPool } from '@rufe-shared/types/dsw/work-pool/work-pool.type';
+import { WorkPool } from '@rufe-shared/types/snarks/work-pool/work-pool.type';
 
 @Component({
   selector: 'mina-dsw-work-pool-toolbar',

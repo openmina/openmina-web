@@ -18,7 +18,11 @@ import {
   DSW_BOOTSTRAP_GET_NODES_SUCCESS,
   DSW_BOOTSTRAP_INIT
 } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.actions';
-import { DSW_LIVE_CLOSE, DSW_LIVE_GET_NODES_SUCCESS, DSW_LIVE_INIT } from '@rufe-app/features/nodes/live/dsw-live.actions';
+import {
+  DSW_LIVE_CLOSE,
+  DSW_LIVE_GET_NODES_SUCCESS,
+  DSW_LIVE_INIT
+} from '@rufe-app/features/nodes/live/dsw-live.actions';
 import {
   DSW_WORK_POOL_CLOSE,
   DSW_WORK_POOL_GET_WORK_POOL_DETAIL,
@@ -26,6 +30,11 @@ import {
   DSW_WORK_POOL_GET_WORK_POOL_SUCCESS,
   DSW_WORK_POOL_INIT,
 } from '@rufe-snarks/work-pool/dsw-work-pool.actions';
+import {
+  SCAN_STATE_CLOSE,
+  SCAN_STATE_GET_BLOCK,
+  SCAN_STATE_GET_BLOCK_SUCCESS, SCAN_STATE_INIT
+} from '@rufe-snarks/scan-state/scan-state.actions';
 
 export type LoadingState = string[];
 
@@ -43,6 +52,8 @@ export function reducer(state: LoadingState = initialState, action: FeatureActio
     case DSW_LIVE_INIT:
     case DSW_WORK_POOL_INIT:
     case DSW_WORK_POOL_GET_WORK_POOL_DETAIL:
+
+    case SCAN_STATE_INIT:
       return add(state, action);
 
     /* ------------ REMOVE ------------ */
@@ -74,6 +85,11 @@ export function reducer(state: LoadingState = initialState, action: FeatureActio
       return remove(state, DSW_WORK_POOL_GET_WORK_POOL_DETAIL);
     case DSW_WORK_POOL_CLOSE:
       return remove(state, [DSW_WORK_POOL_INIT, DSW_WORK_POOL_GET_WORK_POOL_DETAIL]);
+
+    case SCAN_STATE_GET_BLOCK_SUCCESS:
+      return remove(state, SCAN_STATE_INIT);
+    case SCAN_STATE_CLOSE:
+      return remove(state, [SCAN_STATE_INIT]);
     default:
       return state;
   }

@@ -2,10 +2,9 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmi
 import { MinaNode } from '@rufe-shared/types/core/environment/mina-env.type';
 import { debounceTime, distinctUntilChanged, filter, fromEvent, map } from 'rxjs';
 import { AppAddNode, AppChangeActiveNode } from '@rufe-app/app.actions';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { untilDestroyed } from '@ngneat/until-destroy';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 
-@UntilDestroy()
 @Component({
   selector: 'mina-node-picker',
   templateUrl: './node-picker.component.html',
