@@ -14,7 +14,7 @@ import {
   DswFrontierClose,
   DswFrontierGetLogs,
 } from '@rufe-snarks/frontier/dsw-frontier.actions';
-import { DswFrontierLog } from '@rufe-shared/types/dsw/frontier/dsw-frontier-log.type';
+import { DswFrontierLog } from '@rufe-shared/types/snarks/frontier/dsw-frontier-log.type';
 import { MinaErrorType } from '@rufe-shared/types/error-preview/mina-error-type.enum';
 
 @Injectable({

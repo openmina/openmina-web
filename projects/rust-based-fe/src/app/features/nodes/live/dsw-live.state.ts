@@ -1,7 +1,7 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@rufe-app/app.setup';
-import { DswLiveNode } from '@rufe-shared/types/dsw/live/dsw-live-node.type';
-import { DswLiveBlockEvent } from '@rufe-shared/types/dsw/live/dsw-live-block-event.type';
+import { DswLiveNode } from '@rufe-shared/types/nodes/live/dsw-live-node.type';
+import { DswLiveBlockEvent } from '@rufe-shared/types/nodes/live/dsw-live-block-event.type';
 import { TableSort } from '@openmina/shared';
 import { selectNodesLiveState } from '@rufe-nodes/nodes.state';
 

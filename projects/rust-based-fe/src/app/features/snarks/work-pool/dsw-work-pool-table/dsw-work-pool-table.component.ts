@@ -3,7 +3,7 @@ import { getMergedRoute, MergedRoute, SecDurationConfig, TableColumnList } from 
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { Routes } from '@rufe-shared/enums/routes.enum';
-import { WorkPool } from '@rufe-shared/types/dsw/work-pool/work-pool.type';
+import { WorkPool } from '@rufe-shared/types/snarks/work-pool/work-pool.type';
 import {
   DswWorkPoolSetActiveWorkPool,
   DswWorkPoolSortWorkPool,

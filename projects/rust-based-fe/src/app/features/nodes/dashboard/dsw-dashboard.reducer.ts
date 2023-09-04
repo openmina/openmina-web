@@ -7,7 +7,7 @@ import {
   DswDashboardActions,
 } from '@rufe-app/features/nodes/dashboard/dsw-dashboard.actions';
 import { sort, SortDirection, TableSort } from '@openmina/shared';
-import { DswDashboardNode } from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
+import { DswDashboardNode } from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-node.type';
 
 const initialState: DswDashboardState = {
   nodes: [],

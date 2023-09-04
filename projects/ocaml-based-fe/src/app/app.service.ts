@@ -1,7 +1,19 @@
 import { Injectable } from '@angular/core';
 import { GraphQLService } from '@ocfe-core/services/graph-ql.service';
 import { HttpClient } from '@angular/common/http';
-import { catchError, concatAll, defaultIfEmpty, EMPTY, from, map, Observable, of, shareReplay, switchMap, take } from 'rxjs';
+import {
+  catchError,
+  concatAll,
+  defaultIfEmpty,
+  EMPTY,
+  from,
+  map,
+  Observable,
+  of,
+  shareReplay,
+  switchMap,
+  take
+} from 'rxjs';
 import { MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
 import { CONFIG } from '@ocfe-shared/constants/config';
 
@@ -34,9 +46,6 @@ export class AppService {
 
     let onlineNode: MinaNode = nodeFromURL;
 
-    if (CONFIG.rustNodes) {
-      return of(onlineNode);
-    }
     return from(
       configs.map(node =>
         this.http
@@ -67,12 +76,7 @@ export class AppService {
   }
 
   getNodes(): Observable<MinaNode[]> {
-    if (CONFIG.rustNodes) {
-      return of(CONFIG.rustNodes.map((node: string) => ({
-        name: node,
-        graphql: node,
-      })));
-    }else if (CONFIG.nodeLister) {
+    if (CONFIG.nodeLister) {
       return this.getNodesHttp().pipe(
         map((response: any[]) => {
           return response.map((node: any) => ({

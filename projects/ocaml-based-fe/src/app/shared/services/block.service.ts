@@ -23,7 +23,7 @@ export class BlockService {
               private config: ConfigService) { }
 
   getNodeStatus(): Observable<NodeStatus> {
-    if (CONFIG.noServerStatus || CONFIG.rustNodes) {
+    if (CONFIG.noServerStatus) {
       return of(NO_NODE_STATUS);
     }
     if (CONFIG.nodeLister) {

@@ -3,8 +3,18 @@ name: Build and Test Openmina Frontend
 type: docker
 
 steps:
+  - name: set-docker-buildkit
+    image: alpine
+    environment:
+      DOCKER_BUILDKIT: "0"
+    commands:
+      - echo "export DOCKER_BUILDKIT=0" >> $HOME/.bashrc
+      - source $HOME/.bashrc
+
   - name: build
     image: docker:latest
+    environment:
+      DOCKER_BUILDKIT: "0"
     commands:
       - COMMIT_SHORT_SHA=$(echo $DRONE_COMMIT_SHA | cut -c 1-7)
 #      - docker build --no-cache -t directcuteo/ocaml-based-fe:$COMMIT_SHORT_SHA -f projects/ocaml-based-fe/Dockerfile .
@@ -12,6 +22,9 @@ steps:
     volumes:
       - name: docker_sock
         path: /var/run/docker.sock
+    depends_on:
+      - set-docker-buildkit
+
 
   - name: push
     image: docker:latest

@@ -7,6 +7,10 @@
 		&:not(.head) {
 			cursor: pointer;
 		}
+
+		&.sorting.p-relative:last-child {
+			overflow: hidden;
+		}
 	}
 
 	.cdk-virtual-scroll-viewport {

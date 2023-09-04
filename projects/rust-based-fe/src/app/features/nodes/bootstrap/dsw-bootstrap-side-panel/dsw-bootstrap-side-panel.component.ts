@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { Router } from '@angular/router';
 import { selectDswBootstrapActiveNode, selectDswBootstrapNodes } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.state';
-import { DswBootstrapNode } from '@rufe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
+import { DswBootstrapNode } from '@rufe-shared/types/nodes/bootstrap/dsw-bootstrap-node.type';
 import { DswBootstrapSetActiveBlock, DswBootstrapToggleSidePanel } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.actions';
 import { Routes } from '@rufe-shared/enums/routes.enum';
 

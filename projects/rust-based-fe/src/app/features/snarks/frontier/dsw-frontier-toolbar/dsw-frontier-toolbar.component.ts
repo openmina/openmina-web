@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { DswFrontierLogLevels } from '@rufe-shared/types/dsw/frontier/dsw-frontier-log.type';
+import { DswFrontierLogLevels } from '@rufe-shared/types/snarks/frontier/dsw-frontier-log.type';
 
 @Component({
   selector: 'mina-dsw-frontier-toolbar',

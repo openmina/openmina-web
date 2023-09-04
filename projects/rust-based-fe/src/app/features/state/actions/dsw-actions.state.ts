@@ -1,8 +1,8 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@rufe-app/app.setup';
-import { DswActionGroup } from '@rufe-shared/types/dsw/actions/dsw-action-group.type';
+import { DswActionGroup } from '@rufe-shared/types/state/actions/dsw-action-group.type';
 import { TableSort } from '@openmina/shared';
-import { DswActionsStats } from '@rufe-shared/types/dsw/actions/dsw-actions-stats.type';
+import { DswActionsStats } from '@rufe-shared/types/state/actions/dsw-actions-stats.type';
 import { selectStateActionsState } from '@rufe-state/state.state';
 
 export interface DswActionsState {

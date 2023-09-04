@@ -18,8 +18,8 @@ import {
   DswActionsGetActions,
   DswActionsGetEarliestSlot,
 } from '@rufe-state/actions/dsw-actions.actions';
-import { DswActionGroup } from '@rufe-shared/types/dsw/actions/dsw-action-group.type';
-import { DswActionsStats } from '@rufe-shared/types/dsw/actions/dsw-actions-stats.type';
+import { DswActionGroup } from '@rufe-shared/types/state/actions/dsw-action-group.type';
+import { DswActionsStats } from '@rufe-shared/types/state/actions/dsw-actions-stats.type';
 import { Routes } from '@rufe-shared/enums/routes.enum';
 import { Router } from '@angular/router';
 import { MinaRustBaseEffect } from '@rufe-shared/base-classes/mina-rust-base.effect';

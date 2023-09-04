@@ -14,6 +14,7 @@ import {
 import { HorizontalResizeDirective } from './horizontal-resize.directive';
 import { OpenminaSharedModule } from '../../openmina-shared.module';
 import { CommonModule } from '@angular/common';
+import { REQUIRED } from '../../constants/angular';
 
 @Component({
   selector: 'mina-horizontal-resizable-container',
@@ -29,10 +30,10 @@ export class HorizontalResizableContainerComponent implements OnInit, OnChanges 
   @Input() minWidth: number | null = null;
   @Input() maxWidth: number | null = null;
   @Input() maxWidthElement: HTMLElement | null = null;
-  @Input() localStorageKey: string;
-  @Input() show: boolean;
-  @Input() leftTemplate: TemplateRef<void>;
-  @Input() rightTemplate: TemplateRef<void>;
+  @Input(REQUIRED) localStorageKey: string;
+  @Input(REQUIRED) show: boolean;
+  @Input(REQUIRED) leftTemplate: TemplateRef<void>;
+  @Input(REQUIRED) rightTemplate: TemplateRef<void>;
   @Output() endResizing: EventEmitter<void> = new EventEmitter<void>();
 
   width: number | null = null;

@@ -44,10 +44,6 @@ import * as fromStorage from '@ocfe-storage/storage.reducer';
 import { StorageAction } from '@ocfe-storage/storage.reducer';
 import { StorageState } from '@ocfe-storage/storage.state';
 
-import * as fromDsw from '@ocfe-dsw/dsw.reducer';
-import { DswAction } from '@ocfe-dsw/dsw.reducer';
-import { DswState } from '@ocfe-dsw/dsw.state';
-
 import * as fromLoading from '@ocfe-app/layout/toolbar/loading.reducer';
 import { LoadingState } from '@ocfe-app/layout/toolbar/loading.reducer';
 
@@ -64,7 +60,6 @@ export interface MinaState {
   resources: ResourcesState;
   logs: LogsState;
   storage: StorageState;
-  dsw: DswState;
   loading: LoadingState;
 }
 
@@ -80,7 +75,6 @@ type MinaAction =
   & ResourcesAction
   & LogsAction
   & StorageAction
-  & DswAction
   ;
 
 export const reducers: ActionReducerMap<MinaState, MinaAction> = {
@@ -95,7 +89,6 @@ export const reducers: ActionReducerMap<MinaState, MinaAction> = {
   resources: fromResources.reducer,
   logs: fromLogs.reducer,
   storage: fromStorage.reducer,
-  dsw: fromDsw.reducer,
   loading: fromLoading.reducer,
 };
 

@@ -22,6 +22,7 @@ import { ManualDetection } from '../../base-classes/manual-detection.class';
 import { getXTicks, niceYScale } from '../../helpers/graph.helper';
 import { MAX_WIDTH_700 } from '../../constants/breakpoint-observer';
 import { OpenminaEagerSharedModule } from '../../openmina-eager-shared.module';
+import { REQUIRED } from '../../constants/angular';
 
 class ChartColumn {
   name: string;
@@ -42,7 +43,7 @@ class ChartColumn {
 })
 export class BarGraphComponent extends ManualDetection implements OnInit, AfterViewInit, OnChanges, OnDestroy {
 
-  @Input() values: number[] = [];
+  @Input(REQUIRED) values: number[] = [];
   @Input() xStep: number;
   @Input() yAxisValues: number[] = [];
   @Input() xTicksLength: number = 20;

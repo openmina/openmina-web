@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { getMergedRoute, MergedRoute, SortDirection, TableSort } from '@openmina/shared';
-import { DswActionGroup } from '@rufe-shared/types/dsw/actions/dsw-action-group.type';
+import { DswActionGroup } from '@rufe-shared/types/state/actions/dsw-action-group.type';
 import { DswActionsGetActions, DswActionsSearch, DswActionsSort } from '@rufe-state/actions/dsw-actions.actions';
 import { selectDswActionsToolbarValues } from '@rufe-state/actions/dsw-actions.state';
 import { debounceTime, distinctUntilChanged, filter, take } from 'rxjs';

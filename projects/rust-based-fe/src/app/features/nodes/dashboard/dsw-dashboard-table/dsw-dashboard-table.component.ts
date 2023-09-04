@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { DswDashboardNode } from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
+import { DswDashboardNode } from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-node.type';
 import { getMergedRoute, MergedRoute, TableColumnList } from '@openmina/shared';
 import { Router } from '@angular/router';
 import { DswDashboardSetActiveNode, DswDashboardSortNodes } from '@rufe-app/features/nodes/dashboard/dsw-dashboard.actions';

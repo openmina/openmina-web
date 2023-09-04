@@ -1,7 +1,7 @@
 import { FeatureAction, TableSort } from '@openmina/shared';
-import { WorkPool } from '@rufe-shared/types/dsw/work-pool/work-pool.type';
-import { WorkPoolSpecs } from '@rufe-shared/types/dsw/work-pool/work-pool-specs.type';
-import { WorkPoolDetail } from '@rufe-shared/types/dsw/work-pool/work-pool-detail.type';
+import { WorkPool } from '@rufe-shared/types/snarks/work-pool/work-pool.type';
+import { WorkPoolSpecs } from '@rufe-shared/types/snarks/work-pool/work-pool-specs.type';
+import { WorkPoolDetail } from '@rufe-shared/types/snarks/work-pool/work-pool-detail.type';
 
 enum DswWorkPoolTypes {
   DSW_WORK_POOL_INIT = 'DSW_WORK_POOL_INIT',

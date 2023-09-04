@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { selectDswWorkPoolActiveWorkPoolDetail } from '@rufe-snarks/work-pool/dsw-work-pool.state';
-import { WorkPoolDetail } from '@rufe-shared/types/dsw/work-pool/work-pool-detail.type';
+import { WorkPoolDetail } from '@rufe-shared/types/snarks/work-pool/work-pool-detail.type';
 import { Router } from '@angular/router';
 import { getMergedRoute, MergedRoute } from '@openmina/shared';
 import { take } from 'rxjs';

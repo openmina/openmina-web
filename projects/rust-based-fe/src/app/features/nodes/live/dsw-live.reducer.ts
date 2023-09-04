@@ -9,8 +9,8 @@ import {
   DSW_LIVE_TOGGLE_SIDE_PANEL,
   DswLiveActions,
 } from '@rufe-app/features/nodes/live/dsw-live.actions';
-import { DswLiveBlockEvent } from '@rufe-shared/types/dsw/live/dsw-live-block-event.type';
-import { DswDashboardNodeBlockStatus } from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
+import { DswLiveBlockEvent } from '@rufe-shared/types/nodes/live/dsw-live-block-event.type';
+import { DswDashboardNodeBlockStatus } from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-block.type';
 
 const initialState: DswLiveState = {
   nodes: [],

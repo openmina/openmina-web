@@ -6,6 +6,7 @@ import { FlameTimeGraphTooltipComponent } from '../flame-time-graph-tooltip/flam
 import { OpenminaSharedModule } from '../../../openmina-shared.module';
 import { ManualDetection } from '../../../base-classes/manual-detection.class';
 import { CommonModule } from '@angular/common';
+import { REQUIRED } from '../../../constants/angular';
 
 export interface FlameTimeGraph {
   title: string;
@@ -37,8 +38,8 @@ const trackSteps = (index: number) => index;
 })
 export class FlameTimeGraphComponent extends ManualDetection {
 
-  @Input() checkpoint: FlameTimeGraph;
-  @Input() condensedView: boolean;
+  @Input(REQUIRED) checkpoint: FlameTimeGraph;
+  @Input(REQUIRED) condensedView: boolean;
   @Input() xSteps: string[] = X_STEPS;
   @Input() ySteps: string[] = Y_STEPS;
   @Input() ranges: string[] = RANGES;

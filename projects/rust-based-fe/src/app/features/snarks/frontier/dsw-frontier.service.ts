@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DswFrontierLog, DswFrontierLogLevels } from '@rufe-shared/types/dsw/frontier/dsw-frontier-log.type';
+import { DswFrontierLog, DswFrontierLogLevels } from '@rufe-shared/types/snarks/frontier/dsw-frontier-log.type';
 import { Observable, of } from 'rxjs';
 import { toReadableDate } from '@openmina/shared';
 

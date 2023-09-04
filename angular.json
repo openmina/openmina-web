@@ -219,7 +219,7 @@
       },
       "root": "projects/rust-based-fe",
       "sourceRoot": "projects/rust-based-fe/src",
-      "prefix": "app",
+      "prefix": "mina",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

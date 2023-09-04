@@ -1,5 +1,5 @@
 import { FeatureAction, TableSort } from '@openmina/shared';
-import { DswBootstrapNode } from '@rufe-shared/types/dsw/bootstrap/dsw-bootstrap-node.type';
+import { DswBootstrapNode } from '@rufe-shared/types/nodes/bootstrap/dsw-bootstrap-node.type';
 
 enum DswBootstrapActionTypes {
   DSW_BOOTSTRAP_INIT = 'DSW_BOOTSTRAP_INIT',

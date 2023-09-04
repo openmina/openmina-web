@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { DswDashboardService } from '@rufe-app/features/nodes/dashboard/dsw-dashboard.service';
 import { map, Observable } from 'rxjs';
-import { DswDashboardNode, DswDashboardNodeKindType } from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-node.type';
-import { DswLiveNode } from '@rufe-shared/types/dsw/live/dsw-live-node.type';
-import { DswLiveBlockEvent } from '@rufe-shared/types/dsw/live/dsw-live-block-event.type';
+import { DswDashboardNode, DswDashboardNodeKindType } from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-node.type';
+import { DswLiveNode } from '@rufe-shared/types/nodes/live/dsw-live-node.type';
+import { DswLiveBlockEvent } from '@rufe-shared/types/nodes/live/dsw-live-block-event.type';
 import {
   DswDashboardBlock,
   DswDashboardNodeBlockStatus
-} from '@rufe-shared/types/dsw/dashboard/dsw-dashboard-block.type';
+} from '@rufe-shared/types/nodes/dashboard/dsw-dashboard-block.type';
 import { ONE_MILLION, toReadableDate } from '@openmina/shared';
 import { RustNodeService } from '@rufe-core/services/rust-node.service';
 

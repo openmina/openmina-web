@@ -5,11 +5,11 @@ import {
   selectDswActionsGroups,
   selectDswActionsSort
 } from '@rufe-state/actions/dsw-actions.state';
-import { DswActionGroup } from '@rufe-shared/types/dsw/actions/dsw-action-group.type';
+import { DswActionGroup } from '@rufe-shared/types/state/actions/dsw-action-group.type';
 import { isMobile, SecDurationConfig, TableColumnList, TableSort } from '@openmina/shared';
 import { DOCUMENT } from '@angular/common';
 import { distinctUntilChanged } from 'rxjs';
-import { DswActionsStats } from '@rufe-shared/types/dsw/actions/dsw-actions-stats.type';
+import { DswActionsStats } from '@rufe-shared/types/state/actions/dsw-actions-stats.type';
 import { MinaTableRustWrapper } from '@rufe-shared/base-classes/mina-table-rust-wrapper.class';
 
 @Component({

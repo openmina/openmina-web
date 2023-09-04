@@ -8,7 +8,7 @@ import {
   DSW_FRONTIER_TOGGLE_SIDE_PANEL,
   DswFrontierActions,
 } from '@rufe-snarks/frontier/dsw-frontier.actions';
-import { DswFrontierLog } from '@rufe-shared/types/dsw/frontier/dsw-frontier-log.type';
+import { DswFrontierLog } from '@rufe-shared/types/snarks/frontier/dsw-frontier-log.type';
 
 const initialState: DswFrontierState = {
   logs: [],

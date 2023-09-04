@@ -10,7 +10,7 @@ import {
   DSW_WORK_POOL_TOGGLE_SIDE_PANEL,
   DswWorkPoolActions,
 } from '@rufe-snarks/work-pool/dsw-work-pool.actions';
-import { WorkPool } from '@rufe-shared/types/dsw/work-pool/work-pool.type';
+import { WorkPool } from '@rufe-shared/types/snarks/work-pool/work-pool.type';
 
 const initialState: DswWorkPoolState = {
   workPools: [],

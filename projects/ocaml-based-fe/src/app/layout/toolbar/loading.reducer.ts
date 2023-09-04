@@ -107,13 +107,6 @@ import {
 } from '@ocfe-web-node/web-node.actions';
 import { APP_INIT, APP_INIT_SUCCESS } from '@ocfe-app/app.actions';
 import {
-  DSW_ACTIONS_CLOSE,
-  DSW_ACTIONS_GET_ACTIONS,
-  DSW_ACTIONS_GET_ACTIONS_SUCCESS,
-  DSW_ACTIONS_GET_EARLIEST_SLOT,
-  DSW_ACTIONS_GET_EARLIEST_SLOT_SUCCESS,
-} from '@ocfe-dsw/actions/dsw-actions.actions';
-import {
   BENCHMARKS_WALLETS_CLOSE,
   BENCHMARKS_WALLETS_GET_WALLETS,
   BENCHMARKS_WALLETS_GET_WALLETS_SUCCESS,
@@ -123,24 +116,6 @@ import {
 } from '@ocfe-benchmarks/wallets/benchmarks-wallets.actions';
 import { WEB_NODE_PEERS_CLOSE } from '@ocfe-web-node/web-node-peers/web-node-peers.actions';
 import { WEB_NODE_LOGS_CLOSE } from '@ocfe-web-node/web-node-logs/web-node-logs.actions';
-import {
-  DSW_DASHBOARD_CLOSE,
-  DSW_DASHBOARD_GET_NODES_SUCCESS,
-  DSW_DASHBOARD_INIT
-} from '@ocfe-dsw/dashboard/dsw-dashboard.actions';
-import {
-  DSW_BOOTSTRAP_CLOSE,
-  DSW_BOOTSTRAP_GET_NODES_SUCCESS,
-  DSW_BOOTSTRAP_INIT
-} from '@ocfe-dsw/bootstrap/dsw-bootstrap.actions';
-import { DSW_LIVE_CLOSE, DSW_LIVE_GET_NODES_SUCCESS, DSW_LIVE_INIT } from '@ocfe-dsw/live/dsw-live.actions';
-import {
-  DSW_WORK_POOL_CLOSE,
-  DSW_WORK_POOL_GET_WORK_POOL_DETAIL,
-  DSW_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS,
-  DSW_WORK_POOL_GET_WORK_POOL_SUCCESS,
-  DSW_WORK_POOL_INIT,
-} from '@ocfe-dsw/work-pool/dsw-work-pool.actions';
 
 export type LoadingState = string[];
 
@@ -162,9 +137,6 @@ export function reducer(state: LoadingState = initialState, action: FeatureActio
     case BENCHMARKS_WALLETS_GET_WALLETS:
     case BENCHMARKS_WALLETS_SEND_TX:
     case BENCHMARKS_WALLETS_SEND_TX_SYNCED:
-
-    case DSW_ACTIONS_GET_EARLIEST_SLOT:
-    case DSW_ACTIONS_GET_ACTIONS:
 
     case EXPLORER_BLOCKS_GET_BLOCKS:
     case EXPLORER_BLOCKS_GET_TXS:
@@ -203,11 +175,6 @@ export function reducer(state: LoadingState = initialState, action: FeatureActio
     case WEB_NODE_SHARED_GET_PEERS:
     case WEB_NODE_SHARED_GET_LOGS:
 
-    case DSW_DASHBOARD_INIT:
-    case DSW_BOOTSTRAP_INIT:
-    case DSW_LIVE_INIT:
-    case DSW_WORK_POOL_INIT:
-    case DSW_WORK_POOL_GET_WORK_POOL_DETAIL:
       return add(state, action);
 
     /* ------------ REMOVE ------------ */
@@ -238,13 +205,6 @@ export function reducer(state: LoadingState = initialState, action: FeatureActio
       return remove(state, [BENCHMARKS_WALLETS_SEND_TX, BENCHMARKS_WALLETS_SEND_TX_SYNCED]);
     case BENCHMARKS_WALLETS_CLOSE:
       return remove(state, [BENCHMARKS_WALLETS_GET_WALLETS, BENCHMARKS_WALLETS_SEND_TX, BENCHMARKS_WALLETS_SEND_TX_SYNCED]);
-
-    case DSW_ACTIONS_GET_EARLIEST_SLOT_SUCCESS:
-      return remove(state, DSW_ACTIONS_GET_EARLIEST_SLOT);
-    case DSW_ACTIONS_GET_ACTIONS_SUCCESS:
-      return remove(state, DSW_ACTIONS_GET_ACTIONS);
-    case DSW_ACTIONS_CLOSE:
-      return remove(state, [DSW_ACTIONS_GET_EARLIEST_SLOT, DSW_ACTIONS_GET_ACTIONS]);
 
     case EXPLORER_BLOCKS_GET_BLOCKS_SUCCESS:
       return remove(state, EXPLORER_BLOCKS_GET_BLOCKS);
@@ -336,24 +296,6 @@ export function reducer(state: LoadingState = initialState, action: FeatureActio
     case WEB_NODE_LOGS_CLOSE:
       return remove(state, [WEB_NODE_SHARED_GET_LOGS]);
 
-    case DSW_DASHBOARD_GET_NODES_SUCCESS:
-      return remove(state, DSW_DASHBOARD_INIT);
-    case DSW_DASHBOARD_CLOSE:
-      return remove(state, [DSW_DASHBOARD_INIT]);
-    case DSW_BOOTSTRAP_GET_NODES_SUCCESS:
-      return remove(state, DSW_BOOTSTRAP_INIT);
-    case DSW_BOOTSTRAP_CLOSE:
-      return remove(state, [DSW_BOOTSTRAP_INIT]);
-    case DSW_LIVE_GET_NODES_SUCCESS:
-      return remove(state, DSW_LIVE_INIT);
-    case DSW_LIVE_CLOSE:
-      return remove(state, [DSW_LIVE_INIT]);
-    case DSW_WORK_POOL_GET_WORK_POOL_SUCCESS:
-      return remove(state, DSW_WORK_POOL_INIT);
-    case DSW_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS:
-      return remove(state, DSW_WORK_POOL_GET_WORK_POOL_DETAIL);
-    case DSW_WORK_POOL_CLOSE:
-      return remove(state, [DSW_WORK_POOL_INIT, DSW_WORK_POOL_GET_WORK_POOL_DETAIL]);
     default:
       return state;
   }

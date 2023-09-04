@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ArrowHide, HorizontalMenuDirective } from './horizontal-menu.directive';
 import { ManualDetection } from '../../base-classes/manual-detection.class';
 import { OpenminaEagerSharedModule } from '../../openmina-eager-shared.module';
+import { REQUIRED } from '../../constants/angular';
 
 
 @Component({
@@ -16,11 +17,11 @@ import { OpenminaEagerSharedModule } from '../../openmina-eager-shared.module';
 })
 export class HorizontalMenuComponent extends ManualDetection {
 
+  @Input(REQUIRED) template: TemplateRef<any>;
   @Input() showNav: boolean = true;
   @Input() clz: string | string[];
   @Input() distance = 250;
   @Input() scrollSpeed = 100;
-  @Input() template: TemplateRef<any>;
 
   showLeftArrow: boolean = false;
   showRightArrow: boolean = false;

@@ -13,6 +13,7 @@ export * from './lib/components/horizontal-resizable-container/horizontal-resiza
 export * from './lib/components/interval-select/interval-select.component';
 export * from './lib/components/mina-json-viewer/mina-json-viewer.component';
 export * from './lib/components/stepper/stepper.component';
+export * from './lib/components/mina-side-panel-stepper/mina-side-panel-stepper.component';
 
 /* DIRECTIVES */
 export * from './lib/directives/click-outside.directive';
@@ -43,6 +44,7 @@ export * from './lib/base-classes/base-store-dispatcher.class';
 export * from './lib/constants/breakpoint-observer';
 export * from './lib/constants/store-functions';
 export * from './lib/constants/unit-measurements';
+export * from './lib/constants/angular';
 
 /* HELPERS */
 export * from './lib/helpers/array.helper';

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { selectDswWorkPools } from '@rufe-snarks/work-pool/dsw-work-pool.state';
-import { WorkPool } from '@rufe-shared/types/dsw/work-pool/work-pool.type';
+import { WorkPool } from '@rufe-shared/types/snarks/work-pool/work-pool.type';
 import { BarGraphComponent } from '@openmina/shared';
 
 @Component({

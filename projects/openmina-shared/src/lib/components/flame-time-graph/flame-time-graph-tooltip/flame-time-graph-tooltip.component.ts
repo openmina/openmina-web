@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { OpenminaSharedModule } from '../../../openmina-shared.module';
 import { ManualDetection } from '../../../base-classes/manual-detection.class';
 import { CommonModule } from '@angular/common';
+import { REQUIRED } from '../../../constants/angular';
 
 @Component({
   selector: 'mina-flame-time-graph-tooltip',
@@ -14,12 +15,12 @@ import { CommonModule } from '@angular/common';
 })
 export class FlameTimeGraphTooltipComponent extends ManualDetection {
 
-  @Input() xSteps: string[];
-  @Input() activeXPointIndex: number;
-  @Input() range: string;
-  @Input() mean: number;
-  @Input() max: number;
-  @Input() calls: number;
-  @Input() totalTime: number;
+  @Input(REQUIRED) xSteps: string[];
+  @Input(REQUIRED) activeXPointIndex: number;
+  @Input(REQUIRED) range: string;
+  @Input(REQUIRED) mean: number;
+  @Input(REQUIRED) max: number;
+  @Input(REQUIRED) calls: number;
+  @Input(REQUIRED) totalTime: number;
 
 }

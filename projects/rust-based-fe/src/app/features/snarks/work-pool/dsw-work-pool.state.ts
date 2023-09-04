@@ -1,9 +1,9 @@
 import { createSelector, MemoizedSelector } from '@ngrx/store';
 import { MinaState } from '@rufe-app/app.setup';
 import { TableSort } from '@openmina/shared';
-import { WorkPool } from '@rufe-shared/types/dsw/work-pool/work-pool.type';
-import { WorkPoolSpecs } from '@rufe-shared/types/dsw/work-pool/work-pool-specs.type';
-import { WorkPoolDetail } from '@rufe-shared/types/dsw/work-pool/work-pool-detail.type';
+import { WorkPool } from '@rufe-shared/types/snarks/work-pool/work-pool.type';
+import { WorkPoolSpecs } from '@rufe-shared/types/snarks/work-pool/work-pool-specs.type';
+import { WorkPoolDetail } from '@rufe-shared/types/snarks/work-pool/work-pool-detail.type';
 import { selectSnarksWorkPoolState } from '@rufe-snarks/snarks.state';
 
 export interface DswWorkPoolState {
