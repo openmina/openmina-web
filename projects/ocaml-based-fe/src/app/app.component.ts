@@ -10,7 +10,7 @@ import {
 import { AppMenu } from '@ocfe-shared/types/app/app-menu.type';
 import { selectAppMenu } from '@ocfe-app/app.state';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { ManualDetection, MAX_WIDTH_700 } from '@openmina/shared';
+import { any, ManualDetection, MAX_WIDTH_700 } from '@openmina/shared';
 
 @Component({
   selector: 'app-root',
@@ -26,8 +26,8 @@ export class AppComponent extends ManualDetection implements OnInit {
   constructor(private store: Store<MinaState>,
               private breakpointObserver: BreakpointObserver) {
     super();
-    if ((window as any).Cypress) {
-      (window as any).store = store;
+    if (any(window).Cypress) {
+      any(window).store = store;
     }
   }
 

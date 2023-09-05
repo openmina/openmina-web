@@ -1,0 +1,11 @@
+<div class="h-100 p-relative">
+  <ng-content></ng-content>
+  <div class="bar"
+       (horizontalResize)="onResize($event)"
+       (startResizing)="onStartResizing()"
+       (endResizing)="onEndResizing()"
+       [minWidth]="minWidth"
+       [maxWidth]="maxWidth"
+       [maxWidthElement]="maxWidthElement"
+       [localStorageKey]="localStorageKey"></div>
+</div>

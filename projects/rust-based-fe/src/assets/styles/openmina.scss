@@ -573,6 +573,10 @@ $raleway-font: 'Raleway', sans-serif;
 	width: 36px !important;
 }
 
+.lh-xs {
+	line-height: 20px;
+}
+
 .lh-sm {
 	line-height: 24px;
 }
@@ -587,6 +591,10 @@ $raleway-font: 'Raleway', sans-serif;
 
 .lh-xl {
 	line-height: 40px;
+}
+
+@mixin lh-xs() {
+	@extend .lh-xs;
 }
 
 @mixin h-sm() {
@@ -668,6 +676,10 @@ $raleway-font: 'Raleway', sans-serif;
 
 	.w-lg {
 		width: 40px !important;
+	}
+
+	.lh-xs {
+		line-height: 24px !important;
 	}
 
 	.lh-sm {

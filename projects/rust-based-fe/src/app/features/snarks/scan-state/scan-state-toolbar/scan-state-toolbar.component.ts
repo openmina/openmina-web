@@ -33,7 +33,7 @@ export class ScanStateToolbarComponent extends StoreDispatcher implements OnInit
   stream: boolean;
   openSidePanel: boolean;
   treeView: boolean;
-  hightlightSnarkPool: boolean;
+  highlightSnarkPool: boolean;
 
   private inputRef: ElementRef<HTMLInputElement>;
   private gotHeightFromForm: boolean;
@@ -155,7 +155,7 @@ export class ScanStateToolbarComponent extends StoreDispatcher implements OnInit
 
   private listenToHighlightSnarkPoolChange(): void {
     this.select(selectScanStateHighlightSnarkPool, highlight => {
-      this.hightlightSnarkPool = highlight;
+      this.highlightSnarkPool = highlight;
       this.detect();
     });
   }

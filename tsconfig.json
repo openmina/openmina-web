@@ -108,6 +108,26 @@
         "projects/rust-based-fe/src/app/features/snarks/*"
       ],
 
+
+      "@cife-app/*": [
+        "projects/ci-fe/src/app/*"
+      ],
+      "@cife-core/*": [
+        "projects/ci-fe/src/app/core/*"
+      ],
+      "@cife-shared/*": [
+        "projects/ci-fe/src/app/shared/*"
+      ],
+      "@cife-environment/*": [
+        "projects/ci-fe/src/environments/*"
+      ],
+      "@cife-error-preview/*": [
+        "projects/ci-fe/src/app/layout/error-preview/*"
+      ],
+      "@cife-reporting/*": [
+        "projects/ci-fe/src/app/features/reporting/*"
+      ],
+
       "openmina-shared": [
         "dist/openmina-shared"
       ],

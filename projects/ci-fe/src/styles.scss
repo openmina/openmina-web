@@ -1,0 +1,64 @@
+@use '@angular/material' as mat;
+
+//$custom-typography: mat.define-typography-config();
+//@include mat.core();
+
+$theme: mat.define-light-theme((
+  typography: mat.define-typography-config(
+    $font-family: '"Inter", sans-serif'
+  ),
+));
+
+@include mat.core();
+@include mat.all-component-themes($theme);
+
+
+@import 'openmina';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $inter-font;
+  font-weight: 400;
+  color: $base-primary;
+  background-color: $base-background;
+}
+
+.theme-transition {
+  * {
+    transition: background-color 200ms;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* User Select */
+body {
+  ::-moz-selection {
+    color: $base-primary;
+    background: $selected-secondary;
+  }
+
+  ::selection {
+    color: $base-primary;
+    background: $selected-secondary;
+  }
+}
