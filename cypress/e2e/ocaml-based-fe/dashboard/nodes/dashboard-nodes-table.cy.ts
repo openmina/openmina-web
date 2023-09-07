@@ -1,6 +1,6 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { getNodes, stateSliceAsPromise } from '../../../../support/commands';
+import { getNodes, ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { DashboardNodesState } from '@ocfe-dashboard/nodes/dashboard-nodes.state';
 import { DashboardNode } from '@ocfe-shared/types/dashboard/nodes/dashboard-node.type';
 import { AppNodeStatusTypes } from '@ocfe-shared/types/app/app-node-status-types.enum';
@@ -8,7 +8,7 @@ import { MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
 import { ONE_THOUSAND } from '@openmina/shared';
 
 const condition = (state: DashboardNodesState) => state && state.nodes.length > 1;
-const getDashboard = (store: Store<MinaState>) => stateSliceAsPromise<DashboardNodesState>(store, condition, 'dashboard', 'nodes');
+const getDashboard = (store: Store<MinaState>) => ocfeStateSliceAsPromise<DashboardNodesState>(store, condition, 'dashboard', 'nodes');
 
 describe('DASHBOARD NODES TABLE', () => {
   beforeEach(() => {

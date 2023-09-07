@@ -10,7 +10,13 @@ import {
   AppChangeMenuCollapsing,
   AppToggleMenuOpening
 } from '@rufe-app/app.actions';
-import { ManualDetection, removeParamsFromURL, ThemeType, TooltipPosition } from '@openmina/shared';
+import {
+  ManualDetection,
+  removeParamsFromURL,
+  ThemeSwitcherService,
+  ThemeType,
+  TooltipPosition
+} from '@openmina/shared';
 import { DOCUMENT } from '@angular/common';
 import { MinaNode } from '@rufe-shared/types/core/environment/mina-env.type';
 import { filter, map, tap } from 'rxjs';
@@ -48,10 +54,11 @@ export class MenuComponent extends ManualDetection implements OnInit {
 
   constructor(@Inject(DOCUMENT) private readonly document: Document,
               private router: Router,
-              private store: Store<MinaState>) { super(); }
+              private store: Store<MinaState>,
+              private themeService: ThemeSwitcherService) { super(); }
 
   ngOnInit(): void {
-    this.currentTheme = localStorage.getItem('theme') as ThemeType;
+    this.currentTheme = this.themeService.activeTheme;
     this.listenToCollapsingMenu();
     this.listenToActiveNodeChange();
     let lastUrl: string;
@@ -69,16 +76,8 @@ export class MenuComponent extends ManualDetection implements OnInit {
   }
 
   changeTheme(): void {
-    const theme: ThemeType = this.document.body.classList.contains(ThemeType.LIGHT) ? ThemeType.DARK : ThemeType.LIGHT;
-    this.currentTheme = theme;
-    const transitionToken: string = 'theme-transition';
-
-    this.document.body.classList.add(transitionToken);
-    this.document.body.classList.remove(ThemeType.DARK, ThemeType.LIGHT);
-    this.document.body.classList.add(theme);
-
-    localStorage.setItem('theme', theme);
-    setTimeout(() => this.document.body.classList.remove(transitionToken), 700);
+    this.themeService.changeTheme();
+    this.currentTheme = this.themeService.activeTheme;
   }
 
   private listenToCollapsingMenu(): void {

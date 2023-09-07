@@ -14,7 +14,7 @@ import { REQUIRED } from '../../constants/angular';
 export class CopyComponent implements OnInit {
 
   @Input(REQUIRED) value: string;
-  @Input(REQUIRED) display: string;
+  @Input() display: string;
   @Input() hidden: boolean = true;
 
   @HostBinding('class.no-hide') get isHidden(): boolean {

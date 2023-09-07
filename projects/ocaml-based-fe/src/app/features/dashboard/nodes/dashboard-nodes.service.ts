@@ -126,7 +126,7 @@ export class DashboardNodesService {
           const metrics = syncResponse?.data.daemonStatus.metrics || {};
           let blockTraces = tracingResponse.data.blockTraces.traces;
           blockTraces = blockTraces.length ? blockTraces : [{}];
-          const map1 = blockTraces.map((trace: any) => ({
+          return blockTraces.map((trace: any) => ({
             ...node,
             status: daemon.syncStatus,
             blockchainLength: trace.blockchain_length,
@@ -150,7 +150,6 @@ export class DashboardNodesService {
             branch: undefined,
             bestTip: undefined,
           } as DashboardNode));
-          return map1;
         }),
         catchError((error) => this.buildNodeFromErrorResponse(error, node)),
       );

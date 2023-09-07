@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { delay, filter, map } from 'rxjs';
 import { selectAppMenu } from '@cife-app/app.state';
 import { LoadingService } from '@cife-core/services/loading.service';
 import { AppMenu } from '@cife-shared/types/app/app-menu.type';
-import { DOCUMENT } from '@angular/common';
 import { ThemeType } from '@cife-shared/types/core/theme/theme-types.type';
 import { StoreDispatcher } from '@cife-shared/base-classes/store-dispatcher.class';
+import { ThemeSwitcherService } from '@openmina/shared';
 
 @Component({
   selector: 'mina-toolbar',
@@ -23,28 +23,20 @@ export class ToolbarComponent extends StoreDispatcher implements OnInit {
 
   @ViewChild('loadingRef') private loadingRef: ElementRef<HTMLDivElement>;
 
-  constructor(@Inject(DOCUMENT) private readonly document: Document,
-              private router: Router,
-              private loadingService: LoadingService) { super(); }
+  constructor(private router: Router,
+              private loadingService: LoadingService,
+              private themeService: ThemeSwitcherService) { super(); }
 
   ngOnInit(): void {
-    this.currentTheme = localStorage.getItem('theme') as ThemeType;
+    this.currentTheme = this.themeService.activeTheme;
     this.listenToTitleChange();
     this.listenToMenuChange();
     this.listenToLoading();
   }
 
   changeTheme(): void {
-    const theme: ThemeType = this.document.body.classList.contains(ThemeType.LIGHT) ? ThemeType.DARK : ThemeType.LIGHT;
-    this.currentTheme = theme;
-    const transitionToken: string = 'theme-transition';
-
-    this.document.body.classList.add(transitionToken);
-    this.document.body.classList.remove(ThemeType.DARK, ThemeType.LIGHT);
-    this.document.body.classList.add(theme);
-
-    localStorage.setItem('theme', theme);
-    setTimeout(() => this.document.body.classList.remove(transitionToken), 700);
+    this.themeService.changeTheme();
+    this.currentTheme = this.themeService.activeTheme;
   }
 
   private listenToLoading(): void {

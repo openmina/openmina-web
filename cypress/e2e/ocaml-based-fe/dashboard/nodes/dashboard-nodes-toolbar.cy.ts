@@ -1,10 +1,10 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { stateSliceAsPromise } from '../../../../support/commands';
+import { ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { DashboardNodesState } from '@ocfe-dashboard/nodes/dashboard-nodes.state';
 
 const condition = (state: DashboardNodesState) => state && state.nodes.length > 1;
-const getDashboard = (store: Store<MinaState>) => stateSliceAsPromise<DashboardNodesState>(store, condition, 'dashboard', 'nodes');
+const getDashboard = (store: Store<MinaState>) => ocfeStateSliceAsPromise<DashboardNodesState>(store, condition, 'dashboard', 'nodes');
 
 
 describe('DASHBOARD NODES TOOLBAR', () => {

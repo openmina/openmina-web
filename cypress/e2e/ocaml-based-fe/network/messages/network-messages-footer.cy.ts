@@ -1,10 +1,10 @@
 import { NetworkMessagesState } from '@ocfe-network/messages/network-messages.state';
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { stateSliceAsPromise } from '../../../../support/commands';
+import { ocfeStateSliceAsPromise } from '../../../../support/commands';
 
 const condition = (state: NetworkMessagesState) => state && state.messages.length > 20;
-const getNetworkMessages = (store: Store<MinaState>) => stateSliceAsPromise<NetworkMessagesState>(store, condition, 'network', 'messages');
+const getNetworkMessages = (store: Store<MinaState>) => ocfeStateSliceAsPromise<NetworkMessagesState>(store, condition, 'network', 'messages');
 
 describe('NETWORK MESSAGES FOOTER', () => {
   beforeEach(() => {

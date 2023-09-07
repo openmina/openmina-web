@@ -16,7 +16,7 @@ import {
 } from '../types/core/theme/theme-css-category.type';
 import { any } from '../helpers/values.helper';
 
-const DARK_THEME: Theme = {
+const DARK_PALETTE: Theme = {
   name: ThemeType.DARK,
   categories: {
     base: {
@@ -112,7 +112,7 @@ const DARK_THEME: Theme = {
   },
 };
 
-const LIGHT_THEME: Theme = {
+const LIGHT_PALETTE: Theme = {
   name: ThemeType.LIGHT,
   categories: {
     base: {
@@ -208,26 +208,40 @@ const LIGHT_THEME: Theme = {
   },
 };
 
-
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeSwitcherService {
 
   private readonly renderer: Renderer2;
+  private currentTheme: ThemeType;
 
   constructor(@Inject(DOCUMENT) private document: Document,
               rendererFactory: RendererFactory2) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
 
-  getThemeConfiguration(): Theme {
-    return this.document.body.classList.contains(ThemeType.LIGHT) ? LIGHT_THEME : DARK_THEME;
+  get activeTheme(): ThemeType {
+    return this.currentTheme;
+  }
+
+  changeTheme(): void {
+    const theme: ThemeType = this.document.body.classList.contains(ThemeType.LIGHT) ? ThemeType.DARK : ThemeType.LIGHT;
+    this.currentTheme = theme;
+    const transitionToken: string = 'theme-transition';
+
+    this.document.body.classList.add(transitionToken);
+    this.document.body.classList.remove(ThemeType.DARK, ThemeType.LIGHT);
+    this.document.body.classList.add(theme);
+
+    localStorage.setItem('theme', theme);
+    setTimeout(() => this.document.body.classList.remove(transitionToken), 700);
   }
 
   loadThemes(): Promise<void> {
-    const activeTheme = localStorage.getItem('theme') ?? ThemeType.DARK;
+    const activeTheme = localStorage.getItem('theme') as ThemeType ?? ThemeType.DARK;
     localStorage.setItem('theme', activeTheme);
+    this.currentTheme = activeTheme;
     this.document.body.classList.add(activeTheme);
     return new Promise<void>((resolve) => {
       const style = this.renderer.createElement('style');
@@ -239,7 +253,7 @@ export class ThemeSwitcherService {
   }
 
   private buildThemesCss(): string {
-    const THEMES = [DARK_THEME, LIGHT_THEME];
+    const THEMES = [DARK_PALETTE, LIGHT_PALETTE];
     let css = '';
 
     THEMES.forEach((theme: Theme) => {

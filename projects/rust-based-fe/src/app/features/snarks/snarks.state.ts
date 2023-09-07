@@ -5,7 +5,7 @@ import { ScanStateState } from '@rufe-snarks/scan-state/scan-state.state';
 
 export interface SnarksState {
   workPool: DswWorkPoolState;
-  scanState: ScanStateState
+  scanState: ScanStateState;
 }
 
 const select = <T>(selector: (state: SnarksState) => T): MemoizedSelector<MinaState, T> => createSelector(

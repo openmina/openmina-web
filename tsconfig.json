@@ -25,7 +25,6 @@
     "useDefineForClassFields": false,
     "types": [
       "node",
-      "google",
       "cypress",
       "cypress-real-events"
     ],

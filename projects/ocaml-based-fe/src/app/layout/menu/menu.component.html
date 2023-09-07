@@ -3,7 +3,13 @@
   <button class="menu-toggle f-big h-xl primary pointer flex-row align-center f-400"
           [class.flex-between]="menu.isMobile"
           (click)="toggleMenu()">
-    <span>OpenMina</span>
+    <span class="fx-row-vert-cent">
+      <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="var(--base-primary)"
+              d="M114 34H34V114H46V126H126V46H114V34ZM114 46H46V114H114V46Z"/>
+      </svg>
+      OpenMina
+    </span>
     <span [class.flipped]="menu.isMobile ? false : menu.collapsed"
           class="mina-icon f-20">{{ !menu.isMobile ? 'first_page' : 'close' }}</span>
   </button>

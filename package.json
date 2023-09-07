@@ -39,7 +39,7 @@
     "@ngrx/router-store": "^16.2.0",
     "@ngrx/store": "^16.2.0",
     "@ngrx/store-devtools": "^16.2.0",
-    "@openmina/shared": "^0.41.0",
+    "@openmina/shared": "^0.44.0",
     "@sentry/angular-ivy": "^7.61.1",
     "@sentry/tracing": "^7.61.1",
     "base-x": "^4.0.0",

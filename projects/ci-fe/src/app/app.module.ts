@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { INTERCEPTOR_PROVIDER } from '@cife-core/interceptor/loading.interceptor';
-import { THEME_PROVIDER } from '@cife-core/services/theme-switcher.service';
 import { AppGlobalErrorhandler, GlobalErrorHandlerService } from '@cife-core/services/global-error-handler.service';
 import { metaReducers, reducers } from './app.setup';
 import { EffectsModule } from '@ngrx/effects';
@@ -21,6 +20,7 @@ import { ToolbarComponent } from '@cife-app/layout/toolbar/toolbar.component';
 import { ICONS_PROVIDER } from '@cife-core/services/icon-register.service';
 import { SubmenuTabsComponent } from '@cife-app/layout/submenu-tabs/submenu-tabs.component';
 import { AppEffects } from './app.effects';
+import { THEME_PROVIDER } from '@openmina/shared';
 
 
 @NgModule({
@@ -43,7 +43,7 @@ import { AppEffects } from './app.effects';
         strictStateSerializability: true,
       },
     }),
-    EffectsModule.forRoot([AppEffects]),
+    EffectsModule.forRoot(AppEffects),
     NgrxRouterStoreModule,
     !CONFIG.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
     HttpClientModule,
