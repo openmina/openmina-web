@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { SortDirection, TableHeadSorting, TableSort } from '@openmina/shared';
+import { SortDirection, TableColumnList, TableSort } from '@openmina/shared';
 import { BenchmarksTransaction } from '@ocfe-shared/types/benchmarks/transactions/benchmarks-transaction.type';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import {
@@ -20,7 +20,7 @@ export class BenchmarksTransactionsTableComponent extends StoreDispatcher implem
   transactions: BenchmarksTransaction[] = [];
   currentSort: TableSort<BenchmarksTransaction>;
 
-  readonly tableHeads: TableHeadSorting<BenchmarksTransaction>[] = [
+  readonly tableHeads: TableColumnList<BenchmarksTransaction> = [
     { name: 'date' },
     { name: 'from' },
     { name: 'to' },

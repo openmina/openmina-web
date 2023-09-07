@@ -11,7 +11,7 @@ import {
   SystemResourcesSortThreads,
   SystemResourcesToggleSidePanel,
 } from '@ocfe-resources/system/system-resources.actions';
-import { SortDirection, TableHeadSorting, TableSort } from '@openmina/shared';
+import { SortDirection, TableColumnList, TableSort } from '@openmina/shared';
 import { SystemResourcesPointThread } from '@ocfe-shared/types/resources/system/system-resources-sub-point.type';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 import { Router } from '@angular/router';
@@ -31,7 +31,7 @@ export class SystemResourcesSidePanelComponent extends StoreDispatcher implement
   activePath: string;
   currentSort: TableSort<SystemResourcesPointThread>;
 
-  readonly tableHeads: TableHeadSorting<SystemResourcesPointThread>[] = [
+  readonly tableHeads: TableColumnList<SystemResourcesPointThread> = [
     { name: 'task threads', sort: 'name' },
     { name: 'value' },
   ];

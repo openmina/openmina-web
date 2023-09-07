@@ -127,6 +127,25 @@
         "projects/ci-fe/src/app/features/reporting/*"
       ],
 
+      "@fufe-app/*": [
+        "projects/fuzzing-fe/src/app/*"
+      ],
+      "@fufe-core/*": [
+        "projects/fuzzing-fe/src/app/core/*"
+      ],
+      "@fufe-shared/*": [
+        "projects/fuzzing-fe/src/app/shared/*"
+      ],
+      "@fufe-environment/*": [
+        "projects/fuzzing-fe/src/environments/*"
+      ],
+      "@fufe-fuzzing/*": [
+        "projects/fuzzing-fe/src/app/features/fuzzing/*"
+      ],
+      "@fufe-error-preview/*": [
+        "projects/fuzzing-fe/src/app/layout/error-preview/*"
+      ],
+
       "openmina-shared": [
         "dist/openmina-shared"
       ],

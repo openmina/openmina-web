@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { untilDestroyed } from '@ngneat/until-destroy';
-import { SecDurationConfig, TableHeadSorting } from '@openmina/shared';
+import { SecDurationConfig, TableColumnList } from '@openmina/shared';
 import { Router } from '@angular/router';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { NetworkBlocksIpcSort } from '@ocfe-network/blocks-ipc/network-blocks-ipc.actions';
@@ -28,7 +28,7 @@ export class NetworkBlocksIpcTableComponent extends MinaTableOcamlWrapper<Networ
     undefinedAlternative: '-'
   };
 
-  protected readonly tableHeads: TableHeadSorting<NetworkBlockIpc>[] = [
+  protected readonly tableHeads: TableColumnList<NetworkBlockIpc> = [
     { name: 'datetime', sort: 'timestamp' },
     { name: 'message hash', sort: 'hash' },
     { name: 'height' },
