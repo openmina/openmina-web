@@ -53,6 +53,17 @@ export class MinaJsonViewerComponent extends NgxJsonViewerComponent implements O
     }
   }
 
+  toggleAll(expand: boolean): ExpandTracking {
+    const newExpandTracking = {};
+    this.segments.forEach((segment: Segment) => {
+      segment.expanded = expand;
+      if (expand) {
+        this.appendExpandingRecursively(segment.value, segment.key, newExpandTracking);
+      }
+    });
+    return newExpandTracking;
+  }
+
   onExpandToggle(segment: Segment): void {
     this.toggle(segment);
     this.appendExpandingToExpandTrackingElement(segment);
@@ -78,17 +89,6 @@ export class MinaJsonViewerComponent extends NgxJsonViewerComponent implements O
     //   segment.description = '' + segment.value;
     // }
     // return segment;
-  }
-
-  toggleAll(expand: boolean): ExpandTracking {
-    const newExpandTracking = {};
-    this.segments.forEach((segment: Segment) => {
-      segment.expanded = expand;
-      if (expand) {
-        this.appendExpandingRecursively(segment.value, segment.key, newExpandTracking);
-      }
-    });
-    return newExpandTracking;
   }
 
   private appendExpandingRecursively(value: any, keyOfValue: string, tracking: ExpandTracking): void {

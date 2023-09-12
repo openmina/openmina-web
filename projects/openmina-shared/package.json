@@ -1,6 +1,6 @@
 {
   "name": "@openmina/shared",
-  "version": "0.45.0",
+  "version": "0.51.0",
   "scripts": {
     "start": "ng serve",
     "deploy": "npm run pack && npm run publish && npm run update",

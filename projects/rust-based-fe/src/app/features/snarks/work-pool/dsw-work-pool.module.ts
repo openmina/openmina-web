@@ -16,7 +16,7 @@ import { DswWorkPoolDetailsAccountsComponent } from './dsw-work-pool-details-acc
 import {
   CopyComponent,
   HorizontalMenuComponent,
-  HorizontalResizableContainerComponent,
+  HorizontalResizableContainerComponent, JsonConsoleComponent,
   MinaJsonViewerComponent, MinaSidePanelStepperComponent
 } from '@openmina/shared';
 
@@ -42,6 +42,7 @@ import {
     MinaJsonViewerComponent,
     HorizontalMenuComponent,
     MinaSidePanelStepperComponent,
+    JsonConsoleComponent,
   ],
 })
 export class DswWorkPoolModule {}

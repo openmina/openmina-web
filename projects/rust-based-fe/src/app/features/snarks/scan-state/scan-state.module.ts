@@ -11,7 +11,7 @@ import { ScanStateToolbarComponent } from './scan-state-toolbar/scan-state-toolb
 import {
   CopyComponent,
   HorizontalMenuComponent,
-  HorizontalResizableContainerComponent,
+  HorizontalResizableContainerComponent, JsonConsoleComponent,
   MinaJsonViewerComponent,
   MinaSidePanelStepperComponent
 } from '@openmina/shared';
@@ -38,7 +38,8 @@ import { ScanStateJobDetailsComponent } from './scan-state-job-details/scan-stat
     HorizontalMenuComponent,
     HorizontalResizableContainerComponent,
     MinaSidePanelStepperComponent,
-    MinaJsonViewerComponent
+    MinaJsonViewerComponent,
+    JsonConsoleComponent
   ]
 })
 export class ScanStateModule {}
