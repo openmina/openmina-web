@@ -106,6 +106,9 @@
       "@rufe-snarks/*": [
         "projects/rust-based-fe/src/app/features/snarks/*"
       ],
+      "@rufe-testing-tool/*": [
+        "projects/rust-based-fe/src/app/features/testing-tool/*"
+      ],
 
 
       "@cife-app/*": [
