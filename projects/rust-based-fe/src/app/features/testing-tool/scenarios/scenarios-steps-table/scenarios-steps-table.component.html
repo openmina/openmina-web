@@ -1,1 +1,10 @@
-<p>scenarios-steps-table works!</p>
+<ng-container #minaTable></ng-container>
+
+<ng-template #rowTemplate let-row="row">
+  <span>{{ row.index }}</span>
+  <span>{{ row.node_id }}</span>
+  <span>{{ row.kind }}</span>
+  <span>{{ row.dialer }}</span>
+  <span>{{ row.listener }}</span>
+  <span>{{ row.event }}</span>
+</ng-template>

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { TestingToolRouting } from './testing-tool.routing';
 import { TestingToolComponent } from './testing-tool.component';
+import { SharedModule } from '@rufe-shared/shared.module';
 
 
 @NgModule({
@@ -10,8 +10,8 @@ import { TestingToolComponent } from './testing-tool.component';
     TestingToolComponent
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     TestingToolRouting
   ]
 })
-export class TestingToolModule { }
+export class TestingToolModule {}

@@ -1,1 +1,3 @@
-<p>scenarios-event-traces-table works!</p>
+<p *ngFor="let ev of events">
+  {{ ev.id }} - {{ ev.event }} - {{ ev.node_id }}
+</p>

@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TestingToolScenariosComponent } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: TestingToolScenariosComponent,
+    path: 'scenarios',
+    loadChildren: () => import('./scenarios/testing-tool-scenarios.module').then(m => m.TestingToolScenariosModule),
+  },
+  {
+    path: '**',
+    redirectTo: 'scenarios',
+    pathMatch: 'full',
   }
 ];
 

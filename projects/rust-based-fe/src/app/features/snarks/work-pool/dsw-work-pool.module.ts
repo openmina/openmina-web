@@ -10,9 +10,13 @@ import { DswWorkPoolEffects } from '@rufe-snarks/work-pool/dsw-work-pool.effects
 import { DswWorkPoolToolbarComponent } from './dsw-work-pool-toolbar/dsw-work-pool-toolbar.component';
 import { DswWorkPoolStatisticsComponent } from './dsw-work-pool-statistics/dsw-work-pool-statistics.component';
 import { DswWorkPoolDetailsComponent } from './dsw-work-pool-details/dsw-work-pool-details.component';
-import { DswWorkPoolDetailsOverviewComponent } from './dsw-work-pool-details-overview/dsw-work-pool-details-overview.component';
+import {
+  DswWorkPoolDetailsOverviewComponent
+} from './dsw-work-pool-details-overview/dsw-work-pool-details-overview.component';
 import { DswWorkPoolDetailsSpecsComponent } from './dsw-work-pool-details-specs/dsw-work-pool-details-specs.component';
-import { DswWorkPoolDetailsAccountsComponent } from './dsw-work-pool-details-accounts/dsw-work-pool-details-accounts.component';
+import {
+  DswWorkPoolDetailsAccountsComponent
+} from './dsw-work-pool-details-accounts/dsw-work-pool-details-accounts.component';
 import {
   CopyComponent,
   HorizontalMenuComponent,

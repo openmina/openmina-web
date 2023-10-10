@@ -21,18 +21,23 @@ export class TestingToolScenariosService {
           // kind: string;
           // dialer?: number;
           // listener?: string;
-          // node_id?: number;
+          node_id: 13241,
           // event?: string;
+          index: 1,
           kind: 'dialer',
           dialer: 1,
           listener: '2',
         },
         {
+          index: 2,
+          node_id: 56473,
           kind: 'dialer',
           dialer: 2,
           listener: '3',
         },
         {
+          index: 3,
+          node_id: 65474,
           kind: 'dialer',
           dialer: 3,
           listener: '4',
@@ -49,7 +54,11 @@ export class TestingToolScenariosService {
     return of({});
   }
 
-  runSteps(clusterId: string): Observable<any> {
+  createCluster(): Observable<string> {
+    return of('cluster_123');
+  }
+
+  startScenario(id: string): Observable<any> {
     return of({});
   }
 

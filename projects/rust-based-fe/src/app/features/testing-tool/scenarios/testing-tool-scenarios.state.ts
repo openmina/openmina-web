@@ -7,6 +7,7 @@ import { selectTestingToolScenariosState } from '@rufe-testing-tool/testing-tool
 export interface TestingToolScenariosState {
   scenario: TestingToolScenario;
   pendingEvents: TestingToolScenarioEvent[];
+  clusterId: string;
 }
 
 const select = <T>(selector: (state: TestingToolScenariosState) => T): MemoizedSelector<MinaState, T> => createSelector(
@@ -16,3 +17,4 @@ const select = <T>(selector: (state: TestingToolScenariosState) => T): MemoizedS
 
 export const selectTestingToolScenariosScenario = select((state: TestingToolScenariosState): TestingToolScenario => state.scenario);
 export const selectTestingToolScenariosPendingEvents = select((state: TestingToolScenariosState): TestingToolScenarioEvent[] => state.pendingEvents);
+export const selectTestingToolScenariosClusterId = select((state: TestingToolScenariosState): string => state.clusterId);

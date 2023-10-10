@@ -10,6 +10,10 @@ import { ScenariosAddStepComponent } from './scenarios-add-step/scenarios-add-st
 import { ScenariosStepsToolbarComponent } from './scenarios-steps-toolbar/scenarios-steps-toolbar.component';
 import { ScenariosStepsFooterComponent } from './scenarios-steps-footer/scenarios-steps-footer.component';
 import { SharedModule } from '@rufe-shared/shared.module';
+import { CopyComponent, HorizontalResizableContainerComponent } from '@openmina/shared';
+import { EffectsModule } from '@ngrx/effects';
+import { TestingToolScenariosEffects } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.effects';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,9 +25,13 @@ import { SharedModule } from '@rufe-shared/shared.module';
     ScenariosStepsToolbarComponent,
     ScenariosStepsFooterComponent
   ],
-  imports: [
-    SharedModule,
-    TestingToolScenariosRouting
-  ]
+	imports: [
+		TestingToolScenariosRouting,
+		SharedModule,
+		HorizontalResizableContainerComponent,
+		CopyComponent,
+		EffectsModule.forFeature(TestingToolScenariosEffects),
+		FormsModule,
+	],
 })
-export class TestingToolScenariosModule { }
+export class TestingToolScenariosModule {}

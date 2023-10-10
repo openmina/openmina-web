@@ -1,1 +1,19 @@
-<p>testing-tool-scenarios works!</p>
+<mina-horizontal-resizable-container [leftTemplate]="left"
+                                     [rightTemplate]="right"
+                                     [show]="true"
+                                     [minWidth]="600"
+                                     [maxWidthElement]="el.nativeElement"
+                                     localStorageKey="tt-scenarios-spw">
+</mina-horizontal-resizable-container>
+
+<ng-template #left>
+  <div class="near-footer">
+    <mina-scenarios-steps-toolbar></mina-scenarios-steps-toolbar>
+    <mina-scenarios-steps-table></mina-scenarios-steps-table>
+  </div>
+  <mina-scenarios-steps-footer></mina-scenarios-steps-footer>
+</ng-template>
+
+<ng-template #right>
+  <mina-scenarios-event-traces-table></mina-scenarios-event-traces-table>
+</ng-template>

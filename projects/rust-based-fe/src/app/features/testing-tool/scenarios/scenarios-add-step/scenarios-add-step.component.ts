@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'mina-scenarios-add-step',
@@ -8,4 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class ScenariosAddStepComponent {
 
+  @Input() currentStep: number;
+
+  @Output() cancel = new EventEmitter<void>();
+  @Output() confirm = new EventEmitter<string>();
+
+  pastedText: string;
 }

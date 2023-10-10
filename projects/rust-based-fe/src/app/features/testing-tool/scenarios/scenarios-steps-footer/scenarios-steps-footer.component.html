@@ -1,1 +1,10 @@
-<p>scenarios-steps-footer works!</p>
+<div class="flex-row">
+  <button class="btn-primary"
+          [disabled]="stepIsAdding"
+          (click)="stepIsAdding = !stepIsAdding">Add Step
+  </button>
+</div>
+
+<mina-scenarios-add-step *ngIf="stepIsAdding"
+                         (cancel)="stepIsAdding = false"
+                         (confirm)="addStep($event)"></mina-scenarios-add-step>

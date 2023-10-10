@@ -33,6 +33,7 @@ const MENU_ITEMS: MenuItem[] = [
   { name: 'Nodes', icon: 'margin' },
   { name: 'State', icon: 'code_blocks' },
   { name: 'SNARKs', icon: 'assignment_turned_in' },
+  { name: 'Testing Tool', icon: 'build' },
 ];
 
 @UntilDestroy()

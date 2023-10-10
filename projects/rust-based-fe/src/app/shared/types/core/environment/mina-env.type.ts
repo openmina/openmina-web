@@ -21,4 +21,5 @@ export type FeatureType =
   | 'nodes'
   | 'state'
   | 'snarks'
+  | 'testing-tool'
   ;
