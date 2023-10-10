@@ -8,6 +8,7 @@ export const environment: Readonly<MinaEnv> = {
       nodes: ['overview', 'live', 'bootstrap'],
       state: ['actions'],
       snarks: ['work-pool', 'scan-state'],
+      'testing-tool': ['scenarios'],
     },
   },
   configs: [
