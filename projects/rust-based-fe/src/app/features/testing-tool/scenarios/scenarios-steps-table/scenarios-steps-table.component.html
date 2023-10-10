@@ -2,9 +2,8 @@
 
 <ng-template #rowTemplate let-row="row">
   <span>{{ row.index }}</span>
-  <span>{{ row.node_id }}</span>
-  <span>{{ row.kind }}</span>
-  <span>{{ row.dialer }}</span>
-  <span>{{ row.listener }}</span>
-  <span>{{ row.event }}</span>
+  <span class="fx-row-vert-cent"><span class="mina-icon">check</span></span>
+  <span class="secondary">{{ row.kind }}</span>
+  <span>{{ row.dialer ?? '-' }}</span>
+  <span class="truncate">{{ (row.listener || row.event) | json }}</span>
 </ng-template>

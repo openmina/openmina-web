@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, of } from 'rxjs';
+import { map, Observable, of, switchMap } from 'rxjs';
 import { TestingToolScenario } from '@rufe-shared/types/testing-tool/scenarios/testing-tool-scenario.type';
 import { TestingToolScenarioStep } from '@rufe-shared/types/testing-tool/scenarios/testing-tool-scenario-step.type';
 import { TestingToolScenarioEvent } from '@rufe-shared/types/testing-tool/scenarios/testing-tool-scenario-event.type';
@@ -8,85 +8,104 @@ import { TestingToolScenarioEvent } from '@rufe-shared/types/testing-tool/scenar
 @Injectable({ providedIn: 'root' })
 export class TestingToolScenariosService {
 
+  private readonly baseUrl = 'http://webrtc2.webnode.openmina.com:11000';
+
   constructor(private http: HttpClient) { }
 
   getScenario(id: string): Observable<TestingToolScenario> {
-    return of({
-      info: {
-        id: '1',
-        description: 'Scenario 1'
-      },
-      steps: [
-        {
-          // kind: string;
-          // dialer?: number;
-          // listener?: string;
-          node_id: 13241,
-          // event?: string;
-          index: 1,
-          kind: 'dialer',
-          dialer: 1,
-          listener: '2',
-        },
-        {
-          index: 2,
-          node_id: 56473,
-          kind: 'dialer',
-          dialer: 2,
-          listener: '3',
-        },
-        {
-          index: 3,
-          node_id: 65474,
-          kind: 'dialer',
-          dialer: 3,
-          listener: '4',
-        }
-      ]
-    });
+    return this.http.get(this.baseUrl + '/scenarios').pipe(
+      map((response: any) => response[0].id),
+      switchMap((scenarioId: string) =>
+        this.http.get<TestingToolScenario>(`${this.baseUrl}/scenarios/${scenarioId}`),
+      ),
+      map((scenario: TestingToolScenario) => {
+        return {
+          ...scenario,
+          steps: scenario.steps.map((step: TestingToolScenarioStep, index: number) => ({
+            ...step,
+            index,
+          })),
+        };
+      }),
+    );
+    // return of({
+    //   info: {
+    //     id: '1',
+    //     description: 'Scenario 1',
+    //   },
+    //   steps: [
+    //     {
+    //       // kind: string;
+    //       // dialer?: number;
+    //       // listener?: string;
+    //       node_id: 13241,
+    //       // event?: string;
+    //       index: 1,
+    //       kind: 'dialer',
+    //       dialer: 1,
+    //       listener: '2',
+    //     },
+    //     {
+    //       index: 2,
+    //       node_id: 56473,
+    //       kind: 'dialer',
+    //       dialer: 2,
+    //       listener: '3',
+    //     },
+    //     {
+    //       index: 3,
+    //       node_id: 65474,
+    //       kind: 'dialer',
+    //       dialer: 3,
+    //       listener: '4',
+    //     },
+    //   ],
+    // });
   }
 
-  addStep(scenarioId: string, step: TestingToolScenarioStep): Observable<any> {
-    return of({});
+  addStep(scenarioId: string, step: any): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/scenarios/${scenarioId}/steps`, step);
   }
 
-  reloadScenarios(clusterId: string): Observable<any> {
-    return of({});
+  createCluster(scenarioId: string): Observable<string> {
+    return this.http.put<{ cluster_id: string }>(`${this.baseUrl}/clusters/create/${scenarioId}`, null).pipe(
+      map(r => r.cluster_id),
+    );
   }
 
-  createCluster(): Observable<string> {
-    return of('cluster_123');
-  }
-
-  startScenario(id: string): Observable<any> {
-    return of({});
+  startScenario(clusterId: string): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/clusters/${clusterId}/run`, null);
   }
 
   getPendingEvents(clusterId: string): Observable<TestingToolScenarioEvent[]> {
-    return of(
-      {
-        'node_id': 0,
-        'pending_events': [
-          {
-            'id': '10_1',
-            'event': 'P2p, Connection, OfferSdpReady, 2awmjihpsd9TkdaqEkvrJ2UguAsoigRtgoiKei4AxpA5EVzr6JZ, Ok'
-          },
-          {
-            'id': '253',
-            'event': 'P2p, Connection, OfferSdpReady, 2awmjihpsd9TkdaqEkvrJ2UguAsoigRtgoiKei4AxpA5EVzr6JZ, Ok'
-          },
-          {
-            'id': '423',
-            'event': 'P2p, Connection, OfferSdpReady, 2awmjihpsd9TkdaqEkvrJ2UguAsoigRtgoiKei4AxpA5EVzr6JZ, Ok'
-          }
-        ]
-      }).pipe(
-      map((response: any) => {
-        return response.pending_events.map((ev: any) => ({
-          ...ev,
-          node_id: response.node_id
-        }));
-      }),
+    return this.http.get<any>(`${this.baseUrl}/clusters/${clusterId}/nodes/events/pending`).pipe(
+      // return of([
+      //   {
+      //     'node_id': 0,
+      //     'pending_events': [
+      //       {
+      //         'id': '10_1',
+      //         'event': 'P2p, Connection, OfferSdpReady, 2awmjihpsd9TkdaqEkvrJ2UguAsoigRtgoiKei4AxpA5EVzr6JZ, Ok',
+      //       },
+      //       {
+      //         'id': '253',
+      //         'event': 'P2p, Connection, OfferSdpReady, 2awmjihpsd9TkdaqEkvrJ2UguAsoigRtgoiKei4AxpA5EVzr6JZ, Ok',
+      //       },
+      //       {
+      //         'id': '423',
+      //         'event': 'P2p, Connection, OfferSdpReady, 2awmjihpsd9TkdaqEkvrJ2UguAsoigRtgoiKei4AxpA5EVzr6JZ, Ok',
+      //       },
+      //     ],
+      //   }]).pipe(
+      map((response: any[]) =>
+        response.reduce((acc, curr) => [
+          ...acc,
+          ...curr.pending_events.map((ev: any) => ({
+            ...ev,
+            node_id: curr.node_id,
+          })),
+        ], []),
+      ),
     );
   }
 }

@@ -6,5 +6,6 @@
 </div>
 
 <mina-scenarios-add-step *ngIf="stepIsAdding"
+                         [currentStep]="stepCount + 1"
                          (cancel)="stepIsAdding = false"
                          (confirm)="addStep($event)"></mina-scenarios-add-step>

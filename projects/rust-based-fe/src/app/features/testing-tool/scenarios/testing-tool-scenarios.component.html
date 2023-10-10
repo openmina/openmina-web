@@ -7,11 +7,11 @@
 </mina-horizontal-resizable-container>
 
 <ng-template #left>
-  <div class="near-footer">
+  <div class="h-100 flex-column">
     <mina-scenarios-steps-toolbar></mina-scenarios-steps-toolbar>
-    <mina-scenarios-steps-table></mina-scenarios-steps-table>
+    <mina-scenarios-steps-table class="flex-grow"></mina-scenarios-steps-table>
+    <mina-scenarios-steps-footer></mina-scenarios-steps-footer>
   </div>
-  <mina-scenarios-steps-footer></mina-scenarios-steps-footer>
 </ng-template>
 
 <ng-template #right>

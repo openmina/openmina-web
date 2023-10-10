@@ -1,3 +1,22 @@
-<p *ngFor="let ev of events">
-  {{ ev.id }} - {{ ev.event }} - {{ ev.node_id }}
-</p>
+<div class="fx-row-vert-cent flex-between h-xl lh-xl pl-12 pr-12">
+  <div class="f-600 secondary">Event traces</div>
+</div>
+<div class="h-minus-xl flex-column pl-12 pr-12 overflow-y-auto">
+  <ng-container *ngIf="events.length; else noEvents">
+    <div class="grid-row" *ngFor="let ev of events">
+      <span>Node {{ ev.node_id }}</span>
+      <span>
+      <span class="bg-container border-rad-4">{{ ev.id }}</span>
+    </span>
+      <span class="truncate secondary">{{ ev.event }}</span>
+      <span class="fx-row-vert-cent flex-end">
+      <button class="icon-button" (click)="addEventToSteps(ev)">
+        <span class="mina-icon">add</span>
+      </button>
+    </span>
+    </div>
+  </ng-container>
+  <ng-template #noEvents>
+    <div class="tertiary">{{ scenarioIsRunning ? 'Pending events...' : 'No events' }}</div>
+  </ng-template>
+</div>

@@ -1,6 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import { TestingToolScenariosAddStep } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.actions';
+import { selectTestingToolScenariosScenario } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.state';
+import { filter } from 'rxjs';
+import { TestingToolScenario } from '@rufe-shared/types/testing-tool/scenarios/testing-tool-scenario.type';
 
 @Component({
   selector: 'mina-scenarios-steps-footer',
@@ -9,11 +12,22 @@ import { TestingToolScenariosAddStep } from '@rufe-testing-tool/scenarios/testin
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'flex-column p-12' },
 })
-export class ScenariosStepsFooterComponent extends StoreDispatcher {
+export class ScenariosStepsFooterComponent extends StoreDispatcher implements OnInit {
 
   stepIsAdding: boolean = false;
+  stepCount: number = 0;
+
+  ngOnInit(): void {
+    this.listenToStepCount();
+  }
 
   addStep(json: string): void {
-    this.dispatch(TestingToolScenariosAddStep, { step: json });
+    this.dispatch(TestingToolScenariosAddStep, { step: JSON.parse(json) });
+  }
+
+  private listenToStepCount(): void {
+    this.select(selectTestingToolScenariosScenario, (scenario: TestingToolScenario) => {
+      this.stepCount = scenario.steps.length;
+    }, filter(Boolean));
   }
 }

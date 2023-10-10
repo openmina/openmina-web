@@ -50,7 +50,7 @@ export class TestingToolScenariosGetScenarioSuccess implements TestingToolScenar
 export class TestingToolScenariosAddStep implements TestingToolScenariosAction {
   readonly type = TESTING_TOOL_SCENARIOS_ADD_STEP;
 
-  constructor(public payload: { step: string }) { }
+  constructor(public payload: { step: any }) { }
 }
 
 export class TestingToolScenariosCreateCluster implements TestingToolScenariosAction {
