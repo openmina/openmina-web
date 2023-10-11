@@ -15,14 +15,14 @@ import {
   TESTING_TOOL_SCENARIOS_GET_PENDING_EVENTS,
   TESTING_TOOL_SCENARIOS_GET_PENDING_EVENTS_SUCCESS,
   TESTING_TOOL_SCENARIOS_GET_SCENARIO,
-  TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS,
+  TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS, TESTING_TOOL_SCENARIOS_RELOAD_SCENARIO,
   TESTING_TOOL_SCENARIOS_START_SCENARIO,
   TESTING_TOOL_SCENARIOS_START_SCENARIO_SUCCESS,
   TestingToolScenariosActions, TestingToolScenariosAddStep,
   TestingToolScenariosClose,
   TestingToolScenariosCreateCluster,
   TestingToolScenariosGetPendingEvents,
-  TestingToolScenariosGetScenario,
+  TestingToolScenariosGetScenario, TestingToolScenariosReloadScenario,
   TestingToolScenariosStartScenario,
 } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.actions';
 import { TestingToolScenariosService } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.service';
@@ -35,6 +35,7 @@ import { TestingToolScenarioEvent } from '@rufe-shared/types/testing-tool/scenar
 export class TestingToolScenariosEffects extends MinaRustBaseEffect<TestingToolScenariosActions> {
 
   readonly getScenario$: Effect;
+  readonly reloadScenario$: Effect;
   readonly addStep$: Effect;
   readonly createCluster$: Effect;
   readonly createClusterSuccess$: Effect;
@@ -50,10 +51,10 @@ export class TestingToolScenariosEffects extends MinaRustBaseEffect<TestingToolS
     this.getScenario$ = createEffect(() => this.actions$.pipe(
       ofType(TESTING_TOOL_SCENARIOS_GET_SCENARIO, TESTING_TOOL_SCENARIOS_CLOSE),
       this.latestActionState<TestingToolScenariosGetScenario | TestingToolScenariosClose>(),
-      switchMap(({ action, state }) =>
+      switchMap(({ action }) =>
         action.type === TESTING_TOOL_SCENARIOS_CLOSE
           ? EMPTY
-          : this.testingToolScenariosService.getScenario(state.testingTool.scenarios.scenario?.info.id),
+          : this.testingToolScenariosService.getScenario(),
       ),
       map((payload: TestingToolScenario) => ({ type: TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS, payload })),
       catchErrorAndRepeat(MinaErrorType.GENERIC, TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS, {}),
@@ -65,8 +66,18 @@ export class TestingToolScenariosEffects extends MinaRustBaseEffect<TestingToolS
       switchMap(({ action, state }) =>
         this.testingToolScenariosService.addStep(state.testingTool.scenarios.scenario.info.id, action.payload.step),
       ),
-      map(() => ({ type: TESTING_TOOL_SCENARIOS_GET_SCENARIO })),
-      catchErrorAndRepeat(MinaErrorType.GENERIC, TESTING_TOOL_SCENARIOS_GET_SCENARIO),
+      map(() => ({ type: TESTING_TOOL_SCENARIOS_RELOAD_SCENARIO })),
+      catchErrorAndRepeat(MinaErrorType.GENERIC, null),
+    ));
+
+    this.reloadScenario$ = createEffect(() => this.actions$.pipe(
+      ofType(TESTING_TOOL_SCENARIOS_RELOAD_SCENARIO),
+      this.latestActionState<TestingToolScenariosReloadScenario>(),
+      switchMap(({ state }) =>
+        this.testingToolScenariosService.reloadScenario(state.testingTool.scenarios.clusterId, state.testingTool.scenarios.scenario.info.id),
+      ),
+      map((payload: TestingToolScenario) => ({ type: TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS, payload })),
+      catchErrorAndRepeat(MinaErrorType.GENERIC, TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS, {}),
     ));
 
     this.createCluster$ = createEffect(() => this.actions$.pipe(

@@ -1,8 +1,11 @@
-.grid-row {
-  display: grid;
-  grid-template-columns: 100px 40px 1fr 100px;
-  span {
-    line-height: 36px;
-    height: 36px;
-  }
+.event {
+  max-width: 50%;
+}
+
+.add {
+  margin-left: auto;
+}
+
+.node {
+  width: 70px;
 }

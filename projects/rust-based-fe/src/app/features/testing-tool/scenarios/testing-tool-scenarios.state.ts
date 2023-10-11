@@ -9,6 +9,7 @@ export interface TestingToolScenariosState {
   pendingEvents: TestingToolScenarioEvent[];
   clusterId: string;
   scenarioIsRunning: boolean;
+  scenarioHasRun: boolean;
 }
 
 const select = <T>(selector: (state: TestingToolScenariosState) => T): MemoizedSelector<MinaState, T> => createSelector(
@@ -20,3 +21,4 @@ export const selectTestingToolScenariosScenario = select((state: TestingToolScen
 export const selectTestingToolScenariosPendingEvents = select((state: TestingToolScenariosState): TestingToolScenarioEvent[] => state.pendingEvents);
 export const selectTestingToolScenariosClusterId = select((state: TestingToolScenariosState): string => state.clusterId);
 export const selectTestingToolScenariosScenarioIsRunning = select((state: TestingToolScenariosState): boolean => state.scenarioIsRunning);
+export const selectTestingToolScenariosScenarioHasRun = select((state: TestingToolScenariosState): boolean => state.scenarioHasRun);

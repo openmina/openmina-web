@@ -12,10 +12,7 @@ export class TestingToolScenariosService {
 
   constructor(private http: HttpClient) { }
 
-  getScenario(id: string): Observable<TestingToolScenario> {
-    if (id) {
-      return this.getScenarioWithId(id);
-    }
+  getScenario(): Observable<TestingToolScenario> {
     return this.http.get(this.baseUrl + '/scenarios').pipe(
       map((response: any) => response[0].id),
       switchMap((scenarioId: string) => this.getScenarioWithId(scenarioId)),
@@ -69,8 +66,14 @@ export class TestingToolScenariosService {
     );
   }
 
-  addStep(scenarioId: string, step: any): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/scenarios/${scenarioId}/steps`, step);
+  reloadScenario(clusterId: string, scenarioId: string): Observable<TestingToolScenario> {
+    return this.http.post<TestingToolScenario>(`${this.baseUrl}/clusters/${clusterId}/scenarios/reload`, null).pipe(
+      switchMap(() => this.getScenarioWithId(scenarioId)),
+    )
+  }
+
+  addStep(scenarioId: string, step: any): Observable<void> {
+    return this.http.put<void>(`${this.baseUrl}/scenarios/${scenarioId}/steps`, step);
   }
 
   createCluster(scenarioId: string): Observable<string> {
@@ -79,8 +82,8 @@ export class TestingToolScenariosService {
     );
   }
 
-  startScenario(clusterId: string): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/clusters/${clusterId}/run`, null);
+  startScenario(clusterId: string): Observable<void> {
+    return this.http.post<void>(`${this.baseUrl}/clusters/${clusterId}/run`, null);
   }
 
   getPendingEvents(clusterId: string): Observable<TestingToolScenarioEvent[]> {

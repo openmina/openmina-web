@@ -7,6 +7,7 @@ enum TestingToolScenariosActionTypes {
   TESTING_TOOL_SCENARIOS_CLOSE = 'TESTING_TOOL_SCENARIOS_CLOSE',
   TESTING_TOOL_SCENARIOS_GET_SCENARIO = 'TESTING_TOOL_SCENARIOS_GET_SCENARIO',
   TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS = 'TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS',
+  TESTING_TOOL_SCENARIOS_RELOAD_SCENARIO = 'TESTING_TOOL_SCENARIOS_RELOAD_SCENARIO',
   TESTING_TOOL_SCENARIOS_ADD_STEP = 'TESTING_TOOL_SCENARIOS_ADD_STEP',
   TESTING_TOOL_SCENARIOS_CREATE_CLUSTER = 'TESTING_TOOL_SCENARIOS_CREATE_CLUSTER',
   TESTING_TOOL_SCENARIOS_CREATE_CLUSTER_SUCCESS = 'TESTING_TOOL_SCENARIOS_CREATE_CLUSTER_SUCCESS',
@@ -19,6 +20,7 @@ enum TestingToolScenariosActionTypes {
 export const TESTING_TOOL_SCENARIOS_CLOSE = TestingToolScenariosActionTypes.TESTING_TOOL_SCENARIOS_CLOSE;
 export const TESTING_TOOL_SCENARIOS_GET_SCENARIO = TestingToolScenariosActionTypes.TESTING_TOOL_SCENARIOS_GET_SCENARIO;
 export const TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS = TestingToolScenariosActionTypes.TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS;
+export const TESTING_TOOL_SCENARIOS_RELOAD_SCENARIO = TestingToolScenariosActionTypes.TESTING_TOOL_SCENARIOS_RELOAD_SCENARIO;
 export const TESTING_TOOL_SCENARIOS_ADD_STEP = TestingToolScenariosActionTypes.TESTING_TOOL_SCENARIOS_ADD_STEP;
 export const TESTING_TOOL_SCENARIOS_CREATE_CLUSTER = TestingToolScenariosActionTypes.TESTING_TOOL_SCENARIOS_CREATE_CLUSTER;
 export const TESTING_TOOL_SCENARIOS_CREATE_CLUSTER_SUCCESS = TestingToolScenariosActionTypes.TESTING_TOOL_SCENARIOS_CREATE_CLUSTER_SUCCESS;
@@ -45,6 +47,10 @@ export class TestingToolScenariosGetScenarioSuccess implements TestingToolScenar
   readonly type = TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS;
 
   constructor(public payload: TestingToolScenario) { }
+}
+
+export class TestingToolScenariosReloadScenario implements TestingToolScenariosAction {
+  readonly type = TESTING_TOOL_SCENARIOS_RELOAD_SCENARIO;
 }
 
 export class TestingToolScenariosAddStep implements TestingToolScenariosAction {
@@ -85,6 +91,7 @@ export type TestingToolScenariosActions =
   | TestingToolScenariosClose
   | TestingToolScenariosGetScenario
   | TestingToolScenariosGetScenarioSuccess
+  | TestingToolScenariosReloadScenario
   | TestingToolScenariosAddStep
   | TestingToolScenariosCreateCluster
   | TestingToolScenariosCreateClusterSuccess

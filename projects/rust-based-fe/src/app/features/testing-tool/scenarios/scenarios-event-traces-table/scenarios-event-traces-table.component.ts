@@ -14,7 +14,7 @@ import { skip } from 'rxjs';
   templateUrl: './scenarios-event-traces-table.component.html',
   styleUrls: ['./scenarios-event-traces-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column' },
+  host: { class: 'flex-column h-100' },
 })
 export class ScenariosEventTracesTableComponent extends StoreDispatcher implements OnInit {
 

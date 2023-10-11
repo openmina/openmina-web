@@ -4,7 +4,7 @@ import {
   TESTING_TOOL_SCENARIOS_CREATE_CLUSTER,
   TESTING_TOOL_SCENARIOS_CREATE_CLUSTER_SUCCESS,
   TESTING_TOOL_SCENARIOS_GET_PENDING_EVENTS_SUCCESS,
-  TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS,
+  TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS, TESTING_TOOL_SCENARIOS_START_SCENARIO_SUCCESS,
   TestingToolScenariosActions,
 } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.actions';
 
@@ -13,6 +13,7 @@ const initialState: TestingToolScenariosState = {
   pendingEvents: [],
   clusterId: undefined,
   scenarioIsRunning: false,
+  scenarioHasRun: false,
 };
 
 export function reducer(state: TestingToolScenariosState = initialState, action: TestingToolScenariosActions): TestingToolScenariosState {
@@ -46,6 +47,13 @@ export function reducer(state: TestingToolScenariosState = initialState, action:
         pendingEvents: action.payload,
         scenarioIsRunning: false,
       };
+    }
+
+    case TESTING_TOOL_SCENARIOS_START_SCENARIO_SUCCESS: {
+      return {
+        ...state,
+        scenarioHasRun: true,
+      }
     }
 
     case TESTING_TOOL_SCENARIOS_CLOSE:
