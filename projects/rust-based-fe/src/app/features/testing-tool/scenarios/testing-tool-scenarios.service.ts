@@ -8,25 +8,17 @@ import { TestingToolScenarioEvent } from '@rufe-shared/types/testing-tool/scenar
 @Injectable({ providedIn: 'root' })
 export class TestingToolScenariosService {
 
-  private readonly baseUrl = 'http://webrtc2.webnode.openmina.com:11000';
+  readonly baseUrl = 'http://65.109.110.75:11000';
 
   constructor(private http: HttpClient) { }
 
   getScenario(id: string): Observable<TestingToolScenario> {
+    if (id) {
+      return this.getScenarioWithId(id);
+    }
     return this.http.get(this.baseUrl + '/scenarios').pipe(
       map((response: any) => response[0].id),
-      switchMap((scenarioId: string) =>
-        this.http.get<TestingToolScenario>(`${this.baseUrl}/scenarios/${scenarioId}`),
-      ),
-      map((scenario: TestingToolScenario) => {
-        return {
-          ...scenario,
-          steps: scenario.steps.map((step: TestingToolScenarioStep, index: number) => ({
-            ...step,
-            index,
-          })),
-        };
-      }),
+      switchMap((scenarioId: string) => this.getScenarioWithId(scenarioId)),
     );
     // return of({
     //   info: {
@@ -61,6 +53,20 @@ export class TestingToolScenariosService {
     //     },
     //   ],
     // });
+  }
+
+  private getScenarioWithId(id: string): Observable<TestingToolScenario> {
+    return this.http.get<TestingToolScenario>(`${this.baseUrl}/scenarios/${id}`).pipe(
+      map((scenario: TestingToolScenario) => {
+        return {
+          ...scenario,
+          steps: scenario.steps.map((step: TestingToolScenarioStep, index: number) => ({
+            ...step,
+            index,
+          })),
+        };
+      }),
+    );
   }
 
   addStep(scenarioId: string, step: any): Observable<any> {

@@ -1,7 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
-import { TestingToolScenariosCreateCluster } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.actions';
 import {
+  TestingToolScenariosCreateCluster,
+  TestingToolScenariosStartScenario,
+} from '@rufe-testing-tool/scenarios/testing-tool-scenarios.actions';
+import {
+  selectTestingToolScenariosClusterId,
   selectTestingToolScenariosScenario,
   selectTestingToolScenariosScenarioIsRunning,
 } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.state';
@@ -20,15 +24,22 @@ export class ScenariosStepsToolbarComponent extends StoreDispatcher implements O
   scenarioIsRunning: boolean = false;
   scenario: TestingToolScenario;
 
+  private clusterId: string;
+
   constructor() {super();}
 
   ngOnInit(): void {
     this.listenToRunningScenario();
     this.listenToScenario();
+    this.listenToCluster();
   }
 
   runSteps(): void {
-    this.dispatch(TestingToolScenariosCreateCluster);
+    if (this.clusterId) {
+      this.dispatch(TestingToolScenariosStartScenario);
+    } else {
+      this.dispatch(TestingToolScenariosCreateCluster);
+    }
   }
 
   private listenToRunningScenario(): void {
@@ -43,5 +54,11 @@ export class ScenariosStepsToolbarComponent extends StoreDispatcher implements O
       this.scenario = scenario;
       this.detect();
     }, skip(1));
+  }
+
+  private listenToCluster(): void {
+    this.select(selectTestingToolScenariosClusterId, (clusterId: string) => {
+      this.clusterId = clusterId;
+    });
   }
 }

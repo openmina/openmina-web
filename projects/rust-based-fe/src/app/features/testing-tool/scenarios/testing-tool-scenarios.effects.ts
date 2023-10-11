@@ -53,7 +53,7 @@ export class TestingToolScenariosEffects extends MinaRustBaseEffect<TestingToolS
       switchMap(({ action, state }) =>
         action.type === TESTING_TOOL_SCENARIOS_CLOSE
           ? EMPTY
-          : this.testingToolScenariosService.getScenario(action.payload),
+          : this.testingToolScenariosService.getScenario(state.testingTool.scenarios.scenario?.info.id),
       ),
       map((payload: TestingToolScenario) => ({ type: TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS, payload })),
       catchErrorAndRepeat(MinaErrorType.GENERIC, TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS, {}),
@@ -87,7 +87,7 @@ export class TestingToolScenariosEffects extends MinaRustBaseEffect<TestingToolS
     this.startScenario$ = createEffect(() => this.actions$.pipe(
       ofType(TESTING_TOOL_SCENARIOS_START_SCENARIO),
       this.latestActionState<TestingToolScenariosStartScenario>(),
-      switchMap(({ action, state }) =>
+      switchMap(({ state }) =>
         this.testingToolScenariosService.startScenario(state.testingTool.scenarios.clusterId),
       ),
       map(() => ({ type: TESTING_TOOL_SCENARIOS_START_SCENARIO_SUCCESS })),
