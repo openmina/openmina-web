@@ -3,7 +3,7 @@
 </div>
 <div class="h-minus-xl flex-column pl-12 pr-12 overflow-y-auto">
   <ng-container *ngIf="events.length; else noEvents">
-    <div class="flex-row border border-rad-6 p-10" *ngFor="let ev of events; trackBy: eventsTrackBy">
+    <div class="flex-row border border-rad-6 p-10 mb-10" *ngFor="let ev of events; trackBy: eventsTrackBy">
       <span class="node tertiary">Node {{ ev.node_id }}</span>
       <span>
         <span class="bg-container border-rad-4 p-5 mr-10">{{ ev.id }}</span>

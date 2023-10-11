@@ -61,6 +61,7 @@ export function reducer(state: TestingToolScenariosState = initialState, action:
     case TESTING_TOOL_SCENARIOS_START_SCENARIO_SUCCESS: {
       return {
         ...state,
+        runScenario: false,
         scenarioHasRun: true,
       }
     }

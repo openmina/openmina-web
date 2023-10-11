@@ -33,6 +33,7 @@ export class TestingToolScenariosComponent extends StoreDispatcher implements On
 
   private listenToScenario(): void {
     this.select(selectTestingToolScenariosScenarioHasRun, (hasRun: boolean) => {
+      console.log('hasRun', hasRun);
       this.hasRun = hasRun;
     });
   }
