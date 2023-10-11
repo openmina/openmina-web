@@ -22,7 +22,8 @@ export class ScenariosStepsFooterComponent extends StoreDispatcher implements On
   }
 
   addStep(json: string): void {
-    this.dispatch(TestingToolScenariosAddStep, { step: JSON.parse(json) });
+    this.dispatch(TestingToolScenariosAddStep, { runScenario: true, step: JSON.parse(json) });
+    this.stepIsAdding = false;
   }
 
   private listenToStepCount(): void {
