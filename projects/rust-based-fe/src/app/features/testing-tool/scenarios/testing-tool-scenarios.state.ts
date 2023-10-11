@@ -10,6 +10,7 @@ export interface TestingToolScenariosState {
   clusterId: string;
   scenarioIsRunning: boolean;
   scenarioHasRun: boolean;
+  runScenario: boolean;
 }
 
 const select = <T>(selector: (state: TestingToolScenariosState) => T): MemoizedSelector<MinaState, T> => createSelector(

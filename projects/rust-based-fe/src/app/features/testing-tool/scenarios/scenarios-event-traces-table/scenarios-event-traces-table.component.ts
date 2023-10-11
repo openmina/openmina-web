@@ -2,11 +2,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 import {
   selectTestingToolScenariosPendingEvents,
-  selectTestingToolScenariosScenario, selectTestingToolScenariosScenarioIsRunning,
+  selectTestingToolScenariosScenarioIsRunning,
 } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.state';
 import { TestingToolScenarioEvent } from '@rufe-shared/types/testing-tool/scenarios/testing-tool-scenario-event.type';
 import { TestingToolScenariosAddStep } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.actions';
-import { TestingToolScenario } from '@rufe-shared/types/testing-tool/scenarios/testing-tool-scenario.type';
 import { skip } from 'rxjs';
 
 @Component({
@@ -21,6 +20,8 @@ export class ScenariosEventTracesTableComponent extends StoreDispatcher implemen
   events: TestingToolScenarioEvent[];
   scenarioIsRunning: boolean = false;
 
+  readonly eventsTrackBy = (index: number, event: TestingToolScenarioEvent) => event.id + event.details;
+
   constructor() {super();}
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class ScenariosEventTracesTableComponent extends StoreDispatcher implemen
 
   addEventToSteps(event: TestingToolScenarioEvent): void {
     this.dispatch(TestingToolScenariosAddStep, {
+      runScenario: true,
       step: {
         kind: 'Event',
         node_id: event.node_id,

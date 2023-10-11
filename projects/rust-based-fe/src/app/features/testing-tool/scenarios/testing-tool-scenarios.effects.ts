@@ -3,7 +3,7 @@ import { Effect } from '@openmina/shared';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { MinaState, selectMinaState } from '@rufe-app/app.setup';
-import { EMPTY, map, switchMap } from 'rxjs';
+import { EMPTY, filter, map, switchMap } from 'rxjs';
 import { catchErrorAndRepeat } from '@rufe-shared/constants/store-functions';
 import { MinaErrorType } from '@rufe-shared/types/error-preview/mina-error-type.enum';
 import { MinaRustBaseEffect } from '@rufe-shared/base-classes/mina-rust-base.effect';
@@ -22,7 +22,7 @@ import {
   TestingToolScenariosClose,
   TestingToolScenariosCreateCluster,
   TestingToolScenariosGetPendingEvents,
-  TestingToolScenariosGetScenario, TestingToolScenariosReloadScenario,
+  TestingToolScenariosGetScenario, TestingToolScenariosGetScenarioSuccess, TestingToolScenariosReloadScenario,
   TestingToolScenariosStartScenario,
 } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.actions';
 import { TestingToolScenariosService } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.service';
@@ -36,6 +36,7 @@ export class TestingToolScenariosEffects extends MinaRustBaseEffect<TestingToolS
 
   readonly getScenario$: Effect;
   readonly reloadScenario$: Effect;
+  readonly reloadScenarioSuccess$: Effect;
   readonly addStep$: Effect;
   readonly createCluster$: Effect;
   readonly createClusterSuccess$: Effect;
@@ -78,6 +79,13 @@ export class TestingToolScenariosEffects extends MinaRustBaseEffect<TestingToolS
       ),
       map((payload: TestingToolScenario) => ({ type: TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS, payload })),
       catchErrorAndRepeat(MinaErrorType.GENERIC, TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS, {}),
+    ));
+
+    this.reloadScenarioSuccess$ = createEffect(() => this.actions$.pipe(
+      ofType(TESTING_TOOL_SCENARIOS_GET_SCENARIO_SUCCESS),
+      this.latestActionState<TestingToolScenariosGetScenarioSuccess>(),
+      filter(({ state }) => state.testingTool.scenarios.runScenario),
+      map(() => ({ type: TESTING_TOOL_SCENARIOS_START_SCENARIO })),
     ));
 
     this.createCluster$ = createEffect(() => this.actions$.pipe(

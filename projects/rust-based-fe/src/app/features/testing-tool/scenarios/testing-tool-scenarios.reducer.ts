@@ -1,5 +1,6 @@
 import { TestingToolScenariosState } from '@rufe-testing-tool/scenarios/testing-tool-scenarios.state';
 import {
+  TESTING_TOOL_SCENARIOS_ADD_STEP,
   TESTING_TOOL_SCENARIOS_CLOSE,
   TESTING_TOOL_SCENARIOS_CREATE_CLUSTER,
   TESTING_TOOL_SCENARIOS_CREATE_CLUSTER_SUCCESS,
@@ -14,6 +15,7 @@ const initialState: TestingToolScenariosState = {
   clusterId: undefined,
   scenarioIsRunning: false,
   scenarioHasRun: false,
+  runScenario: false,
 };
 
 export function reducer(state: TestingToolScenariosState = initialState, action: TestingToolScenariosActions): TestingToolScenariosState {
@@ -25,6 +27,13 @@ export function reducer(state: TestingToolScenariosState = initialState, action:
         ...state,
         scenario: action.payload,
       };
+    }
+
+    case TESTING_TOOL_SCENARIOS_ADD_STEP: {
+      return {
+        ...state,
+        runScenario: action.payload.runScenario,
+      }
     }
 
     case TESTING_TOOL_SCENARIOS_CREATE_CLUSTER: {
