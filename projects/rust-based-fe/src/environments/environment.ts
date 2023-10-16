@@ -5,6 +5,7 @@ export const environment: Readonly<MinaEnv> = {
   identifier: 'local',
   globalConfig: {
     features: {
+      dashboard: [],
       nodes: ['overview', 'live', 'bootstrap'],
       state: ['actions'],
       snarks: ['work-pool', 'scan-state'],

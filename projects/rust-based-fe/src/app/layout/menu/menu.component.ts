@@ -30,6 +30,7 @@ interface MenuItem {
 }
 
 const MENU_ITEMS: MenuItem[] = [
+  { name: 'Dashboard', icon: 'dashboard' },
   { name: 'Nodes', icon: 'margin' },
   { name: 'State', icon: 'code_blocks' },
   { name: 'SNARKs', icon: 'assignment_turned_in' },

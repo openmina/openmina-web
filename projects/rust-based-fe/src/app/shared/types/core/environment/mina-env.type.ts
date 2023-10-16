@@ -18,6 +18,7 @@ export type FeaturesConfig = {
 };
 
 export type FeatureType =
+  | 'dashboard'
   | 'nodes'
   | 'state'
   | 'snarks'

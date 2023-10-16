@@ -94,6 +94,9 @@
       "@rufe-error-preview/*": [
         "projects/rust-based-fe/src/app/layout/error-preview/*"
       ],
+      "@rufe-dashboard/*": [
+        "projects/rust-based-fe/src/app/features/dashboard/*"
+      ],
       "@rufe-dsw/*": [
         "projects/rust-based-fe/src/app/features/dsw/*"
       ],
