@@ -12,10 +12,10 @@ const getDashboard = (store: Store<MinaState>) => ocfeStateSliceAsPromise<Dashbo
 
 describe('DASHBOARD NODES TABLE', () => {
   beforeEach(() => {
-    cy.visit(Cypress.config().baseUrl + '/dashboard');
+    cy.visit(Cypress.config().baseUrl + '/overview');
   });
 
-  it('display dashboard title', () => {
+  it('display overview title', () => {
     cy.wait(2000)
       .window()
       .its('store')
@@ -35,7 +35,7 @@ describe('DASHBOARD NODES TABLE', () => {
       .then((state: DashboardNodesState) => {
         if (state && state.nodes.length > 1) {
           expect(state.nodes.length).above(1);
-          cy.get('mina-dashboard .mina-table')
+          cy.get('mina-overview .mina-table')
             .get('.row')
             .should('have.length.above', 1);
         }
@@ -142,7 +142,7 @@ describe('DASHBOARD NODES TABLE', () => {
   // });
 
   // it('have correct number of counted filtered nodes displayed', () => {
-  //   cy.get('mina-dashboard-nodes-toolbar .row1 div.flex-between div.flex-row button:last-child')
+  //   cy.get('mina-overview-nodes-toolbar .row1 div.flex-between div.flex-row button:last-child')
   //     .click({ force: true })
   //     .window()
   //     .its('store')
@@ -164,9 +164,9 @@ describe('DASHBOARD NODES TABLE', () => {
   // });
 
   it('sort by name', () => {
-    cy.get('mina-dashboard-nodes-table .head > span:nth-child(1)')
+    cy.get('mina-overview-nodes-table .head > span:nth-child(1)')
       .click()
-      .get('mina-dashboard-nodes-table .head > span:nth-child(1)')
+      .get('mina-overview-nodes-table .head > span:nth-child(1)')
       .click()
       .window()
       .its('store')
@@ -188,7 +188,7 @@ describe('DASHBOARD NODES TABLE', () => {
   });
 
   it('sort by status', () => {
-    cy.get('mina-dashboard-nodes-table .head > span:nth-child(2)')
+    cy.get('mina-overview-nodes-table .head > span:nth-child(2)')
       .click()
       .window()
       .its('store')
@@ -210,9 +210,9 @@ describe('DASHBOARD NODES TABLE', () => {
   });
 
   it('sort by hash reversed', () => {
-    cy.get('mina-dashboard-nodes-table .head > span:nth-child(3)')
+    cy.get('mina-overview-nodes-table .head > span:nth-child(3)')
       .click()
-      .get('mina-dashboard-nodes-table .head > span:nth-child(3)')
+      .get('mina-overview-nodes-table .head > span:nth-child(3)')
       .click()
       .window()
       .its('store')
@@ -234,7 +234,7 @@ describe('DASHBOARD NODES TABLE', () => {
   });
 
   it('sort by height', () => {
-    cy.get('mina-dashboard-nodes-table .head > span:nth-child(4)')
+    cy.get('mina-overview-nodes-table .head > span:nth-child(4)')
       .click()
       .window()
       .its('store')
@@ -256,7 +256,7 @@ describe('DASHBOARD NODES TABLE', () => {
   });
 
   it('sort by address', () => {
-    cy.get('mina-dashboard-nodes-table .head > span:nth-child(5)')
+    cy.get('mina-overview-nodes-table .head > span:nth-child(5)')
       .click()
       .window()
       .its('store')
@@ -278,7 +278,7 @@ describe('DASHBOARD NODES TABLE', () => {
   });
 
   it('sort by date', () => {
-    cy.get('mina-dashboard-nodes-table .head > span:nth-child(6)')
+    cy.get('mina-overview-nodes-table .head > span:nth-child(6)')
       .click()
       .window()
       .its('store')
@@ -300,7 +300,7 @@ describe('DASHBOARD NODES TABLE', () => {
   });
 
   it('sort by latency', () => {
-    cy.get('mina-dashboard-nodes-table .head > span:nth-child(7)')
+    cy.get('mina-overview-nodes-table .head > span:nth-child(7)')
       .click()
       .window()
       .its('store')
@@ -322,7 +322,7 @@ describe('DASHBOARD NODES TABLE', () => {
   });
 
   it('sort by block application', () => {
-    cy.get('mina-dashboard-nodes-table .head > span:nth-child(8)')
+    cy.get('mina-overview-nodes-table .head > span:nth-child(8)')
       .click()
       .window()
       .its('store')
@@ -344,9 +344,9 @@ describe('DASHBOARD NODES TABLE', () => {
   });
 
   it('sort by block application reversed', () => {
-    cy.get('mina-dashboard-nodes-table .head > span:nth-child(8)')
+    cy.get('mina-overview-nodes-table .head > span:nth-child(8)')
       .click()
-      .get('mina-dashboard-nodes-table .head > span:nth-child(8)')
+      .get('mina-overview-nodes-table .head > span:nth-child(8)')
       .click()
       .window()
       .its('store')
@@ -369,9 +369,9 @@ describe('DASHBOARD NODES TABLE', () => {
 
   it('open side panel', () => {
     cy.wait(5000)
-      .get('mina-dashboard-nodes-table .head > span:nth-child(1)')
+      .get('mina-overview-nodes-table .head > span:nth-child(1)')
       .click()
-      .get('mina-dashboard-nodes-table .row:not(.head)')
+      .get('mina-overview-nodes-table .row:not(.head)')
       .first()
       .click()
       .wait(1000)
@@ -384,7 +384,7 @@ describe('DASHBOARD NODES TABLE', () => {
           expect(state.activeNode.hash).to.eq(state.filteredNodes[0].hash);
         }
       })
-      .get('mina-dashboard-nodes-side-panel')
+      .get('mina-overview-nodes-side-panel')
       .should('be.visible')
       .get('mina-block-structured-trace')
       .should('be.visible');

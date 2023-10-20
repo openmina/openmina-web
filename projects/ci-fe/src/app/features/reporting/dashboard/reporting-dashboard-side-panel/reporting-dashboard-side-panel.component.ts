@@ -23,7 +23,7 @@ import {
 import { TableSort } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-dashboard-side-panel',
+  selector: 'mina-reporting-overview-side-panel',
   templateUrl: './reporting-dashboard-side-panel.component.html',
   styleUrls: ['./reporting-dashboard-side-panel.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

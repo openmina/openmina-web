@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: 'actions',
-        loadChildren: () => import('./actions/dsw-actions.module').then(m => m.DswActionsModule),
+        loadChildren: () => import('./actions/state-actions.module').then(m => m.StateActionsModule),
         title: STATE_TITLE,
       },
       {

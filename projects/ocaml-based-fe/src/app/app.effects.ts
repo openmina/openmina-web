@@ -132,7 +132,7 @@ export class AppEffects extends MinaOcamlBaseEffect<AppActions> {
     this.getNodeStatus$ = createEffect(() => this.actions$.pipe(
       ofType(APP_INIT_SUCCESS, APP_GET_NODE_STATUS),
       this.latestActionState<AppInit | AppGetNodeStatus>(),
-      filter(({ state }) => !location.pathname.includes('/dashboard/')),
+      filter(({ state }) => !location.pathname.includes('/overview/')),
       mergeMap(() => this.blockService.getNodeStatus()),
       map((payload: NodeStatus) => ({ type: APP_GET_NODE_STATUS_SUCCESS, payload })),
       catchError((error: HttpErrorResponse) => {
@@ -149,7 +149,7 @@ export class AppEffects extends MinaOcamlBaseEffect<AppActions> {
       ofType(APP_INIT_SUCCESS, APP_GET_DEBUGGER_STATUS),
       this.latestActionState<AppInit | AppGetDebuggerStatus>(),
       filter(({ state }) => !!state.app.activeNode.debugger),
-      filter(({ state }) => !location.pathname.includes('/dashboard/')),
+      filter(({ state }) => !location.pathname.includes('/overview/')),
       mergeMap(() => this.blockService.getDebuggerStatus()),
       map(() => this.updateDebuggerStatus(true)),
       catchError((error: HttpErrorResponse) => {

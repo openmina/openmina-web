@@ -14,7 +14,7 @@ import { any } from '@openmina/shared';
 type ActiveReportType = 'production' | 'application' | 'latency';
 
 @Component({
-  selector: 'mina-reporting-dashboard-graph-list',
+  selector: 'mina-reporting-overview-graph-list',
   templateUrl: './reporting-dashboard-graph-list.component.html',
   styleUrls: ['./reporting-dashboard-graph-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

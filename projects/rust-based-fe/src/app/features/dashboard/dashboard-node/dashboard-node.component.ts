@@ -15,7 +15,6 @@ export class DashboardNodeComponent extends StoreDispatcher implements AfterView
 
   @HostListener('window:resize') onResize(): void {
     this.barWidth = this.parent.nativeElement.offsetWidth / 290;
-    console.log(this.parent.nativeElement.offsetWidth );
   }
 
   ngAfterViewInit(): void {

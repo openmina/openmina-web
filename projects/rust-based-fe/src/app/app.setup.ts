@@ -11,6 +11,10 @@ import { AppState } from '@rufe-app/app.state';
 import * as fromLoading from '@rufe-app/layout/toolbar/loading.reducer';
 import { LoadingState } from '@rufe-app/layout/toolbar/loading.reducer';
 
+import * as fromDashboard from '@rufe-dashboard/dashboard.reducer';
+import { DashboardAction } from '@rufe-dashboard/dashboard.actions';
+import { DashboardState } from '@rufe-dashboard/dashboard.state';
+
 import * as fromNodes from '@rufe-nodes/nodes.reducer';
 import { NodesAction } from '@rufe-nodes/nodes.reducer';
 import { NodesState } from '@rufe-nodes/nodes.state';
@@ -32,6 +36,7 @@ export interface MinaState {
   app: AppState;
   error: ErrorPreviewState;
   loading: LoadingState;
+  dashboard: DashboardState;
   nodes: NodesState;
   state: StateState;
   snarks: SnarksState;
@@ -42,6 +47,7 @@ type MinaAction =
   & AppAction
   & ErrorPreviewAction
   & StateAction
+  & DashboardAction
   & NodesAction
   & SnarksAction
   & TestingToolAction
@@ -51,6 +57,7 @@ export const reducers: ActionReducerMap<MinaState, MinaAction> = {
   app: fromApp.reducer,
   error: fromErrorPreview.reducer,
   loading: fromLoading.reducer,
+  dashboard: fromDashboard.reducer,
   nodes: fromNodes.reducer,
   state: fromState.reducer,
   snarks: fromSnarks.reducer,

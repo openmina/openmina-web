@@ -33,7 +33,7 @@ import {
 } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-dashboard-graph',
+  selector: 'mina-reporting-overview-graph',
   templateUrl: './reporting-dashboard-graph.component.html',
   styleUrls: ['./reporting-dashboard-graph.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

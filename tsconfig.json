@@ -97,9 +97,6 @@
       "@rufe-dashboard/*": [
         "projects/rust-based-fe/src/app/features/dashboard/*"
       ],
-      "@rufe-dsw/*": [
-        "projects/rust-based-fe/src/app/features/dsw/*"
-      ],
       "@rufe-state/*": [
         "projects/rust-based-fe/src/app/features/state/*"
       ],

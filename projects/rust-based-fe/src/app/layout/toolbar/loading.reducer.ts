@@ -2,34 +2,34 @@ import { FeatureAction } from '@openmina/shared';
 import { MinaState } from '@rufe-app/app.setup';
 import { APP_INIT, APP_INIT_SUCCESS } from '@rufe-app/app.actions';
 import {
-  DSW_ACTIONS_CLOSE,
-  DSW_ACTIONS_GET_ACTIONS,
-  DSW_ACTIONS_GET_ACTIONS_SUCCESS,
-  DSW_ACTIONS_GET_EARLIEST_SLOT,
-  DSW_ACTIONS_GET_EARLIEST_SLOT_SUCCESS,
-} from '@rufe-app/features/state/actions/dsw-actions.actions';
+  STATE_ACTIONS_CLOSE,
+  STATE_ACTIONS_GET_ACTIONS,
+  STATE_ACTIONS_GET_ACTIONS_SUCCESS,
+  STATE_ACTIONS_GET_EARLIEST_SLOT,
+  STATE_ACTIONS_GET_EARLIEST_SLOT_SUCCESS,
+} from '@rufe-state/actions/state-actions.actions';
 import {
-  DSW_DASHBOARD_CLOSE,
-  DSW_DASHBOARD_GET_NODES_SUCCESS,
-  DSW_DASHBOARD_INIT
-} from '@rufe-app/features/nodes/dashboard/dsw-dashboard.actions';
+  NODES_OVERVIEW_CLOSE,
+  NODES_OVERVIEW_GET_NODES_SUCCESS,
+  NODES_OVERVIEW_INIT
+} from '@rufe-nodes/overview/nodes-overview.actions';
 import {
-  DSW_BOOTSTRAP_CLOSE,
-  DSW_BOOTSTRAP_GET_NODES_SUCCESS,
-  DSW_BOOTSTRAP_INIT
-} from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.actions';
+  NODES_BOOTSTRAP_CLOSE,
+  NODES_BOOTSTRAP_GET_NODES_SUCCESS,
+  NODES_BOOTSTRAP_INIT
+} from '@rufe-nodes/bootstrap/nodes-bootstrap.actions';
 import {
-  DSW_LIVE_CLOSE,
-  DSW_LIVE_GET_NODES_SUCCESS,
-  DSW_LIVE_INIT
-} from '@rufe-app/features/nodes/live/dsw-live.actions';
+  NODES_LIVE_CLOSE,
+  NODES_LIVE_GET_NODES_SUCCESS,
+  NODES_LIVE_INIT
+} from '@rufe-nodes/live/nodes-live.actions';
 import {
-  DSW_WORK_POOL_CLOSE,
-  DSW_WORK_POOL_GET_WORK_POOL_DETAIL,
-  DSW_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS,
-  DSW_WORK_POOL_GET_WORK_POOL_SUCCESS,
-  DSW_WORK_POOL_INIT,
-} from '@rufe-snarks/work-pool/dsw-work-pool.actions';
+  SNARKS_WORK_POOL_CLOSE,
+  SNARKS_WORK_POOL_GET_WORK_POOL_DETAIL,
+  SNARKS_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS,
+  SNARKS_WORK_POOL_GET_WORK_POOL_SUCCESS,
+  SNARKS_WORK_POOL_INIT,
+} from '@rufe-snarks/work-pool/snarks-work-pool.actions';
 import {
   SCAN_STATE_CLOSE,
   SCAN_STATE_GET_BLOCK,
@@ -45,13 +45,13 @@ export function reducer(state: LoadingState = initialState, action: FeatureActio
     /* ------------ ADD ------------ */
     case APP_INIT:
 
-    case DSW_ACTIONS_GET_EARLIEST_SLOT:
-    case DSW_ACTIONS_GET_ACTIONS:
-    case DSW_DASHBOARD_INIT:
-    case DSW_BOOTSTRAP_INIT:
-    case DSW_LIVE_INIT:
-    case DSW_WORK_POOL_INIT:
-    case DSW_WORK_POOL_GET_WORK_POOL_DETAIL:
+    case STATE_ACTIONS_GET_EARLIEST_SLOT:
+    case STATE_ACTIONS_GET_ACTIONS:
+    case NODES_OVERVIEW_INIT:
+    case NODES_BOOTSTRAP_INIT:
+    case NODES_LIVE_INIT:
+    case SNARKS_WORK_POOL_INIT:
+    case SNARKS_WORK_POOL_GET_WORK_POOL_DETAIL:
 
     case SCAN_STATE_INIT:
       return add(state, action);
@@ -60,31 +60,31 @@ export function reducer(state: LoadingState = initialState, action: FeatureActio
     case APP_INIT_SUCCESS:
       return remove(state, APP_INIT);
 
-    case DSW_ACTIONS_GET_EARLIEST_SLOT_SUCCESS:
-      return remove(state, DSW_ACTIONS_GET_EARLIEST_SLOT);
-    case DSW_ACTIONS_GET_ACTIONS_SUCCESS:
-      return remove(state, DSW_ACTIONS_GET_ACTIONS);
-    case DSW_ACTIONS_CLOSE:
-      return remove(state, [DSW_ACTIONS_GET_EARLIEST_SLOT, DSW_ACTIONS_GET_ACTIONS]);
+    case STATE_ACTIONS_GET_EARLIEST_SLOT_SUCCESS:
+      return remove(state, STATE_ACTIONS_GET_EARLIEST_SLOT);
+    case STATE_ACTIONS_GET_ACTIONS_SUCCESS:
+      return remove(state, STATE_ACTIONS_GET_ACTIONS);
+    case STATE_ACTIONS_CLOSE:
+      return remove(state, [STATE_ACTIONS_GET_EARLIEST_SLOT, STATE_ACTIONS_GET_ACTIONS]);
 
-    case DSW_DASHBOARD_GET_NODES_SUCCESS:
-      return remove(state, DSW_DASHBOARD_INIT);
-    case DSW_DASHBOARD_CLOSE:
-      return remove(state, [DSW_DASHBOARD_INIT]);
-    case DSW_BOOTSTRAP_GET_NODES_SUCCESS:
-      return remove(state, DSW_BOOTSTRAP_INIT);
-    case DSW_BOOTSTRAP_CLOSE:
-      return remove(state, [DSW_BOOTSTRAP_INIT]);
-    case DSW_LIVE_GET_NODES_SUCCESS:
-      return remove(state, DSW_LIVE_INIT);
-    case DSW_LIVE_CLOSE:
-      return remove(state, [DSW_LIVE_INIT]);
-    case DSW_WORK_POOL_GET_WORK_POOL_SUCCESS:
-      return remove(state, DSW_WORK_POOL_INIT);
-    case DSW_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS:
-      return remove(state, DSW_WORK_POOL_GET_WORK_POOL_DETAIL);
-    case DSW_WORK_POOL_CLOSE:
-      return remove(state, [DSW_WORK_POOL_INIT, DSW_WORK_POOL_GET_WORK_POOL_DETAIL]);
+    case NODES_OVERVIEW_GET_NODES_SUCCESS:
+      return remove(state, NODES_OVERVIEW_INIT);
+    case NODES_OVERVIEW_CLOSE:
+      return remove(state, [NODES_OVERVIEW_INIT]);
+    case NODES_BOOTSTRAP_GET_NODES_SUCCESS:
+      return remove(state, NODES_BOOTSTRAP_INIT);
+    case NODES_BOOTSTRAP_CLOSE:
+      return remove(state, [NODES_BOOTSTRAP_INIT]);
+    case NODES_LIVE_GET_NODES_SUCCESS:
+      return remove(state, NODES_LIVE_INIT);
+    case NODES_LIVE_CLOSE:
+      return remove(state, [NODES_LIVE_INIT]);
+    case SNARKS_WORK_POOL_GET_WORK_POOL_SUCCESS:
+      return remove(state, SNARKS_WORK_POOL_INIT);
+    case SNARKS_WORK_POOL_GET_WORK_POOL_DETAIL_SUCCESS:
+      return remove(state, SNARKS_WORK_POOL_GET_WORK_POOL_DETAIL);
+    case SNARKS_WORK_POOL_CLOSE:
+      return remove(state, [SNARKS_WORK_POOL_INIT, SNARKS_WORK_POOL_GET_WORK_POOL_DETAIL]);
 
     case SCAN_STATE_GET_BLOCK_SUCCESS:
       return remove(state, SCAN_STATE_INIT);

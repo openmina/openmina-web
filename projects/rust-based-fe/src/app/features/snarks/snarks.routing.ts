@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: 'work-pool',
-        loadChildren: () => import('@rufe-snarks/work-pool/dsw-work-pool.module').then(m => m.DswWorkPoolModule),
+        loadChildren: () => import('@rufe-snarks/work-pool/snarks-work-pool.module').then(m => m.SnarksWorkPoolModule),
         title: SNARKS_TITLE,
       },
       {

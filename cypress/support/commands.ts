@@ -28,6 +28,7 @@
 import { Store } from '@ngrx/store';
 import { MinaState as OcfeMinaState } from '@ocfe-app/app.setup';
 import { MinaState as CifeMinaState } from '@cife-app/app.setup';
+import { MinaState as RufeMinaState } from '@rufe-app/app.setup';
 import { map, Subscription } from 'rxjs';
 import { MinaNode as OfceMinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
 import { NodeStatus } from '@ocfe-shared/types/app/node-status.type';
@@ -45,7 +46,7 @@ declare global {
   }
 }
 
-type AnyMinaState = OcfeMinaState | CifeMinaState;
+type AnyMinaState = OcfeMinaState | CifeMinaState | RufeMinaState;
 
 export const PROMISE = (resolveFunction: (resolve: (result?: unknown) => void) => void) => new Cypress.Promise(resolveFunction);
 export const getActiveNode = (store: Store<OcfeMinaState>) => {
@@ -131,5 +132,28 @@ export const storeWebNodeWalletSubscription = (store: Store<OcfeMinaState>, obse
 export const storeWebNodeLogsSubscription = (store: Store<OcfeMinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.log)).subscribe(observer);
 export const storeWebNodePeersSubscription = (store: Store<OcfeMinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.peers)).subscribe(observer);
 export const storeWebNodeSharedSubscription = (store: Store<OcfeMinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.shared)).subscribe(observer);
+
+// Rust-based FE
+export const rufeStateSliceAsPromise = <T = RufeMinaState | RufeMinaState[keyof RufeMinaState]>(
+  store: Store<RufeMinaState>, resolveCondition: (state: T) => boolean, slice: keyof RufeMinaState, subSlice: string, timeout: number = 3000,
+) => {
+  return new Cypress.Promise((resolve: (result?: T | void) => void): void => {
+    const observer = (state: T) => {
+      if (resolveCondition(state)) {
+        return resolve(state);
+      }
+      setTimeout(() => resolve(), timeout);
+    };
+    store.select(slice).pipe(
+      map((subState: RufeMinaState[keyof RufeMinaState]) => {
+        cy.log('');
+        return subSlice ? any(subState)[subSlice] : subState;
+      }),
+    ).subscribe(observer);
+  });
+};
+
+
+
 
 Cypress.Commands.overwrite('log', (subject, message) => cy.task('log', message));

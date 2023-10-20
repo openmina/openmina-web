@@ -1,12 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MinaTableRustWrapper } from '@rufe-shared/base-classes/mina-table-rust-wrapper.class';
 import { TableColumnList } from '@openmina/shared';
-
-interface DashboardPeer {
-  status: string;
-  address: string;
-  latestReceivedBestTip: string;
-}
+import { DashboardPeer } from '@rufe-shared/types/dashboard/dashboard-peer';
 
 @Component({
   selector: 'mina-dashboard-peers-table',

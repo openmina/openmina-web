@@ -10,7 +10,7 @@ import { MergedRoute } from '@cife-shared/router/merged-route';
 import { filter, take } from 'rxjs';
 
 @Component({
-  selector: 'mina-reporting-dashboard',
+  selector: 'mina-reporting-overview',
   templateUrl: './reporting-dashboard.component.html',
   styleUrls: ['./reporting-dashboard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

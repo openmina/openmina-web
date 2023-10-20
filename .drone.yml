@@ -65,24 +65,24 @@ steps:
 #    depends_on:
 #      - prepare-tests
 
-#  - name: dashboard-nodes-data
+#  - name: overview-nodes-data
 #    image: cypress/included:12.6.0
 #    commands:
-#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/dashboard/nodes/dashboard-nodes-data.cy.ts"
+#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/overview/nodes/overview-nodes-data.cy.ts"
 #    depends_on:
 #      - prepare-tests
 #
-#  - name: dashboard-nodes-table
+#  - name: overview-nodes-table
 #    image: cypress/included:12.6.0
 #    commands:
-#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/dashboard/nodes/dashboard-nodes-table.cy.ts"
+#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/overview/nodes/overview-nodes-table.cy.ts"
 #    depends_on:
 #      - prepare-tests
 #
-#  - name: dashboard-nodes-toolbar
+#  - name: overview-nodes-toolbar
 #    image: cypress/included:12.6.0
 #    commands:
-#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/dashboard/nodes/dashboard-nodes-toolbar.cy.ts"
+#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/overview/nodes/overview-nodes-toolbar.cy.ts"
 #    depends_on:
 #      - prepare-tests
 #
@@ -212,7 +212,7 @@ steps:
 #        - failure
 #        - success
 #    depends_on:
-#      - dashboard-nodes-table
+#      - overview-nodes-table
 #      - network-messages-table
 #      - network-blocks-table
 #      - network-blocks-toolbar

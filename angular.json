@@ -64,7 +64,8 @@
                 "projects/ocaml-based-fe/src/assets/styles",
                 "projects/ocaml-based-fe/src/assets/images"
               ]
-            }
+            },
+            "aot": true
           },
           "configurations": {
             "production": {
@@ -246,7 +247,8 @@
                 "projects/rust-based-fe/src/assets/images"
               ]
             },
-            "scripts": []
+            "scripts": [],
+            "aot": true
           },
           "configurations": {
             "production": {
@@ -421,7 +423,8 @@
                 "projects/ci-fe/src/assets/styles"
               ]
             },
-            "scripts": []
+            "scripts": [],
+            "aot": true
           },
           "configurations": {
             "production": {
@@ -530,7 +533,8 @@
                 "projects/fuzzing-fe/src/assets/styles"
               ]
             },
-            "scripts": []
+            "scripts": [],
+            "aot": true
           },
           "configurations": {
             "production": {

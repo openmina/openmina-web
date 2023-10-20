@@ -62,7 +62,7 @@ export class SubmenuTabsComponent extends StoreDispatcher implements OnInit {
 
   // features() {
   //   return {
-  //     dashboard: ['nodes', 'topology'],
+  //     overview: ['nodes', 'topology'],
   //     explorer: ['blocks', 'transactions', 'snark-pool', 'scan-state', 'snark-traces'],
   //     resources: ['system'],
   //     network: ['messages', 'connections', 'blocks', 'blocks-ipc'],

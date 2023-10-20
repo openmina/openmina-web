@@ -89,7 +89,7 @@ export function reducer(state: AppState = initialState, action: any): AppState {
     case APP_ADD_NODE: {
       const newNode: MinaNode = {
         features: {//todo: add this
-          // dashboard: ['nodes', 'topology'],
+          // overview: ['nodes', 'topology'],
           // explorer: ['blocks', 'transactions', 'snark-pool', 'scan-state', 'snark-traces'],
           // resources: ['system'],
           // network: ['messages', 'connections', 'blocks', 'blocks-ipc'],
