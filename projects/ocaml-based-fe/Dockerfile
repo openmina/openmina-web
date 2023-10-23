@@ -56,7 +56,7 @@ WORKDIR /app
 COPY . .
 RUN npm install --force
 RUN node_modules/.bin/ng build --configuration webnode --project ocaml-based-fe
-RUN npm prune --production
+RUN npm prune --production --force
 FROM nginx:alpine
 RUN pwd
 RUN ls -l
