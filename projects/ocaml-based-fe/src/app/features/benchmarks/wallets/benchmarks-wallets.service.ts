@@ -683,7 +683,6 @@ export class BenchmarksWalletsService {
     return this.graphQL.query<any>('pooledUserCommands',
       `{ pooledUserCommands { ... on UserCommandPayment {
             nonce
-            memoVerbatim
             from } } }`)
       .pipe(
         map((data: any) => data.pooledUserCommands
@@ -871,7 +870,7 @@ function sendTxGraphQLMutationBody(): string {
           memo: $memo,
           nonce: $nonce,
           validUntil: $validUntil
-        }, 
+        },
         signature: {
           field: $field, scalar: $scalar
         }) {
@@ -884,7 +883,6 @@ function sendTxGraphQLMutationBody(): string {
           id
           isDelegation
           memo
-          memoVerbatim
           nonce
           kind
           to
