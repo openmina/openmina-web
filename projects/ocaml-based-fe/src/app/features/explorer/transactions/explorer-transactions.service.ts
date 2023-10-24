@@ -27,7 +27,6 @@ export class ExplorerTransactionsService {
             nonce
             to
             memo
-            memoVerbatim
             from } } }`)
       .pipe(
         map((data: any) => data.pooledUserCommands
@@ -252,7 +251,7 @@ function sendTxGraphQLMutationBody(): string {
           memo: $input_memo,
           nonce: $input_nonce,
           validUntil: $input_validUntil
-        }, 
+        },
         signature: {
           field: $signature_field, scalar: $signature_scalar
         }) {
