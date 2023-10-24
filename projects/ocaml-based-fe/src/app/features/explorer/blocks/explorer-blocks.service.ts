@@ -34,9 +34,6 @@ export class ExplorerBlocksService {
             feeTransfer {
               fee
             }
-            zkappCommands {
-              hash
-            }
           }
           stateHash
           snarkJobs
@@ -48,9 +45,9 @@ export class ExplorerBlocksService {
           globalSlot: Number(chain.protocolState.consensusState.slotSinceGenesis),
           hash: chain.stateHash,
           txCount: chain.transactions.userCommands.length,
-          totalTxCount: chain.transactions.userCommands.length + chain.transactions.feeTransfer.length + chain.transactions.zkappCommands.length + 1,
+          totalTxCount: chain.transactions.userCommands.length + chain.transactions.feeTransfer.length + (chain transactions?.zkappCommands?.length||0) + 1,
           snarkCount: chain.snarkJobs.length,
-          zkAppsCount: chain.transactions.zkappCommands.length,
+          zkAppsCount: (chain.transactions?.zkappCommands?.length||0),
           date: toReadableDate(chain.protocolState.blockchainState.date),
           timestamp: chain.protocolState.blockchainState.date,
           snarkedLedgerHash: chain.protocolState.blockchainState.snarkedLedgerHash,
