@@ -104,7 +104,7 @@ export class DashboardNodesEffects extends MinaOcamlBaseEffect<DashboardNodesAct
 
     this.getNodes$ = createEffect(() => this.actions$.pipe(
       ofType(DASHBOARD_NODES_GET_NODES, DASHBOARD_NODES_INIT_SUCCESS),
-      this.latestStateSlice<DashboardNodesState, DashboardNodesGetNodes | DashboardNodesInitSuccess>('overview.nodes'),
+      this.latestStateSlice<DashboardNodesState, DashboardNodesGetNodes | DashboardNodesInitSuccess>('dashboard.nodes'),
       filter(state => !!state.nodes.length),
       switchMap(state => state.nodes.map(node =>
         ({ type: DASHBOARD_NODES_GET_NODE, payload: { node, height: state.activeBlock } }),
@@ -131,14 +131,14 @@ export class DashboardNodesEffects extends MinaOcamlBaseEffect<DashboardNodesAct
 
     this.setActiveNode$ = createEffect(() => this.actions$.pipe(
       ofType(DASHBOARD_NODES_SET_ACTIVE_NODE),
-      this.latestStateSlice<DashboardNodesState, DashboardNodesSetActiveNode>('overview.nodes'),
+      this.latestStateSlice<DashboardNodesState, DashboardNodesSetActiveNode>('dashboard.nodes'),
       filter(state => !!state.activeNode),
       map(() => ({ type: DASHBOARD_NODES_GET_TRACES })),
     ));
 
     this.getTraceDetails$ = createEffect(() => this.actions$.pipe(
       ofType(DASHBOARD_NODES_GET_TRACES),
-      this.latestStateSlice<DashboardNodesState, DashboardNodesGetTraces>('overview.nodes'),
+      this.latestStateSlice<DashboardNodesState, DashboardNodesGetTraces>('dashboard.nodes'),
       switchMap(state => this.nodesService.getBlockTraceGroups(state.activeNode)),
       map((payload: TracingTraceGroup[]) => ({ type: DASHBOARD_NODES_GET_TRACES_SUCCESS, payload })),
       catchErrorAndRepeat(MinaErrorType.GRAPH_QL, DASHBOARD_NODES_GET_TRACES_SUCCESS, []),
