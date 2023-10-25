@@ -56,7 +56,7 @@ export class ExplorerBlocksZkAppDetailComponent extends MinaTableOcamlWrapper<Zk
         index,
         appState: update.body.update.appState.filter(Boolean).join(', ').trim(),
         balance: (update.body.balanceChange.sgn === 'Positive' ? '' : '-') + Number(update.body.balanceChange.magnitude) / ONE_BILLION,
-        failure: zkApp.zkAppFullData.failureReason[index].failures[0],
+        failure: zkApp.zkAppFullData.failureReason? zkApp.zkAppFullData.failureReason[index].failures[0] : '-',
       }));
       this.table.rows = this.zkAppUpdates;
       this.table.detect();
