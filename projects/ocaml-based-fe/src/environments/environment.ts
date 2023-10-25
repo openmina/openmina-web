@@ -37,10 +37,10 @@ export const environment: Readonly<MinaEnv> = {
     //   "name": "2Hardcoded Webrtc2 Node"
     // },
     {
-      "graphql": "http://1.k8.openmina.com:31754/prod1",
-      "tracing-graphql": "http://1.k8.openmina.com:31754/prod1/internal-trace",
+      "graphql": "http://1.k8.openmina.com:31754/snarker020",
+      "tracing-graphql": "http://1.k8.openmina.com:31754/snarker020",
       "debugger": "http://1.k8.openmina.com:31754/prod1/bpf-debugger",
-      "name": "prod1"
+      "name": "snarker020"
     },
     // {
     //   "graphql": "http://1.k8.openmina.com:31308/node1",
@@ -710,4 +710,3 @@ export const environment: Readonly<MinaEnv> = {
     // }
   ],
 };
-
