@@ -17,7 +17,8 @@ steps:
       DOCKER_BUILDKIT: "0"
     commands:
       - COMMIT_SHORT_SHA=$(echo $DRONE_COMMIT_SHA | cut -c 1-7)
-      - docker build --no-cache -t directcuteo/ocaml-based-fe:$COMMIT_SHORT_SHA -f projects/ocaml-based-fe/Dockerfile .
+      - docker build --no-cache -t directcuteo/ocaml-based-fe:latest -f projects/ocaml-based-fe/Dockerfile .
+#      - docker build --no-cache -t directcuteo/ocaml-based-fe:$COMMIT_SHORT_SHA -f projects/ocaml-based-fe/Dockerfile .
 #      - docker build --no-cache -t directcuteo/rust-based-fe:$COMMIT_SHORT_SHA -f projects/rust-based-fe/Dockerfile .
     volumes:
       - name: docker_sock
@@ -30,7 +31,8 @@ steps:
     image: docker:latest
     commands:
       - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-      - docker push directcuteo/ocaml-based-fe:${DRONE_COMMIT_SHA:0:7}
+      - docker push directcuteo/ocaml-based-fe:latest
+#      - docker push directcuteo/ocaml-based-fe:${DRONE_COMMIT_SHA:0:7}
 #      - docker push directcuteo/rust-based-fe:${DRONE_COMMIT_SHA:0:7}
     volumes:
       - name: docker_sock
