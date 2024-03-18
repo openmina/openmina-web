@@ -17,7 +17,10 @@ const EAGER_DIRECTIVES = [
 ];
 
 
-/* The role of this module is to eagerly load all shared parts that are also required by app.component */
+/**
+ * @description
+ * The role of this module is to eagerly load all shared parts that are also required by AppModule.
+ * */
 @NgModule({
   imports: [
     ...EAGER_MODULES,

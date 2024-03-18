@@ -55,6 +55,8 @@ export class HorizontalMenuComponent extends ManualDetection {
   public checkView(): void {
     if (this.scrollWrapper.nativeElement.scrollWidth > this.scrollWrapper.nativeElement.clientWidth) {
       this.showRightArrow = true;
+    } else {
+      this.showRightArrow = false;
     }
     this.detect();
   }

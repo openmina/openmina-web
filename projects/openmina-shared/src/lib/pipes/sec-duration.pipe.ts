@@ -10,6 +10,7 @@ interface SecDurationConfigDefinition {
   color: boolean;
   onlySeconds: boolean;
   undefinedAlternative: string | number | undefined;
+  includeMinutes: boolean;
   colors: [string, string, string];
 }
 
@@ -23,6 +24,7 @@ const baseConfig: SecDurationConfig = {
   default: 0.1,
   color: false,
   onlySeconds: false,
+  includeMinutes: false,
   colors: SEC_CONFIG_DEFAULT_PALETTE,
 };
 
@@ -42,8 +44,10 @@ export class SecDurationPipe implements PipeTransform {
       return value === 0 ? `${value}s` : config.undefinedAlternative !== undefined ? config.undefinedAlternative : value;
     }
 
-    if (value >= 1 || config.onlySeconds || value < 0) {
+    if ((value >= 1 && !config.includeMinutes) || (config.includeMinutes && value < 60 && value >= 1) || config.onlySeconds || value < 0) {
       response = SecDurationPipe.format(value) + 's';
+    } else if (value >= 60 && config.includeMinutes) {
+      response = formatNumber(value / 60, 'en-US', '1.0-0') + 'm';
     } else if (value >= 0.001) {
       response = SecDurationPipe.format(value * MILLISEC_IN_1_SEC) + 'ms';
     } else if (value >= 0.000001) {

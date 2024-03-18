@@ -32,7 +32,7 @@ export abstract class BaseStoreDispatcher<State> extends ManualDetection impleme
   protected select<S, R1, R2, R3, R4, R5, R6, R7, R8, R9>(mapFn: (state: State) => S, callback: (result: R9) => void, op1?: OperatorFunction<S, R1>, op2?: OperatorFunction<R1, R2>, op3?: OperatorFunction<R2, R3>, op4?: OperatorFunction<R3, R4>, op5?: OperatorFunction<R4, R5>, op6?: OperatorFunction<R5, R6>, op7?: OperatorFunction<R6, R7>, op8?: OperatorFunction<R7, R8>, op9?: OperatorFunction<R8, R9>): void;
   protected select<S, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10>(mapFn: (state: State) => S, callback: (result: R10) => void, op1?: OperatorFunction<S, R1>, op2?: OperatorFunction<R1, R2>, op3?: OperatorFunction<R2, R3>, op4?: OperatorFunction<R3, R4>, op5?: OperatorFunction<R4, R5>, op6?: OperatorFunction<R5, R6>, op7?: OperatorFunction<R6, R7>, op8?: OperatorFunction<R7, R8>, op9?: OperatorFunction<R8, R9>, op10?: OperatorFunction<R9, R10>): void {
 
-    let result$: Observable<any> = this.store.select<S>(mapFn).pipe(untilDestroyed(this));
+    let result$: Observable<any> = this.store.select<S>(mapFn);
 
     if (op1) {
       result$ = result$.pipe(op1) as Observable<R1>;
@@ -63,7 +63,7 @@ export abstract class BaseStoreDispatcher<State> extends ManualDetection impleme
       }
     }
 
-    result$.subscribe((result: R10) => callback(result));
+    result$.pipe(untilDestroyed(this)).subscribe((result: R10) => callback(result));
   }
 
   ngOnDestroy(): void {}

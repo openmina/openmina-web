@@ -16,6 +16,10 @@
 	background-color: $base-container;
 }
 
+.bg-tertiary2 {
+  background-color: $base-tertiary2;
+}
+
 .bg-selected-container {
 	background-color: $selected-container;
 }
@@ -42,4 +46,8 @@
 
 .bg-container-hover:hover {
 	background-color: $base-container;
+}
+
+.bg-tertiary2-hover:hover {
+  background-color: $base-tertiary2;
 }
