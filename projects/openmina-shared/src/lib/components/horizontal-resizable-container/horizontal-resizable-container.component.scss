@@ -8,6 +8,7 @@ main {
 
 aside {
 	transition: right $transition;
+  z-index: $side-panel-z-index;
 
 	.bar {
 		position: absolute;

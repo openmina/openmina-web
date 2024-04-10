@@ -52,7 +52,7 @@ const DARK_PALETTE: Theme = {
     selected: {
       [`${SELECTED_CSS_PREFIX}primary`]: '#61aeee',
       [`${SELECTED_CSS_PREFIX}secondary`]: 'rgba(97,174,238,0.6)',
-      [`${SELECTED_CSS_PREFIX}tertiary`]: 'rgba(97,174,238,0.07)',
+      [`${SELECTED_CSS_PREFIX}tertiary`]: 'rgba(97,174,238,0.4)',
       [`${SELECTED_CSS_PREFIX}container`]: 'rgba(97,174,238,0.1)',
     },
     special: {
