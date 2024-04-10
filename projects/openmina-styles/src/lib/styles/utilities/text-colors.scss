@@ -12,6 +12,10 @@
   color: $base-tertiary !important;
 }
 
+.tertiary2 {
+  color: $base-tertiary2 !important;
+}
+
 .container {
   color: $base-container !important;
 }
@@ -70,6 +74,10 @@
 
 .tertiary-hover:hover {
   color: $base-tertiary !important;
+}
+
+.tertiary2-hover:hover {
+  color: $base-tertiary2 !important;
 }
 
 .special-alt-1-primary {

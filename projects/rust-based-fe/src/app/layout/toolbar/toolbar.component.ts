@@ -22,6 +22,7 @@ export class ToolbarComponent extends ManualDetection implements OnInit {
   title: string = 'Loading';
   isMobile: boolean;
   switchForbidden: boolean;
+  hideSwitcher: boolean;
 
   @ViewChild('loadingRef') private loadingRef: ElementRef<HTMLDivElement>;
 
@@ -97,6 +98,7 @@ export class ToolbarComponent extends ManualDetection implements OnInit {
   }
 
   private buildSwitchForbidden(): void {
-    this.switchForbidden = location.pathname.includes(Routes.DASHBOARD);
+    this.switchForbidden = location.pathname.includes(Routes.NODES + '/' + Routes.OVERVIEW);
+    this.hideSwitcher = location.pathname.includes(Routes.TESTING_TOOL);
   }
 }

@@ -1,15 +1,15 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { stateSliceAsPromise } from '../../../../support/commands';
+import { ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { DashboardNodesState } from '@ocfe-dashboard/nodes/dashboard-nodes.state';
 
 const condition = (state: DashboardNodesState) => state && state.nodes.length > 1;
-const getDashboard = (store: Store<MinaState>) => stateSliceAsPromise<DashboardNodesState>(store, condition, 'dashboard', 'nodes');
+const getDashboard = (store: Store<MinaState>) => ocfeStateSliceAsPromise<DashboardNodesState>(store, condition, 'dashboard', 'nodes');
 
 
 describe('DASHBOARD NODES TOOLBAR', () => {
   beforeEach(() => {
-    cy.visit(Cypress.config().baseUrl + '/dashboard');
+    cy.visit(Cypress.config().baseUrl + '/overview');
   });
 
   it('goes to previous block', () => {
@@ -24,11 +24,11 @@ describe('DASHBOARD NODES TOOLBAR', () => {
           activeBlock = state.activeBlock;
         }
       })
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:last-child')
       .should('have.class', 'disabled')
-      .get('mina-dashboard-nodes-toolbar > div:first-child button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child button:last-child')
       .should('have.class', 'disabled')
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:first-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:first-child')
       .click({ force: true })
       .wait(1000)
       .window()
@@ -40,9 +40,9 @@ describe('DASHBOARD NODES TOOLBAR', () => {
           expect(activeBlock).to.equal(state.activeBlock + 1);
         }
       })
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:last-child')
       .should('not.have.class', 'disabled')
-      .get('mina-dashboard-nodes-toolbar > div:first-child button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child button:last-child')
       .should('not.have.class', 'disabled');
   });
 
@@ -58,11 +58,11 @@ describe('DASHBOARD NODES TOOLBAR', () => {
           activeBlock = state.activeBlock;
         }
       })
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:last-child')
       .should('have.class', 'disabled')
-      .get('mina-dashboard-nodes-toolbar > div:first-child button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child button:last-child')
       .should('have.class', 'disabled')
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:first-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:first-child')
       .click({ force: true })
       .wait(1000)
       .window()
@@ -74,7 +74,7 @@ describe('DASHBOARD NODES TOOLBAR', () => {
           expect(activeBlock).to.equal(state.activeBlock + 1);
         }
       })
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:last-child')
       .should('not.have.class', 'disabled')
       .click({ force: true })
       .wait(1000)
@@ -87,9 +87,9 @@ describe('DASHBOARD NODES TOOLBAR', () => {
           expect(activeBlock).to.equal(state.activeBlock);
         }
       })
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:last-child')
       .should('have.class', 'disabled')
-      .get('mina-dashboard-nodes-toolbar > div:first-child button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child button:last-child')
       .should('have.class', 'disabled');
   });
 
@@ -105,20 +105,20 @@ describe('DASHBOARD NODES TOOLBAR', () => {
           earliestBlock = state.earliestBlock;
         }
       })
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:last-child')
       .should('have.class', 'disabled')
-      .get('mina-dashboard-nodes-toolbar > div:first-child button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child button:last-child')
       .should('have.class', 'disabled')
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:first-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:first-child')
       .click({ force: true })
       .wait(1000)
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:last-child')
       .should('not.have.class', 'disabled')
-      .get('mina-dashboard-nodes-toolbar > div:first-child button:last-child')
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:first-child')
+      .get('mina-overview-nodes-toolbar > div:first-child button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:first-child')
       .click({ force: true })
       .wait(1000)
-      .get('mina-dashboard-nodes-toolbar .row1 > button')
+      .get('mina-overview-nodes-toolbar .row1 > button')
       .should('not.have.class', 'disabled')
       .click({ force: true })
       .wait(1000)
@@ -131,9 +131,9 @@ describe('DASHBOARD NODES TOOLBAR', () => {
           expect(earliestBlock).to.equal(state.activeBlock);
         }
       })
-      .get('mina-dashboard-nodes-toolbar > div:first-child .pagination-group button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child .pagination-group button:last-child')
       .should('have.class', 'disabled')
-      .get('mina-dashboard-nodes-toolbar > div:first-child button:last-child')
+      .get('mina-overview-nodes-toolbar > div:first-child button:last-child')
       .should('have.class', 'disabled');
   });
 

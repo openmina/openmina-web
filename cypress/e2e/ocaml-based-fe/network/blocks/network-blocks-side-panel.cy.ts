@@ -1,10 +1,10 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { stateSliceAsPromise } from '../../../../support/commands';
+import { ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { NetworkBlocksState } from '@ocfe-network/blocks/network-blocks.state';
 
 const condition = (state: NetworkBlocksState) => state && state.blocks.length > 2;
-const networkBlocksState = (store: Store<MinaState>) => stateSliceAsPromise<NetworkBlocksState>(store, condition, 'network', 'blocks');
+const networkBlocksState = (store: Store<MinaState>) => ocfeStateSliceAsPromise<NetworkBlocksState>(store, condition, 'network', 'blocks');
 
 
 describe('NETWORK BLOCKS SIDE PANEL', () => {

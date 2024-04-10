@@ -1,0 +1,21 @@
+@import 'openmina';
+
+.mina-table {
+	.row {
+		grid-template-columns: 165px 1fr;
+		color: $base-secondary;
+
+		&:not(.head) {
+			cursor: pointer;
+		}
+
+		&.head {
+			grid-template-columns: 165px 165px;
+		}
+	}
+
+	.cdk-virtual-scroll-viewport {
+		min-width: 400px;
+		overflow-x: hidden;
+	}
+}

@@ -3,12 +3,12 @@ import { MinaEnv } from '@ocfe-shared/types/core/environment/mina-env.type';
 export const environment: Readonly<MinaEnv> = {
   production: false,
   identifier: 'local',
-  aggregator: 'http://1.k8.openmina.com:31308/aggregator',
+  // aggregator: 'http://1.k8.openmina.com:31308/aggregator',
   // nodeLister: {
   //   domain: 'http://65.21.195.80',
   //   port: 4000,
   // },
-  isVanilla: true,
+  isVanilla: false,
   // noServerStatus: true,
   globalConfig: {
     features: {
@@ -37,17 +37,23 @@ export const environment: Readonly<MinaEnv> = {
     //   "name": "2Hardcoded Webrtc2 Node"
     // },
     {
-      "graphql": "http://1.k8.openmina.com:31308/node1",
-      "tracing-graphql": "http://1.k8.openmina.com:31308/node1/internal-trace",
-      "debugger": "http://1.k8.openmina.com:31308/node1/bpf-debugger",
-      "name": "node1"
+      "graphql": "http://1.k8.openmina.com:31754/snarker020",
+      "tracing-graphql": "http://1.k8.openmina.com:31754/snarker020",
+      "debugger": "http://1.k8.openmina.com:31754/prod1/bpf-debugger",
+      "name": "snarker020"
     },
-    {
-      "graphql": "http://1.k8.openmina.com:31308/node2",
-      "tracing-graphql": "http://1.k8.openmina.com:31308/node2/internal-trace",
-      "debugger": "http://1.k8.openmina.com:31308/node2/bpf-debugger",
-      "name": "node2"
-    },
+    // {
+    //   "graphql": "http://1.k8.openmina.com:31308/node1",
+    //   "tracing-graphql": "http://1.k8.openmina.com:31308/node1/internal-trace",
+    //   "debugger": "http://1.k8.openmina.com:31308/node1/bpf-debugger",
+    //   "name": "node1"
+    // },
+    // {
+    //   "graphql": "http://1.k8.openmina.com:31308/node2",
+    //   "tracing-graphql": "http://1.k8.openmina.com:31308/node2/internal-trace",
+    //   "debugger": "http://1.k8.openmina.com:31308/node2/bpf-debugger",
+    //   "name": "node2"
+    // },
     // {
     //   "graphql": "http://1.k8.openmina.com:31308/node3",
     //   "tracing-graphql": "http://1.k8.openmina.com:31308/node3/internal-trace",
@@ -704,4 +710,3 @@ export const environment: Readonly<MinaEnv> = {
     // }
   ],
 };
-

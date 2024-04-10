@@ -1,0 +1,10 @@
+<ng-container #minaTable></ng-container>
+
+<ng-template #rowTemplate let-row="row">
+  <span class="fx-row-vert-cent text-capitalize" [ngClass]="row.status">
+    <span class="mina-icon icon-200 mr-10 f-16">circle</span>
+    {{ row.status }}
+  </span>
+  <span>{{ row.address }}</span>
+  <span>{{ row.latestReceivedBestTip | truncateMid }}</span>
+</ng-template>

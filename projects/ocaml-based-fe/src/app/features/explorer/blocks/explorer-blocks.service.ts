@@ -90,7 +90,7 @@ export class ExplorerBlocksService {
         id: zk.id,
         hash: zk.hash,
         updates: zk.zkappCommand.accountUpdates.length,
-        failures: zk.failureReason.length,
+        failures: zk.failureReason?.length,
         zkAppFullData: {
           ...zk,
           id: zk.id.slice(0, 6) + '...' + zk.id.slice(zk.id.length - 6),

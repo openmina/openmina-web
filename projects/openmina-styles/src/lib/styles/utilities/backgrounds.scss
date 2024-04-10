@@ -16,6 +16,10 @@
 	background-color: $base-container;
 }
 
+.bg-tertiary2 {
+  background-color: $base-tertiary2;
+}
+
 .bg-selected-container {
 	background-color: $selected-container;
 }
@@ -29,7 +33,7 @@
 }
 
 .bg-success-primary {
-	background-color: $success-container;
+	background-color: $success-primary;
 }
 
 .bg-warn-container {
@@ -42,4 +46,20 @@
 
 .bg-container-hover:hover {
 	background-color: $base-container;
+}
+
+.bg-tertiary2-hover:hover {
+  background-color: $base-tertiary2;
+}
+
+.bg-special-selected-alt-1-container {
+  background-color: $special-selected-alt-1-container;
+}
+
+.bg-special-selected-alt-2-container {
+  background-color: $special-selected-alt-2-container;
+}
+
+.bg-special-selected-alt-3-container {
+  background-color: $special-selected-alt-3-container;
 }

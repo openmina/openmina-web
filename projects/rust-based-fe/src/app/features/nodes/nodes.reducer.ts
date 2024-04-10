@@ -1,28 +1,28 @@
 import { ActionReducer, combineReducers } from '@ngrx/store';
 
-import * as fromDashboard from '@rufe-app/features/nodes/dashboard/dsw-dashboard.reducer';
-import { DswDashboardAction, DswDashboardActions } from '@rufe-app/features/nodes/dashboard/dsw-dashboard.actions';
+import * as fromDashboard from '@rufe-nodes/overview/nodes-overview.reducer';
+import { NodesOverviewAction, NodesOverviewActions } from '@rufe-nodes/overview/nodes-overview.actions';
 
-import * as fromBootstrap from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.reducer';
-import { DswBootstrapAction, DswBootstrapActions } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.actions';
+import * as fromBootstrap from '@rufe-nodes/bootstrap/nodes-bootstrap.reducer';
+import { NodesBootstrapAction, NodesBootstrapActions } from '@rufe-nodes/bootstrap/nodes-bootstrap.actions';
 
-import * as fromLive from '@rufe-app/features/nodes/live/dsw-live.reducer';
-import { DswLiveAction, DswLiveActions } from '@rufe-app/features/nodes/live/dsw-live.actions';
+import * as fromLive from '@rufe-nodes/live/nodes-live.reducer';
+import { NodesLiveAction, NodesLiveActions } from '@rufe-nodes/live/nodes-live.actions';
 import { NodesState } from '@rufe-nodes/nodes.state';
 
 export type NodesActions =
-  & DswDashboardActions
-  & DswBootstrapActions
-  & DswLiveActions
+  & NodesOverviewActions
+  & NodesBootstrapActions
+  & NodesLiveActions
   ;
 export type NodesAction =
-  & DswDashboardAction
-  & DswBootstrapAction
-  & DswLiveAction
+  & NodesOverviewAction
+  & NodesBootstrapAction
+  & NodesLiveAction
   ;
 
 export const reducer: ActionReducer<NodesState, NodesActions> = combineReducers<NodesState, NodesActions>({
-  dashboard: fromDashboard.reducer,
+  overview: fromDashboard.reducer,
   bootstrap: fromBootstrap.reducer,
   live: fromLive.reducer,
 });

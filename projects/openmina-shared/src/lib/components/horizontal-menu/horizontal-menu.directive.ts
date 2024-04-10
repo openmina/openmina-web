@@ -27,8 +27,8 @@ export class HorizontalMenuDirective implements AfterViewInit {
 
   private listenToWindowResize(): void {
     fromEvent(window, 'resize').pipe(
-      untilDestroyed(this),
       debounceTime(500),
+      untilDestroyed(this),
     ).subscribe(() => this.checkArrows());
   }
 
@@ -43,8 +43,8 @@ export class HorizontalMenuDirective implements AfterViewInit {
     resizeObserver.observe(this.el);
 
     fromEvent(this.el, widthChange).pipe(
-      untilDestroyed(this),
       debounceTime(500),
+      untilDestroyed(this),
     ).subscribe(() => this.checkArrows());
   }
 

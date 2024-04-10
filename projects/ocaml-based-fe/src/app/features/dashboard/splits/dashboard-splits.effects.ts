@@ -53,7 +53,7 @@ export class DashboardSplitsEffects extends MinaOcamlBaseEffect<DashboardSplitsA
 
     this.splitNodes$ = createEffect(() => this.actions$.pipe(
       ofType(DASHBOARD_SPLITS_SPLIT_NODES),
-      this.latestStateSlice<DashboardSplitsState, DashboardSplitsMergeNodes>('dashboard.splits'),
+      this.latestStateSlice<DashboardSplitsState, DashboardSplitsMergeNodes>('overview.splits'),
       switchMap(state => this.splitService.splitNodes(state.peers)),
       map(() => ({ type: DASHBOARD_SPLITS_SPLIT_NODES_SUCCESS })),
       catchErrorAndRepeat(MinaErrorType.GRAPH_QL, DASHBOARD_SPLITS_SPLIT_NODES_SUCCESS),
@@ -61,7 +61,7 @@ export class DashboardSplitsEffects extends MinaOcamlBaseEffect<DashboardSplitsA
 
     this.mergeNodes$ = createEffect(() => this.actions$.pipe(
       ofType(DASHBOARD_SPLITS_MERGE_NODES),
-      this.latestStateSlice<DashboardSplitsState, DashboardSplitsMergeNodes>('dashboard.splits'),
+      this.latestStateSlice<DashboardSplitsState, DashboardSplitsMergeNodes>('overview.splits'),
       switchMap(state => this.splitService.mergeNodes(state.peers)),
       map(() => ({ type: DASHBOARD_SPLITS_MERGE_NODES_SUCCESS })),
       catchErrorAndRepeat(MinaErrorType.GRAPH_QL, DASHBOARD_SPLITS_MERGE_NODES_SUCCESS),

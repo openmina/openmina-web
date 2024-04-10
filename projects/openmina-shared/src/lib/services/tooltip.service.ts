@@ -16,6 +16,7 @@ export class TooltipService {
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.setInitialTooltipBehaviour();
     this.appendTooltipContainerToDOM();
+    this.appendGraphTooltipToDOM();
   }
 
   private appendTooltipContainerToDOM(): void {
@@ -24,10 +25,20 @@ export class TooltipService {
     this.document.body.appendChild(popup);
   }
 
+  private appendGraphTooltipToDOM(): void {
+    const popup = this.document.createElement('div');
+    popup.setAttribute('id', 'mina-graph-tooltip');
+    this.document.body.appendChild(popup);
+  }
+
   private setInitialTooltipBehaviour(): void {
     if (localStorage.getItem(this.tooltipDisabledKey) === null) {
       localStorage.setItem(this.tooltipDisabledKey, JSON.stringify(false));
     }
+  }
+
+  get graphTooltip(): HTMLDivElement {
+    return this.document.getElementById('mina-graph-tooltip') as HTMLDivElement;
   }
 
   toggleTooltips(): void {

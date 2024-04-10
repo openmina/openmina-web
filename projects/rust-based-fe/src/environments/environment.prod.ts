@@ -5,9 +5,11 @@ export const environment: Readonly<MinaEnv> = {
   identifier: 'Rust based node',
   globalConfig: {
     features: {
+      dashboard: [],
       nodes: ['overview', 'live', 'bootstrap'],
       state: ['actions'],
       snarks: ['work-pool', 'scan-state'],
+      'testing-tool': ['scenarios'],
     },
   },
   configs: [

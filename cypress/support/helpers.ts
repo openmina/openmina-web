@@ -1,6 +1,3 @@
-import { SortDirection, TableSort } from '@shared/types/shared/table-sort.type';
-import { hasValue } from '@shared/helpers/values.helper';
-
 export function truncateMid(value: string, firstSlice: number = 6, secondSlice: number = 6): string {
   if (!value) {
     return '';
@@ -8,7 +5,7 @@ export function truncateMid(value: string, firstSlice: number = 6, secondSlice: 
   return value.length > (firstSlice + secondSlice) ? value.slice(0, firstSlice) + '...' + value.slice(value.length - secondSlice) : value;
 }
 
-export function sort<T = any>(inpArray: T[], sort: TableSort<T>, strings: Array<keyof T>, sortNulls: boolean = false): T[] {
+export function sort<T = any>(inpArray: T[], sort: any, strings: Array<keyof T>, sortNulls: boolean = false): T[] {
   const sortProperty = sort.sortBy;
   const isStringSorting = strings.includes(sortProperty);
   const array: T[] = [...inpArray];
@@ -18,24 +15,24 @@ export function sort<T = any>(inpArray: T[], sort: TableSort<T>, strings: Array<
   if (sortNulls) {
     toBeSorted = array;
   } else {
-    toBeSorted = isStringSorting ? array : array.filter(e => e[sortProperty] !== undefined && e[sortProperty] !== null);
-    toNotBeSorted = isStringSorting ? [] : array.filter(e => e[sortProperty] === undefined || e[sortProperty] === null);
+    toBeSorted = isStringSorting ? array : array.filter(e => any(e)[sortProperty] !== undefined && any(e)[sortProperty] !== null);
+    toNotBeSorted = isStringSorting ? [] : array.filter(e => any(e)[sortProperty] === undefined || any(e)[sortProperty] === null);
   }
 
   if (isStringSorting) {
     const stringSort = (o1: T, o2: T) => {
-      const s2 = (o2[sortProperty] || '') as string;
-      const s1 = (o1[sortProperty] || '') as string;
-      return sort.sortDirection === SortDirection.DSC
+      const s2 = (any(o2)[sortProperty] || '') as string;
+      const s1 = (any(o1)[sortProperty] || '') as string;
+      return sort.sortDirection === 'descending'
         ? (s2).localeCompare(s1)
         : s1.localeCompare(s2);
     };
     toBeSorted.sort(stringSort);
   } else {
     const numberSort = (o1: T, o2: T): number => {
-      const o2Sort = (hasValue(o2[sortProperty]) ? o2[sortProperty] : Number.MAX_VALUE) as number;
-      const o1Sort = (hasValue(o1[sortProperty]) ? o1[sortProperty] : Number.MAX_VALUE) as number;
-      return sort.sortDirection === SortDirection.DSC
+      const o2Sort = (hasValue(any(o2)[sortProperty]) ? any(o2)[sortProperty] : Number.MAX_VALUE) as number;
+      const o1Sort = (hasValue(any(o1)[sortProperty]) ? any(o1)[sortProperty] : Number.MAX_VALUE) as number;
+      return sort.sortDirection === 'descending'
         ? o2Sort - o1Sort
         : o1Sort - o2Sort;
     };
@@ -43,4 +40,12 @@ export function sort<T = any>(inpArray: T[], sort: TableSort<T>, strings: Array<
   }
 
   return [...toBeSorted, ...toNotBeSorted];
+}
+
+function hasValue(value: any): boolean {
+  return value !== undefined && value !== null;
+}
+
+function any(value: any): any {
+  return value;
 }

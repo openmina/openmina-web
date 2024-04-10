@@ -2,18 +2,18 @@ import { ActionReducer, combineReducers } from '@ngrx/store';
 
 import { SnarksState } from '@rufe-snarks/snarks.state';
 
-import * as fromWorkPool from '@rufe-snarks/work-pool/dsw-work-pool.reducer';
-import { DswWorkPoolAction, DswWorkPoolActions } from '@rufe-snarks/work-pool/dsw-work-pool.actions';
+import * as fromWorkPool from '@rufe-snarks/work-pool/snarks-work-pool.reducer';
+import { SnarksWorkPoolAction, SnarksWorkPoolActions } from '@rufe-snarks/work-pool/snarks-work-pool.actions';
 
 import * as fromScanState from '@rufe-snarks/scan-state/scan-state.reducer';
 import { ScanStateAction, ScanStateActions } from '@rufe-snarks/scan-state/scan-state.actions';
 
 export type SnarksActions =
-  & DswWorkPoolActions
+  & SnarksWorkPoolActions
   & ScanStateActions
   ;
 export type SnarksAction =
-  & DswWorkPoolAction
+  & SnarksWorkPoolAction
   & ScanStateAction
   ;
 

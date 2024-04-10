@@ -1,13 +1,13 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { stateSliceAsPromise } from '../../../../support/commands';
+import { ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { SnarkWorkersTracesState } from '@ocfe-explorer/snark-workers-traces/snark-workers-traces.state';
 import { SnarkWorkerTraceJob } from '@ocfe-shared/types/explorer/snark-traces/snark-worker-trace-job.type';
 import { ONE_THOUSAND, SortDirection } from '@openmina/shared';
 import { sort } from '../../../../support/helpers';
 
 const condition = (state: SnarkWorkersTracesState) => state && state.workers.length > 1;
-const getSnarkTraces = (store: Store<MinaState>) => stateSliceAsPromise<SnarkWorkersTracesState>(store, condition, 'explorer', 'snarksTraces', 10000);
+const getSnarkTraces = (store: Store<MinaState>) => ocfeStateSliceAsPromise<SnarkWorkersTracesState>(store, condition, 'explorer', 'snarksTraces', 10000);
 
 describe('EXPLORER SNARK TRACES TOOLBAR', () => {
   it('show all workers', () => {

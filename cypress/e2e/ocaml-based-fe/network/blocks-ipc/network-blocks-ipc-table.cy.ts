@@ -1,11 +1,11 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { getActiveNode, stateSliceAsPromise } from '../../../../support/commands';
+import { getActiveNode, ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { NetworkBlocksIpcState } from '@ocfe-network/blocks-ipc/network-blocks-ipc.state';
 import { MinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
 
 const condition = (state: NetworkBlocksIpcState) => state && state.blocks.length > 0;
-const networkBlocksIpcState = (store: Store<MinaState>) => stateSliceAsPromise<NetworkBlocksIpcState>(store, condition, 'network', 'blocksIpc');
+const networkBlocksIpcState = (store: Store<MinaState>) => ocfeStateSliceAsPromise<NetworkBlocksIpcState>(store, condition, 'network', 'blocksIpc');
 
 
 describe('NETWORK BLOCKS IPC TABLE', () => {

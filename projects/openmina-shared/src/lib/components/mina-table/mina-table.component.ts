@@ -45,6 +45,7 @@ export class MinaTableComponent<T extends object> extends BaseStoreDispatcher<an
   sortClz: new (payload: TableSort<T>) => { type: string, payload: TableSort<T> };
   sortSelector: (state: any) => TableSort<T>;
   rowClickCallback: (row: T) => void;
+  trackByFn: (index: number, row: T) => any = (index: number, row: T) => row;
 
   tableLevel: number = 1;
 
@@ -98,7 +99,7 @@ export class MinaTableComponent<T extends object> extends BaseStoreDispatcher<an
 
   private listenToScrolling(): void {
     this.vs.scrolledIndexChange
-      .pipe(untilDestroyed(this), debounceTime(this.hiddenToTop ? 200 : 0))
+      .pipe(debounceTime(this.hiddenToTop ? 200 : 0), untilDestroyed(this))
       .subscribe(index => {
         if (index === 0) {
           this.toTop.nativeElement.classList.add('hide');

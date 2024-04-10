@@ -1,10 +1,10 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { stateSliceAsPromise } from '../../../../support/commands';
+import { ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { ExplorerScanState } from '@ocfe-explorer/scan-state/explorer-scan-state.state';
 
 const condition = (state: ExplorerScanState) => state && state.scanState.length > 1;
-const getScanState = (store: Store<MinaState>) => stateSliceAsPromise<ExplorerScanState>(store, condition, 'explorer', 'scanState');
+const getScanState = (store: Store<MinaState>) => ocfeStateSliceAsPromise<ExplorerScanState>(store, condition, 'explorer', 'scanState');
 
 describe('EXPLORER SCAN STATE TABLE', () => {
   beforeEach(() => {

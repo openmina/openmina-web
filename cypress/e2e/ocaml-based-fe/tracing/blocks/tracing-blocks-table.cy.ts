@@ -1,10 +1,10 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { stateSliceAsPromise } from '../../../../support/commands';
+import { ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { TracingBlocksState } from '@ocfe-tracing/tracing-blocks/tracing-blocks.state';
 
 const condition = (state: TracingBlocksState) => state && state.traces.length > 1;
-const tracingBlocksState = (store: Store<MinaState>) => stateSliceAsPromise<TracingBlocksState>(store, condition, 'tracing', 'blocks');
+const tracingBlocksState = (store: Store<MinaState>) => ocfeStateSliceAsPromise<TracingBlocksState>(store, condition, 'tracing', 'blocks');
 
 describe('TRACING BLOCKS TABLE', () => {
   beforeEach(() => {

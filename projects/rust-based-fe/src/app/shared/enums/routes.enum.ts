@@ -32,4 +32,5 @@ export enum Routes {
   LIVE = 'live',
   WORK_POOL = 'work-pool',
   SNARKS = 'snarks',
+  TESTING_TOOL = 'testing-tool',
 }

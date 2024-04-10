@@ -9,7 +9,6 @@ export const environment: Readonly<MinaEnv> = {
   configs: [
     {
       graphql: 'https://webrtc.webnode.openmina.com',
-      features: [],
       name: 'Web Node Demo',
     },
   ],

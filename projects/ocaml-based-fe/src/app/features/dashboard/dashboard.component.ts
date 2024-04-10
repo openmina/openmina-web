@@ -5,7 +5,7 @@ import { APP_CHANGE_SUB_MENUS, AppChangeSubMenus } from '@ocfe-app/app.actions';
 import { Routes } from '@ocfe-shared/enums/routes.enum';
 
 @Component({
-  selector: 'mina-dashboard',
+  selector: 'mina-overview',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

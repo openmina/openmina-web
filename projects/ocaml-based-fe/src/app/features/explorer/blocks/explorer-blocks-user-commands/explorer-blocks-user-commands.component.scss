@@ -1,6 +1,6 @@
 @import 'openmina';
 
-.acc-row {
+.tx-row {
 	height: 36px;
 	line-height: 36px;
 	display: grid;
@@ -33,7 +33,7 @@
 	background-color: $selected-container !important;
 	border-radius: 6px;
 
-	.acc-row {
+	.tx-row {
 		border-top-right-radius: 6px;
 		border-top-left-radius: 6px;
 

@@ -17,8 +17,8 @@ steps:
       DOCKER_BUILDKIT: "0"
     commands:
       - COMMIT_SHORT_SHA=$(echo $DRONE_COMMIT_SHA | cut -c 1-7)
-#      - docker build --no-cache -t directcuteo/ocaml-based-fe:$COMMIT_SHORT_SHA -f projects/ocaml-based-fe/Dockerfile .
-      - docker build --no-cache -t directcuteo/rust-based-fe:$COMMIT_SHORT_SHA -f projects/rust-based-fe/Dockerfile .
+      - docker build --no-cache -t directcuteo/ocaml-based-fe:latest -f projects/ocaml-based-fe/Dockerfile .
+      - docker build --no-cache -t directcuteo/ocaml-based-fe:$COMMIT_SHORT_SHA -f projects/ocaml-based-fe/Dockerfile .
     volumes:
       - name: docker_sock
         path: /var/run/docker.sock
@@ -30,8 +30,8 @@ steps:
     image: docker:latest
     commands:
       - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-#      - docker push directcuteo/ocaml-based-fe:${DRONE_COMMIT_SHA:0:7}
-      - docker push directcuteo/rust-based-fe:${DRONE_COMMIT_SHA:0:7}
+      - docker push directcuteo/ocaml-based-fe:latest
+      - docker push directcuteo/ocaml-based-fe:${DRONE_COMMIT_SHA:0:7}
     volumes:
       - name: docker_sock
         path: /var/run/docker.sock
@@ -65,24 +65,24 @@ steps:
 #    depends_on:
 #      - prepare-tests
 
-#  - name: dashboard-nodes-data
+#  - name: overview-nodes-data
 #    image: cypress/included:12.6.0
 #    commands:
-#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/dashboard/nodes/dashboard-nodes-data.cy.ts"
+#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/overview/nodes/overview-nodes-data.cy.ts"
 #    depends_on:
 #      - prepare-tests
 #
-#  - name: dashboard-nodes-table
+#  - name: overview-nodes-table
 #    image: cypress/included:12.6.0
 #    commands:
-#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/dashboard/nodes/dashboard-nodes-table.cy.ts"
+#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/overview/nodes/overview-nodes-table.cy.ts"
 #    depends_on:
 #      - prepare-tests
 #
-#  - name: dashboard-nodes-toolbar
+#  - name: overview-nodes-toolbar
 #    image: cypress/included:12.6.0
 #    commands:
-#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/dashboard/nodes/dashboard-nodes-toolbar.cy.ts"
+#      - cypress run --config-file "cypress.config.js" --spec "cypress/e2e/overview/nodes/overview-nodes-toolbar.cy.ts"
 #    depends_on:
 #      - prepare-tests
 #
@@ -212,7 +212,7 @@ steps:
 #        - failure
 #        - success
 #    depends_on:
-#      - dashboard-nodes-table
+#      - overview-nodes-table
 #      - network-messages-table
 #      - network-blocks-table
 #      - network-blocks-toolbar

@@ -19,18 +19,16 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
+    "target": "es2020",
+    "module": "es2022",
     "useDefineForClassFields": false,
     "types": [
       "node",
-      "google",
       "cypress",
       "cypress-real-events"
     ],
     "lib": [
-      "ES2022",
+      "es2020",
       "dom"
     ],
     "paths": {
@@ -95,8 +93,8 @@
       "@rufe-error-preview/*": [
         "projects/rust-based-fe/src/app/layout/error-preview/*"
       ],
-      "@rufe-dsw/*": [
-        "projects/rust-based-fe/src/app/features/dsw/*"
+      "@rufe-dashboard/*": [
+        "projects/rust-based-fe/src/app/features/dashboard/*"
       ],
       "@rufe-state/*": [
         "projects/rust-based-fe/src/app/features/state/*"
@@ -106,6 +104,48 @@
       ],
       "@rufe-snarks/*": [
         "projects/rust-based-fe/src/app/features/snarks/*"
+      ],
+      "@rufe-testing-tool/*": [
+        "projects/rust-based-fe/src/app/features/testing-tool/*"
+      ],
+
+
+      "@cife-app/*": [
+        "projects/ci-fe/src/app/*"
+      ],
+      "@cife-core/*": [
+        "projects/ci-fe/src/app/core/*"
+      ],
+      "@cife-shared/*": [
+        "projects/ci-fe/src/app/shared/*"
+      ],
+      "@cife-environment/*": [
+        "projects/ci-fe/src/environments/*"
+      ],
+      "@cife-error-preview/*": [
+        "projects/ci-fe/src/app/layout/error-preview/*"
+      ],
+      "@cife-reporting/*": [
+        "projects/ci-fe/src/app/features/reporting/*"
+      ],
+
+      "@fufe-app/*": [
+        "projects/fuzzing-fe/src/app/*"
+      ],
+      "@fufe-core/*": [
+        "projects/fuzzing-fe/src/app/core/*"
+      ],
+      "@fufe-shared/*": [
+        "projects/fuzzing-fe/src/app/shared/*"
+      ],
+      "@fufe-environment/*": [
+        "projects/fuzzing-fe/src/environments/*"
+      ],
+      "@fufe-fuzzing/*": [
+        "projects/fuzzing-fe/src/app/features/fuzzing/*"
+      ],
+      "@fufe-error-preview/*": [
+        "projects/fuzzing-fe/src/app/layout/error-preview/*"
       ],
 
       "openmina-shared": [

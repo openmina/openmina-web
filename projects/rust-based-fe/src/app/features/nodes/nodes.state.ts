@@ -1,13 +1,13 @@
 import { MinaState } from '@rufe-app/app.setup';
 import { createFeatureSelector, createSelector, MemoizedSelector } from '@ngrx/store';
-import { DswDashboardState } from '@rufe-app/features/nodes/dashboard/dsw-dashboard.state';
-import { DswBootstrapState } from '@rufe-app/features/nodes/bootstrap/dsw-bootstrap.state';
-import { DswLiveState } from '@rufe-app/features/nodes/live/dsw-live.state';
+import { NodesOverviewState } from '@rufe-nodes/overview/nodes-overview.state';
+import { NodesBootstrapState } from '@rufe-nodes/bootstrap/nodes-bootstrap.state';
+import { NodesLiveState } from '@rufe-nodes/live/nodes-live.state';
 
 export interface NodesState {
-  dashboard: DswDashboardState;
-  bootstrap: DswBootstrapState;
-  live: DswLiveState;
+  overview: NodesOverviewState;
+  bootstrap: NodesBootstrapState;
+  live: NodesLiveState;
 }
 
 const select = <T>(selector: (state: NodesState) => T): MemoizedSelector<MinaState, T> => createSelector(
@@ -16,6 +16,6 @@ const select = <T>(selector: (state: NodesState) => T): MemoizedSelector<MinaSta
 );
 
 export const selectNodesState = createFeatureSelector<NodesState>('nodes');
-export const selectNodesDashboardState = select((state: NodesState): DswDashboardState => state.dashboard);
-export const selectNodesBootstrapState = select((state: NodesState): DswBootstrapState => state.bootstrap);
-export const selectNodesLiveState = select((state: NodesState): DswLiveState => state.live);
+export const selectNodesDashboardState = select((state: NodesState): NodesOverviewState => state.overview);
+export const selectNodesBootstrapState = select((state: NodesState): NodesBootstrapState => state.bootstrap);
+export const selectNodesLiveState = select((state: NodesState): NodesLiveState => state.live);

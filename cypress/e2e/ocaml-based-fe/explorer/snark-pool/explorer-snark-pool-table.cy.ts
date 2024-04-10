@@ -1,10 +1,10 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { stateSliceAsPromise } from '../../../../support/commands';
+import { ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { ExplorerSnarksState } from '@ocfe-explorer/snarks/explorer-snarks.state';
 
 const condition = (state: ExplorerSnarksState) => state && state.snarks.length > 1;
-const getSnarkPool = (store: Store<MinaState>) => stateSliceAsPromise<ExplorerSnarksState>(store, condition, 'explorer', 'snarks', 10000);
+const getSnarkPool = (store: Store<MinaState>) => ocfeStateSliceAsPromise<ExplorerSnarksState>(store, condition, 'explorer', 'snarks', 10000);
 
 describe('EXPLORER SNARK POOL TABLE', () => {
   beforeEach(() => {

@@ -104,8 +104,8 @@ export class IntervalSelectComponent extends ManualDetection implements OnInit, 
     });
     formGroup.valueChanges
       .pipe(
-        untilDestroyed(this),
         distinctUntilChanged(),
+        untilDestroyed(this),
       )
       .subscribe(value => {
         formGroup.get(hourStr).setValue(value.hour > 23 ? 23 : value.hour, { emitEvent: false });

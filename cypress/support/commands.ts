@@ -26,28 +26,32 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import { Store } from '@ngrx/store';
-import { MinaState } from '@app/app.setup';
+import { MinaState as OcfeMinaState } from '@ocfe-app/app.setup';
+import { MinaState as CifeMinaState } from '@cife-app/app.setup';
+import { MinaState as RufeMinaState } from '@rufe-app/app.setup';
 import { map, Subscription } from 'rxjs';
-import { MinaNode } from '@shared/types/core/environment/mina-env.type';
-import { NodeStatus } from '@shared/types/app/node-status.type';
+import { MinaNode as OfceMinaNode } from '@ocfe-shared/types/core/environment/mina-env.type';
+import { NodeStatus } from '@ocfe-shared/types/app/node-status.type';
+import { any } from '@openmina/shared';
 
 declare global {
   namespace Cypress {
     interface Chainable {
-      then(store: Store<MinaState> | any): Chainable<any>;
+      then(store: Store<OcfeMinaState> | any): Chainable<any>;
 
-      then(store: Store<MinaState> | any, { timeout }: { timeout: number }): Chainable<any>;
+      then(store: Store<OcfeMinaState> | any, { timeout }: { timeout: number }): Chainable<any>;
 
-      its(store: 'store'): Chainable<Store<MinaState>>;
+      its(store: 'store'): Chainable<Store<OcfeMinaState>>;
     }
   }
 }
 
+type AnyMinaState = OcfeMinaState | CifeMinaState | RufeMinaState;
+
 export const PROMISE = (resolveFunction: (resolve: (result?: unknown) => void) => void) => new Cypress.Promise(resolveFunction);
-export const storeSubscription = (store: Store<MinaState>, slice: keyof MinaState, observer: any): Subscription => store.select(slice).subscribe(observer);
-export const getActiveNode = (store: Store<MinaState>) => {
-  const promiseBody = (resolve: (result?: MinaNode) => void): void => {
-    const observer = (node: MinaNode) => {
+export const getActiveNode = (store: Store<OcfeMinaState>) => {
+  const promiseBody = (resolve: (result?: OfceMinaNode) => void): void => {
+    const observer = (node: OfceMinaNode) => {
       if (node) {
         return resolve(node);
       }
@@ -57,7 +61,7 @@ export const getActiveNode = (store: Store<MinaState>) => {
   };
   return PROMISE(promiseBody);
 };
-export const getActiveNodeStatus = (store: Store<MinaState>) => {
+export const getActiveNodeStatus = (store: Store<OcfeMinaState>) => {
   const promiseBody = (resolve: (result?: NodeStatus) => void): void => {
     const observer = (status: NodeStatus) => {
       if (status) {
@@ -69,9 +73,9 @@ export const getActiveNodeStatus = (store: Store<MinaState>) => {
   };
   return PROMISE(promiseBody);
 };
-export const getNodes = (store: Store<MinaState>) => {
+export const getNodes = (store: Store<OcfeMinaState>) => {
   const promiseBody = (resolve: (result?: unknown) => void): void => {
-    const observer = (nodes: MinaNode[]) => {
+    const observer = (nodes: OfceMinaNode[]) => {
       if (nodes.length) {
         return resolve(nodes);
       }
@@ -82,8 +86,9 @@ export const getNodes = (store: Store<MinaState>) => {
   return PROMISE(promiseBody);
 };
 
-export const stateSliceAsPromise = <T = MinaState | MinaState[keyof MinaState]>(
-  store: Store<MinaState>, resolveCondition: (state: T) => boolean, slice: keyof MinaState, subSlice: string, timeout: number = 3000,
+// CI FE
+export const cifeStateSliceAsPromise = <T = CifeMinaState | CifeMinaState[keyof CifeMinaState]>(
+  store: Store<CifeMinaState>, resolveCondition: (state: T) => boolean, slice: keyof CifeMinaState, subSlice: string, timeout: number = 3000,
 ) => {
   return new Cypress.Promise((resolve: (result?: T | void) => void): void => {
     const observer = (state: T) => {
@@ -93,19 +98,62 @@ export const stateSliceAsPromise = <T = MinaState | MinaState[keyof MinaState]>(
       setTimeout(() => resolve(), timeout);
     };
     store.select(slice).pipe(
-      map((subState: MinaState[keyof MinaState]) => {
+      map((subState: CifeMinaState[keyof CifeMinaState]) => {
         cy.log('');
-        return subSlice ? subState[subSlice] : subState;
+        return subSlice ? any(subState)[subSlice] : subState;
       }),
     ).subscribe(observer);
   });
 };
 
-export const storeNetworkSubscription = (store: Store<MinaState>, observer: any): Subscription => store.select('network').subscribe(observer);
+// OCaml-based FE
+export const ocfeStateSliceAsPromise = <T = OcfeMinaState | OcfeMinaState[keyof OcfeMinaState]>(
+  store: Store<OcfeMinaState>, resolveCondition: (state: T) => boolean, slice: keyof OcfeMinaState, subSlice: string, timeout: number = 3000,
+) => {
+  return new Cypress.Promise((resolve: (result?: T | void) => void): void => {
+    const observer = (state: T) => {
+      if (resolveCondition(state)) {
+        return resolve(state);
+      }
+      setTimeout(() => resolve(), timeout);
+    };
+    store.select(slice).pipe(
+      map((subState: OcfeMinaState[keyof OcfeMinaState]) => {
+        cy.log('');
+        return subSlice ? any(subState)[subSlice] : subState;
+      }),
+    ).subscribe(observer);
+  });
+};
 
-export const storeWebNodeWalletSubscription = (store: Store<MinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.wallet)).subscribe(observer);
-export const storeWebNodeLogsSubscription = (store: Store<MinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.log)).subscribe(observer);
-export const storeWebNodePeersSubscription = (store: Store<MinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.peers)).subscribe(observer);
-export const storeWebNodeSharedSubscription = (store: Store<MinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.shared)).subscribe(observer);
+export const storeNetworkSubscription = (store: Store<OcfeMinaState>, observer: any): Subscription => store.select('network').subscribe(observer);
+
+export const storeWebNodeWalletSubscription = (store: Store<OcfeMinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.wallet)).subscribe(observer);
+export const storeWebNodeLogsSubscription = (store: Store<OcfeMinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.log)).subscribe(observer);
+export const storeWebNodePeersSubscription = (store: Store<OcfeMinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.peers)).subscribe(observer);
+export const storeWebNodeSharedSubscription = (store: Store<OcfeMinaState>, observer: any): Subscription => store.select('webNode').pipe(map(wn => wn.shared)).subscribe(observer);
+
+// Rust-based FE
+export const rufeStateSliceAsPromise = <T = RufeMinaState | RufeMinaState[keyof RufeMinaState]>(
+  store: Store<RufeMinaState>, resolveCondition: (state: T) => boolean, slice: keyof RufeMinaState, subSlice: string, timeout: number = 3000,
+) => {
+  return new Cypress.Promise((resolve: (result?: T | void) => void): void => {
+    const observer = (state: T) => {
+      if (resolveCondition(state)) {
+        return resolve(state);
+      }
+      setTimeout(() => resolve(), timeout);
+    };
+    store.select(slice).pipe(
+      map((subState: RufeMinaState[keyof RufeMinaState]) => {
+        cy.log('');
+        return subSlice ? any(subState)[subSlice] : subState;
+      }),
+    ).subscribe(observer);
+  });
+};
+
+
+
 
 Cypress.Commands.overwrite('log', (subject, message) => cy.task('log', message));

@@ -14,6 +14,9 @@ import { OpenminaEagerSharedModule } from '../../openmina-eager-shared.module';
 export class StepperComponent {
 
   @Input() steps: TemplateRef<any>[];
+  /**
+   * @description zero-based index of the active step
+   */
   @Input() activeStep: number = 0;
   @Input() stepHeaders: string[];
   @Input() contentHeaderInfoTemplate: TemplateRef<any>;

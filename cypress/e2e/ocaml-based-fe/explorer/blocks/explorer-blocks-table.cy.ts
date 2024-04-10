@@ -1,10 +1,10 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { stateSliceAsPromise } from '../../../../support/commands';
+import { ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { ExplorerBlocksState } from '@ocfe-explorer/blocks/explorer-blocks.state';
 
 const condition = (state: ExplorerBlocksState) => state && state.blocks.length > 1;
-const getBlocks = (store: Store<MinaState>) => stateSliceAsPromise<ExplorerBlocksState>(store, condition, 'explorer', 'blocks');
+const getBlocks = (store: Store<MinaState>) => ocfeStateSliceAsPromise<ExplorerBlocksState>(store, condition, 'explorer', 'blocks');
 
 describe('EXPLORER BLOCKS TABLE', () => {
   beforeEach(() => {

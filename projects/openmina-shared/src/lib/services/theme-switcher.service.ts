@@ -16,13 +16,14 @@ import {
 } from '../types/core/theme/theme-css-category.type';
 import { any } from '../helpers/values.helper';
 
-const DARK_THEME: Theme = {
+const DARK_PALETTE: Theme = {
   name: ThemeType.DARK,
   categories: {
     base: {
       [`${BASE_CSS_PREFIX}primary`]: 'rgba(255,255,255,0.8)',
       [`${BASE_CSS_PREFIX}secondary`]: 'rgba(255,255,255,0.65)',
       [`${BASE_CSS_PREFIX}tertiary`]: 'rgba(255,255,255,0.4)',
+      [`${BASE_CSS_PREFIX}tertiary2`]: 'rgba(255,255,255,0.2)',
       [`${BASE_CSS_PREFIX}divider`]: 'rgba(255,255,255,0.07)',
       [`${BASE_CSS_PREFIX}container`]: 'rgba(255,255,255,0.05)',
       [`${BASE_CSS_PREFIX}surface`]: '#141414',
@@ -51,7 +52,7 @@ const DARK_THEME: Theme = {
     selected: {
       [`${SELECTED_CSS_PREFIX}primary`]: '#61aeee',
       [`${SELECTED_CSS_PREFIX}secondary`]: 'rgba(97,174,238,0.6)',
-      [`${SELECTED_CSS_PREFIX}tertiary`]: 'rgba(97,174,238,0.07)',
+      [`${SELECTED_CSS_PREFIX}tertiary`]: 'rgba(97,174,238,0.4)',
       [`${SELECTED_CSS_PREFIX}container`]: 'rgba(97,174,238,0.1)',
     },
     special: {
@@ -112,13 +113,14 @@ const DARK_THEME: Theme = {
   },
 };
 
-const LIGHT_THEME: Theme = {
+const LIGHT_PALETTE: Theme = {
   name: ThemeType.LIGHT,
   categories: {
     base: {
       [`${BASE_CSS_PREFIX}primary`]: '#191A1A',
       [`${BASE_CSS_PREFIX}secondary`]: 'rgba(0,0,0,0.75)',
       [`${BASE_CSS_PREFIX}tertiary`]: 'rgba(0,0,0,0.6)',
+      [`${BASE_CSS_PREFIX}tertiary2`]: 'rgba(0,0,0,0.2)',
       [`${BASE_CSS_PREFIX}divider`]: 'rgba(0,0,0,0.1)',
       [`${BASE_CSS_PREFIX}container`]: 'rgba(0,0,0,0.06)',
       [`${BASE_CSS_PREFIX}surface`]: '#ffffff',
@@ -208,26 +210,40 @@ const LIGHT_THEME: Theme = {
   },
 };
 
-
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeSwitcherService {
 
   private readonly renderer: Renderer2;
+  private currentTheme: ThemeType;
 
   constructor(@Inject(DOCUMENT) private document: Document,
               rendererFactory: RendererFactory2) {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
 
-  getThemeConfiguration(): Theme {
-    return this.document.body.classList.contains(ThemeType.LIGHT) ? LIGHT_THEME : DARK_THEME;
+  get activeTheme(): ThemeType {
+    return this.currentTheme;
+  }
+
+  changeTheme(): void {
+    const theme: ThemeType = this.document.body.classList.contains(ThemeType.LIGHT) ? ThemeType.DARK : ThemeType.LIGHT;
+    this.currentTheme = theme;
+    const transitionToken: string = 'theme-transition';
+
+    this.document.body.classList.add(transitionToken);
+    this.document.body.classList.remove(ThemeType.DARK, ThemeType.LIGHT);
+    this.document.body.classList.add(theme);
+
+    localStorage.setItem('theme', theme);
+    setTimeout(() => this.document.body.classList.remove(transitionToken), 700);
   }
 
   loadThemes(): Promise<void> {
-    const activeTheme = localStorage.getItem('theme') ?? ThemeType.DARK;
+    const activeTheme = localStorage.getItem('theme') as ThemeType ?? ThemeType.DARK;
     localStorage.setItem('theme', activeTheme);
+    this.currentTheme = activeTheme;
     this.document.body.classList.add(activeTheme);
     return new Promise<void>((resolve) => {
       const style = this.renderer.createElement('style');
@@ -239,7 +255,7 @@ export class ThemeSwitcherService {
   }
 
   private buildThemesCss(): string {
-    const THEMES = [DARK_THEME, LIGHT_THEME];
+    const THEMES = [DARK_PALETTE, LIGHT_PALETTE];
     let css = '';
 
     THEMES.forEach((theme: Theme) => {

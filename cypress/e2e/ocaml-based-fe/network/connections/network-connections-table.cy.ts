@@ -1,10 +1,10 @@
 import { Store } from '@ngrx/store';
 import { MinaState } from '@ocfe-app/app.setup';
-import { stateSliceAsPromise } from '../../../../support/commands';
+import { ocfeStateSliceAsPromise } from '../../../../support/commands';
 import { NetworkConnectionsState } from '@ocfe-network/connections/network-connections.state';
 
 const condition = (state: NetworkConnectionsState) => state && state.connections.length > 2;
-const networkConnectionsState = (store: Store<MinaState>) => stateSliceAsPromise<NetworkConnectionsState>(store, condition, 'network', 'connections');
+const networkConnectionsState = (store: Store<MinaState>) => ocfeStateSliceAsPromise<NetworkConnectionsState>(store, condition, 'network', 'connections');
 
 
 describe('NETWORK CONNECTIONS TABLE', () => {

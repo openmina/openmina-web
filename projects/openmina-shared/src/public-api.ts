@@ -14,6 +14,7 @@ export * from './lib/components/interval-select/interval-select.component';
 export * from './lib/components/mina-json-viewer/mina-json-viewer.component';
 export * from './lib/components/stepper/stepper.component';
 export * from './lib/components/mina-side-panel-stepper/mina-side-panel-stepper.component';
+export * from './lib/components/json-console/json-console.component';
 
 /* DIRECTIVES */
 export * from './lib/directives/click-outside.directive';

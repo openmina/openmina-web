@@ -1,6 +1,6 @@
-const { defineConfig } = require('cypress');
+// const { defineConfig } = require('cypress');
 
-module.exports = defineConfig({
+module.exports = {
   chromeWebSecurity: false,
   viewportWidth: 1920,
   viewportHeight: 1080,
@@ -16,7 +16,7 @@ module.exports = defineConfig({
   defaultCommandTimeout: 10000,
   videoUploadOnPasses: false,
   e2e: {
-    baseUrl: 'http://frontend-server:80',
+    baseUrl: 'http://localhost:4200',
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config);
       // return require('cypress-real-events/support')(on, config);
@@ -27,4 +27,4 @@ module.exports = defineConfig({
     '**/*.js',
     'node_modules/rxjs/**/*.js'
   ]
-});
+};

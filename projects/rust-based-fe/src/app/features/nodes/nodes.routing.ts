@@ -10,17 +10,17 @@ const routes: Routes = [
     children: [
       {
         path: 'overview',
-        loadChildren: () => import('@rufe-app/features/nodes/dashboard/dsw-dashboard.module').then(m => m.DswDashboardModule),
+        loadChildren: () => import('@rufe-nodes/overview/nodes-overview.module').then(m => m.NodesOverviewModule),
         title: NODES_TITLE,
       },
       {
         path: 'bootstrap',
-        loadChildren: () => import('@rufe-app/features/nodes/bootstrap/dsw-bootstrap.module').then(m => m.DswBootstrapModule),
+        loadChildren: () => import('@rufe-nodes/bootstrap/nodes-bootstrap.module').then(m => m.NodesBootstrapModule),
         title: NODES_TITLE,
       },
       {
         path: 'live',
-        loadChildren: () => import('@rufe-app/features/nodes/live/dsw-live.module').then(m => m.DswLiveModule),
+        loadChildren: () => import('@rufe-nodes/live/nodes-live.module').then(m => m.NodesLiveModule),
         title: NODES_TITLE,
       },
       {
