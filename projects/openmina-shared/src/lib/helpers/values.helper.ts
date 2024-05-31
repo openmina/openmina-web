@@ -8,3 +8,10 @@ export function any(arg: any): any {
 
 export const isMobile = (): boolean => window.innerWidth <= 768;
 export const isDesktop = (): boolean => !isMobile();
+
+export const nanOrElse = (value: number, replacement: number | string | null | undefined): any => {
+  if (isNaN(value)) {
+    return replacement;
+  }
+  return value;
+}

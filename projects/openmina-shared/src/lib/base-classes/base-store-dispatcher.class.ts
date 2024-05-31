@@ -1,4 +1,4 @@
-import { Store } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 import { Directive, inject, OnDestroy } from '@angular/core';
 import { ManualDetection } from './manual-detection.class';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
@@ -18,6 +18,10 @@ export abstract class BaseStoreDispatcher<State> extends ManualDetection impleme
 
   protected dispatch<Action extends FeatureAction<any>, P>(actionClass: new (payload?: P) => ActionParam<Action>, payload?: P): void {
     this.store.dispatch<Action>(new actionClass(payload));
+  }
+
+  protected dispatch2(action: Action): void {
+    this.store.dispatch(action);
   }
 
   protected select<S>(mapFn: (state: State) => S, callback: (result: S) => void): void;

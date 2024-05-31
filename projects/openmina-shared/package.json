@@ -1,6 +1,6 @@
 {
   "name": "@openmina/shared",
-  "version": "0.71.0",
+  "version": "0.93.0",
   "scripts": {
     "start": "ng serve",
     "build": "ng build --configuration production",
