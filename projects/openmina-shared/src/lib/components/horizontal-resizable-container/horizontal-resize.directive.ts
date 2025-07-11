@@ -14,6 +14,7 @@ import {
 } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { getLocalStorage } from '../../helpers/browser.helper';
 
 @UntilDestroy()
 @Directive({
@@ -89,7 +90,7 @@ export class HorizontalResizeDirective implements OnInit {
       )
       .subscribe(() => {
         this.maxCalculatedWidth = this.getMaxCalculatedWidth();
-        const currentWidth = Number(localStorage.getItem(this.localStorageKey));
+        const currentWidth = Number(getLocalStorage()?.getItem(this.localStorageKey));
         if (this.maxCalculatedWidth < this.minWidth) {
           this.maxCalculatedWidth = this.minWidth;
           this.windowResize$.next(this.maxCalculatedWidth);

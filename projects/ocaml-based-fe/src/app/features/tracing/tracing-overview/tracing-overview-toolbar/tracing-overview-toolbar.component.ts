@@ -5,11 +5,12 @@ import { TracingOverviewSort, TracingOverviewToggleCondensedView } from '@ocfe-t
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-tracing-overview-toolbar',
-  templateUrl: './tracing-overview-toolbar.component.html',
-  styleUrls: ['./tracing-overview-toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-row align-center flex-between pl-12' },
+    selector: 'mina-tracing-overview-toolbar',
+    templateUrl: './tracing-overview-toolbar.component.html',
+    styleUrls: ['./tracing-overview-toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-row align-center flex-between pl-12' },
+    standalone: false
 })
 export class TracingOverviewToolbarComponent extends StoreDispatcher implements OnInit {
 

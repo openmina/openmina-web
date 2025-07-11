@@ -4,11 +4,12 @@ import { ReportDetailBlockPeerTiming } from '@cife-shared/types/reporting/report
 import { SecDurationConfig, SortDirection, TableColumnList, TableSort } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-detail-active-block',
-  templateUrl: './reporting-detail-active-block.component.html',
-  styleUrls: ['./reporting-detail-active-block.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-reporting-detail-active-block',
+    templateUrl: './reporting-detail-active-block.component.html',
+    styleUrls: ['./reporting-detail-active-block.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class ReportingDetailActiveBlockComponent {
 

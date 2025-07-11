@@ -6,11 +6,12 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { WebNodeSharedGetLogs } from '@ocfe-web-node/web-node.actions';
 
 @Component({
-  selector: 'mina-web-node-logs',
-  templateUrl: './web-node-logs.component.html',
-  styleUrls: ['./web-node-logs.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100' },
+    selector: 'mina-web-node-logs',
+    templateUrl: './web-node-logs.component.html',
+    styleUrls: ['./web-node-logs.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100' },
+    standalone: false
 })
 export class WebNodeLogsComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

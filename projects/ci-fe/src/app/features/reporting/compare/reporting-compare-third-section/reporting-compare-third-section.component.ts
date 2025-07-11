@@ -17,11 +17,12 @@ import { filter, map } from 'rxjs';
 import { TableSort } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-compare-third-section',
-  templateUrl: './reporting-compare-third-section.component.html',
-  styleUrls: ['./reporting-compare-third-section.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 w-100 border-left flex-column' },
+    selector: 'mina-reporting-compare-third-section',
+    templateUrl: './reporting-compare-third-section.component.html',
+    styleUrls: ['./reporting-compare-third-section.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 w-100 border-left flex-column' },
+    standalone: false
 })
 export class ReportingCompareThirdSectionComponent extends StoreDispatcher implements OnInit {
 

@@ -11,11 +11,12 @@ import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocam
 
 
 @Component({
-  selector: 'mina-explorer-blocks-zk-apps-table',
-  templateUrl: './explorer-blocks-zk-apps-table.component.html',
-  styleUrls: ['./explorer-blocks-zk-apps-table.component.scss'],
-  host: { class: 'h-100 w-100 flex-column' },
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-explorer-blocks-zk-apps-table',
+    templateUrl: './explorer-blocks-zk-apps-table.component.html',
+    styleUrls: ['./explorer-blocks-zk-apps-table.component.scss'],
+    host: { class: 'h-100 w-100 flex-column' },
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ExplorerBlocksZkAppsTableComponent extends MinaTableOcamlWrapper<ExplorerBlockZkApp> implements OnInit, OnChanges {
 

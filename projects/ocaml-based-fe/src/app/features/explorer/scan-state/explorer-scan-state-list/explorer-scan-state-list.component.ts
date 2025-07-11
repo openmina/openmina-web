@@ -10,11 +10,12 @@ import { skip } from 'rxjs';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-explorer-scan-state-list',
-  templateUrl: './explorer-scan-state-list.component.html',
-  styleUrls: ['./explorer-scan-state-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column' },
+    selector: 'mina-explorer-scan-state-list',
+    templateUrl: './explorer-scan-state-list.component.html',
+    styleUrls: ['./explorer-scan-state-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column' },
+    standalone: false
 })
 export class ExplorerScanStateListComponent extends ManualDetection implements OnInit {
 

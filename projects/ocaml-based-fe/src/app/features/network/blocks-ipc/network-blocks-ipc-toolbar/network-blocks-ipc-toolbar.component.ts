@@ -12,11 +12,12 @@ import {
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-network-blocks-ipc-toolbar',
-  templateUrl: './network-blocks-ipc-toolbar.component.html',
-  styleUrls: ['./network-blocks-ipc-toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'border-bottom flex-column' },
+    selector: 'mina-network-blocks-ipc-toolbar',
+    templateUrl: './network-blocks-ipc-toolbar.component.html',
+    styleUrls: ['./network-blocks-ipc-toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'border-bottom flex-column' },
+    standalone: false
 })
 export class NetworkBlocksIpcToolbarComponent extends StoreDispatcher implements OnInit {
 

@@ -23,11 +23,12 @@ const secDurationConfig: SecDurationConfig = {
 };
 
 @Component({
-  selector: 'mina-tracing-blocks-table',
-  templateUrl: './tracing-blocks-table.component.html',
-  styleUrls: ['./tracing-blocks-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-tracing-blocks-table',
+    templateUrl: './tracing-blocks-table.component.html',
+    styleUrls: ['./tracing-blocks-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class TracingBlocksTableComponent extends MinaTableOcamlWrapper<TracingBlockTrace> implements OnInit {
 

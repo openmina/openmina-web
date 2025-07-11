@@ -21,10 +21,11 @@ import { AppMenu } from '@ocfe-shared/types/app/app-menu.type';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-wallet-toolbar',
-  templateUrl: './web-node-wallet-toolbar.component.html',
-  styleUrls: ['./web-node-wallet-toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-web-node-wallet-toolbar',
+    templateUrl: './web-node-wallet-toolbar.component.html',
+    styleUrls: ['./web-node-wallet-toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WebNodeWalletToolbarComponent extends ManualDetection implements OnInit {
 

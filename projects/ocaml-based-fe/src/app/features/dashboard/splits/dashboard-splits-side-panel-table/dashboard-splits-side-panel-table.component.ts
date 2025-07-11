@@ -14,10 +14,11 @@ import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-dashboard-splits-side-panel-table',
-  templateUrl: './dashboard-splits-side-panel-table.component.html',
-  styleUrls: ['./dashboard-splits-side-panel-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-dashboard-splits-side-panel-table',
+    templateUrl: './dashboard-splits-side-panel-table.component.html',
+    styleUrls: ['./dashboard-splits-side-panel-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DashboardSplitsSidePanelTableComponent extends MinaTableOcamlWrapper<DashboardSplitsPeer> implements OnInit {
 

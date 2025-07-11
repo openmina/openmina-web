@@ -13,11 +13,12 @@ import {
 } from '@rufe-app/app.actions';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'd-block h-100 w-100' },
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'd-block h-100 w-100' },
+    standalone: false
 })
 export class AppComponent extends ManualDetection implements OnInit {
 

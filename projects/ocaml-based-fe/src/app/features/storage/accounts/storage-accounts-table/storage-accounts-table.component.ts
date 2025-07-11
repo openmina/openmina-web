@@ -10,11 +10,12 @@ import { StorageAccountsSetActiveAccount } from '@ocfe-storage/accounts/storage-
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-storage-accounts-table',
-  templateUrl: './storage-accounts-table.component.html',
-  styleUrls: ['./storage-accounts-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-storage-accounts-table',
+    templateUrl: './storage-accounts-table.component.html',
+    styleUrls: ['./storage-accounts-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class StorageAccountsTableComponent extends MinaTableOcamlWrapper<StorageAccount> implements OnInit {
 

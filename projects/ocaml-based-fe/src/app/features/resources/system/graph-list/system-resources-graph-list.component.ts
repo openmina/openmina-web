@@ -14,11 +14,12 @@ import { Router } from '@angular/router';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-system-resources-graph-list',
-  templateUrl: './system-resources-graph-list.component.html',
-  styleUrls: ['./system-resources-graph-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column overflow-y-scroll h-100 p-12 overflow-x-hidden' },
+    selector: 'mina-system-resources-graph-list',
+    templateUrl: './system-resources-graph-list.component.html',
+    styleUrls: ['./system-resources-graph-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column overflow-y-scroll h-100 p-12 overflow-x-hidden' },
+    standalone: false
 })
 export class SystemResourcesGraphListComponent extends StoreDispatcher implements OnInit {
 

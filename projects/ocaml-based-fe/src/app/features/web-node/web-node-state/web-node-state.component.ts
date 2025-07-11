@@ -5,11 +5,12 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-state',
-  templateUrl: './web-node-state.component.html',
-  styleUrls: ['./web-node-state.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100 overflow-auto pt-12' },
+    selector: 'mina-web-node-state',
+    templateUrl: './web-node-state.component.html',
+    styleUrls: ['./web-node-state.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100 overflow-auto pt-12' },
+    standalone: false
 })
 export class WebNodeStateComponent extends ManualDetection implements OnInit {
 

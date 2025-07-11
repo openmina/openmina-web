@@ -12,11 +12,12 @@ import { take } from 'rxjs';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-snark-workers-traces-table',
-  templateUrl: './snark-workers-traces-table.component.html',
-  styleUrls: ['./snark-workers-traces-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-snark-workers-traces-table',
+    templateUrl: './snark-workers-traces-table.component.html',
+    styleUrls: ['./snark-workers-traces-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class SnarkWorkersTracesTableComponent extends MinaTableOcamlWrapper<SnarkWorkerTraceJob> implements OnChanges {
 

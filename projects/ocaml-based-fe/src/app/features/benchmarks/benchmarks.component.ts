@@ -6,11 +6,12 @@ import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { ManualDetection } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-benchmarks',
-  templateUrl: './benchmarks.component.html',
-  styleUrls: ['./benchmarks.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-benchmarks',
+    templateUrl: './benchmarks.component.html',
+    styleUrls: ['./benchmarks.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class BenchmarksComponent extends ManualDetection implements OnInit {
 

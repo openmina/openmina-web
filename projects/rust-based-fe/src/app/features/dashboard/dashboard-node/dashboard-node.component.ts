@@ -2,10 +2,11 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostList
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-dashboard-node',
-  templateUrl: './dashboard-node.component.html',
-  styleUrls: ['./dashboard-node.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'mina-dashboard-node',
+    templateUrl: './dashboard-node.component.html',
+    styleUrls: ['./dashboard-node.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DashboardNodeComponent extends StoreDispatcher implements AfterViewInit {
 

@@ -26,11 +26,12 @@ import { MinaTooltipDirective, TooltipPosition } from '@openmina/shared';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'mina-fuzzing-code',
-  templateUrl: './fuzzing-code.component.html',
-  styleUrls: ['./fuzzing-code.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 border-left flex-column' },
+    selector: 'mina-fuzzing-code',
+    templateUrl: './fuzzing-code.component.html',
+    styleUrls: ['./fuzzing-code.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 border-left flex-column' },
+    standalone: false
 })
 export class FuzzingCodeComponent extends StoreDispatcher implements OnInit, AfterViewInit {
 

@@ -3,11 +3,12 @@ import { BenchmarksWalletsClose, BenchmarksWalletsGetWallets } from '@ocfe-bench
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-benchmarks-wallets',
-  templateUrl: './benchmarks-wallets.component.html',
-  styleUrls: ['./benchmarks-wallets.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100' },
+    selector: 'mina-benchmarks-wallets',
+    templateUrl: './benchmarks-wallets.component.html',
+    styleUrls: ['./benchmarks-wallets.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100' },
+    standalone: false
 })
 export class BenchmarksWalletsComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

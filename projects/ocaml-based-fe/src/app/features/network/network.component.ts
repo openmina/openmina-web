@@ -6,10 +6,11 @@ import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { CONFIG } from '@ocfe-shared/constants/config';
 
 @Component({
-  selector: 'mina-network',
-  templateUrl: './network.component.html',
-  styleUrls: ['./network.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-network',
+    templateUrl: './network.component.html',
+    styleUrls: ['./network.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NetworkComponent implements OnInit {
 

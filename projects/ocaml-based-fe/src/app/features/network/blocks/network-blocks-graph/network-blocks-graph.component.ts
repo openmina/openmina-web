@@ -5,10 +5,11 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { BarGraphComponent } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-network-blocks-graph',
-  templateUrl: './network-blocks-graph.component.html',
-  styleUrls: ['./network-blocks-graph.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-network-blocks-graph',
+    templateUrl: './network-blocks-graph.component.html',
+    styleUrls: ['./network-blocks-graph.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NetworkBlocksGraphComponent extends StoreDispatcher implements OnInit {
 

@@ -8,11 +8,12 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-wallet-transactions',
-  templateUrl: './web-node-wallet-transactions.component.html',
-  styleUrls: ['./web-node-wallet-transactions.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-web-node-wallet-transactions',
+    templateUrl: './web-node-wallet-transactions.component.html',
+    styleUrls: ['./web-node-wallet-transactions.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class WebNodeWalletTransactionsComponent extends StoreDispatcher implements OnInit {
 

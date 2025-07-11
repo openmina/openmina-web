@@ -19,10 +19,11 @@ export const reportingIconMap: Record<string, string> = {
 };
 
 @Component({
-  selector: 'mina-reporting-builds-toolbar',
-  templateUrl: './reporting-builds-toolbar.component.html',
-  styleUrls: ['./reporting-builds-toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-reporting-builds-toolbar',
+    templateUrl: './reporting-builds-toolbar.component.html',
+    styleUrls: ['./reporting-builds-toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ReportingBuildsToolbarComponent extends StoreDispatcher implements OnInit {
 

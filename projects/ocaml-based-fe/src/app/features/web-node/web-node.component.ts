@@ -13,10 +13,11 @@ import { DOCUMENT } from '@angular/common';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node',
-  templateUrl: './web-node.component.html',
-  styleUrls: ['./web-node.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-web-node',
+    templateUrl: './web-node.component.html',
+    styleUrls: ['./web-node.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WebNodeComponent extends ManualDetection implements OnInit, AfterViewInit {
 

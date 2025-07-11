@@ -5,7 +5,8 @@ const MB_FACTOR = 1048576;
 const GB_FACTOR = 1073741824;
 
 @Pipe({
-  name: 'size',
+    name: 'size',
+    standalone: false
 })
 export class SizePipe implements PipeTransform {
 

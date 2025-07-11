@@ -5,7 +5,7 @@ import {
   ElementRef,
   Inject,
   TemplateRef,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { untilDestroyed } from '@ngneat/until-destroy';
@@ -16,17 +16,17 @@ import { TableColumnList } from '../../types/shared/table-head-sorting.type';
 import { SortDirection, TableSort } from '../../types/shared/table-sort.type';
 import { hasValue, isMobile } from '../../helpers/values.helper';
 import { OpenminaEagerSharedModule } from '../../openmina-eager-shared.module';
+import { ActionCreator, Action } from '@ngrx/store';
 
 const DESKTOP_ROW_HEIGHT = 36;
 
 @Component({
-  standalone: true,
-  imports: [OpenminaEagerSharedModule, CommonModule],
-  selector: 'mina-table',
-  templateUrl: './mina-table.component.html',
-  styleUrls: ['./mina-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    imports: [OpenminaEagerSharedModule, CommonModule],
+    selector: 'mina-table',
+    templateUrl: './mina-table.component.html',
+    styleUrls: ['./mina-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' }
 })
 export class MinaTableComponent<T extends object> extends BaseStoreDispatcher<any> implements AfterViewInit {
 
@@ -43,6 +43,7 @@ export class MinaTableComponent<T extends object> extends BaseStoreDispatcher<an
   gridTemplateColumns: Array<number | 'auto' | '1fr'> = [];
   minWidth: number;
   sortClz: new (payload: TableSort<T>) => { type: string, payload: TableSort<T> };
+  sortAction: ActionCreator<string, (props: { sort: TableSort<T>; }) => { sort: TableSort<T>; } & Action<string>>;
   sortSelector: (state: any) => TableSort<T>;
   rowClickCallback: (row: T) => void;
   trackByFn: (index: number, row: T) => any = (index: number, row: T) => row;
@@ -78,7 +79,12 @@ export class MinaTableComponent<T extends object> extends BaseStoreDispatcher<an
     const sortDirection = sortBy !== this.currentSort.sortBy
       ? this.currentSort.sortDirection
       : this.currentSort.sortDirection === SortDirection.ASC ? SortDirection.DSC : SortDirection.ASC;
-    this.dispatch(this.sortClz, { sortBy: sortBy as keyof T, sortDirection });
+    const sort = { sortBy: sortBy as keyof T, sortDirection };
+    if (this.sortClz) {
+      this.dispatch(this.sortClz, sort);
+    } else if (this.sortAction) {
+      this.dispatch2(this.sortAction({ sort }));
+    }
   }
 
   scrollToTop(): void {

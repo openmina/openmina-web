@@ -4,10 +4,11 @@ import { selectSnarksWorkPoolActiveWorkPoolDetail } from '@rufe-snarks/work-pool
 import { WorkPoolDetail } from '@rufe-shared/types/snarks/work-pool/work-pool-detail.type';
 
 @Component({
-  selector: 'mina-snarks-work-pool-details-overview',
-  templateUrl: './snarks-work-pool-details-overview.component.html',
-  styleUrls: ['./snarks-work-pool-details-overview.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-snarks-work-pool-details-overview',
+    templateUrl: './snarks-work-pool-details-overview.component.html',
+    styleUrls: ['./snarks-work-pool-details-overview.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class SnarksWorkPoolDetailsOverviewComponent extends StoreDispatcher implements OnInit {
 

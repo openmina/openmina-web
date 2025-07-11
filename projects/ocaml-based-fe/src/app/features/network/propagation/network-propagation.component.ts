@@ -5,10 +5,11 @@ import * as d3 from 'd3';
 import { Path } from 'd3';
 
 @Component({
-  selector: 'mina-network-propagation',
-  templateUrl: './network-propagation.component.html',
-  styleUrls: ['./network-propagation.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-network-propagation',
+    templateUrl: './network-propagation.component.html',
+    styleUrls: ['./network-propagation.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NetworkPropagationComponent implements OnInit, AfterViewInit {
 

@@ -1120,6 +1120,17 @@ $z-index-bigger-than-cdk-overlay: 1001;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+@keyframes tooltip-no-animation {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
 @keyframes tooltip-slide-top {
   0% {
     opacity: 0;

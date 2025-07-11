@@ -9,11 +9,12 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-node-picker',
-  templateUrl: './node-picker.component.html',
-  styleUrls: ['./node-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column w-100' },
+    selector: 'mina-node-picker',
+    templateUrl: './node-picker.component.html',
+    styleUrls: ['./node-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column w-100' },
+    standalone: false
 })
 export class NodePickerComponent extends ManualDetection implements AfterViewInit {
 

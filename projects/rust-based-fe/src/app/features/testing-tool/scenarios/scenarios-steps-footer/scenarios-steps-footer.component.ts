@@ -6,11 +6,12 @@ import { filter } from 'rxjs';
 import { TestingToolScenario } from '@rufe-shared/types/testing-tool/scenarios/testing-tool-scenario.type';
 
 @Component({
-  selector: 'mina-scenarios-steps-footer',
-  templateUrl: './scenarios-steps-footer.component.html',
-  styleUrls: ['./scenarios-steps-footer.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column p-12' },
+    selector: 'mina-scenarios-steps-footer',
+    templateUrl: './scenarios-steps-footer.component.html',
+    styleUrls: ['./scenarios-steps-footer.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column p-12' },
+    standalone: false
 })
 export class ScenariosStepsFooterComponent extends StoreDispatcher implements OnInit {
 

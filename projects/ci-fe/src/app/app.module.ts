@@ -45,7 +45,7 @@ import { THEME_PROVIDER } from '@openmina/shared';
     }),
     EffectsModule.forRoot(AppEffects),
     NgrxRouterStoreModule,
-    !CONFIG.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
+    !CONFIG.production ? StoreDevtoolsModule.instrument({ maxAge: 50 , connectInZone: true}) : [],
     HttpClientModule,
     BrowserAnimationsModule,
     EagerSharedModule,

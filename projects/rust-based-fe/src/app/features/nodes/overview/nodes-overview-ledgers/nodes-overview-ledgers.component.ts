@@ -5,11 +5,12 @@ import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
 
 @Component({
-  selector: 'mina-nodes-overview-ledgers',
-  templateUrl: './nodes-overview-ledgers.component.html',
-  styleUrls: ['./nodes-overview-ledgers.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'd-flex w-100' },
+    selector: 'mina-nodes-overview-ledgers',
+    templateUrl: './nodes-overview-ledgers.component.html',
+    styleUrls: ['./nodes-overview-ledgers.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'd-flex w-100' },
+    standalone: false
 })
 export class NodesOverviewLedgersComponent {
 

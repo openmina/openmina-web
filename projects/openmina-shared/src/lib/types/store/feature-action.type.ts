@@ -1,3 +1,3 @@
-import { TypedAction } from '@ngrx/store/src/models';
+import { Action } from '@ngrx/store';
 
-export type FeatureAction<T extends string> = TypedAction<T>;
+export type FeatureAction<T extends string> = Action<T>;

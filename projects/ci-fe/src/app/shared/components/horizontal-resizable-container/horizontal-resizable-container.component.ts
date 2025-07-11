@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'mina-horizontal-resizable-container',
-  templateUrl: './horizontal-resizable-container.component.html',
-  styleUrls: ['./horizontal-resizable-container.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-horizontal-resizable-container',
+    templateUrl: './horizontal-resizable-container.component.html',
+    styleUrls: ['./horizontal-resizable-container.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HorizontalResizableContainerComponent {
 

@@ -4,11 +4,12 @@ import { TableColumnList } from '@openmina/shared';
 import { DashboardPeer } from '@rufe-shared/types/dashboard/dashboard-peer';
 
 @Component({
-  selector: 'mina-dashboard-peers-table',
-  templateUrl: './dashboard-peers-table.component.html',
-  styleUrls: ['./dashboard-peers-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-dashboard-peers-table',
+    templateUrl: './dashboard-peers-table.component.html',
+    styleUrls: ['./dashboard-peers-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class DashboardPeersTableComponent extends MinaTableRustWrapper<DashboardPeer> {
 

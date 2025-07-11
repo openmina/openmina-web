@@ -48,11 +48,12 @@ export const filters: StorageAccountsFilterGroup[][] = [
 ];
 
 @Component({
-  selector: 'mina-storage-accounts-filter',
-  templateUrl: './storage-accounts-filter.component.html',
-  styleUrls: ['./storage-accounts-filter.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'w-100' },
+    selector: 'mina-storage-accounts-filter',
+    templateUrl: './storage-accounts-filter.component.html',
+    styleUrls: ['./storage-accounts-filter.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'w-100' },
+    standalone: false
 })
 export class StorageAccountsFilterComponent extends StoreDispatcher implements OnInit {
 

@@ -9,11 +9,12 @@ import { StoreDispatcher } from '@cife-shared/base-classes/store-dispatcher.clas
 import { ThemeSwitcherService } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-toolbar',
-  templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-row align-center border-bottom bg-surface' },
+    selector: 'mina-toolbar',
+    templateUrl: './toolbar.component.html',
+    styleUrls: ['./toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-row align-center border-bottom bg-surface' },
+    standalone: false
 })
 export class ToolbarComponent extends StoreDispatcher implements OnInit {
 

@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'mina-scenarios-add-step',
-  templateUrl: './scenarios-add-step.component.html',
-  styleUrls: ['./scenarios-add-step.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'mina-scenarios-add-step',
+    templateUrl: './scenarios-add-step.component.html',
+    styleUrls: ['./scenarios-add-step.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ScenariosAddStepComponent {
 

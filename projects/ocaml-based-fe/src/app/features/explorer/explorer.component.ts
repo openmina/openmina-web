@@ -5,10 +5,11 @@ import { isVanilla } from '@ocfe-shared/constants/config';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-explorer',
-  templateUrl: './explorer.component.html',
-  styleUrls: ['./explorer.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-explorer',
+    templateUrl: './explorer.component.html',
+    styleUrls: ['./explorer.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ExplorerComponent extends StoreDispatcher implements OnInit {
 

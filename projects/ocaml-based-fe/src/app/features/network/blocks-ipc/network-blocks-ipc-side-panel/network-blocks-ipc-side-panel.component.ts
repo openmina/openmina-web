@@ -5,11 +5,12 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { BarGraphComponent } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-network-blocks-ipc-side-panel',
-  templateUrl: './network-blocks-ipc-side-panel.component.html',
-  styleUrls: ['./network-blocks-ipc-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column border-left' },
+    selector: 'mina-network-blocks-ipc-side-panel',
+    templateUrl: './network-blocks-ipc-side-panel.component.html',
+    styleUrls: ['./network-blocks-ipc-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column border-left' },
+    standalone: false
 })
 export class NetworkBlocksIpcSidePanelComponent extends StoreDispatcher implements OnInit {
 
