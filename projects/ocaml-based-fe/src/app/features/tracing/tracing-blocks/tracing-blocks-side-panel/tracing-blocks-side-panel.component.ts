@@ -11,11 +11,12 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { ExpandTracking } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-tracing-blocks-side-panel',
-  templateUrl: './tracing-blocks-side-panel.component.html',
-  styleUrls: ['./tracing-blocks-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-tracing-blocks-side-panel',
+    templateUrl: './tracing-blocks-side-panel.component.html',
+    styleUrls: ['./tracing-blocks-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class TracingBlocksSidePanelComponent extends StoreDispatcher implements OnInit {
 

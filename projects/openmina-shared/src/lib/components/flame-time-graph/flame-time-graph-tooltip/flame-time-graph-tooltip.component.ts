@@ -5,13 +5,12 @@ import { CommonModule } from '@angular/common';
 import { REQUIRED } from '../../../constants/angular';
 
 @Component({
-  selector: 'mina-flame-time-graph-tooltip',
-  standalone: true,
-  imports: [OpenminaSharedModule, CommonModule],
-  templateUrl: './flame-time-graph-tooltip.component.html',
-  styleUrls: ['./flame-time-graph-tooltip.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush ,
-  host: { class: 'bg-surface-top pt-5 f-10 flex-column border-rad-6' },
+    selector: 'mina-flame-time-graph-tooltip',
+    imports: [OpenminaSharedModule, CommonModule],
+    templateUrl: './flame-time-graph-tooltip.component.html',
+    styleUrls: ['./flame-time-graph-tooltip.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'bg-surface-top pt-5 f-10 flex-column border-rad-6' }
 })
 export class FlameTimeGraphTooltipComponent extends ManualDetection {
 

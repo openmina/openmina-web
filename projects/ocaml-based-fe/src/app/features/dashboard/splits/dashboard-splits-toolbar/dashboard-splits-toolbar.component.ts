@@ -13,11 +13,12 @@ import { filter } from 'rxjs';
 import { selectLoadingStateLength } from '@ocfe-app/layout/toolbar/loading.reducer';
 
 @Component({
-  selector: 'mina-dashboard-splits-toolbar',
-  templateUrl: './dashboard-splits-toolbar.component.html',
-  styleUrls: ['./dashboard-splits-toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-xl' },
+    selector: 'mina-dashboard-splits-toolbar',
+    templateUrl: './dashboard-splits-toolbar.component.html',
+    styleUrls: ['./dashboard-splits-toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-xl' },
+    standalone: false
 })
 export class DashboardSplitsToolbarComponent extends StoreDispatcher implements OnInit {
 

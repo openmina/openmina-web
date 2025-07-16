@@ -9,11 +9,12 @@ import { WEB_NODE_WALLET_SELECT_TRANSACTION, WebNodeWalletSelectTransaction } fr
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-wallet-side-panel',
-  templateUrl: './web-node-wallet-side-panel.component.html',
-  styleUrls: ['./web-node-wallet-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column border-left' },
+    selector: 'mina-web-node-wallet-side-panel',
+    templateUrl: './web-node-wallet-side-panel.component.html',
+    styleUrls: ['./web-node-wallet-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column border-left' },
+    standalone: false
 })
 export class WebNodeWalletSidePanelComponent extends ManualDetection implements OnInit {
 

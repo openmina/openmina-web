@@ -3,18 +3,19 @@ import { DOCUMENT } from '@angular/common';
 import { Theme } from '../types/core/theme/theme.type';
 import { ThemeType } from '../types/core/theme/theme-types.type';
 import {
-  BASE_CSS_PREFIX,
-  SUCCESS_CSS_PREFIX,
   AWARE_CSS_PREFIX,
-  WARN_CSS_PREFIX,
-  SELECTED_CSS_PREFIX,
-  SPECIAL_CSS_PREFIX,
+  BASE_CSS_PREFIX,
+  CHART_CSS_PREFIX,
   CODE_CSS_PREFIX,
   CTA_CSS_PREFIX,
-  CHART_CSS_PREFIX,
-  ThemeCssCategory
+  SELECTED_CSS_PREFIX,
+  SPECIAL_CSS_PREFIX,
+  SUCCESS_CSS_PREFIX,
+  ThemeCssCategory,
+  WARN_CSS_PREFIX,
 } from '../types/core/theme/theme-css-category.type';
 import { any } from '../helpers/values.helper';
+import { getLocalStorage } from '../helpers/browser.helper';
 
 const DARK_PALETTE: Theme = {
   name: ThemeType.DARK,
@@ -236,13 +237,13 @@ export class ThemeSwitcherService {
     this.document.body.classList.remove(ThemeType.DARK, ThemeType.LIGHT);
     this.document.body.classList.add(theme);
 
-    localStorage.setItem('theme', theme);
+    getLocalStorage()?.setItem('theme', theme);
     setTimeout(() => this.document.body.classList.remove(transitionToken), 700);
   }
 
   loadThemes(): Promise<void> {
-    const activeTheme = localStorage.getItem('theme') as ThemeType ?? ThemeType.DARK;
-    localStorage.setItem('theme', activeTheme);
+    const activeTheme = getLocalStorage()?.getItem('theme') as ThemeType ?? ThemeType.DARK;
+    getLocalStorage()?.setItem('theme', activeTheme);
     this.currentTheme = activeTheme;
     this.document.body.classList.add(activeTheme);
     return new Promise<void>((resolve) => {

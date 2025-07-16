@@ -20,10 +20,11 @@ import { AppNodeStatusTypes } from '@ocfe-shared/types/app/app-node-status-types
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-dashboard-nodes',
-  templateUrl: './dashboard-nodes.component.html',
-  styleUrls: ['./dashboard-nodes.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-dashboard-nodes',
+    templateUrl: './dashboard-nodes.component.html',
+    styleUrls: ['./dashboard-nodes.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DashboardNodesComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

@@ -5,7 +5,8 @@ import { TooltipService } from '../services/tooltip.service';
 import { MinaTooltipDirective, TooltipPosition } from './mina-tooltip.directive';
 
 @Directive({
-  selector: '[copyToClipboard]',
+    selector: '[copyToClipboard]',
+    standalone: false
 })
 export class CopyToClipboardDirective implements OnInit {
 

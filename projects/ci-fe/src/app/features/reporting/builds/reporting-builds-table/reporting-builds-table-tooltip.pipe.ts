@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { hasValue } from '@openmina/shared';
 
 @Pipe({
-  name: 'reportingTooltip',
+    name: 'reportingTooltip',
+    standalone: false
 })
 export class ReportingBuildsTableTooltipPipe implements PipeTransform {
 

@@ -7,11 +7,10 @@ import { REQUIRED } from '../../constants/angular';
 import { HorizontalMenuComponent } from '../horizontal-menu/horizontal-menu.component';
 
 @Component({
-  selector: 'mina-json-console',
-  standalone: true,
-  imports: [MinaJsonViewerComponent, OpenminaEagerSharedModule, CommonModule, HorizontalMenuComponent],
-  templateUrl: './json-console.component.html',
-  styleUrls: ['./json-console.component.scss']
+    selector: 'mina-json-console',
+    imports: [MinaJsonViewerComponent, OpenminaEagerSharedModule, CommonModule, HorizontalMenuComponent],
+    templateUrl: './json-console.component.html',
+    styleUrls: ['./json-console.component.scss']
 })
 export class JsonConsoleComponent implements OnChanges {
 

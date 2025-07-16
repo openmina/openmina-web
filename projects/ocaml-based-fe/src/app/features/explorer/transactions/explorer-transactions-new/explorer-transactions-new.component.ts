@@ -15,10 +15,11 @@ interface TxForm extends FormDefinitions {
 }
 
 @Component({
-  selector: 'mina-explorer-transactions-new',
-  templateUrl: './explorer-transactions-new.component.html',
-  styleUrls: ['./explorer-transactions-new.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-explorer-transactions-new',
+    templateUrl: './explorer-transactions-new.component.html',
+    styleUrls: ['./explorer-transactions-new.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ExplorerTransactionsNewComponent extends StoreDispatcher implements OnInit {
 

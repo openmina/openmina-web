@@ -1,14 +1,9 @@
-import { Store } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 import { Directive, inject, OnDestroy } from '@angular/core';
 import { ManualDetection } from './manual-detection.class';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Observable, OperatorFunction } from 'rxjs';
-import { FunctionIsNotAllowed } from '@ngrx/store/src/models';
 import { FeatureAction } from '../types/store/feature-action.type';
-
-type ActionParam<Action extends FeatureAction<any>> =
-  Action
-  & FunctionIsNotAllowed<Action, 'Functions are not allowed to be dispatched. Did you forget to call the action creator function?'>;
 
 @UntilDestroy()
 @Directive()
@@ -16,8 +11,16 @@ export abstract class BaseStoreDispatcher<State> extends ManualDetection impleme
 
   protected store: Store<State> = inject<Store<State>>(Store<State>);
 
-  protected dispatch<Action extends FeatureAction<any>, P>(actionClass: new (payload?: P) => ActionParam<Action>, payload?: P): void {
+  protected dispatch<Action extends FeatureAction<any>, P>(actionClass: new (payload?: P) => any, payload?: P): void {
     this.store.dispatch<Action>(new actionClass(payload));
+  }
+
+  protected dispatch2(action: Action): void {
+    this.store.dispatch(action);
+  }
+
+  protected select$<T>(mapFn: (state: State) => T): Observable<T> {
+    return this.store.select<T>(mapFn).pipe(untilDestroyed(this));
   }
 
   protected select<S>(mapFn: (state: State) => S, callback: (result: S) => void): void;

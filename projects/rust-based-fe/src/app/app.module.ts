@@ -72,7 +72,7 @@ export class AppGlobalErrorhandler implements ErrorHandler {
     }),
     EffectsModule.forRoot([AppEffects]),
     NgrxRouterStoreModule,
-    !CONFIG.production ? StoreDevtoolsModule.instrument({ maxAge: 150 }) : [],
+    !CONFIG.production ? StoreDevtoolsModule.instrument({ maxAge: 150 , connectInZone: true}) : [],
     HttpClientModule,
     MatSidenavModule,
     OpenminaEagerSharedModule,

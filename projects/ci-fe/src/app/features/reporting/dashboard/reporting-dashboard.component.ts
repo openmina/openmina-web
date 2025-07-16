@@ -10,11 +10,12 @@ import { MergedRoute } from '@cife-shared/router/merged-route';
 import { filter, take } from 'rxjs';
 
 @Component({
-  selector: 'mina-reporting-overview',
-  templateUrl: './reporting-dashboard.component.html',
-  styleUrls: ['./reporting-dashboard.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'w-100 h-100 flex-row' },
+    selector: 'mina-reporting-overview',
+    templateUrl: './reporting-dashboard.component.html',
+    styleUrls: ['./reporting-dashboard.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'w-100 h-100 flex-row' },
+    standalone: false
 })
 export class ReportingDashboardComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

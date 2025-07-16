@@ -42,11 +42,12 @@ const TOOLTIP_MESSAGES: { [p: string]: string } = {
 };
 
 @Component({
-  selector: 'mina-server-status',
-  templateUrl: './server-status.component.html',
-  styleUrls: ['./server-status.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-row align-center' },
+    selector: 'mina-server-status',
+    templateUrl: './server-status.component.html',
+    styleUrls: ['./server-status.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-row align-center' },
+    standalone: false
 })
 export class ServerStatusComponent extends ManualDetection implements OnInit, OnChanges {
 

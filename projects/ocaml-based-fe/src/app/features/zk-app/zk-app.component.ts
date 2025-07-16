@@ -18,11 +18,12 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 // }
 
 @Component({
-  selector: 'mina-zk-app',
-  templateUrl: './zk-app.component.html',
-  styleUrls: ['./zk-app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-zk-app',
+    templateUrl: './zk-app.component.html',
+    styleUrls: ['./zk-app.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class ZkAppComponent implements OnInit {
 

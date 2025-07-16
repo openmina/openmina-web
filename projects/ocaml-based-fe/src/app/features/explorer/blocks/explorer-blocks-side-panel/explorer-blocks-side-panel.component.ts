@@ -15,11 +15,12 @@ import { getMergedRoute, MergedRoute } from '@openmina/shared';
 import { take } from 'rxjs';
 
 @Component({
-  selector: 'mina-explorer-blocks-side-panel',
-  templateUrl: './explorer-blocks-side-panel.component.html',
-  styleUrls: ['./explorer-blocks-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-explorer-blocks-side-panel',
+    templateUrl: './explorer-blocks-side-panel.component.html',
+    styleUrls: ['./explorer-blocks-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class ExplorerBlocksSidePanelComponent extends StoreDispatcher implements OnInit {
 

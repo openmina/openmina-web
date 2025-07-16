@@ -7,13 +7,12 @@ import { REQUIRED } from '../../constants/angular';
 
 
 @Component({
-  selector: 'mina-horizontal-menu',
-  templateUrl: './horizontal-menu.component.html',
-  styleUrls: ['./horizontal-menu.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [OpenminaEagerSharedModule, CommonModule, HorizontalMenuDirective],
-  host: { class: 'h-100 w-100 flex-column' },
+    selector: 'mina-horizontal-menu',
+    templateUrl: './horizontal-menu.component.html',
+    styleUrls: ['./horizontal-menu.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [OpenminaEagerSharedModule, CommonModule, HorizontalMenuDirective],
+    host: { class: 'h-100 w-100 flex-column' }
 })
 export class HorizontalMenuComponent extends ManualDetection {
 

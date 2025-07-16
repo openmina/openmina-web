@@ -4,11 +4,12 @@ import { MinaError } from '@ocfe-shared/types/error-preview/mina-error.type';
 import { ManualDetection } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-error-list',
-  templateUrl: './error-list.component.html',
-  styleUrls: ['./error-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'border-rad-6 border overflow-y-auto' },
+    selector: 'mina-error-list',
+    templateUrl: './error-list.component.html',
+    styleUrls: ['./error-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'border-rad-6 border overflow-y-auto' },
+    standalone: false
 })
 export class ErrorListComponent extends ManualDetection {
 

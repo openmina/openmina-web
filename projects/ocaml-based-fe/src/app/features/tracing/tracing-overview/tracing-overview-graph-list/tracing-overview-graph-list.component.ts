@@ -6,11 +6,12 @@ import { AppMenu } from '@ocfe-shared/types/app/app-menu.type';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-tracing-overview-graph-list',
-  templateUrl: './tracing-overview-graph-list.component.html',
-  styleUrls: ['./tracing-overview-graph-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column' },
+    selector: 'mina-tracing-overview-graph-list',
+    templateUrl: './tracing-overview-graph-list.component.html',
+    styleUrls: ['./tracing-overview-graph-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column' },
+    standalone: false
 })
 export class TracingOverviewGraphListComponent extends StoreDispatcher implements OnInit {
 

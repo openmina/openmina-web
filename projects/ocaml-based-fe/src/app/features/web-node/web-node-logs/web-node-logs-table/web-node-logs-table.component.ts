@@ -10,11 +10,12 @@ import { selectWebNodeLogs } from '@ocfe-web-node/web-node.state';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-web-node-logs-table',
-  templateUrl: './web-node-logs-table.component.html',
-  styleUrls: ['./web-node-logs-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-web-node-logs-table',
+    templateUrl: './web-node-logs-table.component.html',
+    styleUrls: ['./web-node-logs-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class WebNodeLogsTableComponent extends MinaTableOcamlWrapper<WebNodeLog> implements OnInit {
 

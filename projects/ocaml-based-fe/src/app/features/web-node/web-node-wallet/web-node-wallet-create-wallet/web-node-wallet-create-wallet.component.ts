@@ -12,11 +12,12 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-wallet-create-wallet',
-  templateUrl: './web-node-wallet-create-wallet.component.html',
-  styleUrls: ['./web-node-wallet-create-wallet.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-web-node-wallet-create-wallet',
+    templateUrl: './web-node-wallet-create-wallet.component.html',
+    styleUrls: ['./web-node-wallet-create-wallet.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class WebNodeWalletCreateWalletComponent extends ManualDetection {
 

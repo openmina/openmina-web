@@ -9,11 +9,12 @@ import { NodeStatus } from '@ocfe-shared/types/app/node-status.type';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-explorer-snarks',
-  templateUrl: './explorer-snarks.component.html',
-  styleUrls: ['./explorer-snarks.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-explorer-snarks',
+    templateUrl: './explorer-snarks.component.html',
+    styleUrls: ['./explorer-snarks.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class ExplorerSnarksComponent implements OnInit, OnDestroy {
 

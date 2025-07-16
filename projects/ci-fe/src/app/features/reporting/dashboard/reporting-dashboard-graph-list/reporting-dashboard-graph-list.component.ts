@@ -14,11 +14,12 @@ import { any } from '@openmina/shared';
 type ActiveReportType = 'production' | 'application' | 'latency';
 
 @Component({
-  selector: 'mina-reporting-overview-graph-list',
-  templateUrl: './reporting-dashboard-graph-list.component.html',
-  styleUrls: ['./reporting-dashboard-graph-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column p-12 overflow-y-auto overflow-x-hidden no-transition' },
+    selector: 'mina-reporting-overview-graph-list',
+    templateUrl: './reporting-dashboard-graph-list.component.html',
+    styleUrls: ['./reporting-dashboard-graph-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column p-12 overflow-y-auto overflow-x-hidden no-transition' },
+    standalone: false
 })
 export class ReportingDashboardGraphListComponent extends StoreDispatcher implements OnInit {
 

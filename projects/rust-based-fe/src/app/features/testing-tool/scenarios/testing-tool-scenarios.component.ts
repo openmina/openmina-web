@@ -14,10 +14,11 @@ import { untilDestroyed } from '@ngneat/until-destroy';
 import { FuzzingGetDirectories, FuzzingGetFiles } from '@fufe-fuzzing/fuzzing.actions';
 
 @Component({
-  selector: 'mina-testing-tool-scenarios',
-  templateUrl: './testing-tool-scenarios.component.html',
-  styleUrls: ['./testing-tool-scenarios.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-testing-tool-scenarios',
+    templateUrl: './testing-tool-scenarios.component.html',
+    styleUrls: ['./testing-tool-scenarios.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class TestingToolScenariosComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

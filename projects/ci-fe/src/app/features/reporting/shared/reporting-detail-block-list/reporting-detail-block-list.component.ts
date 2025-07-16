@@ -3,11 +3,12 @@ import { ReportDetailBlock } from '@cife-shared/types/reporting/report-detail-bl
 import { SecDurationConfig, SortDirection, TableColumnList, TableSort } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-detail-block-list',
-  templateUrl: './reporting-detail-block-list.component.html',
-  styleUrls: ['./reporting-detail-block-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-minus-lg flex-column' },
+    selector: 'mina-reporting-detail-block-list',
+    templateUrl: './reporting-detail-block-list.component.html',
+    styleUrls: ['./reporting-detail-block-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-minus-lg flex-column' },
+    standalone: false
 })
 export class ReportingDetailBlockListComponent {
 

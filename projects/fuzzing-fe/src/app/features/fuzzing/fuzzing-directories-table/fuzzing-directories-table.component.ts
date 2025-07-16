@@ -12,11 +12,12 @@ import { FuzzingDirectory } from '@fufe-shared/types/fuzzing/fuzzing-directory.t
 import { TableColumnList } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-fuzzing-directories-table',
-  templateUrl: './fuzzing-directories-table.component.html',
-  styleUrls: ['./fuzzing-directories-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100 border-right' },
+    selector: 'mina-fuzzing-directories-table',
+    templateUrl: './fuzzing-directories-table.component.html',
+    styleUrls: ['./fuzzing-directories-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100 border-right' },
+    standalone: false
 })
 export class FuzzingDirectoriesTableComponent extends StoreDispatcher implements OnInit {
 

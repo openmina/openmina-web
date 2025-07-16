@@ -12,10 +12,11 @@ import { TemplatePortal } from '@angular/cdk/portal';
 import { ScanStateLeaf } from '@rufe-shared/types/snarks/scan-state/scan-state-leaf.type';
 
 @Component({
-  selector: 'mina-scan-state-side-panel',
-  templateUrl: './scan-state-side-panel.component.html',
-  styleUrls: ['./scan-state-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'mina-scan-state-side-panel',
+    templateUrl: './scan-state-side-panel.component.html',
+    styleUrls: ['./scan-state-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ScanStateSidePanelComponent extends StoreDispatcher implements OnInit {
 

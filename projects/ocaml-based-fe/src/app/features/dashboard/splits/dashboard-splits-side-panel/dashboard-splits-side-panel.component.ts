@@ -17,11 +17,12 @@ import { DashboardSplitsPeer } from '@ocfe-shared/types/dashboard/splits/dashboa
 import { DashboardSplitsSet } from '@ocfe-shared/types/dashboard/splits/dashboard-splits-set.type';
 
 @Component({
-  selector: 'mina-dashboard-splits-side-panel',
-  templateUrl: './dashboard-splits-side-panel.component.html',
-  styleUrls: ['./dashboard-splits-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100 w-100' },
+    selector: 'mina-dashboard-splits-side-panel',
+    templateUrl: './dashboard-splits-side-panel.component.html',
+    styleUrls: ['./dashboard-splits-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100 w-100' },
+    standalone: false
 })
 export class DashboardSplitsSidePanelComponent extends StoreDispatcher implements OnInit {
 

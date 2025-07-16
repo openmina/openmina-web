@@ -6,11 +6,12 @@ import { untilDestroyed } from '@ngneat/until-destroy';
 import { StoreDispatcher } from '@rufe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-node-picker',
-  templateUrl: './node-picker.component.html',
-  styleUrls: ['./node-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column w-100' },
+    selector: 'mina-node-picker',
+    templateUrl: './node-picker.component.html',
+    styleUrls: ['./node-picker.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column w-100' },
+    standalone: false
 })
 export class NodePickerComponent extends StoreDispatcher implements AfterViewInit {
 

@@ -11,29 +11,30 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { CONFIG } from '@cife-shared/constants/config';
 
 @Component({
-  selector: 'mina-reporting-compare-first-section',
-  templateUrl: './reporting-compare-first-section.component.html',
-  styleUrls: ['./reporting-compare-first-section.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'p-12 flex-column overflow-y-auto no-transition' },
-  animations: [
-    trigger('popupAnimation', [
-      state('hidden', style({
-        opacity: 0,
-        transform: 'translateY(20px)',
-      })),
-      state('visible', style({
-        opacity: 1,
-        transform: 'translateY(0)',
-      })),
-      transition('hidden => visible', [
-        animate('0.2s ease-in-out'),
-      ]),
-      transition('visible => hidden', [
-        animate('0.2s ease-in-out'),
-      ]),
-    ]),
-  ],
+    selector: 'mina-reporting-compare-first-section',
+    templateUrl: './reporting-compare-first-section.component.html',
+    styleUrls: ['./reporting-compare-first-section.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'p-12 flex-column overflow-y-auto no-transition' },
+    animations: [
+        trigger('popupAnimation', [
+            state('hidden', style({
+                opacity: 0,
+                transform: 'translateY(20px)',
+            })),
+            state('visible', style({
+                opacity: 1,
+                transform: 'translateY(0)',
+            })),
+            transition('hidden => visible', [
+                animate('0.2s ease-in-out'),
+            ]),
+            transition('visible => hidden', [
+                animate('0.2s ease-in-out'),
+            ]),
+        ]),
+    ],
+    standalone: false
 })
 export class ReportingCompareFirstSectionComponent extends StoreDispatcher implements OnInit {
 

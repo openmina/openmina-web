@@ -23,11 +23,12 @@ import { ReportDetailBlockPeerTiming } from '@cife-shared/types/reporting/report
 import { TableSort } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-builds-side-panel',
-  templateUrl: './reporting-builds-side-panel.component.html',
-  styleUrls: ['./reporting-builds-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 border-left flex-column' },
+    selector: 'mina-reporting-builds-side-panel',
+    templateUrl: './reporting-builds-side-panel.component.html',
+    styleUrls: ['./reporting-builds-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 border-left flex-column' },
+    standalone: false
 })
 export class ReportingBuildsSidePanelComponent extends StoreDispatcher implements OnInit {
 

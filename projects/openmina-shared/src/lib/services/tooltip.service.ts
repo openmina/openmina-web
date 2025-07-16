@@ -1,6 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
+import { ReplaySubject, Subject, take } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
+import { MinaTooltipDirective } from '../directives/mina-tooltip.directive';
+import { getLocalStorage } from '../helpers/browser.helper';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +10,11 @@ import { DOCUMENT } from '@angular/common';
 export class TooltipService {
 
   openTooltipsWithClipboardClick: number[] = [];
+  justShowedTooltip: boolean = false;
+  userExitedTooltip: boolean = false;
+  openedTooltips: number = 0;
+  private timeout: any;
+  private popup: HTMLDivElement;
 
   readonly onTooltipChange$: ReplaySubject<boolean> = new ReplaySubject<boolean>();
 
@@ -23,6 +30,7 @@ export class TooltipService {
     const popup = this.document.createElement('div');
     popup.setAttribute('id', 'mina-tooltip');
     this.document.body.appendChild(popup);
+    this.popup = popup;
   }
 
   private appendGraphTooltipToDOM(): void {
@@ -32,8 +40,8 @@ export class TooltipService {
   }
 
   private setInitialTooltipBehaviour(): void {
-    if (localStorage.getItem(this.tooltipDisabledKey) === null) {
-      localStorage.setItem(this.tooltipDisabledKey, JSON.stringify(false));
+    if (getLocalStorage()?.getItem(this.tooltipDisabledKey) === null) {
+      getLocalStorage()?.setItem(this.tooltipDisabledKey, JSON.stringify(false));
     }
   }
 
@@ -43,11 +51,25 @@ export class TooltipService {
 
   toggleTooltips(): void {
     const tooltipDisabled = this.getTooltipDisabledSetting();
-    localStorage.setItem(this.tooltipDisabledKey, JSON.stringify(!tooltipDisabled));
+    getLocalStorage()?.setItem(this.tooltipDisabledKey, JSON.stringify(!tooltipDisabled));
     this.onTooltipChange$.next(!tooltipDisabled);
   }
 
   getTooltipDisabledSetting(): boolean {
-    return !!JSON.parse(localStorage.getItem(this.tooltipDisabledKey));
+    return !!JSON.parse(getLocalStorage()?.getItem(this.tooltipDisabledKey));
+  }
+
+  onTooltipShow(): void {
+    this.openedTooltips++;
+    this.justShowedTooltip = true;
+    this.userExitedTooltip = false;
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.justShowedTooltip = false;
+      this.openedTooltips = 0;
+      if (this.userExitedTooltip) {
+        MinaTooltipDirective.hideTooltip(this.popup);
+      }
+    }, 100);
   }
 }

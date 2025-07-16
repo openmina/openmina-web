@@ -1,6 +1,5 @@
 import { Directive, ElementRef, HostListener, Inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { TooltipService } from '../services/tooltip.service';
 
 const TOOLTIP_OFFSET = 8;
@@ -13,9 +12,9 @@ export enum TooltipPosition {
   RIGHT = 'right',
 }
 
-@UntilDestroy()
 @Directive({
-  selector: '[tooltip]',
+    selector: '[tooltip]',
+    standalone: false
 })
 export class MinaTooltipDirective implements OnInit, OnDestroy {
 
@@ -28,6 +27,7 @@ export class MinaTooltipDirective implements OnInit, OnDestroy {
   @Input() maxWidth: number = 250;
   @Input() position: TooltipPosition = TooltipPosition.BOTTOM;
   @Input() html: boolean = true;
+  @Input() noAnimation: boolean = false;
 
   private popup: HTMLDivElement;
   private timer: any;
@@ -40,13 +40,12 @@ export class MinaTooltipDirective implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.popup = this.document.getElementById('mina-tooltip') as HTMLDivElement;
     if (this.globalTooltip) {
-      this.tooltipDisabled = this.tooltipService.getTooltipDisabledSetting();
+      this.tooltipDisabled = this.tooltipService.getTooltipDisabledSetting() || this.tooltipDisabled;
     }
-
-    this.tooltipService.onTooltipChange$
-      .asObservable()
-      .pipe(untilDestroyed(this))
-      .subscribe(value => this.tooltipDisabled = value);
+    // this.tooltipService.onTooltipChange$
+    //   .asObservable()
+    //   .pipe(untilDestroyed(this))
+    //   .subscribe(value => this.tooltipDisabled = value);
   }
 
   @HostListener('mouseenter')
@@ -56,7 +55,16 @@ export class MinaTooltipDirective implements OnInit, OnDestroy {
     }
     this.timer = setTimeout(() => {
       if (!this.cancelShowing) {
-        MinaTooltipDirective.showTooltip(this.popup, this.el.nativeElement, this.tooltip.toString(), this.maxWidth, this.position, this.html);
+        this.tooltipService.onTooltipShow();
+        MinaTooltipDirective.showTooltip(
+          this.popup,
+          this.el.nativeElement,
+          this.tooltip.toString(),
+          this.maxWidth,
+          this.position,
+          this.html,
+          this.noAnimation,
+        );
         if (this.cancelFormatting) {
           this.popup.classList.add('cancel-formatting');
         }
@@ -69,7 +77,10 @@ export class MinaTooltipDirective implements OnInit, OnDestroy {
     if (this.timer) {
       clearTimeout(this.timer);
     }
-    setTimeout(() => MinaTooltipDirective.hideTooltip(this.popup), this.hideDelay);
+    this.tooltipService.userExitedTooltip = true;
+    if (!this.tooltipService.justShowedTooltip || this.tooltipService.openedTooltips === 1) {
+      setTimeout(() => { MinaTooltipDirective.hideTooltip(this.popup); }, this.hideDelay);
+    }
   }
 
   ngOnDestroy(): void {
@@ -82,7 +93,8 @@ export class MinaTooltipDirective implements OnInit, OnDestroy {
                      message: string,
                      maxWidth: number,
                      position: TooltipPosition,
-                     html: boolean = true): void {
+                     html: boolean = true,
+                     noAnimation: boolean = false): void {
     if (html) {
       popup.innerHTML = message;
     } else {
@@ -138,7 +150,7 @@ export class MinaTooltipDirective implements OnInit, OnDestroy {
     popup.style.maxWidth = maxWidth + PX;
     popup.style.top = y + PX;
     popup.style.left = x + PX;
-    popup.style.animationName = 'tooltip-slide-' + animationName;
+    popup.style.animationName = 'tooltip-' + (noAnimation ? 'no-animation' : ('slide-' + animationName));
   }
 
   static hideTooltip(popup: HTMLDivElement): void {

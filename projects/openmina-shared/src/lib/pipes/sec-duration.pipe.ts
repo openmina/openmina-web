@@ -16,6 +16,7 @@ interface SecDurationConfigDefinition {
    */
   includeHours: boolean;
   colors: [string, string, string];
+  valueIsZeroFn: () => string;
 }
 
 export type SecDurationConfig = Partial<SecDurationConfigDefinition>;
@@ -31,10 +32,12 @@ const baseConfig: SecDurationConfig = {
   includeMinutes: false,
   includeHours: false,
   colors: SEC_CONFIG_DEFAULT_PALETTE,
+  valueIsZeroFn: null,
 };
 
 @Pipe({
-  name: 'secDuration',
+    name: 'secDuration',
+    standalone: false
 })
 export class SecDurationPipe implements PipeTransform {
 
@@ -46,7 +49,14 @@ export class SecDurationPipe implements PipeTransform {
     let response;
 
     if (!value) {
-      return value === 0 ? `${value}s` : config.undefinedAlternative !== undefined ? config.undefinedAlternative : value;
+      if (value === 0) {
+        if (config.valueIsZeroFn) {
+          return config.valueIsZeroFn();
+        }
+        return `${value}s`;
+      } else {
+        return config.undefinedAlternative !== undefined ? config.undefinedAlternative : value;
+      }
     }
 
     if ((value >= 1 && !config.includeMinutes) || (config.includeMinutes && value < 60 && value >= 1) || config.onlySeconds || value < 0) {

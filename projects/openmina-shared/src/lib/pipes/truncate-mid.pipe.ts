@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'truncateMid',
+    name: 'truncateMid',
+    standalone: false
 })
 export class TruncateMidPipe implements PipeTransform {
 

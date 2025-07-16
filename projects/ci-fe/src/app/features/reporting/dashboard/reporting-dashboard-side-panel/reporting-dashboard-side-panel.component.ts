@@ -23,11 +23,12 @@ import {
 import { TableSort } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-overview-side-panel',
-  templateUrl: './reporting-dashboard-side-panel.component.html',
-  styleUrls: ['./reporting-dashboard-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column border-left' },
+    selector: 'mina-reporting-overview-side-panel',
+    templateUrl: './reporting-dashboard-side-panel.component.html',
+    styleUrls: ['./reporting-dashboard-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column border-left' },
+    standalone: false
 })
 export class ReportingDashboardSidePanelComponent extends StoreDispatcher implements OnInit {
 
