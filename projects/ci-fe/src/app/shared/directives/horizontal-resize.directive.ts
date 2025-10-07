@@ -5,7 +5,8 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()
 @Directive({
-  selector: '[horizontalResize]',
+    selector: '[horizontalResize]',
+    standalone: false
 })
 export class HorizontalResizeDirective implements AfterViewInit, OnChanges {
 

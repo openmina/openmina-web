@@ -4,6 +4,7 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { MinaTooltipDirective } from './directives/mina-tooltip.directive';
 import { CopyToClipboardDirective } from './directives/copy-to-clipboard.directive';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { PluralPipe } from './pipes/plural.pipe';
 
 const EAGER_MODULES = [
   OverlayModule,
@@ -16,6 +17,10 @@ const EAGER_DIRECTIVES = [
   CopyToClipboardDirective,
 ];
 
+const EAGER_PIPES = [
+  PluralPipe,
+];
+
 
 /**
  * @description
@@ -24,10 +29,12 @@ const EAGER_DIRECTIVES = [
 @NgModule({
   imports: [
     ...EAGER_MODULES,
+    ...EAGER_PIPES,
   ],
   exports: [
     ...EAGER_MODULES,
     ...EAGER_DIRECTIVES,
+    ...EAGER_PIPES,
   ],
   declarations: [
     ...EAGER_DIRECTIVES,

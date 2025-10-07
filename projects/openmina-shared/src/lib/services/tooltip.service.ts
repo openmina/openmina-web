@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { ReplaySubject, Subject, take } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
 import { MinaTooltipDirective } from '../directives/mina-tooltip.directive';
+import { getLocalStorage } from '../helpers/browser.helper';
 
 @Injectable({
   providedIn: 'root',
@@ -39,8 +40,8 @@ export class TooltipService {
   }
 
   private setInitialTooltipBehaviour(): void {
-    if (localStorage.getItem(this.tooltipDisabledKey) === null) {
-      localStorage.setItem(this.tooltipDisabledKey, JSON.stringify(false));
+    if (getLocalStorage()?.getItem(this.tooltipDisabledKey) === null) {
+      getLocalStorage()?.setItem(this.tooltipDisabledKey, JSON.stringify(false));
     }
   }
 
@@ -50,12 +51,12 @@ export class TooltipService {
 
   toggleTooltips(): void {
     const tooltipDisabled = this.getTooltipDisabledSetting();
-    localStorage.setItem(this.tooltipDisabledKey, JSON.stringify(!tooltipDisabled));
+    getLocalStorage()?.setItem(this.tooltipDisabledKey, JSON.stringify(!tooltipDisabled));
     this.onTooltipChange$.next(!tooltipDisabled);
   }
 
   getTooltipDisabledSetting(): boolean {
-    return !!JSON.parse(localStorage.getItem(this.tooltipDisabledKey));
+    return !!JSON.parse(getLocalStorage()?.getItem(this.tooltipDisabledKey));
   }
 
   onTooltipShow(): void {

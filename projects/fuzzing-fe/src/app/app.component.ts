@@ -13,9 +13,10 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { ManualDetection, MIN_WIDTH_700 } from '@openmina/shared';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent extends ManualDetection implements OnInit {
 

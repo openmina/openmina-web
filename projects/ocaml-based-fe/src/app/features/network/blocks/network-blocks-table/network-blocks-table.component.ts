@@ -8,11 +8,12 @@ import { NetworkBlocksSort } from '@ocfe-network/blocks/network-blocks.actions';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-network-blocks-table',
-  templateUrl: './network-blocks-table.component.html',
-  styleUrls: ['./network-blocks-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-network-blocks-table',
+    templateUrl: './network-blocks-table.component.html',
+    styleUrls: ['./network-blocks-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class NetworkBlocksTableComponent extends MinaTableOcamlWrapper<NetworkBlock> implements OnInit {
 

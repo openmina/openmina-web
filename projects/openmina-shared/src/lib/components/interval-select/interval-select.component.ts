@@ -51,12 +51,11 @@ const yearStr = 'year';
 
 @UntilDestroy()
 @Component({
-  standalone: true,
-  imports: [OpenminaEagerSharedModule, CommonModule, ReactiveFormsModule],
-  selector: 'mina-interval-select',
-  templateUrl: './interval-select.component.html',
-  styleUrls: ['./interval-select.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [OpenminaEagerSharedModule, CommonModule, ReactiveFormsModule],
+    selector: 'mina-interval-select',
+    templateUrl: './interval-select.component.html',
+    styleUrls: ['./interval-select.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IntervalSelectComponent extends ManualDetection implements OnInit, AfterViewInit {
 

@@ -1,32 +1,33 @@
-@import 'openmina';
+@use '../../../assets/styles/openmina' as *;
+
 
 :host.no-hide {
-	.cpy {
-		margin-left: 0 !important;
-	}
+  .cpy {
+    margin-left: 0 !important;
+  }
 
-	.mina-icon {
-		margin-right: -11px;
-	}
+  .mina-icon {
+    margin-right: -11px;
+  }
 }
 
 .p-relative {
-	display: inline-flex;
-	align-items: center;
+  display: inline-flex;
+  align-items: center;
 
-	.cpy {
-		@include flexRowFullCenter();
-		cursor: pointer;
-		height: 26px;
-		width: 26px;
+  .cpy {
+    @include flexRowFullCenter();
+    cursor: pointer;
+    height: 26px;
+    width: 26px;
 
-		.mina-icon {
-			color: $base-tertiary !important;
-			font-size: 22px;
-		}
+    .mina-icon {
+      color: $base-tertiary !important;
+      font-size: 22px;
+    }
 
-		&:hover .mina-icon {
-			color: $base-primary !important;
-		}
-	}
+    &:hover .mina-icon {
+      color: $base-primary !important;
+    }
+  }
 }

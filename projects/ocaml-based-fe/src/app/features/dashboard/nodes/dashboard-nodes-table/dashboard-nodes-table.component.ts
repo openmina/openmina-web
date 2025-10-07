@@ -20,11 +20,12 @@ import { CONFIG } from '@ocfe-shared/constants/config';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-dashboard-nodes-table',
-  templateUrl: './dashboard-nodes-table.component.html',
-  styleUrls: ['./dashboard-nodes-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-dashboard-nodes-table',
+    templateUrl: './dashboard-nodes-table.component.html',
+    styleUrls: ['./dashboard-nodes-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class DashboardNodesTableComponent extends MinaTableOcamlWrapper<DashboardNode> implements OnInit {
 

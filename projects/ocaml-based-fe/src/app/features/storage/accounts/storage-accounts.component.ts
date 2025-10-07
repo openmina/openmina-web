@@ -7,11 +7,12 @@ import { selectStorageAccountsActiveAccount } from '@ocfe-storage/accounts/stora
 import { StorageAccount } from '@ocfe-shared/types/storage/accounts/storage-account.type';
 
 @Component({
-  selector: 'mina-storage-accounts',
-  templateUrl: './storage-accounts.component.html',
-  styleUrls: ['./storage-accounts.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-storage-accounts',
+    templateUrl: './storage-accounts.component.html',
+    styleUrls: ['./storage-accounts.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class StorageAccountsComponent extends StoreDispatcher implements OnInit {
 

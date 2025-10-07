@@ -15,15 +15,15 @@ import { HorizontalResizeDirective } from './horizontal-resize.directive';
 import { OpenminaSharedModule } from '../../openmina-shared.module';
 import { CommonModule } from '@angular/common';
 import { REQUIRED } from '../../constants/angular';
+import { getLocalStorage } from '../../helpers/browser.helper';
 
 @Component({
-  selector: 'mina-horizontal-resizable-container',
-  standalone: true,
-  imports: [HorizontalResizeDirective, OpenminaSharedModule, CommonModule],
-  templateUrl: './horizontal-resizable-container.component.html',
-  styleUrls: ['./horizontal-resizable-container.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'w-100 h-100 p-relative flex-row' },
+    selector: 'mina-horizontal-resizable-container',
+    imports: [HorizontalResizeDirective, OpenminaSharedModule, CommonModule],
+    templateUrl: './horizontal-resizable-container.component.html',
+    styleUrls: ['./horizontal-resizable-container.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'w-100 h-100 p-relative flex-row' }
 })
 export class HorizontalResizableContainerComponent implements OnInit, OnChanges {
 
@@ -44,7 +44,7 @@ export class HorizontalResizableContainerComponent implements OnInit, OnChanges 
   @ViewChild('aside', { static: true }) private aside: ElementRef<HTMLElement>;
 
   ngOnInit(): void {
-    const localStorageWidth = Number(localStorage.getItem(this.localStorageKey));
+    const localStorageWidth = Number(getLocalStorage()?.getItem(this.localStorageKey));
     if (localStorageWidth) {
       this.onResize(localStorageWidth);
     } else {
@@ -62,7 +62,7 @@ export class HorizontalResizableContainerComponent implements OnInit, OnChanges 
 
   onResize(width: number): void {
     this.width = width;
-    localStorage.setItem(this.localStorageKey, width.toString());
+    getLocalStorage()?.setItem(this.localStorageKey, width.toString());
     this.setDimensions();
   }
 

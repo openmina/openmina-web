@@ -8,10 +8,11 @@ import { any, ManualDetection, niceYScale } from '@openmina/shared';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-reporting-graph',
-  templateUrl: './reporting-graph.component.html',
-  styleUrls: ['./reporting-graph.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-reporting-graph',
+    templateUrl: './reporting-graph.component.html',
+    styleUrls: ['./reporting-graph.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ReportingGraphComponent extends ManualDetection implements AfterViewInit, OnChanges {
 

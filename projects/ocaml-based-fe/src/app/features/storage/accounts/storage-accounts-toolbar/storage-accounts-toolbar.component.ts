@@ -6,11 +6,12 @@ import { StorageAccount } from '@ocfe-shared/types/storage/accounts/storage-acco
 import { StorageAccountsPagination } from '@ocfe-shared/types/storage/accounts/storage-accounts-pagination.type';
 
 @Component({
-  selector: 'mina-storage-accounts-toolbar',
-  templateUrl: './storage-accounts-toolbar.component.html',
-  styleUrls: ['./storage-accounts-toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-row flex-between h-xl border-bottom' },
+    selector: 'mina-storage-accounts-toolbar',
+    templateUrl: './storage-accounts-toolbar.component.html',
+    styleUrls: ['./storage-accounts-toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-row flex-between h-xl border-bottom' },
+    standalone: false
 })
 export class StorageAccountsToolbarComponent extends StoreDispatcher implements OnInit {
 

@@ -18,11 +18,12 @@ import { Clipboard } from '@angular/cdk/clipboard';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-network-messages-side-panel',
-  templateUrl: './network-messages-side-panel.component.html',
-  styleUrls: ['./network-messages-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100 w-100' },
+    selector: 'mina-network-messages-side-panel',
+    templateUrl: './network-messages-side-panel.component.html',
+    styleUrls: ['./network-messages-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100 w-100' },
+    standalone: false
 })
 export class NetworkMessagesSidePanelComponent extends StoreDispatcher implements AfterViewInit {
 

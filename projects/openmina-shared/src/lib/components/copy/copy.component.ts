@@ -4,12 +4,11 @@ import { CommonModule } from '@angular/common';
 import { REQUIRED } from '../../constants/angular';
 
 @Component({
-  selector: 'mina-copy',
-  templateUrl: './copy.component.html',
-  styleUrls: ['./copy.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [OpenminaEagerSharedModule, CommonModule],
+    selector: 'mina-copy',
+    templateUrl: './copy.component.html',
+    styleUrls: ['./copy.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [OpenminaEagerSharedModule, CommonModule]
 })
 export class CopyComponent implements OnInit {
 

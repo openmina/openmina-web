@@ -25,10 +25,11 @@ import { NodesBootstrapNode } from '@rufe-shared/types/nodes/bootstrap/nodes-boo
 import { MinaTableRustWrapper } from '@rufe-shared/base-classes/mina-table-rust-wrapper.class';
 
 @Component({
-  selector: 'mina-nodes-bootstrap-table',
-  templateUrl: './nodes-bootstrap-table.component.html',
-  styleUrls: ['./nodes-bootstrap-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-nodes-bootstrap-table',
+    templateUrl: './nodes-bootstrap-table.component.html',
+    styleUrls: ['./nodes-bootstrap-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NodesBootstrapTableComponent extends MinaTableRustWrapper<NodesBootstrapNode> implements OnInit {
 

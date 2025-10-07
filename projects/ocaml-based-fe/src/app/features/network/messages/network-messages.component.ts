@@ -11,11 +11,12 @@ import { filter } from 'rxjs';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-network-messages',
-  templateUrl: './network-messages.component.html',
-  styleUrls: ['./network-messages.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100' },
+    selector: 'mina-network-messages',
+    templateUrl: './network-messages.component.html',
+    styleUrls: ['./network-messages.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100' },
+    standalone: false
 })
 export class NetworkMessagesComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

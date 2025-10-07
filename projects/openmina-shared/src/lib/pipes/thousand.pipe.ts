@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { ONE_MILLION, ONE_THOUSAND } from '../constants/unit-measurements';
 
 @Pipe({
-  name: 'thousand',
+    name: 'thousand',
+    standalone: false
 })
 export class ThousandPipe implements PipeTransform {
 

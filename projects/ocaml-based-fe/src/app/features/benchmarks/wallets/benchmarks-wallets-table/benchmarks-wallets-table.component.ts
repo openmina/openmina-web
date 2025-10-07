@@ -9,11 +9,12 @@ import { TableColumnList } from '@openmina/shared';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-benchmarks-wallets-table',
-  templateUrl: './benchmarks-wallets-table.component.html',
-  styleUrls: ['./benchmarks-wallets-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-benchmarks-wallets-table',
+    templateUrl: './benchmarks-wallets-table.component.html',
+    styleUrls: ['./benchmarks-wallets-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class BenchmarksWalletsTableComponent extends MinaTableOcamlWrapper<BenchmarksWallet> implements OnInit {
 

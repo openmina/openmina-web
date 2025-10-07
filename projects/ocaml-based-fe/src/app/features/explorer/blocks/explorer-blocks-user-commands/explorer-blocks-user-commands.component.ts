@@ -3,10 +3,11 @@ import { ExplorerBlockTx } from '@ocfe-shared/types/explorer/blocks/explorer-blo
 import { toggleItem } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-explorer-blocks-user-commands',
-  templateUrl: './explorer-blocks-user-commands.component.html',
-  styleUrls: ['./explorer-blocks-user-commands.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'mina-explorer-blocks-user-commands',
+    templateUrl: './explorer-blocks-user-commands.component.html',
+    styleUrls: ['./explorer-blocks-user-commands.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ExplorerBlocksUserCommandsComponent implements OnChanges {
 

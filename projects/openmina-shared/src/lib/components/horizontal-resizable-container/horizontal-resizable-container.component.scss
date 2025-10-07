@@ -1,4 +1,6 @@
-@import 'openmina';
+@use '../../../assets/styles/openmina' as *;
+
+
 
 $transition: 400ms cubic-bezier(0.22, 1, 0.36, 1);
 

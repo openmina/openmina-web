@@ -3,7 +3,8 @@ import { ONE_MILLION } from '../constants/unit-measurements';
 import { toReadableDate } from '../helpers/date.helper';
 
 @Pipe({
-  name: 'readableDate',
+    name: 'readableDate',
+    standalone: false
 })
 export class ReadableDatePipe implements PipeTransform {
   transform(value: number, format?: string): string {

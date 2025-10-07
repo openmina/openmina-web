@@ -11,11 +11,12 @@ import { selectLoadingStateLength } from '@rufe-app/layout/toolbar/loading.reduc
 import { Routes } from '@rufe-shared/enums/routes.enum';
 
 @Component({
-  selector: 'mina-toolbar',
-  templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-row align-center border-bottom' },
+    selector: 'mina-toolbar',
+    templateUrl: './toolbar.component.html',
+    styleUrls: ['./toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-row align-center border-bottom' },
+    standalone: false
 })
 export class ToolbarComponent extends ManualDetection implements OnInit {
 

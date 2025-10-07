@@ -6,11 +6,12 @@ import { StorageAccount } from '@ocfe-shared/types/storage/accounts/storage-acco
 import { StorageAccountsSetActiveAccount } from '@ocfe-storage/accounts/storage-accounts.actions';
 
 @Component({
-  selector: 'mina-storage-accounts-side-panel',
-  templateUrl: './storage-accounts-side-panel.component.html',
-  styleUrls: ['./storage-accounts-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100 w-100' },
+    selector: 'mina-storage-accounts-side-panel',
+    templateUrl: './storage-accounts-side-panel.component.html',
+    styleUrls: ['./storage-accounts-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100 w-100' },
+    standalone: false
 })
 export class StorageAccountsSidePanelComponent extends StoreDispatcher implements OnInit {
 

@@ -10,10 +10,11 @@ import { ReportingBuildsTableComponent } from '@cife-reporting/builds/reporting-
 import { selectReportingBuildsActiveReport } from './reporting-builds.state';
 
 @Component({
-  selector: 'mina-reporting-builds',
-  templateUrl: './reporting-builds.component.html',
-  styleUrls: ['./reporting-builds.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-reporting-builds',
+    templateUrl: './reporting-builds.component.html',
+    styleUrls: ['./reporting-builds.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ReportingBuildsComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

@@ -8,11 +8,12 @@ import { removeParamsFromURL } from '@openmina/shared';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-submenu-tabs',
-  templateUrl: './submenu-tabs.component.html',
-  styleUrls: ['./submenu-tabs.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-xl flex-row flex-grow align-center' },
+    selector: 'mina-submenu-tabs',
+    templateUrl: './submenu-tabs.component.html',
+    styleUrls: ['./submenu-tabs.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-xl flex-row flex-grow align-center' },
+    standalone: false
 })
 export class SubmenuTabsComponent extends StoreDispatcher implements OnInit {
 

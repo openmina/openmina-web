@@ -33,12 +33,13 @@ import {
 } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-overview-graph',
-  templateUrl: './reporting-dashboard-graph.component.html',
-  styleUrls: ['./reporting-dashboard-graph.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'w-100 flex-row' },
-  providers: [DatePipe],
+    selector: 'mina-reporting-overview-graph',
+    templateUrl: './reporting-dashboard-graph.component.html',
+    styleUrls: ['./reporting-dashboard-graph.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'w-100 flex-row' },
+    providers: [DatePipe],
+    standalone: false
 })
 export class ReportingDashboardGraphComponent extends StoreDispatcher implements AfterViewInit, OnChanges {
 

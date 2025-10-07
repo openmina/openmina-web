@@ -8,11 +8,12 @@ import { TableColumnList } from '@openmina/shared';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-web-node-peers-table',
-  templateUrl: './web-node-peers-table.component.html',
-  styleUrls: ['./web-node-peers-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-web-node-peers-table',
+    templateUrl: './web-node-peers-table.component.html',
+    styleUrls: ['./web-node-peers-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class WebNodePeersTableComponent extends MinaTableOcamlWrapper<WebNodeLog> implements OnInit {
 

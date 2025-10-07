@@ -11,10 +11,11 @@ import { MARK_ERRORS_AS_SEEN, MarkErrorsAsSeen } from './error-preview.actions';
 import { ManualDetection } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-error-preview',
-  templateUrl: './error-preview.component.html',
-  styleUrls: ['./error-preview.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-error-preview',
+    templateUrl: './error-preview.component.html',
+    styleUrls: ['./error-preview.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ErrorPreviewComponent extends ManualDetection implements OnInit {
 

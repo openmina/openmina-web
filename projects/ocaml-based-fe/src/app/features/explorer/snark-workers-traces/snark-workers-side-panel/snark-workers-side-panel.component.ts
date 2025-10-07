@@ -12,11 +12,12 @@ import {
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-snark-workers-side-panel',
-  templateUrl: './snark-workers-side-panel.component.html',
-  styleUrls: ['./snark-workers-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-snark-workers-side-panel',
+    templateUrl: './snark-workers-side-panel.component.html',
+    styleUrls: ['./snark-workers-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class SnarkWorkersSidePanelComponent extends ManualDetection implements OnInit {
 

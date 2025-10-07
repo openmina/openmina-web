@@ -14,7 +14,6 @@ const PIPES = [
   SecDurationPipe,
   ThousandPipe,
   ReadableDatePipe,
-  PluralPipe,
   SafeHtmlPipe,
 ];
 

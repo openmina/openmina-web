@@ -9,11 +9,12 @@ import { fromEvent } from 'rxjs';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-peers-listen',
-  templateUrl: './web-node-peers-listen.component.html',
-  styleUrls: ['./web-node-peers-listen.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-web-node-peers-listen',
+    templateUrl: './web-node-peers-listen.component.html',
+    styleUrls: ['./web-node-peers-listen.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class WebNodePeersListenComponent extends ManualDetection {
 

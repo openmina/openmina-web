@@ -18,11 +18,12 @@ type ZkAppUpdate = {
 }
 
 @Component({
-  selector: 'mina-explorer-blocks-zk-app-detail',
-  templateUrl: './explorer-blocks-zk-app-detail.component.html',
-  styleUrls: ['./explorer-blocks-zk-app-detail.component.scss'],
-  host: { class: 'h-100 flex-column' },
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-explorer-blocks-zk-app-detail',
+    templateUrl: './explorer-blocks-zk-app-detail.component.html',
+    styleUrls: ['./explorer-blocks-zk-app-detail.component.scss'],
+    host: { class: 'h-100 flex-column' },
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ExplorerBlocksZkAppDetailComponent extends MinaTableOcamlWrapper<ZkAppUpdate> implements OnInit {
 

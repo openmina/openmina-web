@@ -5,13 +5,12 @@ import { REQUIRED } from '../../constants/angular';
 
 
 @Component({
-  selector: 'mina-side-panel-stepper',
-  templateUrl: './mina-side-panel-stepper.component.html',
-  styleUrls: ['./mina-side-panel-stepper.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [CommonModule, OpenminaSharedModule],
-  host: { class: 'w-100 h-100 p-relative overflow-hidden flex-column' },
+    selector: 'mina-side-panel-stepper',
+    templateUrl: './mina-side-panel-stepper.component.html',
+    styleUrls: ['./mina-side-panel-stepper.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [CommonModule, OpenminaSharedModule],
+    host: { class: 'w-100 h-100 p-relative overflow-hidden flex-column' }
 })
 export class MinaSidePanelStepperComponent {
   /**

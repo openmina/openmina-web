@@ -20,11 +20,12 @@ import { FuzzingDirectory } from '@fufe-shared/types/fuzzing/fuzzing-directory.t
 import { SortDirection, TableColumnList, TableSort } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-fuzzing-files-table',
-  templateUrl: './fuzzing-files-table.component.html',
-  styleUrls: ['./fuzzing-files-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-fuzzing-files-table',
+    templateUrl: './fuzzing-files-table.component.html',
+    styleUrls: ['./fuzzing-files-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class FuzzingFilesTableComponent extends StoreDispatcher implements OnInit {
 

@@ -12,11 +12,12 @@ export interface ScanStateSunburst {
 }
 
 @Component({
-  selector: 'mina-explorer-scan-state-chart-list',
-  templateUrl: './explorer-scan-state-chart-list.component.html',
-  styleUrls: ['./explorer-scan-state-chart-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 w-100 flex-column' },
+    selector: 'mina-explorer-scan-state-chart-list',
+    templateUrl: './explorer-scan-state-chart-list.component.html',
+    styleUrls: ['./explorer-scan-state-chart-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 w-100 flex-column' },
+    standalone: false
 })
 export class ExplorerScanStateChartListComponent extends StoreDispatcher implements AfterViewInit {
 

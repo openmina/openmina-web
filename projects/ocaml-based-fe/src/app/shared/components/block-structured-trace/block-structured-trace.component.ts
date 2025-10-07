@@ -5,13 +5,12 @@ import { ManualDetection, SecDurationConfig } from '@openmina/shared';
 import { SharedModule } from '@ocfe-shared/shared.module';
 
 @Component({
-  standalone: true,
-  imports: [SharedModule],
-  selector: 'mina-block-structured-trace',
-  templateUrl: './block-structured-trace.component.html',
-  styleUrls: ['./block-structured-trace.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    imports: [SharedModule],
+    selector: 'mina-block-structured-trace',
+    templateUrl: './block-structured-trace.component.html',
+    styleUrls: ['./block-structured-trace.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' }
 })
 export class BlockStructuredTraceComponent extends ManualDetection {
 

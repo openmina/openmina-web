@@ -11,11 +11,12 @@ import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-explorer-transactions-table',
-  templateUrl: './explorer-transactions-table.component.html',
-  styleUrls: ['./explorer-transactions-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-explorer-transactions-table',
+    templateUrl: './explorer-transactions-table.component.html',
+    styleUrls: ['./explorer-transactions-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class ExplorerTransactionsTableComponent extends MinaTableOcamlWrapper<ExplorerTransaction> implements OnInit {
 

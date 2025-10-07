@@ -12,11 +12,12 @@ import { filter, take } from 'rxjs';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-network-connections-table',
-  templateUrl: './network-connections-table.component.html',
-  styleUrls: ['./network-connections-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-network-connections-table',
+    templateUrl: './network-connections-table.component.html',
+    styleUrls: ['./network-connections-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class NetworkConnectionsTableComponent extends MinaTableOcamlWrapper<NetworkConnection> implements OnInit {
 

@@ -24,11 +24,12 @@ import { selectActiveNode } from '@ocfe-app/app.state';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-snark-workers-traces',
-  templateUrl: './snark-workers-traces.component.html',
-  styleUrls: ['./snark-workers-traces.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-snark-workers-traces',
+    templateUrl: './snark-workers-traces.component.html',
+    styleUrls: ['./snark-workers-traces.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class SnarkWorkersTracesComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

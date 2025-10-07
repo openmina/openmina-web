@@ -10,11 +10,12 @@ import { CONFIG } from '@cife-shared/constants/config';
 import { TooltipPosition } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-builds-table',
-  templateUrl: './reporting-builds-table.component.html',
-  styleUrls: ['./reporting-builds-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column' },
+    selector: 'mina-reporting-builds-table',
+    templateUrl: './reporting-builds-table.component.html',
+    styleUrls: ['./reporting-builds-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column' },
+    standalone: false
 })
 export class ReportingBuildsTableComponent extends StoreDispatcher implements OnInit {
 

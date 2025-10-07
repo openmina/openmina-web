@@ -4,11 +4,12 @@ import { Routes } from '@ocfe-shared/enums/routes.enum';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-tracing',
-  templateUrl: './tracing.component.html',
-  styleUrls: ['./tracing.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100' },
+    selector: 'mina-tracing',
+    templateUrl: './tracing.component.html',
+    styleUrls: ['./tracing.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100' },
+    standalone: false
 })
 export class TracingComponent extends StoreDispatcher implements OnInit {
 

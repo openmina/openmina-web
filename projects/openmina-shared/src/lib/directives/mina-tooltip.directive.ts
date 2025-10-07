@@ -13,7 +13,8 @@ export enum TooltipPosition {
 }
 
 @Directive({
-  selector: '[tooltip]',
+    selector: '[tooltip]',
+    standalone: false
 })
 export class MinaTooltipDirective implements OnInit, OnDestroy {
 

@@ -13,11 +13,12 @@ import { skip } from 'rxjs';
 import { TestingToolScenario } from '@rufe-shared/types/testing-tool/scenarios/testing-tool-scenario.type';
 
 @Component({
-  selector: 'mina-scenarios-steps-toolbar',
-  templateUrl: './scenarios-steps-toolbar.component.html',
-  styleUrls: ['./scenarios-steps-toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'fx-row-vert-cent h-xl pl-12' },
+    selector: 'mina-scenarios-steps-toolbar',
+    templateUrl: './scenarios-steps-toolbar.component.html',
+    styleUrls: ['./scenarios-steps-toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'fx-row-vert-cent h-xl pl-12' },
+    standalone: false
 })
 export class ScenariosStepsToolbarComponent extends StoreDispatcher implements OnInit {
 

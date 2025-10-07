@@ -7,11 +7,12 @@ import { filter } from 'rxjs';
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-tracing-blocks',
-  templateUrl: './tracing-blocks.component.html',
-  styleUrls: ['./tracing-blocks.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 w-100' },
+    selector: 'mina-tracing-blocks',
+    templateUrl: './tracing-blocks.component.html',
+    styleUrls: ['./tracing-blocks.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 w-100' },
+    standalone: false
 })
 export class TracingBlocksComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

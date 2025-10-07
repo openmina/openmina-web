@@ -13,11 +13,12 @@ import { filter, take } from 'rxjs';
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-explorer-snarks-table',
-  templateUrl: './explorer-snarks-table.component.html',
-  styleUrls: ['./explorer-snarks-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-explorer-snarks-table',
+    templateUrl: './explorer-snarks-table.component.html',
+    styleUrls: ['./explorer-snarks-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class ExplorerSnarksTableComponent extends MinaTableOcamlWrapper<ExplorerSnark> implements OnInit {
 

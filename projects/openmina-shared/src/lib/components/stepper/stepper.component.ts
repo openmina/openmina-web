@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 import { OpenminaEagerSharedModule } from '../../openmina-eager-shared.module';
 
 @Component({
-  standalone: true,
-  imports: [OpenminaEagerSharedModule, CommonModule],
-  selector: 'mina-stepper',
-  templateUrl: './stepper.component.html',
-  styleUrls: ['./stepper.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'w-100 mt-16 flex-column' },
+    imports: [OpenminaEagerSharedModule, CommonModule],
+    selector: 'mina-stepper',
+    templateUrl: './stepper.component.html',
+    styleUrls: ['./stepper.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'w-100 mt-16 flex-column' }
 })
 export class StepperComponent {
 

@@ -53,6 +53,7 @@ export * from './lib/helpers/date.helper';
 export * from './lib/helpers/graph.helper';
 export * from './lib/helpers/router.helper';
 export * from './lib/helpers/values.helper';
+export * from './lib/helpers/browser.helper';
 export * from './lib/helpers/observable.helper';
 export * from './lib/helpers/user-input.helper';
 

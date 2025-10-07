@@ -11,10 +11,11 @@ import { ReportingBuildsMarkReportToShow } from '@cife-reporting/builds/reportin
 import { filter, take } from 'rxjs';
 
 @Component({
-  selector: 'mina-reporting-compare',
-  templateUrl: './reporting-compare.component.html',
-  styleUrls: ['./reporting-compare.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-reporting-compare',
+    templateUrl: './reporting-compare.component.html',
+    styleUrls: ['./reporting-compare.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ReportingCompareComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

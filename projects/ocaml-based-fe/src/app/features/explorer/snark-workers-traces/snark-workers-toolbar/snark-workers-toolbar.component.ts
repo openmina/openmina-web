@@ -25,12 +25,13 @@ import { SnarkWorkerTraceFilter } from '@ocfe-shared/types/explorer/snark-traces
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-snark-workers-toolbar',
-  templateUrl: './snark-workers-toolbar.component.html',
-  styleUrls: ['./snark-workers-toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'border-bottom h-xl fx-row-vert-cent flex-between' },
-  providers: [DatePipe],
+    selector: 'mina-snark-workers-toolbar',
+    templateUrl: './snark-workers-toolbar.component.html',
+    styleUrls: ['./snark-workers-toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'border-bottom h-xl fx-row-vert-cent flex-between' },
+    providers: [DatePipe],
+    standalone: false
 })
 export class SnarkWorkersToolbarComponent extends ManualDetection implements OnInit {
 

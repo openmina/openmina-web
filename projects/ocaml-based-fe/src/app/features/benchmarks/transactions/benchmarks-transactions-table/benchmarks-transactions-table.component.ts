@@ -9,11 +9,12 @@ import {
 import { BenchmarksTransactionsSort } from '@ocfe-benchmarks/transactions/benchmarks-transactions.actions';
 
 @Component({
-  selector: 'mina-benchmarks-transactions-table',
-  templateUrl: './benchmarks-transactions-table.component.html',
-  styleUrls: ['./benchmarks-transactions-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-benchmarks-transactions-table',
+    templateUrl: './benchmarks-transactions-table.component.html',
+    styleUrls: ['./benchmarks-transactions-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class BenchmarksTransactionsTableComponent extends StoreDispatcher implements OnInit {
 

@@ -28,11 +28,12 @@ import { DashboardForkFilter } from '@ocfe-shared/types/dashboard/nodes/dashboar
 import { CONFIG } from '@ocfe-shared/constants/config';
 
 @Component({
-  selector: 'mina-dashboard-nodes-toolbar',
-  templateUrl: './dashboard-nodes-toolbar.component.html',
-  styleUrls: ['./dashboard-nodes-toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column border-bottom' },
+    selector: 'mina-dashboard-nodes-toolbar',
+    templateUrl: './dashboard-nodes-toolbar.component.html',
+    styleUrls: ['./dashboard-nodes-toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column border-bottom' },
+    standalone: false
 })
 export class DashboardNodesToolbarComponent extends StoreDispatcher implements OnInit {
 

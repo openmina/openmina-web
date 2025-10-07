@@ -4,11 +4,12 @@ import { ScanStateSunburst } from '@ocfe-explorer/scan-state/explorer-scan-state
 
 
 @Component({
-  selector: 'mina-scan-state-chart',
-  templateUrl: './scan-state-chart.component.html',
-  styleUrls: ['./scan-state-chart.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100 w-100 flex-center align-center' },
+    selector: 'mina-scan-state-chart',
+    templateUrl: './scan-state-chart.component.html',
+    styleUrls: ['./scan-state-chart.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100 w-100 flex-center align-center' },
+    standalone: false
 })
 export class ScanStateChartComponent implements AfterViewInit {
 

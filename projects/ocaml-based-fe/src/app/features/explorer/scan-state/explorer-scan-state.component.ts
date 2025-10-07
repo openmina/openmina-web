@@ -18,11 +18,12 @@ import { EXPLORER_SNARKS_GET_SNARKS, ExplorerSnarksGetSnarks } from '@ocfe-explo
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-explorer-scan-state',
-  templateUrl: './explorer-scan-state.component.html',
-  styleUrls: ['./explorer-scan-state.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-explorer-scan-state',
+    templateUrl: './explorer-scan-state.component.html',
+    styleUrls: ['./explorer-scan-state.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class ExplorerScanStateComponent implements OnInit, OnDestroy {
 

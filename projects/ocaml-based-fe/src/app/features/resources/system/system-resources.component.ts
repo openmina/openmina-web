@@ -16,10 +16,11 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { selectSystemResourcesSidePanel } from '@ocfe-resources/system/system-resources.state';
 
 @Component({
-  selector: 'mina-system-resources',
-  templateUrl: './system-resources.component.html',
-  styleUrls: ['./system-resources.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-system-resources',
+    templateUrl: './system-resources.component.html',
+    styleUrls: ['./system-resources.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class SystemResourcesComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

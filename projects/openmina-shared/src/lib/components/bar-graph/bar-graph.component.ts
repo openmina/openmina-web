@@ -33,13 +33,12 @@ class ChartColumn {
 
 @UntilDestroy()
 @Component({
-  standalone: true,
-  imports: [OpenminaEagerSharedModule, CommonModule],
-  selector: 'mina-bar-graph',
-  templateUrl: './bar-graph.component.html',
-  styleUrls: ['./bar-graph.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 mt-10 pt-12 flex-column' },
+    imports: [OpenminaEagerSharedModule, CommonModule],
+    selector: 'mina-bar-graph',
+    templateUrl: './bar-graph.component.html',
+    styleUrls: ['./bar-graph.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 mt-10 pt-12 flex-column' }
 })
 export class BarGraphComponent extends ManualDetection implements OnInit, AfterViewInit, OnChanges, OnDestroy {
 

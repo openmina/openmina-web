@@ -7,11 +7,12 @@ import { TestingToolScenarioStep } from '@rufe-shared/types/testing-tool/scenari
 import { filter } from 'rxjs';
 
 @Component({
-  selector: 'mina-scenarios-steps-table',
-  templateUrl: './scenarios-steps-table.component.html',
-  styleUrls: ['./scenarios-steps-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column' }
+    selector: 'mina-scenarios-steps-table',
+    templateUrl: './scenarios-steps-table.component.html',
+    styleUrls: ['./scenarios-steps-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column' },
+    standalone: false
 })
 export class ScenariosStepsTableComponent extends MinaTableRustWrapper<TestingToolScenarioStep> implements OnInit {
 

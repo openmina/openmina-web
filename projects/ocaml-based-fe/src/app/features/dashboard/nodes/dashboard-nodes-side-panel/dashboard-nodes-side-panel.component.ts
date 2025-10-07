@@ -9,11 +9,12 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'mina-dashboard-nodes-side-panel',
-  templateUrl: './dashboard-nodes-side-panel.component.html',
-  styleUrls: ['./dashboard-nodes-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-dashboard-nodes-side-panel',
+    templateUrl: './dashboard-nodes-side-panel.component.html',
+    styleUrls: ['./dashboard-nodes-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class DashboardNodesSidePanelComponent extends StoreDispatcher implements OnInit {
 

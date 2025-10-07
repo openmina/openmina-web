@@ -177,7 +177,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ocaml-based-fe:build"
+            "buildTarget": "ocaml-based-fe:build"
           }
         },
         "test": {
@@ -274,11 +274,12 @@
       "prefix": "mina",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/rust-based-fe",
+            "outputPath": {
+              "base": "dist/rust-based-fe"
+            },
             "index": "projects/rust-based-fe/src/index.html",
-            "main": "projects/rust-based-fe/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -299,7 +300,8 @@
               ]
             },
             "scripts": [],
-            "aot": true
+            "aot": true,
+            "browser": "projects/rust-based-fe/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -312,9 +314,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -326,10 +326,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "rust-based-fe:build:production"
+              "buildTarget": "rust-based-fe:build:production"
             },
             "development": {
-              "browserTarget": "rust-based-fe:build:development"
+              "buildTarget": "rust-based-fe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -337,7 +337,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rust-based-fe:build"
+            "buildTarget": "rust-based-fe:build"
           }
         },
         "test": {
@@ -593,11 +593,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ci-fe",
+            "outputPath": {
+              "base": "dist/ci-fe"
+            },
             "index": "projects/ci-fe/src/index.html",
-            "main": "projects/ci-fe/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -616,7 +617,8 @@
               ]
             },
             "scripts": [],
-            "aot": true
+            "aot": true,
+            "browser": "projects/ci-fe/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -629,9 +631,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -643,10 +643,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ci-fe:build:production"
+              "buildTarget": "ci-fe:build:production"
             },
             "development": {
-              "browserTarget": "ci-fe:build:development"
+              "buildTarget": "ci-fe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -654,7 +654,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ci-fe:build"
+            "buildTarget": "ci-fe:build"
           }
         },
         "test": {
@@ -750,11 +750,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/fuzzing-fe",
+            "outputPath": {
+              "base": "dist/fuzzing-fe"
+            },
             "index": "projects/fuzzing-fe/src/index.html",
-            "main": "projects/fuzzing-fe/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -773,7 +774,8 @@
               ]
             },
             "scripts": [],
-            "aot": true
+            "aot": true,
+            "browser": "projects/fuzzing-fe/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -786,9 +788,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -800,10 +800,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "fuzzing-fe:build:production"
+              "buildTarget": "fuzzing-fe:build:production"
             },
             "development": {
-              "browserTarget": "fuzzing-fe:build:development"
+              "buildTarget": "fuzzing-fe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -811,7 +811,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fuzzing-fe:build"
+            "buildTarget": "fuzzing-fe:build"
           }
         },
         "test": {

@@ -32,11 +32,12 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { selectSystemResourcesRedrawCharts } from '@ocfe-resources/system/system-resources.state';
 
 @Component({
-  selector: 'mina-system-resources-graph',
-  templateUrl: './system-resources-graph.component.html',
-  styleUrls: ['./system-resources-graph.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [DatePipe, DecimalPipe],
+    selector: 'mina-system-resources-graph',
+    templateUrl: './system-resources-graph.component.html',
+    styleUrls: ['./system-resources-graph.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [DatePipe, DecimalPipe],
+    standalone: false
 })
 export class SystemResourcesGraphComponent extends StoreDispatcher implements AfterViewInit, OnChanges {
 

@@ -8,12 +8,11 @@ export interface ExpandTracking {
 }
 
 @Component({
-  selector: 'mina-json-viewer',
-  templateUrl: './mina-json-viewer.component.html',
-  styleUrls: ['./mina-json-viewer.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [CommonModule, NgxJsonViewerModule],
+    selector: 'mina-json-viewer',
+    templateUrl: './mina-json-viewer.component.html',
+    styleUrls: ['./mina-json-viewer.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [CommonModule, NgxJsonViewerModule]
 })
 export class MinaJsonViewerComponent extends NgxJsonViewerComponent implements OnChanges, OnInit {
 

@@ -16,19 +16,17 @@ import { TableColumnList } from '../../types/shared/table-head-sorting.type';
 import { SortDirection, TableSort } from '../../types/shared/table-sort.type';
 import { hasValue, isMobile } from '../../helpers/values.helper';
 import { OpenminaEagerSharedModule } from '../../openmina-eager-shared.module';
-import { ActionCreator } from '@ngrx/store';
-import { TypedAction } from '@ngrx/store/src/models';
+import { ActionCreator, Action } from '@ngrx/store';
 
 const DESKTOP_ROW_HEIGHT = 36;
 
 @Component({
-  standalone: true,
-  imports: [OpenminaEagerSharedModule, CommonModule],
-  selector: 'mina-table',
-  templateUrl: './mina-table.component.html',
-  styleUrls: ['./mina-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    imports: [OpenminaEagerSharedModule, CommonModule],
+    selector: 'mina-table',
+    templateUrl: './mina-table.component.html',
+    styleUrls: ['./mina-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' }
 })
 export class MinaTableComponent<T extends object> extends BaseStoreDispatcher<any> implements AfterViewInit {
 
@@ -45,7 +43,7 @@ export class MinaTableComponent<T extends object> extends BaseStoreDispatcher<an
   gridTemplateColumns: Array<number | 'auto' | '1fr'> = [];
   minWidth: number;
   sortClz: new (payload: TableSort<T>) => { type: string, payload: TableSort<T> };
-  sortAction: ActionCreator<string, (props: { sort: TableSort<T>; }) => { sort: TableSort<T>; } & TypedAction<string>>;
+  sortAction: ActionCreator<string, (props: { sort: TableSort<T>; }) => { sort: TableSort<T>; } & Action<string>>;
   sortSelector: (state: any) => TableSort<T>;
   rowClickCallback: (row: T) => void;
   trackByFn: (index: number, row: T) => any = (index: number, row: T) => row;

@@ -17,11 +17,12 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'mina-system-resources-side-panel',
-  templateUrl: './system-resources-side-panel.component.html',
-  styleUrls: ['./system-resources-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'border-left flex-column h-100' },
+    selector: 'mina-system-resources-side-panel',
+    templateUrl: './system-resources-side-panel.component.html',
+    styleUrls: ['./system-resources-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'border-left flex-column h-100' },
+    standalone: false
 })
 export class SystemResourcesSidePanelComponent extends StoreDispatcher implements OnInit {
 

@@ -8,11 +8,12 @@ import { CONFIG } from '@cife-shared/constants/config';
 import { TableSort } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-detail',
-  templateUrl: './reporting-detail.component.html',
-  styleUrls: ['./reporting-detail.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-reporting-detail',
+    templateUrl: './reporting-detail.component.html',
+    styleUrls: ['./reporting-detail.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class ReportingDetailComponent implements OnChanges {
 

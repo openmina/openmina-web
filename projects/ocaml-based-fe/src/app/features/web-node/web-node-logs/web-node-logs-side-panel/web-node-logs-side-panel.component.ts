@@ -12,11 +12,12 @@ import { filter } from 'rxjs';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-logs-side-panel',
-  templateUrl: './web-node-logs-side-panel.component.html',
-  styleUrls: ['./web-node-logs-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column border-left' },
+    selector: 'mina-web-node-logs-side-panel',
+    templateUrl: './web-node-logs-side-panel.component.html',
+    styleUrls: ['./web-node-logs-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column border-left' },
+    standalone: false
 })
 export class WebNodeLogsSidePanelComponent extends ManualDetection implements OnInit {
 

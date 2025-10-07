@@ -23,11 +23,12 @@ import {
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-explorer-scan-state-toolbar',
-  templateUrl: './explorer-scan-state-toolbar.component.html',
-  styleUrls: ['./explorer-scan-state-toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'border-bottom h-xl' },
+    selector: 'mina-explorer-scan-state-toolbar',
+    templateUrl: './explorer-scan-state-toolbar.component.html',
+    styleUrls: ['./explorer-scan-state-toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'border-bottom h-xl' },
+    standalone: false
 })
 export class ExplorerScanStateToolbarComponent extends ManualDetection implements OnInit {
 

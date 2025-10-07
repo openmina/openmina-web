@@ -35,11 +35,12 @@ import { APP_UPDATE_DEBUGGER_STATUS, AppUpdateDebuggerStatus } from '@ocfe-app/a
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-network-messages-table',
-  templateUrl: './network-messages-table.component.html',
-  styleUrls: ['./network-messages-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-network-messages-table',
+    templateUrl: './network-messages-table.component.html',
+    styleUrls: ['./network-messages-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class NetworkMessagesTableComponent extends MinaTableOcamlWrapper<NetworkMessage> implements OnInit {
 

@@ -3,11 +3,12 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { BenchmarksTransactionsClose, BenchmarksTransactionsGetTransactions } from '@ocfe-benchmarks/transactions/benchmarks-transactions.actions';
 
 @Component({
-  selector: 'mina-benchmarks-transactions',
-  templateUrl: './benchmarks-transactions.component.html',
-  styleUrls: ['./benchmarks-transactions.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-benchmarks-transactions',
+    templateUrl: './benchmarks-transactions.component.html',
+    styleUrls: ['./benchmarks-transactions.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class BenchmarksTransactionsComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

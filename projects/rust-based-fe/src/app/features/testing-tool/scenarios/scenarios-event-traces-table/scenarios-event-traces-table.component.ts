@@ -9,11 +9,12 @@ import { TestingToolScenariosAddStep } from '@rufe-testing-tool/scenarios/testin
 import { skip } from 'rxjs';
 
 @Component({
-  selector: 'mina-scenarios-event-traces-table',
-  templateUrl: './scenarios-event-traces-table.component.html',
-  styleUrls: ['./scenarios-event-traces-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-scenarios-event-traces-table',
+    templateUrl: './scenarios-event-traces-table.component.html',
+    styleUrls: ['./scenarios-event-traces-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class ScenariosEventTracesTableComponent extends StoreDispatcher implements OnInit {
 

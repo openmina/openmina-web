@@ -29,12 +29,11 @@ const RANGES = ['1μs - 10μs', '10μs - 100μs', '100μs - 1ms', '1ms - 10ms', 
 const trackSteps = (index: number) => index;
 
 @Component({
-  standalone: true,
-  imports: [OpenminaSharedModule, CommonModule],
-  selector: 'mina-flame-time-graph',
-  templateUrl: './flame-time-graph.component.html',
-  styleUrls: ['./flame-time-graph.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [OpenminaSharedModule, CommonModule],
+    selector: 'mina-flame-time-graph',
+    templateUrl: './flame-time-graph.component.html',
+    styleUrls: ['./flame-time-graph.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FlameTimeGraphComponent extends ManualDetection {
 

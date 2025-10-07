@@ -10,11 +10,12 @@ import { fromEvent } from 'rxjs';
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-peers-connect',
-  templateUrl: './web-node-peers-connect.component.html',
-  styleUrls: ['./web-node-peers-connect.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-web-node-peers-connect',
+    templateUrl: './web-node-peers-connect.component.html',
+    styleUrls: ['./web-node-peers-connect.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class WebNodePeersConnectComponent extends ManualDetection implements AfterViewInit {
 

@@ -4,10 +4,11 @@ import { Store } from '@ngrx/store';
 import { any } from '@openmina/shared';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  host: { class: 'overflow-hidden flex-column h-100' },
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    host: { class: 'overflow-hidden flex-column h-100' },
+    standalone: false
 })
 export class AppComponent {
 

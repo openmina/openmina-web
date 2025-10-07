@@ -1,4 +1,6 @@
-@import 'openmina';
+@use '../../../../assets/styles/openmina' as *;
+
+
 
 :host {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);

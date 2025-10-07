@@ -5,11 +5,12 @@ import { selectSnarksWorkPoolOpenSidePanel } from '@rufe-snarks/work-pool/snarks
 import { selectActiveNode } from '@rufe-app/app.state';
 
 @Component({
-  selector: 'mina-snarks-work-pool',
-  templateUrl: './snarks-work-pool.component.html',
-  styleUrls: ['./snarks-work-pool.component.scss'],
-  host: { class: 'flex-column h-100' },
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-snarks-work-pool',
+    templateUrl: './snarks-work-pool.component.html',
+    styleUrls: ['./snarks-work-pool.component.scss'],
+    host: { class: 'flex-column h-100' },
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class SnarksWorkPoolComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

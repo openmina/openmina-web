@@ -13,11 +13,12 @@ import {
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-peers-side-panel',
-  templateUrl: './web-node-peers-side-panel.component.html',
-  styleUrls: ['./web-node-peers-side-panel.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column border-left' },
+    selector: 'mina-web-node-peers-side-panel',
+    templateUrl: './web-node-peers-side-panel.component.html',
+    styleUrls: ['./web-node-peers-side-panel.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column border-left' },
+    standalone: false
 })
 export class WebNodePeersSidePanelComponent extends ManualDetection implements OnInit {
 

@@ -7,10 +7,11 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { untilDestroyed } from '@ngneat/until-destroy';
 
 @Component({
-  selector: 'mina-explorer-transactions',
-  templateUrl: './explorer-transactions.component.html',
-  styleUrls: ['./explorer-transactions.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-explorer-transactions',
+    templateUrl: './explorer-transactions.component.html',
+    styleUrls: ['./explorer-transactions.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ExplorerTransactionsComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

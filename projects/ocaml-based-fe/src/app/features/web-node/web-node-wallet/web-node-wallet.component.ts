@@ -11,10 +11,11 @@ import {
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-wallet',
-  templateUrl: './web-node-wallet.component.html',
-  styleUrls: ['./web-node-wallet.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-web-node-wallet',
+    templateUrl: './web-node-wallet.component.html',
+    styleUrls: ['./web-node-wallet.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class WebNodeWalletComponent implements OnDestroy {
 

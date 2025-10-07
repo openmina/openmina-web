@@ -8,11 +8,12 @@ import { selectExplorerBlocksActiveBlock } from '@ocfe-explorer/blocks/explorer-
 import { ExplorerBlock } from '@ocfe-shared/types/explorer/blocks/explorer-block.type';
 
 @Component({
-  selector: 'mina-explorer-blocks',
-  templateUrl: './explorer-blocks.component.html',
-  styleUrls: ['./explorer-blocks.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex-column h-100' },
+    selector: 'mina-explorer-blocks',
+    templateUrl: './explorer-blocks.component.html',
+    styleUrls: ['./explorer-blocks.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'flex-column h-100' },
+    standalone: false
 })
 export class ExplorerBlocksComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

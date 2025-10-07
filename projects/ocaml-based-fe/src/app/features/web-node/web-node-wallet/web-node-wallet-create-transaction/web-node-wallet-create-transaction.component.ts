@@ -28,11 +28,12 @@ interface TransactionForm {
 
 @UntilDestroy()
 @Component({
-  selector: 'mina-web-node-wallet-create-transaction',
-  templateUrl: './web-node-wallet-create-transaction.component.html',
-  styleUrls: ['./web-node-wallet-create-transaction.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-web-node-wallet-create-transaction',
+    templateUrl: './web-node-wallet-create-transaction.component.html',
+    styleUrls: ['./web-node-wallet-create-transaction.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class WebNodeWalletCreateTransactionComponent extends ManualDetection implements OnInit {
 

@@ -21,11 +21,12 @@ import { ReportGraphConfig } from '@cife-shared/types/reporting/report-graph-con
 import { TableSort } from '@openmina/shared';
 
 @Component({
-  selector: 'mina-reporting-compare-second-section',
-  templateUrl: './reporting-compare-second-section.component.html',
-  styleUrls: ['./reporting-compare-second-section.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 border-left flex-column no-transition' },
+    selector: 'mina-reporting-compare-second-section',
+    templateUrl: './reporting-compare-second-section.component.html',
+    styleUrls: ['./reporting-compare-second-section.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 border-left flex-column no-transition' },
+    standalone: false
 })
 export class ReportingCompareSecondSectionComponent extends StoreDispatcher implements OnInit {
 

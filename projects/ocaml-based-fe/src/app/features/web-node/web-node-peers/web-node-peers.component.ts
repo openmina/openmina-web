@@ -4,11 +4,12 @@ import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.clas
 import { WebNodeSharedGetPeers } from '@ocfe-web-node/web-node.actions';
 
 @Component({
-  selector: 'mina-web-node-peers',
-  templateUrl: './web-node-peers.component.html',
-  styleUrls: ['./web-node-peers.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-web-node-peers',
+    templateUrl: './web-node-peers.component.html',
+    styleUrls: ['./web-node-peers.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class WebNodePeersComponent extends StoreDispatcher implements OnInit, OnDestroy {
 

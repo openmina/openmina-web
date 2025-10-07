@@ -12,11 +12,12 @@ import { NetworkBlockIpc } from '@ocfe-shared/types/network/blocks-ipc/network-b
 import { MinaTableOcamlWrapper } from '@ocfe-shared/base-classes/mina-table-ocaml-wrapper.class';
 
 @Component({
-  selector: 'mina-network-blocks-ipc-table',
-  templateUrl: './network-blocks-ipc-table.component.html',
-  styleUrls: ['./network-blocks-ipc-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 flex-column' },
+    selector: 'mina-network-blocks-ipc-table',
+    templateUrl: './network-blocks-ipc-table.component.html',
+    styleUrls: ['./network-blocks-ipc-table.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 flex-column' },
+    standalone: false
 })
 export class NetworkBlocksIpcTableComponent extends MinaTableOcamlWrapper<NetworkBlockIpc> implements OnInit {
 

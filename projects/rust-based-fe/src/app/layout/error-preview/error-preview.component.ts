@@ -11,10 +11,11 @@ import { MinaError } from '@rufe-shared/types/error-preview/mina-error.type';
 import { MARK_ERRORS_AS_SEEN, MarkErrorsAsSeen } from '@rufe-error-preview/error-preview.actions';
 
 @Component({
-  selector: 'mina-error-preview',
-  templateUrl: './error-preview.component.html',
-  styleUrls: ['./error-preview.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'mina-error-preview',
+    templateUrl: './error-preview.component.html',
+    styleUrls: ['./error-preview.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ErrorPreviewComponent extends ManualDetection implements OnInit {
 

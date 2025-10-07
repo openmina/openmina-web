@@ -15,11 +15,12 @@ import { selectNetworkBlocksIpcSidePanelOpen } from './network-blocks-ipc.state'
 import { StoreDispatcher } from '@ocfe-shared/base-classes/store-dispatcher.class';
 
 @Component({
-  selector: 'mina-network-blocks-ipc',
-  templateUrl: './network-blocks-ipc.component.html',
-  styleUrls: ['./network-blocks-ipc.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'h-100 w-100' },
+    selector: 'mina-network-blocks-ipc',
+    templateUrl: './network-blocks-ipc.component.html',
+    styleUrls: ['./network-blocks-ipc.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: { class: 'h-100 w-100' },
+    standalone: false
 })
 export class NetworkBlocksIpcComponent extends StoreDispatcher implements OnInit, AfterViewInit, OnDestroy {
 
