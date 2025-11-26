@@ -2,7 +2,7 @@
   "bundlerOptions": {
     "entryFile": "./projects/openmina-styles/src/lib/styles/entry.scss",
     "rootDir": "../",
-    "outFile": "./projects/openmina-styles/src/lib/styles/openmina.scss",
+    "outFile": "./projects/openmina-styles/src/lib/styles/mina-rust.scss",
     "ignoreImports": [],
     "dedupeGlobs": [
       "./projects/openmina-styles/src/lib/styles/utilities/dimensions.scss",
